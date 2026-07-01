@@ -3,9 +3,7 @@ import { RankBadge } from './RankBadge';
 import { MmrCell } from './MmrCell';
 import { PlayerLink } from './PlayerAccent';
 import { CharacterName } from './CharacterName';
-import { platformIcon, platformLabel } from '@/lib/format';
 import { accentColor } from '@/lib/accent';
-import { useData } from '@/data/DataProvider';
 
 interface Props {
   rows: PairViewModel[];
@@ -45,7 +43,6 @@ export function LeaderboardTable({
   startRank = 1,
   onSortChange,
 }: Props) {
-  const { playerById } = useData();
   return (
     <div className="overflow-x-auto">
       <table className="w-full border-separate border-spacing-y-1.5 text-sm">
@@ -75,19 +72,12 @@ export function LeaderboardTable({
               />
             </th>
             <th className="hidden px-3 pb-1 sm:table-cell">
-              <span className="eyebrow">Main</span>
-            </th>
-            <th className="hidden px-3 pb-1 md:table-cell">
               <span className="eyebrow">Peak</span>
-            </th>
-            <th className="w-10 px-3 pb-1">
-              <span className="eyebrow sr-only">Platform</span>
             </th>
           </tr>
         </thead>
         <tbody>
           {rows.map((p, i) => {
-            const player = playerById.get(p.playerId);
             const pos = startRank + i;
             const accent = accentColor(p.playerId);
             return (
@@ -112,32 +102,22 @@ export function LeaderboardTable({
                 <td className="px-3 py-2.5">
                   <RankBadge rank={p.rank} iconSize={22} />
                 </td>
-                <td className="px-3 py-2.5">
+                <td className="rounded-r px-3 py-2.5 sm:rounded-none">
                   <MmrCell
                     mmr={p.mmr}
                     provisional={p.provisional}
                     confidence={p.confidence}
                   />
                 </td>
-                <td className="hidden px-3 py-2.5 text-muted sm:table-cell">
-                  <CharacterName slug={player?.main_character ?? null} iconSize={18} />
-                </td>
-                <td className="hidden px-3 py-2.5 md:table-cell">
+                <td className="hidden rounded-r px-3 py-2.5 sm:table-cell">
                   <RankBadge rank={p.peakRank} iconSize={18} showLabel={false} />
-                </td>
-                <td
-                  className="rounded-r px-3 py-2.5 text-muted"
-                  title={platformLabel(p.platform)}
-                >
-                  <span aria-hidden>{platformIcon(p.platform)}</span>
-                  <span className="sr-only">{platformLabel(p.platform)}</span>
                 </td>
               </tr>
             );
           })}
           {rows.length === 0 && (
             <tr>
-              <td colSpan={8} className="bg-surface/70 px-3 py-10 text-center text-muted">
+              <td colSpan={6} className="bg-surface/70 px-3 py-10 text-center text-muted">
                 No qualifying pairs yet — data appears after the first pipeline run.
               </td>
             </tr>
