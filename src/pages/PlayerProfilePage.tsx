@@ -242,9 +242,9 @@ export function PlayerProfilePage() {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg border border-border bg-surface p-3">
-      <div className="text-xs uppercase tracking-wide text-muted">{label}</div>
-      <div className="mt-1 text-2xl font-display">{value}</div>
+    <div className="border border-border bg-surface p-3">
+      <div className="eyebrow">{label}</div>
+      <div className="mt-1 font-numeral text-3xl leading-none">{value}</div>
     </div>
   );
 }

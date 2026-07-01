@@ -1,23 +1,30 @@
 /*
- * Design tokens. The whole palette/vibe is swappable here without touching
- * components (spec §5.8). Colors are space-separated RGB channels so Tailwind's
- * `rgb(var(--x) / <alpha>)` opacity syntax works.
+ * Design tokens — "Versus Screen" direction (fighting-game HUD).
+ * Whole palette/vibe swappable here without touching components (spec §5.8).
+ * Colors are space-separated RGB channels for Tailwind's rgb(var(--x)/<a>) syntax.
  *
- * This is a starting "slick-competitive" dark theme; the design pass owns the
- * final art direction.
+ * Identity: Tekken versus screens are red-corner (P1) vs blue-corner (P2). That
+ * duality is the brand — rivalries render as literal P1/P2 matchups.
  */
 :root {
-  --bg: 12 14 20;
-  --surface: 20 23 32;
-  --surface-2: 28 32 44;
-  --border: 44 50 66;
-  --fg: 232 236 245;
-  --muted: 148 158 178;
-  --accent: 122 92 255; /* electric violet */
-  --accent-2: 0 214 179; /* teal */
+  /* Base — deep indigo-black, not pure black (versus-screen depth) */
+  --bg: 11 14 21; /* #0B0E15 */
+  --surface: 20 26 38; /* #141A26 */
+  --surface-2: 29 37 52; /* #1D2534 */
+  --border: 43 52 70; /* #2B3446 */
+  --fg: 234 240 255; /* #EAF0FF */
+  --muted: 126 138 163; /* #7E8AA3 */
 
-  --font-display: 'Bebas Neue', 'Arial Narrow', system-ui, sans-serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Dual accents — P1 ember / P2 volt */
+  --accent: 255 77 77; /* #FF4D4D ember (P1) */
+  --accent-2: 34 211 238; /* #22D3EE volt  (P2) */
+  --p1: 255 77 77;
+  --p2: 34 211 238;
+  --gold: 255 194 75; /* #FFC24B champion / crown */
+
+  --font-display: 'Chakra Petch', 'Segoe UI', system-ui, sans-serif;
+  --font-numeral: 'Bebas Neue', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
 
   /* Rank color bands (see src/data/ranks.ts colorVarForTier) */
@@ -34,13 +41,13 @@
   --rank-god: 250 230 120;
   --rank-destruction: 255 90 90;
 
-  /* Player accent palette (assigned by hash of player id) */
-  --accent-0: 255 99 132;
-  --accent-1: 54 162 235;
-  --accent-2p: 255 206 86;
-  --accent-3: 75 192 192;
-  --accent-4: 153 102 255;
-  --accent-5: 255 159 64;
-  --accent-6: 46 204 113;
-  --accent-7: 231 76 60;
+  /* Player accent palette (assigned by hash of player id) — vivid HUD hues */
+  --accent-0: 255 77 77; /* ember   */
+  --accent-1: 34 211 238; /* volt    */
+  --accent-2p: 255 194 75; /* gold    */
+  --accent-3: 130 224 170; /* mint    */
+  --accent-4: 167 139 250; /* violet  */
+  --accent-5: 251 146 60; /* orange  */
+  --accent-6: 244 114 182; /* magenta */
+  --accent-7: 96 165 250; /* azure   */
 }

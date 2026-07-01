@@ -115,7 +115,7 @@ function MatchupDrilldown({
       <div className="grid grid-cols-2 gap-4">
         <div>
           <div className="text-xs uppercase text-muted">Games</div>
-          <div className="font-display text-3xl">
+          <div className="font-numeral text-4xl leading-none">
             {aGames}
             <span className="text-muted"> – </span>
             {bGames}
@@ -123,7 +123,7 @@ function MatchupDrilldown({
         </div>
         <div>
           <div className="text-xs uppercase text-muted">Sets</div>
-          <div className="font-display text-3xl">
+          <div className="font-numeral text-4xl leading-none">
             {aSets}
             <span className="text-muted"> – </span>
             {bSets}

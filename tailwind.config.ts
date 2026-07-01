@@ -15,9 +15,13 @@ export default {
         muted: 'rgb(var(--muted) / <alpha-value>)',
         accent: 'rgb(var(--accent) / <alpha-value>)',
         'accent-2': 'rgb(var(--accent-2) / <alpha-value>)',
+        p1: 'rgb(var(--p1) / <alpha-value>)',
+        p2: 'rgb(var(--p2) / <alpha-value>)',
+        gold: 'rgb(var(--gold) / <alpha-value>)',
       },
       fontFamily: {
         display: 'var(--font-display)',
+        numeral: 'var(--font-numeral)',
         body: 'var(--font-body)',
         mono: 'var(--font-mono)',
       },

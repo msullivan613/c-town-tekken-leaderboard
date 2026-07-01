@@ -15,19 +15,30 @@ const NAV = [
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen">
-      <header className="border-b border-border bg-surface/60 backdrop-blur">
+      <header className="sticky top-0 z-10 border-b border-border bg-bg/80 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center gap-6 px-4 py-3">
-          <NavLink to="/" className="font-display text-2xl !text-fg">
-            C-TOWN
+          <NavLink to="/" className="group flex items-baseline gap-1 !text-fg hover:!text-fg">
+            <span className="font-display text-2xl font-bold tracking-widest">C</span>
+            <span
+              className="font-display text-2xl font-bold tracking-widest"
+              style={{ color: 'rgb(var(--p1))' }}
+            >
+              ·
+            </span>
+            <span className="font-display text-2xl font-bold tracking-widest">TOWN</span>
           </NavLink>
-          <nav className="flex gap-4 text-sm">
+          <nav className="flex gap-5 text-sm">
             {NAV.map((n) => (
               <NavLink
                 key={n.to}
                 to={n.to}
                 end={n.end}
                 className={({ isActive }) =>
-                  isActive ? '!text-accent' : '!text-muted hover:!text-fg'
+                  `eyebrow pb-0.5 ${
+                    isActive
+                      ? '!text-fg [box-shadow:inset_0_-2px_0_rgb(var(--p2))]'
+                      : 'hover:!text-fg'
+                  }`
                 }
               >
                 {n.label}
@@ -37,8 +48,9 @@ function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       <main className="mx-auto max-w-5xl px-4 py-6">{children}</main>
-      <footer className="mx-auto max-w-5xl px-4 py-8 text-xs text-muted">
-        C-Town Tekken Leaderboard · static · $0 · reads committed JSON only.
+      <footer className="mx-auto max-w-5xl px-4 py-10 text-xs text-muted">
+        <span className="eyebrow">C-Town</span> · self-updating · $0 · reads committed
+        JSON only.
       </footer>
     </div>
   );

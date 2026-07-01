@@ -10,13 +10,85 @@
   }
   body {
     @apply bg-bg text-fg font-body antialiased;
-  }
-  a {
-    @apply text-accent hover:text-accent-2 transition-colors;
+    /* Versus-screen ambience: faint P1-red / P2-blue corner glows over the ink. */
+    background-image:
+      radial-gradient(60rem 40rem at 8% -10%, rgb(var(--p1) / 0.1), transparent 60%),
+      radial-gradient(60rem 40rem at 92% -10%, rgb(var(--p2) / 0.1), transparent 60%);
+    background-attachment: fixed;
   }
   h1,
   h2,
   h3 {
-    @apply font-display tracking-wide;
+    @apply font-display uppercase tracking-wide;
+  }
+  a {
+    @apply text-accent-2 transition-colors;
+  }
+  a:hover {
+    @apply text-fg;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent-2));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Fighting-game HUD panel: notched bottom-right corner + hairline edge. */
+  .hud-notch {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      0 100%
+    );
+  }
+  /* Eyebrow label — small technical caps, common in fight HUDs. */
+  .eyebrow {
+    @apply font-display text-xs font-semibold uppercase tracking-[0.22em] text-muted;
+  }
+  /* Charged energy meter (MMR). */
+  .meter {
+    @apply relative h-2 overflow-hidden rounded-full bg-surface-2;
+  }
+  .meter > span {
+    @apply absolute inset-y-0 left-0 block rounded-full;
+    background: linear-gradient(90deg, rgb(var(--p2)), rgb(var(--gold)));
+    box-shadow: 0 0 12px rgb(var(--gold) / 0.5);
+  }
+}
+
+@keyframes hud-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: hud-rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes meter-fill {
+  from {
+    width: 0;
+  }
+}
+.animate-meter {
+  animation: meter-fill 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
