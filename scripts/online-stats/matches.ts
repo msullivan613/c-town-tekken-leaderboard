@@ -1,21 +1,14 @@
-// Build matches.json from EWGF battles (spec §4). Pure + unit-tested.
+// Build matches.json from tknow battles (spec §4). Pure + unit-tested.
 //
-// Each EwgfBattle is one match to 3 rounds. A crew-vs-crew battle appears in
-// BOTH players' battle lists with identical orientation, so we dedup by a
-// synthetic id. Crew matches are kept forever (head-to-head); non-crew matches
-// are kept as a rolling recent window (activity feed) bounded by config.
-import { canonicalizeCharacter } from '@/data/characters';
-import { rankFromName } from '@/data/ranks';
-import type { EwgfBattle } from './ewgf';
-import type { AppConfig, Match, MatchSide, MatchType } from '@/types/data-files';
+// Each tknow match carries a real `battle_id`, so a crew-vs-crew battle that
+// appears in both players' feeds dedups exactly on that id (no synthetic key).
+// tknow already canonicalizes each battle's orientation (p1.polarisId ≤
+// p2.polarisId), so the two feeds yield an identical Match. Crew matches are kept
+// forever (head-to-head); non-crew matches are a rolling recent window (activity
+// feed) bounded by config.
+import type { TknowBattle, TknowBattleSide } from './tknow';
+import type { AppConfig, Match, MatchSide } from '@/types/data-files';
 import type { Player } from '@/types/domain';
-
-const BATTLE_TYPE: Record<string, MatchType> = {
-  QUICK_BATTLE: 'quick',
-  RANKED_BATTLE: 'ranked',
-  GROUP_BATTLE: 'group',
-  PLAYER_BATTLE: 'player',
-};
 
 function undash(id: string): string {
   return id.replaceAll('-', '');
@@ -29,20 +22,14 @@ function rosterByPolaris(players: Player[]): Map<string, Player> {
   return map;
 }
 
-function makeSide(
-  roster: Map<string, Player>,
-  name: string,
-  polarisId: string,
-  charName: string,
-  danRank: string | null,
-): MatchSide {
-  const player = polarisId ? roster.get(undash(polarisId)) : undefined;
+function makeSide(roster: Map<string, Player>, s: TknowBattleSide): MatchSide {
+  const player = roster.get(s.polarisId);
   return {
     playerId: player?.id ?? null,
-    name,
-    polarisId: undash(polarisId),
-    character: canonicalizeCharacter(charName),
-    rank: rankFromName(danRank).slug,
+    name: s.name,
+    polarisId: s.polarisId,
+    character: s.character,
+    rank: s.rank,
   };
 }
 
@@ -58,7 +45,7 @@ export interface BuildMatchesResult {
 }
 
 export function buildMatches(
-  battles: EwgfBattle[],
+  battles: TknowBattle[],
   players: Player[],
   priorMatches: Match[],
   config: AppConfig,
@@ -66,28 +53,25 @@ export function buildMatches(
 ): BuildMatchesResult {
   const roster = rosterByPolaris(players);
 
-  // Merge prior + fresh, keyed by synthetic id (fresh overwrites with newer data).
+  // Merge prior + fresh, keyed by battle_id (fresh overwrites with newer data).
   const byId = new Map<string, Match>();
   for (const m of priorMatches) byId.set(m.id, m);
 
   for (const b of battles) {
-    const at = Date.parse(b.battle_at);
+    const at = Date.parse(b.battleAt);
     if (!Number.isFinite(at)) continue;
-    const playedAt = new Date(at).toISOString();
-    const a = makeSide(roster, b.p1_name, b.p1_tekken_id, b.p1_char, b.p1_dan_rank);
-    const side2 = makeSide(roster, b.p2_name, b.p2_tekken_id, b.p2_char, b.p2_dan_rank);
+    const a = makeSide(roster, b.p1);
+    const side2 = makeSide(roster, b.p2);
     if (!a.playerId && !side2.playerId) continue; // must involve a tracked player
-    const epoch = Math.floor(at / 1000);
-    const id = `${undash(b.p1_tekken_id)}:${undash(b.p2_tekken_id)}:${epoch}`;
-    byId.set(id, {
-      id,
-      playedAt,
-      battleType: BATTLE_TYPE[b.battle_type] ?? null,
+    byId.set(b.battleId, {
+      id: b.battleId,
+      playedAt: b.battleAt,
+      battleType: b.battleType,
       a,
       b: side2,
-      roundsA: b.p1_rounds_won,
-      roundsB: b.p2_rounds_won,
-      winner: b.winner === 1 ? 'a' : 'b',
+      roundsA: b.p1.rounds,
+      roundsB: b.p2.rounds,
+      winner: b.winner === 'p1' ? 'a' : 'b',
       crew: a.playerId != null && side2.playerId != null,
     });
   }

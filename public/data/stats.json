@@ -1,8 +1,92 @@
 {
-  "basedOnMatchCount": 0,
+  "basedOnMatchCount": 291,
   "charMatchups": {},
-  "generatedAt": "2026-07-01T11:28:47.606Z",
+  "generatedAt": "2026-07-01T16:19:48.888Z",
   "headToHead": {},
-  "players": {},
+  "players": {
+    "bigman": {
+      "charUsage": {
+        "kuma": 40
+      },
+      "matchLosses": 22,
+      "matchWins": 18,
+      "mostPlayedCharacter": "kuma",
+      "totalMatches": 40,
+      "winRate": 0.45
+    },
+    "burny": {
+      "charUsage": {
+        "paul": 11
+      },
+      "matchLosses": 1,
+      "matchWins": 10,
+      "mostPlayedCharacter": "paul",
+      "totalMatches": 11,
+      "winRate": 0.909
+    },
+    "chamk": {
+      "charUsage": {
+        "devil_jin": 36,
+        "kunimitsu": 4
+      },
+      "matchLosses": 24,
+      "matchWins": 16,
+      "mostPlayedCharacter": "devil_jin",
+      "totalMatches": 40,
+      "winRate": 0.4
+    },
+    "fop": {
+      "charUsage": {
+        "reina": 40
+      },
+      "matchLosses": 22,
+      "matchWins": 18,
+      "mostPlayedCharacter": "reina",
+      "totalMatches": 40,
+      "winRate": 0.45
+    },
+    "mickrus": {
+      "charUsage": {
+        "heihachi": 11,
+        "lee": 29
+      },
+      "matchLosses": 16,
+      "matchWins": 24,
+      "mostPlayedCharacter": "lee",
+      "totalMatches": 40,
+      "winRate": 0.6
+    },
+    "nullified": {
+      "charUsage": {
+        "fahkumram": 40
+      },
+      "matchLosses": 17,
+      "matchWins": 23,
+      "mostPlayedCharacter": "fahkumram",
+      "totalMatches": 40,
+      "winRate": 0.575
+    },
+    "stone": {
+      "charUsage": {
+        "law": 40
+      },
+      "matchLosses": 11,
+      "matchWins": 29,
+      "mostPlayedCharacter": "law",
+      "totalMatches": 40,
+      "winRate": 0.725
+    },
+    "sugarfree": {
+      "charUsage": {
+        "bryan": 4,
+        "yoshimitsu": 36
+      },
+      "matchLosses": 13,
+      "matchWins": 27,
+      "mostPlayedCharacter": "yoshimitsu",
+      "totalMatches": 40,
+      "winRate": 0.675
+    }
+  },
   "schemaVersion": 2
 }

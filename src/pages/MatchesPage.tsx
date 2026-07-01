@@ -26,7 +26,7 @@ export function MatchesPage() {
     <div className="space-y-4">
       <h1 className="text-4xl">Matches</h1>
       <p className="text-sm text-muted">
-        Auto-gathered daily from EWGF — crew rivalries plus each player&apos;s recent
+        Auto-gathered from tknow.gg — crew rivalries plus each player&apos;s recent
         games against anyone.
       </p>
 

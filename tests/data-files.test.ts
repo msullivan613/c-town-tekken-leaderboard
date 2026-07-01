@@ -41,7 +41,7 @@ describe('committed data files', () => {
   });
 
   it('ranks.json: valid rank slugs, resolvable players, pairId shape', () => {
-    expect(ranks.source).toBe('ewgf');
+    expect(ranks.source).toBe('tknow');
     for (const r of ranks.pairs) {
       expect(playerIds.has(r.playerId)).toBe(true);
       expect(r.pairId).toBe(`${r.tekken_id}:${r.character}`);
@@ -60,7 +60,7 @@ describe('committed data files', () => {
 
   it('matches.json: v2 shape, ≥1 crew side, valid winner/rounds', () => {
     expect(matches.schemaVersion).toBe(2);
-    expect(matches.source).toBe('ewgf');
+    expect(matches.source).toBe('tknow');
     let crew = 0;
     for (const m of matches.matches) {
       // at least one side must be a tracked crew player
@@ -74,7 +74,7 @@ describe('committed data files', () => {
       expect(['a', 'b']).toContain(m.winner);
       expect(m.roundsA).toBeGreaterThanOrEqual(0);
       expect(m.roundsB).toBeGreaterThanOrEqual(0);
-      expect(m.id).toContain(':');
+      expect(m.id.length).toBeGreaterThan(0); // tknow battle_id
     }
     expect(matches.crewMatchCount).toBe(crew);
     expect(matches.feedMatchCount).toBe(matches.matches.length - crew);

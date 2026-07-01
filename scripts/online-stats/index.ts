@@ -1,10 +1,11 @@
 // Daily online-stats job (spec §3). For each roster player with a tekken_id,
-// fetch EWGF in-game rank + Wavu Glicko MMR per character, write ranks.json &
-// glicko.json, and append to rankhistory.json / mmrhistory.json.
+// fetch tknow in-game rank + match history and Wavu Glicko MMR per character,
+// write ranks.json & glicko.json, append to rankhistory.json / mmrhistory.json,
+// and rebuild matches.json / stats.json.
 import { loadConfig } from '../shared/config';
 import { readDataFile, writeDataFile } from '../shared/atomicWrite';
 import { sleep } from '../shared/http';
-import { getPlayer, type EwgfBattle, type EwgfCharacterStat } from './ewgf';
+import { getPlayerInfo, getPlayerMatches, type TknowBattle } from './tknow';
 import { getPlayerCharacters as getWavu } from './wavu';
 import { buildMatches } from './matches';
 import { deriveStats } from './stats';
@@ -29,7 +30,7 @@ function todayUtc(): string {
 /** Append today's [date, value] to each pair's series, idempotently (§3.4). */
 function appendHistory(
   existing: HistoryFile | null,
-  source: 'ewgf' | 'wavu',
+  source: 'tknow' | 'wavu',
   rows: Array<{ pairId: string; playerId: string; character: string; value: number }>,
   date: string,
   now: string,
@@ -58,11 +59,13 @@ function appendHistory(
 async function main() {
   const config = loadConfig();
   const players = readDataFile<PlayersFile>('players.json')?.players ?? [];
-  const apiKey = process.env.EWGF_API_KEY ?? '';
-  const ewgfAvailable = apiKey.length > 0;
-  if (!ewgfAvailable) {
-    console.warn('[online-stats] EWGF_API_KEY unset — degrading to Wavu-only MMR.');
-  }
+
+  const tknowHeaders = {
+    'User-Agent': config.tknow.userAgent,
+    Origin: config.sources.tknowOrigin,
+    Referer: `${config.sources.tknowOrigin}/`,
+    Accept: 'application/json',
+  };
 
   const now = new Date().toISOString();
   const date = todayUtc();
@@ -77,24 +80,33 @@ async function main() {
     if (tier != null) priorPeakTier.set(p.pairId, tier);
   }
 
+  // Matches accumulate append-only; feed tknow the ids we already have so the
+  // per-player match fetch can stop early once it reaches known battles (§4.2).
+  const priorMatches = readDataFile<MatchesFile>('matches.json')?.matches ?? [];
+  const knownBattleIds = new Set(priorMatches.map((m) => m.id));
+
   const rankPairs: RankPair[] = [];
   const glickoPairs: GlickoPair[] = [];
-  const allBattles: EwgfBattle[] = [];
+  const allBattles: TknowBattle[] = [];
+  let tknowReachable = false; // at least one info fetch succeeded
 
   for (const player of players) {
     if (!player.tekken_id) continue;
     const tekkenId = player.tekken_id;
 
-    let ewgf: EwgfCharacterStat[] = [];
-    if (ewgfAvailable) {
-      const res = await getPlayer(
+    const info = await getPlayerInfo(tekkenId, config.sources.tknowBaseUrl, tknowHeaders);
+    await sleep(REQUEST_DELAY_MS);
+    if (info.ok) tknowReachable = true;
+
+    if (info.ok && info.matchVersion != null) {
+      const battles = await getPlayerMatches(
         tekkenId,
-        apiKey,
-        config.sources.ewgfBaseUrl,
-        config.sources.ewgfBattlesPath,
+        info.matchVersion,
+        config.sources.tknowBaseUrl,
+        tknowHeaders,
+        { knownIds: knownBattleIds },
       );
-      ewgf = res.characters;
-      allBattles.push(...res.battles);
+      allBattles.push(...battles);
       await sleep(REQUEST_DELAY_MS);
     }
 
@@ -105,28 +117,22 @@ async function main() {
     );
     await sleep(REQUEST_DELAY_MS);
 
-    const ewgfByChar = new Map(ewgf.map((e) => [e.character, e]));
+    const tknowByChar = new Map(info.characters.map((e) => [e.character, e]));
     const wavuByChar = new Map(wavu.map((w) => [w.character, w]));
-    const characters = new Set<string>([...ewgfByChar.keys(), ...wavuByChar.keys()]);
+    const characters = new Set<string>([...tknowByChar.keys(), ...wavuByChar.keys()]);
 
     for (const character of characters) {
-      const e = ewgfByChar.get(character);
+      const e = tknowByChar.get(character);
       const w = wavuByChar.get(character);
       const pairId = makePairId(tekkenId, character);
 
       const gamesForThreshold = Math.max(e?.rankedGames ?? 0, w?.games ?? 0);
       const meetsGames = gamesForThreshold >= config.pairThreshold.minRankedGames;
-      const meetsRank =
-        !config.pairThreshold.requireAssignedRank ||
-        !ewgfAvailable ||
-        (e?.rank != null);
+      const meetsRank = !config.pairThreshold.requireAssignedRank || e?.rank != null;
       if (!meetsGames || !meetsRank) continue;
 
       if (e) {
-        const peakTier = Math.max(
-          priorPeakTier.get(pairId) ?? -1,
-          e.rankTier ?? -1,
-        );
+        const peakTier = Math.max(priorPeakTier.get(pairId) ?? -1, e.rankTier ?? -1);
         rankPairs.push({
           pairId,
           playerId: player.id,
@@ -162,7 +168,7 @@ async function main() {
 
   const ranksFile: RanksFile = {
     schemaVersion: 1,
-    source: 'ewgf',
+    source: 'tknow',
     generatedAt: now,
     pairs: rankPairs,
   };
@@ -175,7 +181,7 @@ async function main() {
 
   const rankHistory = appendHistory(
     readDataFile<HistoryFile>('rankhistory.json'),
-    'ewgf',
+    'tknow',
     rankPairs
       .filter((p) => p.rankTier != null)
       .map((p) => ({
@@ -202,10 +208,10 @@ async function main() {
     now,
   );
 
-  // In EWGF-degraded mode, don't clobber yesterday's committed ranks with an
-  // empty file (§3.2 "keeps yesterday's committed data").
+  // If tknow was wholly unreachable this run, keep yesterday's committed rank /
+  // match data rather than clobbering it with an empty file (§3.2).
   const wroteRanks =
-    ewgfAvailable || rankPairs.length > 0
+    tknowReachable || rankPairs.length > 0
       ? writeDataFile('ranks.json', ranksFile)
       : false;
   const wroteGlicko = writeDataFile('glicko.json', glickoFile);
@@ -215,24 +221,17 @@ async function main() {
       : false;
   const wroteMmrHist = writeDataFile('mmrhistory.json', mmrHistory);
 
-  // Matches + derived stats come from EWGF battles (§4). Only rebuild when EWGF
-  // is available; otherwise keep yesterday's committed matches/stats.
+  // Matches + derived stats come from tknow battles (§4). Only rebuild when tknow
+  // was reachable; otherwise keep yesterday's committed matches/stats.
   let wroteMatches = false;
   let wroteStats = false;
   let matchCount = 0;
-  if (ewgfAvailable) {
-    const prior = readDataFile<MatchesFile>('matches.json');
-    const built = buildMatches(
-      allBattles,
-      players,
-      prior?.matches ?? [],
-      config,
-      new Date(now),
-    );
+  if (tknowReachable) {
+    const built = buildMatches(allBattles, players, priorMatches, config, new Date(now));
     matchCount = built.matches.length;
     const matchesFile: MatchesFile = {
       schemaVersion: 2,
-      source: 'ewgf',
+      source: 'tknow',
       generatedAt: now,
       crewMatchCount: built.crewMatchCount,
       feedMatchCount: built.feedMatchCount,

@@ -30,7 +30,7 @@ export interface RankPair {
 }
 export interface RanksFile {
   schemaVersion: 1;
-  source: 'ewgf';
+  source: 'tknow';
   generatedAt: string;
   pairs: RankPair[];
 }
@@ -63,28 +63,29 @@ export interface HistorySeries {
 }
 export interface HistoryFile {
   schemaVersion: 1;
-  source: 'ewgf' | 'wavu';
+  source: 'tknow' | 'wavu';
   updatedAt: string;
   series: Record<string, HistorySeries>; // keyed by pairId
 }
 
-// ── matches.json (§2.8) — gathered from EWGF battles ─────────────────────────
-// Tekken 8 online match type (EWGF's battle-type taxonomy). Offline is not tracked.
+// ── matches.json (§2.8) — gathered from tknow battles ────────────────────────
+// Tekken 8 online match type. tknow surfaces quick + ranked matchmaking; custom
+// lobby (player/group) matches are not tracked. Offline is not tracked.
 export type MatchType = 'quick' | 'ranked' | 'player' | 'group' | null;
 
 /** One side of a match. `playerId` is set iff the side is a tracked crew member;
  *  otherwise the side is an external opponent identified by name only. */
 export interface MatchSide {
   playerId: string | null;
-  name: string; // EWGF display name
+  name: string; // tknow display name
   polarisId: string;
   character: CharacterSlug | null;
   rank: string | null; // rank slug from danRank
 }
 
-/** One EWGF battle = one match played to 3 rounds. */
+/** One tknow match = one match played to 3 rounds. */
 export interface Match {
-  id: string; // deterministic: `${p1Polaris}:${p2Polaris}:${epochSeconds}`
+  id: string; // tknow battle_id (globally unique)
   playedAt: string; // ISO-8601 UTC
   battleType: MatchType;
   a: MatchSide;
@@ -96,7 +97,7 @@ export interface Match {
 }
 export interface MatchesFile {
   schemaVersion: 2;
-  source: 'ewgf';
+  source: 'tknow';
   generatedAt: string;
   crewMatchCount: number;
   feedMatchCount: number;
@@ -147,10 +148,11 @@ export interface AppConfig {
     feedMaxPerPlayer: number; // cap of non-crew matches kept per player
   };
   sources: {
-    ewgfBaseUrl: string;
-    ewgfBattlesPath: string;
+    tknowBaseUrl: string;
+    tknowOrigin: string; // Origin/Referer the tknow API requires (anti-hotlink)
     wavuProfileUrl: string;
   };
+  tknow: { userAgent: string };
   wavu: { userAgent: string };
   history: {
     granularity: 'daily';

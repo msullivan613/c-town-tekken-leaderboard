@@ -98,8 +98,12 @@ export function isKnownCharacter(slug: CharacterSlug): boolean {
   return BY_SLUG.has(slug);
 }
 
-// EWGF numeric character id → display name (verified characterIdMap, spec §7.6).
-// EWGF battle data keys characters by this id, not by name.
+// Numeric character id → display name (verified against tknow.gg's character
+// table and EWGF's characterIdMap, spec §7.6/§7.9 — the two agree). tknow keys
+// characters by this id in `current_ranks` and match rows. Gaps in the id space
+// (25, 26, 27, 30, 31, 37, …) are reserved for as-yet-unreleased characters
+// (e.g. Bob, Roger Jr., Yujiro); an unmapped id is logged and skipped by
+// fromCharacterId until it ships and is added here.
 export const characterIdMap: Record<number, string> = {
   0: 'Paul',
   1: 'Law',
@@ -139,9 +143,12 @@ export const characterIdMap: Record<number, string> = {
   41: 'Clive',
   42: 'Anna',
   43: 'Fahkumram',
+  44: 'Armor King',
+  45: 'Miary Zo',
+  46: 'Kunimitsu',
 };
 
-/** Resolve an EWGF numeric character id to our canonical slug, or null. */
+/** Resolve a numeric character id (tknow/EWGF) to our canonical slug, or null. */
 export function fromCharacterId(id: number | null | undefined): CharacterSlug | null {
   if (id == null) return null;
   const name = characterIdMap[id];

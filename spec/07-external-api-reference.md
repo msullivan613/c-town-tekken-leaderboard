@@ -29,6 +29,16 @@ Steam id is also exposed on the Wavu page (`steamcommunity.com/profiles/<steamId
 
 ## 7.2 EWGF — recent battles (drives ranks + matches)
 
+> **🛑 SUPERSEDED (2026-07-01) — the pipeline no longer uses EWGF.** EWGF's free
+> tier caps at the last 50 battles (24h delayed) and its `/external/profile`
+> endpoint (Pro-only) exposes only the *main* character's rank, not per-character
+> dan ranks — so it couldn't satisfy either goal (full match history / real
+> per-character rank). We switched ranks **and** matches to **tknow.gg** (§7.9),
+> which is free, un-gated, gives real per-character dan ranks + lifetime games,
+> and a paginated `battle_id`-keyed match history. Wavu (§7.3) still drives MMR.
+> The `ewgf.ts` client and `EWGF_API_KEY` secret have been removed. The EWGF notes
+> below are retained for historical context only.
+
 > **⚠️ Requires an API key.** The **public** EWGF API lives at `api.ewgf.gg`
 > behind an auth gateway: every request returns **HTTP 401**
 > (`{"error":"Unauthorized access."}`) without `Authorization: Bearer <key>`. Keys
@@ -297,3 +307,55 @@ run seeds day 1; the charts grow from there.
 | Both providers share character names | Character aliasing simplified to name⇄slug (§7.6) |
 | Verified rank & character maps | Replace the placeholder `RANK_LADDER`/`CharacterSlug` stubs (§7.5, §7.6) |
 | No provider history series | Confirms daily-snapshot design for both history files (§7.7) |
+
+---
+
+## 7.9 tknow.gg — the live source for ranks + matches (verified 2026-07-01)
+
+After EWGF proved insufficient (§7.2), the pipeline sources **both** in-game rank
+and match history from **tknow.gg**, an independent Tekken-8 stats site with an
+unofficial JSON API. Free, no API key, no Cloudflare challenge. Wavu (§7.3) still
+drives MMR. Implemented in `scripts/online-stats/tknow.ts`.
+
+- **Base URL:** `https://api.tk8now.pe.kr/api/v1` (the site's `api.tknow.gg` alias
+  does not resolve publicly; the `.pe.kr` host is what the frontend falls back to).
+- **Gate:** requests without an `Origin: https://www.tknow.gg` + `Referer:
+  https://www.tknow.gg/` header pair get `403 {"error":"The stars have not
+  foretold…"}`. This is a soft anti-hotlink check (no token). We send those headers
+  plus a descriptive `User-Agent`. **ToS note:** unofficial API — keep it polite
+  (sequential, one player at a time, low volume), same posture as the Wavu scrape.
+  Consider giving the dev (min2hound; Discord/X linked on the site) a heads-up.
+
+### `GET /player/info/{polarisId}` → per-character rank (drives `ranks.json`)
+
+`current_ranks[]` gives, per character actually played:
+
+| our field | from tknow |
+|---|---|
+| `character` | `fromCharacterId(char_id)` (§7.6; ids match EWGF's, +44 Armor King, 45 Miary Zo, 46 Kunimitsu) |
+| `rank` / `rankTier` | `rankFromDanRank(current_rank)` — `current_rank` is the **same integer ladder** as §7.5's `rankOrderMap` (27=Tekken God, 31=God of Destruction II) |
+| `rankedGames` | `total_games` — **lifetime** ranked games (not a windowed count → fixes the §7.2 free-tier caveat) |
+| `region` | `region_id` → name (0 Asia, 1 Middle East, 2 Oceania, 3 Americas, 4 Europe 1, 5 Africa, 6 Europe 2) |
+| `lastSeen` | `latest_at` (unix seconds) → ISO |
+
+Also returns `nickname`, `my_power`, `region_id`, and `latest_game_info.version_list`.
+The match query version is `max(current_ranks[].last_play_version)`, falling back to
+`max(version_list)`. **Unmapped `char_id`s** (e.g. reserved ids 25/26/27/30/31/37 for
+unreleased characters — Bob, Roger Jr., Yujiro) are logged and skipped.
+
+### `GET /player/match/{polarisId}?version={v}&page={n}` → matches (drives `matches.json`)
+
+Newest-first, paginated match rows with a real **`battle_id`** (globally unique →
+exact dedup, replacing the old synthetic `p1:p2:epoch` key). Fields we use:
+`battle_at` (unix), `battle_type` (1 = quick, else ranked; lobby/player matches are
+**not** tracked), `is_win`, and `my_/enemy_` `polaris_id` / `chara` / `rank` /
+`rounds`. Each row is normalized to a canonical orientation (p1.polarisId ≤
+p2.polarisId) so the same battle from either crew member's feed yields an identical
+`Match`. **`version` is required and per-patch** (`all`/`0` are rejected), so we query
+the player's latest version each run and paginate until a page adds nothing new or we
+reach a `battle_id` we already stored (incremental catch-up; first run backfills the
+current version's full history).
+
+> **Crew-vs-crew caveat:** head-to-head only populates when two roster members meet
+> in **ranked/quick matchmaking**. Custom-lobby sets aren't tracked by tknow (or
+> EWGF), so a crew that plays each other in private rooms will show 0 crew matches.

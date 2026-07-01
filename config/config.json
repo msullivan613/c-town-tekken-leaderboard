@@ -13,9 +13,12 @@
     "feedMaxPerPlayer": 40
   },
   "sources": {
-    "ewgfBaseUrl": "https://api.ewgf.gg",
-    "ewgfBattlesPath": "/external/battles",
+    "tknowBaseUrl": "https://api.tk8now.pe.kr/api/v1",
+    "tknowOrigin": "https://www.tknow.gg",
     "wavuProfileUrl": "https://wank.wavu.wiki"
+  },
+  "tknow": {
+    "userAgent": "c-town-tekken-leaderboard (crew tool; contact matthew.sullivan613@gmail.com)"
   },
   "wavu": {
     "userAgent": "c-town-tekken-leaderboard (crew tool; contact matthew.sullivan613@gmail.com)"

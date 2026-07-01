@@ -1,6 +1,267 @@
 {
   "schemaVersion": 1,
-  "series": {},
+  "series": {
+    "2tYa-R4NB-GJJr:heihachi": {
+      "character": "heihachi",
+      "playerId": "mickrus",
+      "points": [
+        [
+          "2026-07-01",
+          1716
+        ]
+      ]
+    },
+    "2tYa-R4NB-GJJr:lee": {
+      "character": "lee",
+      "playerId": "mickrus",
+      "points": [
+        [
+          "2026-07-01",
+          1824
+        ]
+      ]
+    },
+    "37iF-Jy3H-YdTJ:bryan": {
+      "character": "bryan",
+      "playerId": "chamk",
+      "points": [
+        [
+          "2026-07-01",
+          1207
+        ]
+      ]
+    },
+    "37iF-Jy3H-YdTJ:devil_jin": {
+      "character": "devil_jin",
+      "playerId": "chamk",
+      "points": [
+        [
+          "2026-07-01",
+          1471
+        ]
+      ]
+    },
+    "37iF-Jy3H-YdTJ:jin": {
+      "character": "jin",
+      "playerId": "chamk",
+      "points": [
+        [
+          "2026-07-01",
+          1605
+        ]
+      ]
+    },
+    "37iF-Jy3H-YdTJ:kazuya": {
+      "character": "kazuya",
+      "playerId": "chamk",
+      "points": [
+        [
+          "2026-07-01",
+          1515
+        ]
+      ]
+    },
+    "37iF-Jy3H-YdTJ:kunimitsu": {
+      "character": "kunimitsu",
+      "playerId": "chamk",
+      "points": [
+        [
+          "2026-07-01",
+          1548
+        ]
+      ]
+    },
+    "3E4R-n7J9-e32T:reina": {
+      "character": "reina",
+      "playerId": "fop",
+      "points": [
+        [
+          "2026-07-01",
+          1805
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:armor_king": {
+      "character": "armor_king",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          1770
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:claudio": {
+      "character": "claudio",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          1891
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:clive": {
+      "character": "clive",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          1731
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:fahkumram": {
+      "character": "fahkumram",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          2035
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:kunimitsu": {
+      "character": "kunimitsu",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          1472
+        ]
+      ]
+    },
+    "3fee-J699-M7An:bryan": {
+      "character": "bryan",
+      "playerId": "sugarfree",
+      "points": [
+        [
+          "2026-07-01",
+          1666
+        ]
+      ]
+    },
+    "3fee-J699-M7An:fahkumram": {
+      "character": "fahkumram",
+      "playerId": "sugarfree",
+      "points": [
+        [
+          "2026-07-01",
+          1682
+        ]
+      ]
+    },
+    "3fee-J699-M7An:feng": {
+      "character": "feng",
+      "playerId": "sugarfree",
+      "points": [
+        [
+          "2026-07-01",
+          1415
+        ]
+      ]
+    },
+    "3fee-J699-M7An:yoshimitsu": {
+      "character": "yoshimitsu",
+      "playerId": "sugarfree",
+      "points": [
+        [
+          "2026-07-01",
+          1715
+        ]
+      ]
+    },
+    "4899-Drd8-678h:kuma": {
+      "character": "kuma",
+      "playerId": "bigman",
+      "points": [
+        [
+          "2026-07-01",
+          2112
+        ]
+      ]
+    },
+    "4899-Drd8-678h:kunimitsu": {
+      "character": "kunimitsu",
+      "playerId": "bigman",
+      "points": [
+        [
+          "2026-07-01",
+          1426
+        ]
+      ]
+    },
+    "4899-Drd8-678h:panda": {
+      "character": "panda",
+      "playerId": "bigman",
+      "points": [
+        [
+          "2026-07-01",
+          1903
+        ]
+      ]
+    },
+    "4TiQ-J6FA-rHJa:dragunov": {
+      "character": "dragunov",
+      "playerId": "stone",
+      "points": [
+        [
+          "2026-07-01",
+          1977
+        ]
+      ]
+    },
+    "4TiQ-J6FA-rHJa:fahkumram": {
+      "character": "fahkumram",
+      "playerId": "stone",
+      "points": [
+        [
+          "2026-07-01",
+          1808
+        ]
+      ]
+    },
+    "4TiQ-J6FA-rHJa:law": {
+      "character": "law",
+      "playerId": "stone",
+      "points": [
+        [
+          "2026-07-01",
+          1769
+        ]
+      ]
+    },
+    "4TiQ-J6FA-rHJa:lee": {
+      "character": "lee",
+      "playerId": "stone",
+      "points": [
+        [
+          "2026-07-01",
+          1738
+        ]
+      ]
+    },
+    "4fLe-2B6Q-34fJ:paul": {
+      "character": "paul",
+      "playerId": "burny",
+      "points": [
+        [
+          "2026-07-01",
+          1901
+        ]
+      ]
+    },
+    "4fLe-2B6Q-34fJ:victor": {
+      "character": "victor",
+      "playerId": "burny",
+      "points": [
+        [
+          "2026-07-01",
+          1961
+        ]
+      ]
+    }
+  },
   "source": "wavu",
-  "updatedAt": "2026-07-01T11:28:47.606Z"
+  "updatedAt": "2026-07-01T16:19:48.888Z"
 }

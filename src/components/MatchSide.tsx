@@ -5,7 +5,7 @@ import { CharacterIcon } from './icons';
 
 // Renders one side of a match: the character portrait + the fighter's name. Crew
 // members link to their profile and use their roster tag; external opponents show
-// their EWGF name, unlinked and muted.
+// their tknow name, unlinked and muted.
 export function MatchSideLabel({
   side,
   align = 'left',

@@ -1,10 +1,10 @@
-// Manual helper (§3.2): verify a member's Tekken ID against EWGF. The public API
-// has no name search, so members grab their Tekken ID from their ewgf.gg profile
-// URL (https://ewgf.gg/player/<tekkenId>); this confirms it resolves and prints
-// the display name + characters seen so the right id lands in players.json. Run:
-//   EWGF_API_KEY=… npm run resolve-id -- "3fee-J699-M7An"
+// Manual helper (§3.2): verify a member's Tekken ID against tknow. tknow has no
+// name search, so members grab their Tekken ID from their profile URL
+// (https://www.tknow.gg/player/<tekkenId>); this confirms it resolves and prints
+// the display name + per-character ranks so the right id lands in players.json.
+// Run:  npm run resolve-id -- "3fee-J699-M7An"
 import { loadConfig } from '../shared/config';
-import { getPlayer } from './ewgf';
+import { getPlayerInfo } from './tknow';
 import { characterDisplayName } from '@/data/characters';
 
 async function main() {
@@ -13,34 +13,24 @@ async function main() {
     console.error('usage: npm run resolve-id -- "<tekken_id>"');
     process.exit(2);
   }
-  const apiKey = process.env.EWGF_API_KEY ?? '';
-  if (!apiKey) {
-    console.error('EWGF_API_KEY is required (the EWGF API is gated).');
-    process.exit(2);
-  }
   const config = loadConfig();
-  const { characters, battles } = await getPlayer(
-    tekkenId,
-    apiKey,
-    config.sources.ewgfBaseUrl,
-    config.sources.ewgfBattlesPath,
-  );
-  if (!battles.length) {
-    console.log(`No battles found for "${tekkenId}" — check the id.`);
+  const headers = {
+    'User-Agent': config.tknow.userAgent,
+    Origin: config.sources.tknowOrigin,
+    Referer: `${config.sources.tknowOrigin}/`,
+    Accept: 'application/json',
+  };
+  const info = await getPlayerInfo(tekkenId, config.sources.tknowBaseUrl, headers);
+  if (!info.ok) {
+    console.log(`Could not reach tknow for "${tekkenId}" — try again later.`);
     return;
   }
-  const undashed = tekkenId.replaceAll('-', '');
-  const self = battles.find(
-    (b) =>
-      b.p1_tekken_id.replaceAll('-', '') === undashed ||
-      b.p2_tekken_id.replaceAll('-', '') === undashed,
-  );
-  const name =
-    self?.p1_tekken_id.replaceAll('-', '') === undashed
-      ? self?.p1_name
-      : self?.p2_name;
-  console.log(`${tekkenId}\t${name ?? '(unknown)'}\t${battles.length} recent battles`);
-  for (const c of characters) {
+  if (!info.name && info.characters.length === 0) {
+    console.log(`No player found for "${tekkenId}" — check the id.`);
+    return;
+  }
+  console.log(`${tekkenId}\t${info.name ?? '(unknown)'}\t${info.characters.length} characters`);
+  for (const c of info.characters) {
     console.log(
       `  ${characterDisplayName(c.character)} — ${c.rank ?? 'unranked'} (${c.rankedGames} ranked)`,
     );

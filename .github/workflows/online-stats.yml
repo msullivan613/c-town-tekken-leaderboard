@@ -2,7 +2,8 @@ name: online-stats
 
 on:
   schedule:
-    - cron: '0 8 * * *' # 08:00 UTC daily
+    - cron: '0 */6 * * *' # every 6h (00/06/12/18 UTC) — overlapping battle windows
+                          # + append-only merge minimize missed matches (§4.2, §7.2)
   workflow_dispatch: {}
 
 permissions:
@@ -24,8 +25,6 @@ jobs:
       - run: npm ci
       - name: Refresh online stats
         run: npx tsx scripts/online-stats/index.ts
-        env:
-          EWGF_API_KEY: ${{ secrets.EWGF_API_KEY }} # gated API (§7.4); absent ⇒ Wavu-only
       - name: Commit if changed
         run: |
           git config user.name  "ctown-bot"
