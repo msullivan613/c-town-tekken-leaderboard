@@ -58,7 +58,10 @@ These are the only things the code can't do for itself:
    File → Share → Publish to web → CSV) and paste the URL into
    `config/config.json`. Until it's set, `match-sync` no-ops.
 3. **Roster** — add crew members to `public/data/players.json` (use
-   `resolve-id` to fill `tekken_id`).
+   `resolve-id` to fill `tekken_id`). Optional per-player `avatar` (a path
+   under `public/`, e.g. `"avatars/nick.svg"`) overrides the default
+   main-character portrait shown next to their name; without it the UI uses
+   the character portrait, then a colored initial.
 
 ## Status
 

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { PairViewModel } from '@/lib/leaderboard';
 import { CharacterIcon, RankIcon } from './icons';
+import { PlayerAccent } from './PlayerAccent';
 import { characterDisplayName } from '@/data/characters';
 import { accentColor } from '@/lib/accent';
 import { formatMmr, platformLabel } from '@/lib/format';
@@ -26,12 +27,13 @@ export function ChampionHero({ champ }: { champ: PairViewModel }) {
 
       <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:p-6">
         <div className="relative shrink-0">
-          <div
-            className="rounded-full p-1"
-            style={{ boxShadow: `0 0 0 2px ${color}, 0 0 28px ${color}66` }}
-          >
-            <CharacterIcon slug={champ.character} size={96} />
-          </div>
+          <PlayerAccent
+            playerId={champ.playerId}
+            tag={champ.playerTag}
+            character={champ.character}
+            size={96}
+            glow
+          />
           <span
             className="absolute -bottom-1 -right-1 rounded-full border-2 border-surface bg-gold px-2 font-numeral text-lg leading-6 text-bg"
             title="Reigning #1"
