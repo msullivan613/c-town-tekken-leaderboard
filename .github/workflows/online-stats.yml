@@ -23,15 +23,22 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
-      - name: Refresh online stats
-        run: npx tsx scripts/online-stats/index.ts
+      - name: Refresh online stats (all sites)
+        run: |
+          for dir in sites/*/; do
+            slug="$(basename "$dir")"
+            echo "::group::$slug"
+            SITE="$slug" npx tsx scripts/online-stats/index.ts
+            echo "::endgroup::"
+          done
       - name: Commit if changed
         run: |
           git config user.name  "ctown-bot"
           git config user.email "ctown-bot@users.noreply.github.com"
-          git add public/data/ranks.json public/data/glicko.json \
-                  public/data/rankhistory.json public/data/mmrhistory.json \
-                  public/data/matches.json public/data/stats.json
+          # players.json is hand-maintained; only stage generated files.
+          git add sites/*/data/ranks.json sites/*/data/glicko.json \
+                  sites/*/data/rankhistory.json sites/*/data/mmrhistory.json \
+                  sites/*/data/matches.json sites/*/data/stats.json
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh online stats $(date -u +%F)"
             git push

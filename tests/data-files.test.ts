@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { deriveStats } from '../scripts/online-stats/stats';
 import { isKnownCharacter } from '@/data/characters';
@@ -13,21 +13,30 @@ import type {
   HistoryFile,
 } from '@/types/data-files';
 
-const DATA = resolve(__dirname, '..', 'public', 'data');
-function read<T>(name: string): T {
-  return JSON.parse(readFileSync(resolve(DATA, name), 'utf8')) as T;
-}
+const SITES = resolve(__dirname, '..', 'sites');
+const siteSlugs = readdirSync(SITES, { withFileTypes: true })
+  .filter((e) => e.isDirectory())
+  .map((e) => e.name);
 
 // Lightweight runtime validation that committed JSON matches the schemas (§2.10):
-// a malformed pipeline output fails CI before it can break the site.
-describe('committed data files', () => {
+// a malformed pipeline output fails CI before it can break the site. Every site's
+// data folder is checked; generated files absent on a fresh site are skipped.
+describe.each(siteSlugs)('committed data files: %s', (slug) => {
+  const DATA = resolve(SITES, slug, 'data');
+  function read<T>(name: string): T {
+    return JSON.parse(readFileSync(resolve(DATA, name), 'utf8')) as T;
+  }
+  function readMaybe<T>(name: string): T | null {
+    return existsSync(resolve(DATA, name)) ? read<T>(name) : null;
+  }
+
   const players = read<PlayersFile>('players.json');
-  const ranks = read<RanksFile>('ranks.json');
-  const glicko = read<GlickoFile>('glicko.json');
-  const matches = read<MatchesFile>('matches.json');
-  const stats = read<StatsFile>('stats.json');
-  const rankHistory = read<HistoryFile>('rankhistory.json');
-  const mmrHistory = read<HistoryFile>('mmrhistory.json');
+  const ranks = readMaybe<RanksFile>('ranks.json');
+  const glicko = readMaybe<GlickoFile>('glicko.json');
+  const matches = readMaybe<MatchesFile>('matches.json');
+  const stats = readMaybe<StatsFile>('stats.json');
+  const rankHistory = readMaybe<HistoryFile>('rankhistory.json');
+  const mmrHistory = readMaybe<HistoryFile>('mmrhistory.json');
 
   const playerIds = new Set(players.players.map((p) => p.id));
 
@@ -41,6 +50,7 @@ describe('committed data files', () => {
   });
 
   it('ranks.json: valid rank slugs, resolvable players, pairId shape', () => {
+    if (!ranks) return;
     expect(ranks.source).toBe('tknow');
     for (const r of ranks.pairs) {
       expect(playerIds.has(r.playerId)).toBe(true);
@@ -51,6 +61,7 @@ describe('committed data files', () => {
   });
 
   it('glicko.json: provisional flag agrees with confidence bucket', () => {
+    if (!glicko) return;
     expect(glicko.source).toBe('wavu');
     for (const g of glicko.pairs) {
       expect(playerIds.has(g.playerId)).toBe(true);
@@ -59,6 +70,7 @@ describe('committed data files', () => {
   });
 
   it('matches.json: v2 shape, ≥1 crew side, valid winner/rounds', () => {
+    if (!matches) return;
     expect(matches.schemaVersion).toBe(2);
     expect(matches.source).toBe('tknow');
     let crew = 0;
@@ -82,6 +94,7 @@ describe('committed data files', () => {
 
   it('history files: series keys look like pairIds, points are sorted', () => {
     for (const file of [rankHistory, mmrHistory]) {
+      if (!file) continue;
       for (const [pairId, series] of Object.entries(file.series)) {
         expect(pairId).toContain(':');
         expect(playerIds.has(series.playerId)).toBe(true);
@@ -92,6 +105,7 @@ describe('committed data files', () => {
   });
 
   it('stats.json is consistent with matches.json (regenerates identically)', () => {
+    if (!matches || !stats) return;
     const regen = deriveStats(matches.matches, stats.generatedAt);
     expect(regen.headToHead).toEqual(stats.headToHead);
     expect(regen.players).toEqual(stats.players);

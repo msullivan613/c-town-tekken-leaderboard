@@ -134,6 +134,11 @@ export interface StatsFile {
 
 // ── config/config.json (§1.4) ────────────────────────────────────────────────
 export interface AppConfig {
+  site: {
+    slug: string;
+    name: string; // group display name, e.g. "C-Town"
+    description: string; // used for <title>/<meta> and social preview
+  };
   pairThreshold: {
     minRankedGames: number;
     requireAssignedRank: boolean;

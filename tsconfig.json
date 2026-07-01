@@ -23,8 +23,11 @@
     "types": ["vite/client", "node"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      // Resolves to a concrete site config for typecheck; Vite/Vitest alias this
+      // to the SITE-selected file at build/test time (see vite.config.ts).
+      "@site-config": ["sites/c-town/config.json"]
     }
   },
-  "include": ["src", "scripts", "config", "vite.config.ts"]
+  "include": ["src", "scripts", "config", "sites", "vite.config.ts"]
 }

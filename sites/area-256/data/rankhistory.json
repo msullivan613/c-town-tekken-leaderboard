@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "series": {
+    "2YTm-Mj47-4bny:azucena": {
+      "character": "azucena",
+      "playerId": "holycrow",
+      "points": [
+        [
+          "2026-07-01",
+          29
+        ]
+      ]
+    },
+    "35J4-f2QE-t9BQ:heihachi": {
+      "character": "heihachi",
+      "playerId": "falsecrustacean",
+      "points": [
+        [
+          "2026-07-01",
+          24
+        ]
+      ]
+    },
+    "35J4-f2QE-t9BQ:hwoarang": {
+      "character": "hwoarang",
+      "playerId": "falsecrustacean",
+      "points": [
+        [
+          "2026-07-01",
+          29
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:armor_king": {
+      "character": "armor_king",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          29
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:claudio": {
+      "character": "claudio",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          30
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:clive": {
+      "character": "clive",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          28
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:fahkumram": {
+      "character": "fahkumram",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          32
+        ]
+      ]
+    },
+    "3JAY-QR5R-dNJh:kunimitsu": {
+      "character": "kunimitsu",
+      "playerId": "nullified",
+      "points": [
+        [
+          "2026-07-01",
+          29
+        ]
+      ]
+    },
+    "3fee-J699-M7An:bryan": {
+      "character": "bryan",
+      "playerId": "sugarfree",
+      "points": [
+        [
+          "2026-07-01",
+          26
+        ]
+      ]
+    },
+    "3fee-J699-M7An:fahkumram": {
+      "character": "fahkumram",
+      "playerId": "sugarfree",
+      "points": [
+        [
+          "2026-07-01",
+          24
+        ]
+      ]
+    },
+    "3fee-J699-M7An:feng": {
+      "character": "feng",
+      "playerId": "sugarfree",
+      "points": [
+        [
+          "2026-07-01",
+          25
+        ]
+      ]
+    },
+    "3fee-J699-M7An:yoshimitsu": {
+      "character": "yoshimitsu",
+      "playerId": "sugarfree",
+      "points": [
+        [
+          "2026-07-01",
+          27
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:armor_king": {
+      "character": "armor_king",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          25
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:bryan": {
+      "character": "bryan",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          26
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:clive": {
+      "character": "clive",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          25
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:heihachi": {
+      "character": "heihachi",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          24
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:jack8": {
+      "character": "jack8",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          26
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:kuma": {
+      "character": "kuma",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          26
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:miary_zo": {
+      "character": "miary_zo",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          25
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:panda": {
+      "character": "panda",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          27
+        ]
+      ]
+    },
+    "3hBB-83gE-7EAG:yoshimitsu": {
+      "character": "yoshimitsu",
+      "playerId": "skrt",
+      "points": [
+        [
+          "2026-07-01",
+          25
+        ]
+      ]
+    },
+    "54Ab-yiYH-Ab4B:asuka": {
+      "character": "asuka",
+      "playerId": "goul",
+      "points": [
+        [
+          "2026-07-01",
+          28
+        ]
+      ]
+    },
+    "54Ab-yiYH-Ab4B:dragunov": {
+      "character": "dragunov",
+      "playerId": "goul",
+      "points": [
+        [
+          "2026-07-01",
+          29
+        ]
+      ]
+    },
+    "54Ab-yiYH-Ab4B:kazuya": {
+      "character": "kazuya",
+      "playerId": "goul",
+      "points": [
+        [
+          "2026-07-01",
+          26
+        ]
+      ]
+    },
+    "54Ab-yiYH-Ab4B:miary_zo": {
+      "character": "miary_zo",
+      "playerId": "goul",
+      "points": [
+        [
+          "2026-07-01",
+          26
+        ]
+      ]
+    },
+    "54Ab-yiYH-Ab4B:xiaoyu": {
+      "character": "xiaoyu",
+      "playerId": "goul",
+      "points": [
+        [
+          "2026-07-01",
+          26
+        ]
+      ]
+    },
+    "5HyE-nHGe-rLJ8:azucena": {
+      "character": "azucena",
+      "playerId": "phine",
+      "points": [
+        [
+          "2026-07-01",
+          35
+        ]
+      ]
+    },
+    "5HyE-nHGe-rLJ8:jun": {
+      "character": "jun",
+      "playerId": "phine",
+      "points": [
+        [
+          "2026-07-01",
+          30
+        ]
+      ]
+    },
+    "5HyE-nHGe-rLJ8:kunimitsu": {
+      "character": "kunimitsu",
+      "playerId": "phine",
+      "points": [
+        [
+          "2026-07-01",
+          29
+        ]
+      ]
+    }
+  },
+  "source": "tknow",
+  "updatedAt": "2026-07-01T21:03:01.284Z"
+}

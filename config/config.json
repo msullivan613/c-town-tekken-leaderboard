@@ -18,10 +18,10 @@
     "wavuProfileUrl": "https://wank.wavu.wiki"
   },
   "tknow": {
-    "userAgent": "c-town-tekken-leaderboard (crew tool; contact matthew.sullivan613@gmail.com)"
+    "userAgent": "tekken-leaderboard (crew tool; contact matthew.sullivan613@gmail.com)"
   },
   "wavu": {
-    "userAgent": "c-town-tekken-leaderboard (crew tool; contact matthew.sullivan613@gmail.com)"
+    "userAgent": "tekken-leaderboard (crew tool; contact matthew.sullivan613@gmail.com)"
   },
   "history": {
     "granularity": "daily",
