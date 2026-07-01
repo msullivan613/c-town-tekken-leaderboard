@@ -99,16 +99,15 @@ auto-discovered by the pipeline (brief §5 core concept).
 
 **Invariants**
 
-- `id` is unique, URL-safe, and **immutable** (it's the profile URL and the join key
-  the match sheet references by tag→id; see §4).
+- `id` is unique, URL-safe, and **immutable** (the profile URL and the join key).
 - `tekken_id` may be `null` for a player not yet resolved on EWGF — such a player
-  shows in the roster/profiles but has no ranks/MMR until an id is filled in.
+  shows in the roster/profiles but has no ranks/MMR/matches until an id is filled in.
 - `peak_rank: null` means "derive it" (§2.4 note). A non-null value is a hand-set
   override / fallback.
 
 > **📌 Decision — `id` (internal slug) is the canonical player key everywhere;
-> `player_tag` is display-only.** The match sheet is authored with human tags, so the
-> match pipeline resolves tags → `id` (§4.3). This isolates the site from tag renames.
+> `player_tag` is display-only.** The match pipeline resolves EWGF `polarisId` →
+> `id` (§4.2), so nothing downstream depends on a tag that can be renamed.
 
 ## 2.4 `ranks.json` — current in-game rank (generated, EWGF, daily)
 
@@ -243,85 +242,87 @@ Identical shape to §2.6 but the tuple value is the Glicko rating (float):
 This is the **headline visualization** (brief §5.5): line chart of each pair's rating
 trajectory; a profile overlays a player's characters on one chart.
 
-## 2.8 `matches.json` — set log (generated from Google Sheet)
+## 2.8 `matches.json` — gathered from EWGF battles (generated, §4)
 
-One object per **set** (not per game). Game totals for head-to-head are *derived*
-from the set score (§4.4), so the sheet only records set scores.
+One object per **EWGF battle** (= one online match to 3 rounds). Matches are
+harvested automatically from each tracked player's EWGF `battles` — there is no
+manual entry. Each side is a structured object so a **non-crew opponent** (a random
+the player met in ranked) is first-class; `playerId` is set only for tracked crew.
 
 ```jsonc
 {
-  "schemaVersion": 1,
-  "source": "google-sheet",
-  "generatedAt": "2026-06-30T12:00:00Z",
-  "rowCount": 128,
-  "rejectedCount": 2,
+  "schemaVersion": 2,
+  "source": "ewgf",
+  "generatedAt": "2026-06-30T08:00:00Z",
+  "crewMatchCount": 4,              // both sides are roster players (head-to-head)
+  "feedMatchCount": 3,              // exactly one crew side (activity feed)
   "matches": [
     {
-      "id": "2026-06-28#0",         // deterministic: `${date}#${indexOnDate}`
-      "date": "2026-06-28",
-      "playedAt": "2026-06-28T19:40:00Z", // ISO-8601 UTC set conclusion; null if unknown
-      "playerA": "matt",            // resolved player id (from tag)
-      "playerB": "alex",
-      "charA": "jin",               // CharacterSlug, or null if not recorded
-      "charB": "king",
-      "scoreA": 3,                  // games won by A in the set
-      "scoreB": 1,
-      "matchType": "ranked"         // "quick" | "ranked" | "player" | "group" | null (offline not tracked)
+      "id": "3feeJ699M7An:2b3c4d5e6f70:1782790200", // `${p1Polaris}:${p2Polaris}:${epochSeconds}`
+      "playedAt": "2026-06-29T21:30:00Z",           // ISO-8601 UTC (from BattleDTO.date)
+      "battleType": "ranked",        // "quick" | "ranked" | "player" | "group" | null
+      "a": {
+        "playerId": "matt",          // roster id iff a tracked crew member, else null
+        "name": "SugarFree",         // EWGF display name (used for externals + display)
+        "polarisId": "3feeJ699M7An",
+        "character": "jin",          // CharacterSlug (from characterId), or null
+        "rank": "tekken_god"         // rank slug (from danRank), or null
+      },
+      "b": { "playerId": "nick", "name": "NickTheKnife", "polarisId": "2b3c4d5e6f70",
+             "character": "kazuya", "rank": "tekken_king" },
+      "roundsA": 3, "roundsB": 1,    // rounds won by a / b in the match
+      "winner": "a",                 // 'a' | 'b'
+      "crew": true                   // both sides are roster players
     }
-  ],
-  "rejected": [
-    { "rowNumber": 57, "reason": "unknown player tag 'Aelx'", "raw": { /*…*/ } }
   ]
 }
 ```
 
 **Invariants**
 
-- `playerA`/`playerB` are resolved roster `id`s; rows referencing unknown tags go to
-  `rejected` (not `matches`) with a human-readable `reason` (brief §7 "typo'd names").
-- `scoreA`/`scoreB` are non-negative integers, not both zero.
-- `id` is stable across re-ingests so the "recent matches" feed doesn't reshuffle.
+- Every match has **≥ 1 crew side** (we only fetch tracked players' battles).
+- `id` is orientation-independent, so a crew-vs-crew battle that appears in *both*
+  players' EWGF feeds **dedups** to one match (§4).
+- Crew matches are kept **forever** (head-to-head); non-crew matches are kept as a
+  **rolling recent window** (`config.matches.recentWindowDays`, capped per player by
+  `feedMaxPerPlayer`) to power the activity feed without unbounded repo growth.
 
 ## 2.9 `stats.json` — derived head-to-head + usage (generated)
 
-Computed purely from `matches.json` (brief §5.3). **Counted by individual games**: a
-`3–1` set contributes 3 wins + 1 loss.
+Computed purely from `matches.json`. **Head-to-head is crew-vs-crew, counted by
+matches won** (each battle = one match); rounds are kept for drill-down.
 
 ```jsonc
 {
-  "schemaVersion": 1,
-  "generatedAt": "2026-06-30T12:00:01Z",
-  "basedOnMatchCount": 128,
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-30T08:00:00Z",
+  "basedOnMatchCount": 7,
 
-  // person-vs-person game record. Key is "idA|idB" with idA < idB lexicographically.
+  // person-vs-person record (crew only). Key "idA|idB" with idA < idB.
   "headToHead": {
-    "alex|matt": { "gamesA": 31, "gamesB": 47, "setsA": 9, "setsB": 14 }
-    //            gamesA = games won by the lexicographically-first id (alex)
+    "matt|nick": { "matchesA": 1, "matchesB": 1, "roundsA": 5, "roundsB": 4 }
+    //             matchesA/roundsA = won by the lexicographically-first id (matt)
   },
 
-  // per-player rollups
+  // per-player rollups over ALL tracked matches (crew + the feed window)
   "players": {
     "matt": {
-      "totalGames": 210, "gameWins": 132, "gameLosses": 78, "gameWinRate": 0.629,
-      "totalSets": 64, "setWins": 41, "setLosses": 23,
-      "charUsage": { "jin": 180, "devil_jin": 30 },   // games played per character
+      "totalMatches": 4, "matchWins": 3, "matchLosses": 1, "winRate": 0.75,
+      "charUsage": { "jin": 3, "devil_jin": 1 },   // matches played per character
       "mostPlayedCharacter": "jin"
     }
   },
 
-  // OPTIONAL per-character matchup breakdown (brief §7 stretch). Populated in v1
-  // because the data is free to compute; UI may hide it. Key adds characters.
+  // per-character matchup breakdown (crew), matches won. Key adds characters.
   "charMatchups": {
-    "matt:jin|alex:king": { "gamesA": 12, "gamesB": 8 }
+    "matt:jin|nick:kazuya": { "matchesA": 1, "matchesB": 1 }
   }
 }
 ```
 
-> **📌 Decision — H2H is person-vs-person by default; per-character matchups are
-> also computed into `stats.json` (`charMatchups`) but surfaced as a secondary UI.**
-> Resolves brief §7 "H2H … per-character breakdowns." Computing both costs nothing;
-> the default rivalry table uses `headToHead`, and profiles can drill into
-> `charMatchups`.
+> **📌 Decision — H2H is person-vs-person by matches won; per-character matchups are
+> also computed (`charMatchups`) as a secondary UI.** Per-player `winRate` reflects
+> **tracked** matches (crew + the recent non-crew window), not lifetime.
 
 ## 2.10 Shared TypeScript types
 

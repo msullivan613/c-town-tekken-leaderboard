@@ -8,8 +8,9 @@
     "defaultSort": "rank",
     "bestPairMetric": "mmr"
   },
-  "sheet": {
-    "csvUrl": "https://docs.google.com/spreadsheets/d/e/REPLACE_ME/pub?gid=0&single=true&output=csv"
+  "matches": {
+    "recentWindowDays": 30,
+    "feedMaxPerPlayer": 40
   },
   "sources": {
     "ewgfBaseUrl": "https://api.ewgf.gg",

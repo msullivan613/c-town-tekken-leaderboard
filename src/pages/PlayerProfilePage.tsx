@@ -9,7 +9,15 @@ import { MmrCell } from '@/components/MmrCell';
 import { CharacterName } from '@/components/CharacterName';
 import { CharacterIcon } from '@/components/icons';
 import { HistoryChart } from '@/components/HistoryChart';
-import { EMPTY, formatDate, formatPercent, platformLabel } from '@/lib/format';
+import { MatchSideLabel } from '@/components/MatchSide';
+import {
+  EMPTY,
+  concludedAgo,
+  formatDate,
+  formatPercent,
+  matchTimestamp,
+  platformLabel,
+} from '@/lib/format';
 import { characterDisplayName } from '@/data/characters';
 import { rankBySlug } from '@/data/ranks';
 
@@ -26,9 +34,9 @@ export function PlayerProfilePage() {
   const myMatches = useMemo(
     () =>
       (matches?.matches ?? [])
-        .filter((m) => m.playerA === id || m.playerB === id)
-        .slice(-15)
-        .reverse(),
+        .filter((m) => m.a.playerId === id || m.b.playerId === id)
+        .sort((x, y) => matchTimestamp(y.playedAt) - matchTimestamp(x.playedAt))
+        .slice(0, 15),
     [matches, id],
   );
 
@@ -69,15 +77,12 @@ export function PlayerProfilePage() {
       {/* Stat cards */}
       {myStats && (
         <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <StatCard label="Win rate" value={formatPercent(myStats.gameWinRate)} />
+          <StatCard label="Win rate" value={formatPercent(myStats.winRate)} />
           <StatCard
-            label="Game record"
-            value={`${myStats.gameWins}–${myStats.gameLosses}`}
+            label="Match record"
+            value={`${myStats.matchWins}–${myStats.matchLosses}`}
           />
-          <StatCard
-            label="Set record"
-            value={`${myStats.setWins}–${myStats.setLosses}`}
-          />
+          <StatCard label="Tracked matches" value={String(myStats.totalMatches)} />
           <StatCard
             label="Most played"
             value={
@@ -171,8 +176,8 @@ export function PlayerProfilePage() {
             <thead>
               <tr className="bg-surface-2 text-left text-xs uppercase text-muted">
                 <th className="px-3 py-2">Opponent</th>
-                <th className="px-3 py-2">Games</th>
-                <th className="px-3 py-2">Sets</th>
+                <th className="px-3 py-2">Matches</th>
+                <th className="px-3 py-2">Rounds</th>
               </tr>
             </thead>
             <tbody>
@@ -186,10 +191,10 @@ export function PlayerProfilePage() {
                         <Link to={`/player/${o.id}`}>{o.player_tag}</Link>
                       </td>
                       <td className="px-3 py-2 font-mono tabular-nums">
-                        {rec ? `${rec.games}–${rec.oppGames}` : EMPTY}
+                        {rec ? `${rec.matches}–${rec.oppMatches}` : EMPTY}
                       </td>
                       <td className="px-3 py-2 font-mono tabular-nums text-muted">
-                        {rec ? `${rec.sets}–${rec.oppSets}` : EMPTY}
+                        {rec ? `${rec.rounds}–${rec.oppRounds}` : EMPTY}
                       </td>
                     </tr>
                   );
@@ -204,28 +209,29 @@ export function PlayerProfilePage() {
         <h2 className="mb-2 text-xl">Recent matches</h2>
         <ul className="divide-y divide-border rounded-lg border border-border text-sm">
           {myMatches.map((m) => {
-            const meA = m.playerA === id;
-            const myScore = meA ? m.scoreA : m.scoreB;
-            const oppScore = meA ? m.scoreB : m.scoreA;
-            const oppId = meA ? m.playerB : m.playerA;
-            const won = myScore > oppScore;
+            const meA = m.a.playerId === id;
+            const myRounds = meA ? m.roundsA : m.roundsB;
+            const oppRounds = meA ? m.roundsB : m.roundsA;
+            const oppSide = meA ? m.b : m.a;
+            const won = (m.winner === 'a') === meA;
             return (
               <li key={m.id} className="flex items-center gap-3 px-3 py-2">
-                <span className="w-20 shrink-0 text-muted">{formatDate(m.date)}</span>
+                <span className="w-16 shrink-0 text-muted" title={m.playedAt}>
+                  {concludedAgo(m.playedAt)}
+                </span>
                 <span className={won ? 'font-medium text-accent-2' : 'text-muted'}>
                   {won ? 'W' : 'L'}
                 </span>
                 <span className="font-mono tabular-nums">
-                  {myScore}–{oppScore}
+                  {myRounds}–{oppRounds}
                 </span>
-                <span className="text-muted">
-                  vs {playerById.get(oppId)?.player_tag ?? oppId}
-                </span>
+                <span className="text-muted">vs</span>
+                <MatchSideLabel side={oppSide} won={!won} iconSize={18} />
               </li>
             );
           })}
           {myMatches.length === 0 && (
-            <li className="px-3 py-6 text-center text-muted">No matches logged.</li>
+            <li className="px-3 py-6 text-center text-muted">No matches yet.</li>
           )}
         </ul>
       </section>

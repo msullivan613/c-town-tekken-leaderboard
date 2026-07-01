@@ -1,61 +1,95 @@
 import { describe, it, expect } from 'vitest';
-import { deriveStats } from '../scripts/match-sync/stats';
-import type { Match } from '@/types/data-files';
+import { deriveStats } from '../scripts/online-stats/stats';
+import type { Match, MatchSide } from '@/types/data-files';
 
-const NOW = '2026-06-30T12:00:01Z';
+const NOW = '2026-06-30T08:00:00.000Z';
 
-// Mirrors the committed fixtures in public/data (matches.json ⇒ stats.json).
-const FIXTURE: Match[] = [
-  { id: '2026-06-28#0', date: '2026-06-28', playedAt: null, playerA: 'matt', playerB: 'alex', charA: 'jin', charB: 'king', scoreA: 3, scoreB: 1, matchType: 'ranked' },
-  { id: '2026-06-28#1', date: '2026-06-28', playedAt: null, playerA: 'nick', playerB: 'matt', charA: 'kazuya', charB: 'jin', scoreA: 2, scoreB: 3, matchType: 'player' },
-  { id: '2026-06-29#0', date: '2026-06-29', playedAt: null, playerA: 'alex', playerB: 'nick', charA: 'king', charB: 'kazuya', scoreA: 3, scoreB: 2, matchType: 'ranked' },
-  { id: '2026-06-29#1', date: '2026-06-29', playedAt: null, playerA: 'matt', playerB: 'dev', charA: 'devil_jin', charB: 'dragunov', scoreA: 3, scoreB: 0, matchType: 'quick' },
-  { id: '2026-06-30#0', date: '2026-06-30', playedAt: null, playerA: 'nick', playerB: 'alex', charA: 'kazuya', charB: 'king', scoreA: 1, scoreB: 3, matchType: 'group' },
+function side(playerId: string | null, name: string, character: string | null): MatchSide {
+  return { playerId, name, polarisId: name, character, rank: null };
+}
+function match(o: {
+  id: string;
+  a: MatchSide;
+  b: MatchSide;
+  roundsA: number;
+  roundsB: number;
+  winner: 'a' | 'b';
+}): Match {
+  return {
+    id: o.id,
+    playedAt: `2026-06-29T00:00:00Z`,
+    battleType: 'ranked',
+    a: o.a,
+    b: o.b,
+    roundsA: o.roundsA,
+    roundsB: o.roundsB,
+    winner: o.winner,
+    crew: o.a.playerId != null && o.b.playerId != null,
+  };
+}
+
+const MATT = side('matt', 'SugarFree', 'jin');
+const NICK = side('nick', 'NickTheKnife', 'kazuya');
+const ALEX = side('alex', 'AlxDestroyer', 'king');
+const RANDO = side(null, 'KO_King_88', 'king');
+
+const MATCHES: Match[] = [
+  match({ id: '1', a: MATT, b: NICK, roundsA: 3, roundsB: 1, winner: 'a' }),
+  match({ id: '2', a: NICK, b: MATT, roundsA: 3, roundsB: 2, winner: 'a' }), // nick beats matt
+  match({ id: '3', a: ALEX, b: NICK, roundsA: 3, roundsB: 2, winner: 'a' }),
+  match({ id: '4', a: MATT, b: RANDO, roundsA: 3, roundsB: 2, winner: 'a' }), // vs external
 ];
 
-describe('deriveStats', () => {
-  const stats = deriveStats(FIXTURE, NOW);
+describe('deriveStats (matches-won)', () => {
+  const stats = deriveStats(MATCHES, NOW);
 
-  it('counts head-to-head by games, key ordered idA<idB', () => {
-    expect(stats.headToHead['alex|matt']).toEqual({ gamesA: 1, gamesB: 3, setsA: 0, setsB: 1 });
-    expect(stats.headToHead['matt|nick']).toEqual({ gamesA: 3, gamesB: 2, setsA: 1, setsB: 0 });
-    expect(stats.headToHead['alex|nick']).toEqual({ gamesA: 6, gamesB: 3, setsA: 2, setsB: 0 });
-    expect(stats.headToHead['dev|matt']).toEqual({ gamesA: 0, gamesB: 3, setsA: 0, setsB: 1 });
+  it('counts head-to-head by matches won, with rounds, crew-only, key idA<idB', () => {
+    // matt vs nick: 1 win each; rounds matt 3+2=5, nick 1+3=4
+    expect(stats.headToHead['matt|nick']).toEqual({
+      matchesA: 1,
+      matchesB: 1,
+      roundsA: 5,
+      roundsB: 4,
+    });
+    // alex beat nick once
+    expect(stats.headToHead['alex|nick']).toEqual({
+      matchesA: 1,
+      matchesB: 0,
+      roundsA: 3,
+      roundsB: 2,
+    });
   });
 
-  it('rolls up per-player games, sets, win rate, usage', () => {
+  it('excludes external (non-crew) matches from head-to-head', () => {
+    // matt-vs-random must not create an h2h entry
+    expect(Object.keys(stats.headToHead)).not.toContain('KO_King_88|matt');
+    expect(Object.keys(stats.headToHead).length).toBe(2);
+  });
+
+  it('rolls up per-player match record over all tracked matches (incl. external)', () => {
     expect(stats.players.matt).toMatchObject({
-      totalGames: 12,
-      gameWins: 9,
-      gameLosses: 3,
-      gameWinRate: 0.75,
-      setWins: 3,
-      setLosses: 0,
+      totalMatches: 3, // vs nick x2 + vs random
+      matchWins: 2,
+      matchLosses: 1,
+      winRate: 0.667,
       mostPlayedCharacter: 'jin',
     });
-    expect(stats.players.matt.charUsage).toEqual({ jin: 9, devil_jin: 3 });
-    expect(stats.players.alex).toMatchObject({ gameWins: 7, gameLosses: 6, gameWinRate: 0.538 });
-    expect(stats.players.nick).toMatchObject({ gameWins: 5, gameLosses: 9, setLosses: 3 });
-    expect(stats.players.dev).toMatchObject({ gameWins: 0, gameLosses: 3, gameWinRate: 0 });
+    expect(stats.players.matt.charUsage).toEqual({ jin: 3 });
+    expect(stats.players.nick).toMatchObject({ matchWins: 1, matchLosses: 2 });
   });
 
-  it('computes per-character matchups keyed by ordered id:char tokens', () => {
-    expect(stats.charMatchups['alex:king|matt:jin']).toEqual({ gamesA: 1, gamesB: 3 });
-    expect(stats.charMatchups['matt:jin|nick:kazuya']).toEqual({ gamesA: 3, gamesB: 2 });
-    expect(stats.charMatchups['alex:king|nick:kazuya']).toEqual({ gamesA: 6, gamesB: 3 });
-    expect(stats.charMatchups['dev:dragunov|matt:devil_jin']).toEqual({ gamesA: 0, gamesB: 3 });
+  it('computes per-character matchups (crew) keyed by ordered id:char tokens', () => {
+    expect(stats.charMatchups['matt:jin|nick:kazuya']).toEqual({
+      matchesA: 1,
+      matchesB: 1,
+    });
+    expect(stats.charMatchups['alex:king|nick:kazuya']).toEqual({
+      matchesA: 1,
+      matchesB: 0,
+    });
   });
 
-  it('reports basedOnMatchCount', () => {
-    expect(stats.basedOnMatchCount).toBe(5);
-  });
-
-  it('handles a tie set (no set awarded, games still count)', () => {
-    const tie = deriveStats(
-      [{ id: '2026-01-01#0', date: '2026-01-01', playedAt: null, playerA: 'a', playerB: 'b', charA: null, charB: null, scoreA: 2, scoreB: 2, matchType: null }],
-      NOW,
-    );
-    expect(tie.headToHead['a|b']).toEqual({ gamesA: 2, gamesB: 2, setsA: 0, setsB: 0 });
-    expect(tie.players.a).toMatchObject({ setWins: 0, setLosses: 0, gameWins: 2, gameLosses: 2 });
+  it('reports basedOnMatchCount over all matches', () => {
+    expect(stats.basedOnMatchCount).toBe(4);
   });
 });

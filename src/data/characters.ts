@@ -94,3 +94,53 @@ export function characterDisplayName(slug: CharacterSlug): string {
 export function isKnownCharacter(slug: CharacterSlug): boolean {
   return BY_SLUG.has(slug);
 }
+
+// EWGF numeric character id → display name (verified characterIdMap, spec §7.6).
+// EWGF battle data keys characters by this id, not by name.
+export const characterIdMap: Record<number, string> = {
+  0: 'Paul',
+  1: 'Law',
+  2: 'King',
+  3: 'Yoshimitsu',
+  4: 'Hwoarang',
+  5: 'Xiaoyu',
+  6: 'Jin',
+  7: 'Bryan',
+  8: 'Kazuya',
+  9: 'Steve',
+  10: 'Jack-8',
+  11: 'Asuka',
+  12: 'Devil Jin',
+  13: 'Feng',
+  14: 'Lili',
+  15: 'Dragunov',
+  16: 'Leo',
+  17: 'Lars',
+  18: 'Alisa',
+  19: 'Claudio',
+  20: 'Shaheen',
+  21: 'Nina',
+  22: 'Lee',
+  23: 'Kuma',
+  24: 'Panda',
+  28: 'Zafina',
+  29: 'Leroy',
+  32: 'Jun',
+  33: 'Reina',
+  34: 'Azucena',
+  35: 'Victor',
+  36: 'Raven',
+  38: 'Eddy',
+  39: 'Lidia',
+  40: 'Heihachi',
+  41: 'Clive',
+  42: 'Anna',
+  43: 'Fahkumram',
+};
+
+/** Resolve an EWGF numeric character id to our canonical slug, or null. */
+export function fromCharacterId(id: number | null | undefined): CharacterSlug | null {
+  if (id == null) return null;
+  const name = characterIdMap[id];
+  return name ? canonicalizeCharacter(name) : null;
+}

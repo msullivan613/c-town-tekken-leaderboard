@@ -87,6 +87,30 @@ interface PlayerMatchupSummaryDTO {  // one per played character
 > Peak becomes a value we *accumulate*, which also means it's correct going forward
 > even if EWGF never backfills it.
 
+### `PlayerDTO.battles: BattleDTO[]` — recent matches (drives §4)
+
+The same player-stats response carries the player's battles. Each `BattleDTO` is
+**one online match to 3 rounds** (verified against `ewgf-gg/ewgfgg-backend`):
+
+```ts
+interface BattleDTO {
+  date: string;                 // "MM/dd/yyyy HH:mm:ss UTC" (UTC, parseable)
+  battleType: number;           // 1 quick, 2 ranked, 3 group, 4 player
+  gameVersion: number;
+  player1Name: string; player1PolarisId: string;
+  player1CharacterId: number; player1RegionId: number | null; player1DanRank: number | null;
+  player2Name: string; player2PolarisId: string;
+  player2CharacterId: number; player2RegionId: number | null; player2DanRank: number | null;
+  player1RoundsWon: number; player2RoundsWon: number;
+  winner: number;               // 1 | 2
+  stageId: number;
+}
+```
+
+There is **no `battleId`** in the DTO, so a crew-vs-crew battle (present in both
+players' lists) is deduped by a synthetic key (§4.2). `battleType` maps directly to
+our `matchType` slugs. This is the sole source for `matches.json`/`stats.json`.
+
 ---
 
 ## 7.3 Wavu Wank — Glicko-2 MMR (μ / σ²)

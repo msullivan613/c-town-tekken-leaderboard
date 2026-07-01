@@ -14,7 +14,6 @@ export interface Player {
   platform: Platform;
   main_character: CharacterSlug;
   peak_rank: string | null; // rank slug override/fallback, or null → derive
-  aliases?: string[]; // extra tags the match sheet may use (§4.3)
   // Optional profile picture, path under public/ (e.g. "avatars/nick.png").
   // When unset, the UI falls back to the main-character portrait, then to a
   // colored initial. The per-player accent ring is applied either way.

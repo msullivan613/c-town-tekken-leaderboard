@@ -31,7 +31,8 @@ jobs:
           git config user.name  "ctown-bot"
           git config user.email "ctown-bot@users.noreply.github.com"
           git add public/data/ranks.json public/data/glicko.json \
-                  public/data/rankhistory.json public/data/mmrhistory.json
+                  public/data/rankhistory.json public/data/mmrhistory.json \
+                  public/data/matches.json public/data/stats.json
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh online stats $(date -u +%F)"
             git push

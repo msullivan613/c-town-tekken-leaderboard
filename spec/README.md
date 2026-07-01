@@ -12,7 +12,7 @@ the open design questions** from brief §7 with concrete defaults.
 | 1 | [`01-architecture.md`](./01-architecture.md) | System overview, tech stack, repo layout, deploy model |
 | 2 | [`02-data-schemas.md`](./02-data-schemas.md) | Every JSON file: schema, example, invariants + shared TS types |
 | 3 | [`03-online-stats-pipeline.md`](./03-online-stats-pipeline.md) | Daily EWGF + Wavu Wank job → ranks/glicko/history JSON |
-| 4 | [`04-match-pipeline.md`](./04-match-pipeline.md) | Google Sheet → `matches.json` + derived `stats.json` |
+| 4 | [`04-match-pipeline.md`](./04-match-pipeline.md) | EWGF battles → `matches.json` + derived `stats.json` |
 | 5 | [`05-frontend.md`](./05-frontend.md) | React/Vite app: routes, views, components, data loading |
 | 6 | [`06-decisions-and-open-questions.md`](./06-decisions-and-open-questions.md) | Decision log resolving brief §7; what's still genuinely TBD |
 | 7 | [`07-external-api-reference.md`](./07-external-api-reference.md) | **Verified** EWGF + Wavu contracts, rank/character maps, scrape DOM (supersedes the ⚠️ placeholders) |
@@ -22,7 +22,7 @@ the open design questions** from brief §7 with concrete defaults.
 - **Decisions** made in this spec are marked with a **📌 Decision** callout and
   recorded in the log in file 6. They resolve brief §7 with sensible v1 defaults;
   nothing here is irreversible.
-- **Config-driven** values (thresholds, cron cadence, sheet URL) live in a single
+- **Config-driven** values (thresholds, cron cadence, match retention) live in a single
   [`config`](./01-architecture.md#configuration) so they can change without code edits.
 - The EWGF / Wavu response shapes, rank/character maps, and scrape DOM have now been
   **verified against the live services** — see [`07-external-api-reference.md`](./07-external-api-reference.md),

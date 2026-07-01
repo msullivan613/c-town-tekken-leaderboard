@@ -4,14 +4,17 @@
 import { loadConfig } from '../shared/config';
 import { readDataFile, writeDataFile } from '../shared/atomicWrite';
 import { sleep } from '../shared/http';
-import { getPlayerCharacters as getEwgf } from './ewgf';
+import { getPlayer, type BattleDTO, type EwgfCharacterStat } from './ewgf';
 import { getPlayerCharacters as getWavu } from './wavu';
+import { buildMatches } from './matches';
+import { deriveStats } from './stats';
 import { rankByTier, rankBySlug } from '@/data/ranks';
 import { makePairId } from '@/types/domain';
 import type {
   GlickoFile,
   GlickoPair,
   HistoryFile,
+  MatchesFile,
   PlayersFile,
   RankPair,
   RanksFile,
@@ -76,19 +79,22 @@ async function main() {
 
   const rankPairs: RankPair[] = [];
   const glickoPairs: GlickoPair[] = [];
+  const allBattles: BattleDTO[] = [];
 
   for (const player of players) {
     if (!player.tekken_id) continue;
     const tekkenId = player.tekken_id;
 
-    let ewgf: Awaited<ReturnType<typeof getEwgf>> = [];
+    let ewgf: EwgfCharacterStat[] = [];
     if (ewgfAvailable) {
-      ewgf = await getEwgf(
+      const res = await getPlayer(
         tekkenId,
         apiKey,
         config.sources.ewgfBaseUrl,
         config.sources.ewgfPlayerPath,
       );
+      ewgf = res.characters;
+      allBattles.push(...res.battles);
       await sleep(REQUEST_DELAY_MS);
     }
 
@@ -209,9 +215,38 @@ async function main() {
       : false;
   const wroteMmrHist = writeDataFile('mmrhistory.json', mmrHistory);
 
+  // Matches + derived stats come from EWGF battles (§4). Only rebuild when EWGF
+  // is available; otherwise keep yesterday's committed matches/stats.
+  let wroteMatches = false;
+  let wroteStats = false;
+  let matchCount = 0;
+  if (ewgfAvailable) {
+    const prior = readDataFile<MatchesFile>('matches.json');
+    const built = buildMatches(
+      allBattles,
+      players,
+      prior?.matches ?? [],
+      config,
+      new Date(now),
+    );
+    matchCount = built.matches.length;
+    const matchesFile: MatchesFile = {
+      schemaVersion: 2,
+      source: 'ewgf',
+      generatedAt: now,
+      crewMatchCount: built.crewMatchCount,
+      feedMatchCount: built.feedMatchCount,
+      matches: built.matches,
+    };
+    wroteMatches = writeDataFile('matches.json', matchesFile);
+    wroteStats = writeDataFile('stats.json', deriveStats(built.matches, now));
+  }
+
   console.log(
     `[online-stats] ranks:${rankPairs.length} glicko:${glickoPairs.length} ` +
-      `written(ranks:${wroteRanks} glicko:${wroteGlicko} rankHist:${wroteRankHist} mmrHist:${wroteMmrHist})`,
+      `battles:${allBattles.length} matches:${matchCount} ` +
+      `written(ranks:${wroteRanks} glicko:${wroteGlicko} rankHist:${wroteRankHist} ` +
+      `mmrHist:${wroteMmrHist} matches:${wroteMatches} stats:${wroteStats})`,
   );
 }
 

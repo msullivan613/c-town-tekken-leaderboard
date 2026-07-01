@@ -13,7 +13,7 @@ export function HeadToHeadPage() {
     <div className="space-y-6">
       <h1 className="text-4xl">Head-to-head</h1>
       <p className="text-sm text-muted">
-        Cell = row player&apos;s game record vs column player. Click a cell for the
+        Cell = row player&apos;s match record vs column player. Click a cell for the
         full breakdown.
       </p>
 
@@ -49,8 +49,8 @@ export function HeadToHeadPage() {
                     );
                   }
                   const rec = directedH2H(stats, row.id, col.id);
-                  const total = rec ? rec.games + rec.oppGames : 0;
-                  const share = total ? rec!.games / total : 0.5;
+                  const total = rec ? rec.matches + rec.oppMatches : 0;
+                  const share = total ? rec!.matches / total : 0.5;
                   return (
                     <td
                       key={col.id}
@@ -62,7 +62,7 @@ export function HeadToHeadPage() {
                       }}
                       onClick={() => rec && setSelected({ a: row, b: col })}
                     >
-                      {rec ? `${rec.games}–${rec.oppGames}` : EMPTY}
+                      {rec ? `${rec.matches}–${rec.oppMatches}` : EMPTY}
                     </td>
                   );
                 })}
@@ -97,10 +97,10 @@ function MatchupDrilldown({
   if (!rec) return null;
   // headToHead is keyed idA<idB; map to a-vs-b orientation.
   const aIsFirst = a.id < b.id;
-  const aGames = aIsFirst ? rec.gamesA : rec.gamesB;
-  const bGames = aIsFirst ? rec.gamesB : rec.gamesA;
-  const aSets = aIsFirst ? rec.setsA : rec.setsB;
-  const bSets = aIsFirst ? rec.setsB : rec.setsA;
+  const aMatches = aIsFirst ? rec.matchesA : rec.matchesB;
+  const bMatches = aIsFirst ? rec.matchesB : rec.matchesA;
+  const aRounds = aIsFirst ? rec.roundsA : rec.roundsB;
+  const bRounds = aIsFirst ? rec.roundsB : rec.roundsA;
 
   return (
     <div className="rounded-lg border border-border bg-surface p-4">
@@ -114,19 +114,19 @@ function MatchupDrilldown({
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <div className="text-xs uppercase text-muted">Games</div>
+          <div className="eyebrow">Matches</div>
           <div className="font-numeral text-4xl leading-none">
-            {aGames}
+            {aMatches}
             <span className="text-muted"> – </span>
-            {bGames}
+            {bMatches}
           </div>
         </div>
         <div>
-          <div className="text-xs uppercase text-muted">Sets</div>
+          <div className="eyebrow">Rounds</div>
           <div className="font-numeral text-4xl leading-none">
-            {aSets}
+            {aRounds}
             <span className="text-muted"> – </span>
-            {bSets}
+            {bRounds}
           </div>
         </div>
       </div>

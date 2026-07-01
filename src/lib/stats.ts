@@ -1,12 +1,13 @@
 // Read helpers for stats.json keys (§2.9). Keys are ordered so idA < idB
 // lexicographically; these normalize lookups from the caller's perspective.
+// Head-to-head is counted by matches won (rounds kept for drill-down).
 import type { StatsFile, HeadToHeadRecord } from '@/types/data-files';
 
 export interface DirectedH2H {
-  games: number; // games `me` won
-  oppGames: number; // games opponent won
-  sets: number; // sets `me` won
-  oppSets: number;
+  matches: number; // matches `me` won
+  oppMatches: number; // matches opponent won
+  rounds: number; // rounds `me` won
+  oppRounds: number;
 }
 
 export function h2hKey(a: string, b: string): string {
@@ -24,8 +25,8 @@ export function directedH2H(
   if (!rec) return null;
   const meIsA = me < opp;
   return meIsA
-    ? { games: rec.gamesA, oppGames: rec.gamesB, sets: rec.setsA, oppSets: rec.setsB }
-    : { games: rec.gamesB, oppGames: rec.gamesA, sets: rec.setsB, oppSets: rec.setsA };
+    ? { matches: rec.matchesA, oppMatches: rec.matchesB, rounds: rec.roundsA, oppRounds: rec.roundsB }
+    : { matches: rec.matchesB, oppMatches: rec.matchesA, rounds: rec.roundsB, oppRounds: rec.roundsA };
 }
 
 export function rawH2H(

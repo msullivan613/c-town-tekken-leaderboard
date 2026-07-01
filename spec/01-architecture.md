@@ -10,14 +10,11 @@ only "database."
                     ┌───────────────── GitHub repo (main) ─────────────────┐
                     │                                                       │
  EWGF.gg API ─┐     │  .github/workflows/online-stats.yml  (cron, daily)    │
-              ├────▶│    → public/data/ranks.json                           │
- Wavu Wank ───┘     │    → public/data/glicko.json                          │
- (Glicko-2)         │    → append public/data/rankhistory.json              │
-                    │    → append public/data/mmrhistory.json               │
-                    │                                                       │
- Google Sheet ─────▶│  .github/workflows/match-sync.yml    (cron, 6h)       │
- (matches only)     │    → public/data/matches.json                         │
-                    │    → public/data/stats.json (derived)                 │
+              ├────▶│    → public/data/ranks.json    (EWGF)                 │
+ Wavu Wank ───┘     │    → public/data/glicko.json   (Wavu)                 │
+ (Glicko-2)         │    → append rankhistory.json / mmrhistory.json        │
+                    │    → public/data/matches.json  (EWGF battles)         │
+                    │    → public/data/stats.json    (derived)              │
                     │                                                       │
  hand edit ────────▶│  public/data/players.json  (roster, committed)       │
                     │                                                       │
@@ -28,7 +25,7 @@ only "database."
                               React + Vite SPA (reads /data/*.json)
 ```
 
-Both pipelines write JSON under `public/data/` and `git commit` the changes. Any
+One daily job writes all generated JSON under `public/data/` and `git commit`s the changes. Any
 commit to `main` that touches the app or its data triggers `deploy.yml`, which
 rebuilds the site and publishes it to Pages. The data is therefore always part of
 the deployed build — no runtime fetch to a third party, no CORS, no secrets in the
@@ -58,7 +55,7 @@ browser.
 | Charts | [Recharts](https://recharts.org) | line charts for rank/MMR history |
 | Data fetch | native `fetch` + a small `useJson<T>()` hook | no React Query needed for static JSON |
 | Pipeline runtime | Node 20 + `tsx` | run inside GitHub Actions |
-| Sheet parsing | `csv-parse` | reads the published-CSV export |
+| Match source | EWGF `battles` (same player-stats call) | no manual entry, no sheet |
 | Lint / format | ESLint + Prettier | |
 | Tests | Vitest | unit tests for pipeline transforms + stats math |
 
@@ -84,7 +81,7 @@ c-town-tekken-leaderboard/
 │       ├── glicko.json            # generated: Wavu
 │       ├── rankhistory.json       # generated: append-only
 │       ├── mmrhistory.json        # generated: append-only
-│       ├── matches.json           # generated: Google Sheet
+│       ├── matches.json           # generated: EWGF battles
 │       └── stats.json             # generated: derived from matches
 ├── src/
 │   ├── main.tsx
@@ -105,19 +102,15 @@ c-town-tekken-leaderboard/
 ├── scripts/                       # pipeline entrypoints (run via tsx)
 │   ├── online-stats/
 │   │   ├── index.ts               # orchestrates the daily job
-│   │   ├── ewgf.ts                # EWGF client + mapping
-│   │   └── wavu.ts                # Wavu Wank client + mapping
-│   ├── match-sync/
-│   │   ├── index.ts
-│   │   ├── sheet.ts               # fetch + parse published CSV
+│   │   ├── ewgf.ts                # EWGF client (stats + battles) + mapping
+│   │   ├── wavu.ts                # Wavu Wank client + mapping
+│   │   ├── matches.ts             # EWGF battles → matches (dedup/classify/retain)
 │   │   └── stats.ts               # derive head-to-head / win rates
 │   └── shared/
 │       ├── config.ts              # loads config/config.json
-│       ├── characters.ts          # re-exports src/data/characters.ts
 │       └── atomicWrite.ts         # write + stable-sort + pretty-print JSON
 ├── .github/workflows/
 │   ├── online-stats.yml
-│   ├── match-sync.yml
 │   └── deploy.yml
 ├── vite.config.ts
 ├── tailwind.config.ts
@@ -141,9 +134,9 @@ c-town-tekken-leaderboard/
     "defaultSort": "rank",       // "rank" | "mmr"
     "bestPairMetric": "mmr"      // how "best pair" is chosen for Players view
   },
-  "sheet": {
-    // Google Sheet → File → Share → Publish to web → CSV. Public, read-only.
-    "csvUrl": "https://docs.google.com/spreadsheets/d/e/…/pub?gid=0&single=true&output=csv"
+  "matches": {
+    "recentWindowDays": 30,      // prune non-crew matches older than this
+    "feedMaxPerPlayer": 40       // cap of non-crew matches kept per player
   },
   "sources": {
     "ewgfBaseUrl": "https://api.ewgf.gg",        // verified — see 07-external-api-reference.md
@@ -168,7 +161,7 @@ in `defaultView`/`defaultSort`. The pipelines read it at runtime.
   publishes `dist/` with `actions/deploy-pages`.
 - Vite `base` is set to `/c-town-tekken-leaderboard/` (the repo name) so asset URLs
   resolve under the Pages sub-path. Data is fetched via `import.meta.env.BASE_URL`.
-- The data pipelines (`online-stats.yml`, `match-sync.yml`) commit to `main`, which
+- The data pipeline (`online-stats.yml`) commits to `main`, which
   in turn fires `deploy.yml`. To avoid infinite loops, pipelines commit with
   `[skip ci]`-style path scoping is *not* needed because `deploy.yml` is
   path-filtered to only run on content changes and pipelines never touch each other's
@@ -189,5 +182,5 @@ Only one secret exists, and it never reaches the browser:
   runs in Actions and only commits derived JSON, the key stays server-side. If it's
   absent, the pipeline degrades to Wavu-only (MMR, no in-game rank) — see §7.4.
 
-Wavu Wank and the Google Sheet (published CSV) need **no** secret — both are read
-anonymously.
+Wavu Wank needs **no** secret (read anonymously). Matches also come from EWGF
+(the `battles` in the same player-stats response), so they require the same key.

@@ -123,19 +123,18 @@ rank|mmr mode), `PlayerH2HTable`, `PlayerMatchList`, `PlayerStatCards`.
 
 ## 5.6 Head-to-head (`/h2h`)
 
-- **Crew matrix:** everyone-vs-everyone grid of game records (brief §5.3 "full crew
-  grid"), colored by win share, reading from `stats.json.headToHead`.
-- **Cell drill-down:** click a cell → the two players' lifetime record, set history,
-  and optional per-character matchup breakdown (`charMatchups`).
+- **Crew matrix:** everyone-vs-everyone grid of **match records** (brief §5.3 "full
+  crew grid"), colored by win share, reading from `stats.json.headToHead`.
+- **Cell drill-down:** click a cell → the two players' matches + rounds record and the
+  optional per-character matchup breakdown (`charMatchups`).
 
 Components: `H2HMatrix`, `H2HCell`, `MatchupDrilldown`.
 
 ## 5.7 Matches (`/matches`)
 
-Full log from `matches.json` with client-side filters (player, character, setting,
-date range). Shows a discreet "N rows need fixing in the sheet" banner when
-`rejectedCount > 0` (brief §7 typo handling), listing the reasons so the crew can fix
-the source.
+Full log from `matches.json` with client-side filters (player, match type, crew-only).
+Opponents without a `playerId` are non-crew randoms and render by EWGF name (no link).
+Rows show each side's character, the rounds score, "concluded X ago", and match type.
 
 ## 5.8 Design direction (pointer, not spec)
 

@@ -68,66 +68,67 @@ export interface HistoryFile {
   series: Record<string, HistorySeries>; // keyed by pairId
 }
 
-// ── matches.json (§2.8) ──────────────────────────────────────────────────────
-// Tekken 8 online match type (matches EWGF's battle-type taxonomy). Offline is
-// intentionally not tracked.
+// ── matches.json (§2.8) — gathered from EWGF battles ─────────────────────────
+// Tekken 8 online match type (EWGF's battle-type taxonomy). Offline is not tracked.
 export type MatchType = 'quick' | 'ranked' | 'player' | 'group' | null;
-export interface Match {
-  id: string; // `${date}#${indexOnDate}`
-  date: string; // YYYY-MM-DD (day the set was played; used for grouping/ids)
-  playedAt: string | null; // ISO-8601 UTC when the set concluded; null if unknown
-  playerA: string; // resolved player id
-  playerB: string;
-  charA: CharacterSlug | null;
-  charB: CharacterSlug | null;
-  scoreA: number; // games won by A
-  scoreB: number; // games won by B
-  matchType: MatchType;
-}
-export interface RejectedRow {
-  rowNumber: number;
-  reason: string;
-  raw: Record<string, string>;
-}
-export interface MatchesFile {
-  schemaVersion: 1;
-  source: 'google-sheet';
-  generatedAt: string;
-  rowCount: number;
-  rejectedCount: number;
-  matches: Match[];
-  rejected: RejectedRow[];
+
+/** One side of a match. `playerId` is set iff the side is a tracked crew member;
+ *  otherwise the side is an external opponent identified by name only. */
+export interface MatchSide {
+  playerId: string | null;
+  name: string; // EWGF display name
+  polarisId: string;
+  character: CharacterSlug | null;
+  rank: string | null; // rank slug from danRank
 }
 
-// ── stats.json (§2.9) ────────────────────────────────────────────────────────
+/** One EWGF battle = one match played to 3 rounds. */
+export interface Match {
+  id: string; // deterministic: `${p1Polaris}:${p2Polaris}:${epochSeconds}`
+  playedAt: string; // ISO-8601 UTC
+  battleType: MatchType;
+  a: MatchSide;
+  b: MatchSide;
+  roundsA: number;
+  roundsB: number;
+  winner: 'a' | 'b';
+  crew: boolean; // both sides are roster players
+}
+export interface MatchesFile {
+  schemaVersion: 2;
+  source: 'ewgf';
+  generatedAt: string;
+  crewMatchCount: number;
+  feedMatchCount: number;
+  matches: Match[];
+}
+
+// ── stats.json (§2.9) — derived from matches.json ────────────────────────────
 export interface HeadToHeadRecord {
-  gamesA: number; // won by the lexicographically-first id
-  gamesB: number;
-  setsA: number;
-  setsB: number;
+  matchesA: number; // matches won by the lexicographically-first id
+  matchesB: number;
+  roundsA: number; // rounds won (drill-down)
+  roundsB: number;
 }
 export interface PlayerStats {
-  totalGames: number;
-  gameWins: number;
-  gameLosses: number;
-  gameWinRate: number;
-  totalSets: number;
-  setWins: number;
-  setLosses: number;
-  charUsage: Record<string, number>; // games played per character
+  totalMatches: number;
+  matchWins: number;
+  matchLosses: number;
+  winRate: number; // over tracked matches
+  charUsage: Record<string, number>; // matches played per character
   mostPlayedCharacter: CharacterSlug | null;
 }
 export interface CharMatchupRecord {
-  gamesA: number;
-  gamesB: number;
+  matchesA: number;
+  matchesB: number;
 }
 export interface StatsFile {
-  schemaVersion: 1;
+  schemaVersion: 2;
   generatedAt: string;
   basedOnMatchCount: number;
-  headToHead: Record<string, HeadToHeadRecord>; // key "idA|idB", idA < idB
+  headToHead: Record<string, HeadToHeadRecord>; // key "idA|idB", idA < idB (crew only)
   players: Record<string, PlayerStats>;
-  charMatchups: Record<string, CharMatchupRecord>; // key "idA:charA|idB:charB"
+  charMatchups: Record<string, CharMatchupRecord>; // key "idA:charA|idB:charB" (crew)
 }
 
 // ── config/config.json (§1.4) ────────────────────────────────────────────────
@@ -141,7 +142,10 @@ export interface AppConfig {
     defaultSort: 'rank' | 'mmr';
     bestPairMetric: 'mmr' | 'rank';
   };
-  sheet: { csvUrl: string };
+  matches: {
+    recentWindowDays: number; // non-crew matches older than this are pruned
+    feedMaxPerPlayer: number; // cap of non-crew matches kept per player
+  };
   sources: {
     ewgfBaseUrl: string;
     ewgfPlayerPath: string;

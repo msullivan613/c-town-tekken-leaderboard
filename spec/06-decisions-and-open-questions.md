@@ -15,14 +15,14 @@ confirmation.
 | Character identity across EWGF/Wavu | Canonical `CharacterSlug` + provider alias maps; unmapped ⇒ warn & skip | §2.1 |
 | Play threshold | `rankedGames ≥ 10` **and** has an assigned rank (config) | §1.4, §2.4 |
 | Peak rank source | Derive `max(tier)` from EWGF per-character peaks; hand-set `players.json` value as fallback; tracked per pair, rolled up per player | §2.4 |
-| Player key vs display | Internal immutable `id` is canonical everywhere; `player_tag` is display-only; sheet tags resolve to `id` | §2.3, §4.3 |
+| Player key vs display | Internal immutable `id` is canonical everywhere; `player_tag` is display-only; EWGF `polarisId` resolves to `id` | §2.3, §4.2 |
 | Players ⇄ Pairs toggle | Default **Players**; "best pair" by MMR (fallback rank); toggle lives on the leaderboard | §1.4, §5.3 |
 | Default board sort | In-game **rank** desc, MMR tiebreak; header toggles to MMR sort | §5.3 |
-| Sheet auth | Public "Publish to web" CSV; Sheets-API service account documented as fallback | §4.1 |
-| Sheet granularity | One row per **set** with set score; games derived | §4.2, §4.4 |
-| Typo'd rows | Rejected to `matches.json.rejected[]` with reason; surfaced in UI; never silently dropped | §4.3, §5.7 |
-| Head-to-head unit | Individual **games** from set scores; person-vs-person default; `charMatchups` also computed | §2.9, §4.4 |
-| Refresh cadence | Ranks/MMR daily (08:00 UTC); match sheet every 6h; both have `workflow_dispatch` | §3.6, §4.5 |
+| Match source | **EWGF battles** (no manual entry); crew-vs-crew kept forever + rolling non-crew feed window | §4.1, §4.2 |
+| Match granularity | One EWGF battle = one match to 3 rounds; deduped across both players' feeds | §2.8, §4.2 |
+| Non-crew opponents | Kept as first-class `MatchSide` (name only, no link); windowed retention | §2.8, §4.4 |
+| Head-to-head unit | **Matches won** (person-vs-person, crew only); rounds kept for drill-down; `charMatchups` too | §2.9, §4.3 |
+| Refresh cadence | One daily job (08:00 UTC) does ranks/MMR **and** matches; `workflow_dispatch` too | §3.6, §4 |
 | Commit noise | Deterministic serialization + commit-only-if-changed gate | §2, §3.5, §4.5 |
 | Alerting | Failed Actions run → GitHub emails owner (v1, $0); Discord is a stretch | §3.7 |
 | **EWGF access** (post-research) | Gated API → `EWGF_API_KEY` Actions secret; graceful degrade to Wavu-only MMR if absent | §7.4, §1.6 |
@@ -73,6 +73,7 @@ any of them — e.g. `stats.json` already carries the data a dashboard would nee
 4. Implement `ewgf.ts` / `wavu.ts` against the **verified** contracts in file 7 +
    the `online-stats` pipeline; wire `rankhistory`/`mmrhistory`. (Secure
    `EWGF_API_KEY` first, or build Wavu-only and add EWGF later.)
-5. Implement `match-sync` (`sheet.ts` + `stats.ts`); unit-test `deriveStats`.
+5. Implement match gathering from EWGF battles (`matches.ts` + `stats.ts`);
+   unit-test `buildMatches` (dedup/classify/retain) and `deriveStats`.
 6. Add the three workflows; verify commit-if-changed and the deploy trigger.
 7. Design pass (frontend-design skill): tokens, palette, rank iconography, branding.

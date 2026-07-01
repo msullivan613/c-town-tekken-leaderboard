@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { deriveStats } from '../scripts/match-sync/stats';
+import { deriveStats } from '../scripts/online-stats/stats';
 import { isKnownCharacter } from '@/data/characters';
 import { rankBySlug } from '@/data/ranks';
 import type {
@@ -58,15 +58,26 @@ describe('committed data files', () => {
     }
   });
 
-  it('matches.json: resolvable players, valid non-negative scores', () => {
+  it('matches.json: v2 shape, ≥1 crew side, valid winner/rounds', () => {
+    expect(matches.schemaVersion).toBe(2);
+    expect(matches.source).toBe('ewgf');
+    let crew = 0;
     for (const m of matches.matches) {
-      expect(playerIds.has(m.playerA)).toBe(true);
-      expect(playerIds.has(m.playerB)).toBe(true);
-      expect(m.scoreA).toBeGreaterThanOrEqual(0);
-      expect(m.scoreB).toBeGreaterThanOrEqual(0);
-      expect(m.scoreA + m.scoreB).toBeGreaterThan(0);
+      // at least one side must be a tracked crew player
+      const aCrew = m.a.playerId != null;
+      const bCrew = m.b.playerId != null;
+      expect(aCrew || bCrew).toBe(true);
+      if (aCrew) expect(playerIds.has(m.a.playerId!)).toBe(true);
+      if (bCrew) expect(playerIds.has(m.b.playerId!)).toBe(true);
+      expect(m.crew).toBe(aCrew && bCrew);
+      if (m.crew) crew++;
+      expect(['a', 'b']).toContain(m.winner);
+      expect(m.roundsA).toBeGreaterThanOrEqual(0);
+      expect(m.roundsB).toBeGreaterThanOrEqual(0);
+      expect(m.id).toContain(':');
     }
-    expect(matches.rejectedCount).toBe(matches.rejected.length);
+    expect(matches.crewMatchCount).toBe(crew);
+    expect(matches.feedMatchCount).toBe(matches.matches.length - crew);
   });
 
   it('history files: series keys look like pairIds, points are sorted', () => {

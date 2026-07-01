@@ -1,138 +1,64 @@
-# 4. Match pipeline (Google Sheet → matches + stats)
+# 4. Match pipeline (EWGF battles → matches + stats)
 
-**Goal:** on a schedule, read the crew's shared Google Sheet of set results,
-validate each row against the roster, write `matches.json`, then derive
-`stats.json` (head-to-head + usage). Logging a result stays a one-row spreadsheet
-edit (brief §5.2) — zero code, zero deploy.
+**Goal:** with no manual entry, gather each tracked player's recent online matches
+from EWGF, write `matches.json`, then derive `stats.json` (head-to-head + usage).
+This runs **inside the daily `online-stats` job** (§3) — the per-player
+`GET /player-stats/{polarisId}` call already returns the player's `battles`, so no
+extra request or separate workflow is needed.
 
-Entry point: `scripts/match-sync/index.ts`.
+Entry points: `scripts/online-stats/matches.ts` (build) + `scripts/online-stats/stats.ts`
+(derive), orchestrated by `scripts/online-stats/index.ts`.
 
-## 4.1 Sheet access
+> **📌 Decision — matches come from EWGF, not a spreadsheet.** The crew never
+> hand-logs results. Each `BattleDTO` (verified, [§7.2](./07-external-api-reference.md#72-ewgf--in-game-rank-winslosses-tekken-power))
+> is one match to 3 rounds and carries both sides' name/polarisId/characterId/danRank,
+> `player1RoundsWon`/`player2RoundsWon`, `winner`, `battleType`, and a UTC `date`
+> string. This supersedes the earlier Google-Sheet design.
 
-> **📌 Decision — public "Publish to web" CSV export; no API key, no auth.**
-> Resolves brief §7 "how the Action authenticates." In Google Sheets:
-> `File → Share → Publish to web → (the matches tab) → CSV`. This yields a stable URL
-> (`config.sheet.csvUrl`) the Action `fetch`es anonymously. Keeps cost $0 and avoids
-> storing a service-account secret. Trade-off: the sheet's *contents* are
-> world-readable-by-URL — acceptable for match scores. If that's ever unwanted,
-> switch to the Sheets API with a read-only service account stored in Actions
-> secrets (documented as the fallback path).
+## 4.1 What we gather
 
-## 4.2 Sheet contract (columns)
+- **Crew-vs-crew** matches (both `polarisId`s resolve to roster players) → the
+  head-to-head / rivalry feature. **Kept forever.**
+- **Non-crew** matches (a tracked player vs a random) → the recent-activity feed and
+  per-player recent form. **Kept as a rolling window.**
 
-> **📌 Decision — the sheet logs one row per *set* with a set score; game totals are
-> derived.** Resolves brief §7 "set score vs each game as a row." A row is
-> `3` and `1`, not three win-rows. This is the minimum typing per the brief's
-> "< 1 minute to log."
+Since we only fetch tracked players' battles, every battle has ≥ 1 crew side.
 
-Header row (exact, lowercase, order-independent — parsed by name):
+## 4.2 Building `matches.json` (`scripts/online-stats/matches.ts`)
 
-| Column | Required | Format | Notes |
-|---|---|---|---|
-| `date` | yes | `YYYY-MM-DD` | set date |
-| `time` | no | `HH:MM`\|`HH:MM:SS` | 24h UTC; combined with `date` → `playedAt` (drives "concluded X ago") |
-| `player_a` | yes | tag | resolved to roster id (§4.3) |
-| `player_b` | yes | tag | |
-| `char_a` | no | character name | canonicalized; blank ⇒ `null` |
-| `char_b` | no | character name | |
-| `score_a` | yes | integer ≥ 0 | games A won |
-| `score_b` | yes | integer ≥ 0 | games B won |
-| `match_type` | no | `quick`\|`ranked`\|`player`\|`group` | Tekken 8 online match type; blank ⇒ `null` (offline not tracked) |
+`buildMatches(battles, players, priorMatches, config, now) → { matches, crewMatchCount, feedMatchCount }`:
 
-A pinned "instructions" note in the sheet documents this for the crew, plus a data
-validation dropdown on `player_a`/`player_b`/`match_type` to cut typos at the source.
+1. **Roster join.** `polarisId` → roster `id` via an **undashed** `tekken_id` map
+   (strip `-` on both sides, §7.1). A side is crew iff it resolves.
+2. **Field mapping.** `characterId` (int) → slug via `characterIdMap` + `fromCharacterId()`
+   ([§7.6](./07-external-api-reference.md#76-character-list--verified-characteridmap-ewgf-wavu-uses-same-names));
+   `danRank` → rank slug via `rankFromDanRank()` (§7.5); `date`
+   (`"MM/dd/yyyy HH:mm:ss UTC"`) → ISO `playedAt`; `battleType` int → slug.
+3. **Dedup.** Synthetic `id = ${p1Polaris}:${p2Polaris}:${epochSeconds}`. A
+   crew-vs-crew battle appears in *both* players' feeds → same id → one match.
+   Fresh data is **merged** with `priorMatches` (append-only crew history).
+4. **Retention.** Keep every crew match; drop non-crew matches older than
+   `config.matches.recentWindowDays` and cap each player's non-crew matches at
+   `config.matches.feedMaxPerPlayer`. Sort by `playedAt`.
 
-## 4.3 Validation & name resolution
+## 4.3 Deriving `stats.json` (`scripts/online-stats/stats.ts`)
 
-For each data row (resolves brief §7 "typo'd player names"):
+Pure `deriveStats(matches, generatedAt): StatsFile`, unit-tested:
 
-1. **Tag → id.** Look the tag up in a case-insensitive map built from
-   `players.json` (`player_tag` and `id`, plus an optional `aliases` list we can add
-   to the roster). Unresolvable ⇒ reject the row.
-2. **Characters.** `char_a`/`char_b` canonicalized via the same alias maps as the
-   online pipeline; an unknown non-blank character ⇒ reject (so we never mis-attribute
-   a matchup). Blank is fine (`null`).
-3. **Scores.** Must parse as non-negative integers, not both zero. Otherwise reject.
-4. **Date.** Must parse as a valid `YYYY-MM-DD`. Otherwise reject.
+- `headToHead` (crew only), key `idA|idB` (idA<idB): **matches won** (`matchesA/B`)
+  and rounds won (`roundsA/B`).
+- `players[id]` over all tracked matches: `matchWins`/`matchLosses`/`winRate`,
+  `charUsage` (matches played per character), `mostPlayedCharacter`.
+- `charMatchups` (crew), per `id:char` pair, by matches won.
 
-Rejected rows are **not dropped silently** — they go to `matches.json.rejected[]`
-with `rowNumber`, a human `reason`, and the `raw` cells, and `rejectedCount` is set.
-The site can show a small "N rows need fixing" admin hint; the crew fixes the sheet
-and the next run clears it. Valid rows always produce a clean `matches.json`.
+## 4.4 Degradation & writing
 
-**Deterministic ids:** within a date, rows are numbered in sheet order →
-`id = \`${date}#${indexOnDate}\``. Stable across re-ingests as long as earlier rows
-on that date aren't reordered (append-only usage keeps ids stable).
+`matches.json`/`stats.json` are (re)built only when `EWGF_API_KEY` is present (matches
+come solely from EWGF). If the key is absent, the job keeps yesterday's committed
+matches — same graceful posture as ranks (§3.2). Both files are written
+deterministically and staged by `online-stats.yml` under the commit-if-changed gate.
 
-## 4.4 Deriving `stats.json` (`scripts/match-sync/stats.ts`)
+## 4.5 Recent-matches feed
 
-Pure function `deriveStats(matches: Match[]): StatsFile`. **Games, not sets**
-(brief §5.3): a `3–1` set adds 3 to the winner's game count and 1 to the loser's.
-
-```
-for each match m:
-    # head-to-head (person vs person), key ordered so idA < idB
-    [lo, hi] = sort([m.playerA, m.playerB])
-    h2h[`${lo}|${hi}`].gamesLo += (m games won by lo)
-    h2h[`${lo}|${hi}`].gamesHi += (m games won by hi)
-    h2h[...].setsLo/setsHi += 1 to whoever won more games (ties → neither)
-
-    # per-player rollups
-    for side in {A,B}:
-        p = players[m[side]]
-        p.gameWins   += m.score(side)
-        p.gameLosses += m.score(other)
-        p.setWins/Losses += set outcome
-        if m.char(side): p.charUsage[char] += m.score(side)+m.score(other)  # games played
-    # optional per-character matchup (charMatchups), same idea keyed with characters
-compute winRate = gameWins / (gameWins+gameLosses); mostPlayedCharacter = argmax(charUsage)
-```
-
-`deriveStats` is unit-tested (Vitest) with fixture matches — it's the "settles
-arguments" math (brief §9), so it must be correct and covered.
-
-## 4.5 Workflow (`.github/workflows/match-sync.yml`)
-
-```yaml
-name: match-sync
-on:
-  schedule:
-    - cron: '0 */6 * * *'      # every 6h (brief §7 "how often to re-ingest")
-  workflow_dispatch: {}
-permissions:
-  contents: write
-concurrency:
-  group: match-sync
-  cancel-in-progress: false
-jobs:
-  sync:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '20', cache: 'npm' }
-      - run: npm ci
-      - run: npx tsx scripts/match-sync/index.ts
-      - name: Commit if changed
-        run: |
-          git config user.name  "ctown-bot"
-          git config user.email "ctown-bot@users.noreply.github.com"
-          git add public/data/matches.json public/data/stats.json
-          if ! git diff --cached --quiet; then
-            git commit -m "data: sync matches $(date -u +%FT%TZ)"
-            git push
-          else
-            echo "No changes."
-          fi
-```
-
-> **📌 Decision — re-ingest every 6 hours.** Resolves brief §7 "how often to
-> re-ingest the match sheet." Frequent enough that a just-logged set shows up the
-> same evening; infrequent enough to stay a light job. `workflow_dispatch` lets the
-> crew force an immediate refresh after logging a big session. Bump to hourly if the
-> crew wants near-live updates — it's a one-line cron change.
-
-## 4.6 Recent-matches feed
-
-`matches.json` is already date-sorted; the site slices the most recent N (default 20,
-brief §5.2) for the home-page feed. No extra derived file needed.
+The site sorts `matches.json` by `playedAt` and slices the most recent N for the
+home-page feed (crew + non-crew). Opponents without a `playerId` render by EWGF name.

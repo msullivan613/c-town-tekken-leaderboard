@@ -1,70 +1,170 @@
 {
-  "schemaVersion": 1,
-  "source": "google-sheet",
-  "generatedAt": "2026-06-30T12:00:00Z",
-  "rowCount": 5,
-  "rejectedCount": 0,
+  "crewMatchCount": 4,
+  "feedMatchCount": 3,
+  "generatedAt": "2026-06-30T08:00:00.000Z",
   "matches": [
     {
-      "id": "2026-06-28#0",
-      "date": "2026-06-28",
-      "playedAt": "2026-06-28T19:40:00Z",
-      "playerA": "matt",
-      "playerB": "alex",
-      "charA": "jin",
-      "charB": "king",
-      "scoreA": 3,
-      "scoreB": 1,
-      "matchType": "ranked"
+      "a": {
+        "character": "king",
+        "name": "AlxDestroyer",
+        "playerId": "alex",
+        "polarisId": "1a2b3c4d5e6f",
+        "rank": "fujin"
+      },
+      "b": {
+        "character": "nina",
+        "name": "QueenBee",
+        "playerId": null,
+        "polarisId": "QueenBee",
+        "rank": "battle_ruler"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "1a2b3c4d5e6f:QueenBee:1782675600",
+      "playedAt": "2026-06-28T19:40:00.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
     },
     {
-      "id": "2026-06-28#1",
-      "date": "2026-06-28",
-      "playedAt": "2026-06-28T20:15:00Z",
-      "playerA": "nick",
-      "playerB": "matt",
-      "charA": "kazuya",
-      "charB": "jin",
-      "scoreA": 2,
-      "scoreB": 3,
-      "matchType": "player"
+      "a": {
+        "character": "kazuya",
+        "name": "NickTheKnife",
+        "playerId": "nick",
+        "polarisId": "2b3c4d5e6f70",
+        "rank": "tekken_king"
+      },
+      "b": {
+        "character": "devil_jin",
+        "name": "JinFanatic99",
+        "playerId": null,
+        "polarisId": "JinFanatic99",
+        "rank": "bushin"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "2b3c4d5e6f70:JinFanatic99:1782763200",
+      "playedAt": "2026-06-29T20:00:00.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
     },
     {
-      "id": "2026-06-29#0",
-      "date": "2026-06-29",
-      "playedAt": "2026-06-29T21:30:00Z",
-      "playerA": "alex",
-      "playerB": "nick",
-      "charA": "king",
-      "charB": "kazuya",
-      "scoreA": 3,
-      "scoreB": 2,
-      "matchType": "ranked"
+      "a": {
+        "character": "jin",
+        "name": "SugarFree",
+        "playerId": "matt",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "kazuya",
+        "name": "NickTheKnife",
+        "playerId": "nick",
+        "polarisId": "2b3c4d5e6f70",
+        "rank": "tekken_king"
+      },
+      "battleType": "ranked",
+      "crew": true,
+      "id": "3feeJ699M7An:2b3c4d5e6f70:1782768600",
+      "playedAt": "2026-06-29T21:30:00.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
     },
     {
-      "id": "2026-06-29#1",
-      "date": "2026-06-29",
-      "playedAt": "2026-06-29T23:05:00Z",
-      "playerA": "matt",
-      "playerB": "dev",
-      "charA": "devil_jin",
-      "charB": "dragunov",
-      "scoreA": 3,
-      "scoreB": 0,
-      "matchType": "quick"
+      "a": {
+        "character": "king",
+        "name": "AlxDestroyer",
+        "playerId": "alex",
+        "polarisId": "1a2b3c4d5e6f",
+        "rank": "fujin"
+      },
+      "b": {
+        "character": "kazuya",
+        "name": "NickTheKnife",
+        "playerId": "nick",
+        "polarisId": "2b3c4d5e6f70",
+        "rank": "tekken_king"
+      },
+      "battleType": "ranked",
+      "crew": true,
+      "id": "1a2b3c4d5e6f:2b3c4d5e6f70:1782771000",
+      "playedAt": "2026-06-29T22:10:00.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
     },
     {
-      "id": "2026-06-30#0",
-      "date": "2026-06-30",
-      "playedAt": "2026-06-30T02:41:00Z",
-      "playerA": "nick",
-      "playerB": "alex",
-      "charA": "kazuya",
-      "charB": "king",
-      "scoreA": 1,
-      "scoreB": 3,
-      "matchType": "group"
+      "a": {
+        "character": "jin",
+        "name": "SugarFree",
+        "playerId": "matt",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "king",
+        "name": "AlxDestroyer",
+        "playerId": "alex",
+        "polarisId": "1a2b3c4d5e6f",
+        "rank": "fujin"
+      },
+      "battleType": "ranked",
+      "crew": true,
+      "id": "3feeJ699M7An:1a2b3c4d5e6f:1782782100",
+      "playedAt": "2026-06-30T01:15:00.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kazuya",
+        "name": "NickTheKnife",
+        "playerId": "nick",
+        "polarisId": "2b3c4d5e6f70",
+        "rank": "tekken_king"
+      },
+      "b": {
+        "character": "devil_jin",
+        "name": "SugarFree",
+        "playerId": "matt",
+        "polarisId": "3feeJ699M7An",
+        "rank": "fujin"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "2b3c4d5e6f70:3feeJ699M7An:1782785100",
+      "playedAt": "2026-06-30T02:05:00.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "jin",
+        "name": "SugarFree",
+        "playerId": "matt",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "king",
+        "name": "KO_King_88",
+        "playerId": null,
+        "polarisId": "KO_King_88",
+        "rank": "tekken_emperor"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "3feeJ699M7An:KO_King_88:1782787260",
+      "playedAt": "2026-06-30T02:41:00.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
     }
   ],
-  "rejected": []
+  "schemaVersion": 2,
+  "source": "ewgf"
 }
