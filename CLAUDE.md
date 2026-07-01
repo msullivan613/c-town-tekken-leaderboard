@@ -1,0 +1,127 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What this is
+
+A free, serverless, self-updating Tekken 8 leaderboard. A static React + Vite SPA on
+GitHub Pages; committed JSON files are the only "database." A scheduled GitHub Action
+refreshes the JSON. There is no backend, no runtime API call from the browser, no auth.
+
+## Commands
+
+```bash
+npm install
+npm run dev              # dev server for the default site (SITE=c-town)
+npm run build            # tsc --noEmit, then scripts/build-all.ts (builds every site)
+npm test                 # vitest run (pipeline math + committed-data validation)
+npm run test:watch
+npm run lint             # eslint . --ext .ts,.tsx
+npm run format           # prettier --write .
+
+# Run one test file:
+npx vitest run tests/matches.test.ts
+
+# Work against a specific site (default is c-town):
+SITE=area-256 npm run dev
+SITE=area-256 npx vitest run tests/data-files.test.ts
+
+# Pipelines (write into sites/<SITE>/data/):
+npm run online-stats                       # SITE=c-town by default
+SITE=area-256 npm run online-stats
+npm run resolve-id -- "3fee-J699-M7An"     # verify a tekken_id resolves on tknow
+```
+
+## ⚠️ The docs have drifted — trust the code
+
+`spec/`, `README.md`, and `PROJECT-BRIEF.md` describe an earlier design. Two things
+changed that they mostly still describe the old way:
+
+1. **Data source is tknow.gg, not EWGF.** The pipeline uses `scripts/online-stats/tknow.ts`
+   (unofficial JSON API at `api.tk8now.pe.kr`, gated by an Origin/Referer check, **no API
+   key**) for in-game ranks and match history, plus Wavu Wank for Glicko MMR. The specs'
+   `ewgf.ts` / `EWGF_API_KEY` / Bearer-token discussion is obsolete. There is no `ewgf.ts`.
+2. **Multi-site.** Data lives in `sites/<slug>/data/*.json`, **not** `public/data/`. There
+   are currently two sites: `c-town` and `area-256`. `public/` holds only shared static
+   assets (character icons, avatars). Wherever spec/atomicWrite comments say "public/data/",
+   read "sites/<SITE>/data/".
+
+When code and docs disagree on these points, the code is correct.
+
+## Architecture
+
+### Multi-site model
+
+One codebase (`src/`) renders N independently-deployed sites. A build produces
+`dist/<slug>/` per site plus a root `dist/index.html` linking to them all.
+
+- **`SITE` env var** (default `c-town`) selects the active site everywhere: `vite.config.ts`,
+  `vitest.config.ts`, `scripts/shared/config.ts`, and `scripts/build-all.ts` all read it.
+- Each `sites/<slug>/` has a `config.json` (site branding + optional config overrides) and a
+  `data/` folder (the per-site JSON database).
+- **Config layering:** `config/config.json` holds shared defaults; `sites/<slug>/config.json`
+  supplies the `site` block and any overrides. `src/lib/config-merge.ts#mergeAppConfig`
+  deep-merges them (override wins, arrays replace). **Neither file alone satisfies `AppConfig`
+  — only the merged result does.** The frontend imports config as a module (baked into the
+  bundle at build time); pipelines load it from disk at runtime via `loadConfig()`.
+- The `@site-config` import alias resolves to the SITE-selected `sites/<slug>/config.json`
+  (aliased in both `vite.config.ts` and `vitest.config.ts`). `@` aliases `src/`.
+- `vite.config.ts` sets `base` to `/<PAGES_REPO>/<SITE>/` and copies `sites/<SITE>/data/` into
+  `dist/<SITE>/data/` at build; in dev, a middleware serves `.../data/<file>` straight from
+  `sites/<SITE>/data/`. The app fetches data via `import.meta.env.BASE_URL`.
+
+### Shared types & data modules (app ↔ pipeline)
+
+Everything is TypeScript (strict). Pipeline scripts run under `tsx` and import the **same**
+`@/` modules the frontend uses — e.g. `tknow.ts` imports `@/data/characters` and
+`@/data/ranks`, and both sides share `@/types/domain.ts` and `@/types/data-files.ts`. A schema
+change is therefore a compile error in both places at once. Keep types in `src/types/` and
+canonical character/rank tables in `src/data/`.
+
+### Data pipeline (`scripts/online-stats/index.ts`)
+
+Daily-ish job (cron every 6h), run once per site. For each roster player with a `tekken_id`:
+fetch tknow player info (per-character dan rank + games) and match history, and Wavu Glicko
+MMR per character. It then:
+
+- Keys everything by **(player, character) pair** (`makePairId`). Pairs only appear once they
+  clear `config.pairThreshold` (min ranked games + optionally a non-null rank).
+- Writes `ranks.json`, `glicko.json`; **appends** today's point to `rankhistory.json` /
+  `mmrhistory.json` (idempotent per date); rebuilds `matches.json` + derived `stats.json`.
+- **Matches are gathered automatically from tknow battles** — no manual entry, no Google
+  Sheet (the sheet in the brief was never built). Matches accumulate append-only; known
+  battle ids are fed back so the fetch stops early at already-seen battles.
+- **Graceful degradation:** if tknow is wholly unreachable, it keeps yesterday's committed
+  ranks/matches/stats rather than clobbering them with empties (Wavu still updates MMR).
+
+### Determinism / commit-if-changed
+
+`scripts/shared/atomicWrite.ts` recursively **sorts object keys** and pretty-prints (2-space)
+so re-runs are byte-identical and `git` only sees real data changes. `writeDataFile` returns
+`false` when nothing changed. CI stages only generated files and commits only if the diff is
+non-empty — so no-op runs produce no commits. **Preserve this determinism** when touching any
+JSON-writing code; non-deterministic output breaks the whole no-op-commit gate.
+
+### Frontend
+
+`src/App.tsx` uses **HashRouter** (GitHub Pages has no server rewrites, so `/#/...` deep links
+survive refresh — don't switch to BrowserRouter without adding the 404 redirect hack).
+`src/data/DataProvider.tsx` fetches all JSON files via `useJson` and exposes them through
+`useData()`. `players.json` is the only required file; the rest degrade to null/empty. The
+(player, character) collapse, sorting, and best-pair logic live in `src/lib/leaderboard.ts`.
+
+### CI (`.github/workflows/`)
+
+- `online-stats.yml` — cron every 6h + manual dispatch. Loops `for dir in sites/*/`, runs the
+  pipeline per site, stages only generated JSON (never the hand-maintained `players.json`),
+  and commits/pushes only if changed. That push to `main` then triggers deploy.
+- `deploy.yml` — on push to `main` touching app/data/config, runs `npm test && npm run build`
+  and publishes `dist/` to Pages. Set `PAGES_REPO` if the repo slug differs from
+  `tekken-leaderboard` (it feeds Vite `base`).
+
+## Conventions
+
+- Add a crew member by hand-editing `sites/<slug>/data/players.json`. Their `tekken_id` is the
+  id in their `tknow.gg/player/<id>` URL; use `resolve-id` to confirm it before committing.
+- Reference spec sections in code comments (`§3.4` etc.) as the existing code does — but the
+  spec is a design record, not ground truth for the tknow/multi-site points above.
