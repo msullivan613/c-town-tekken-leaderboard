@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useData } from '@/data/DataProvider';
-import { formatDate, matchTypeLabel } from '@/lib/format';
+import { concludedAgo, formatDate, matchTimestamp, matchTypeLabel } from '@/lib/format';
 import { CharacterIcon } from '@/components/icons';
 
 const MATCH_TYPES = ['quick', 'ranked', 'player', 'group'] as const;
@@ -11,7 +11,9 @@ export function MatchesPage() {
   const [matchType, setMatchType] = useState('');
 
   const rows = useMemo(() => {
-    let list = [...(matches?.matches ?? [])].reverse();
+    let list = [...(matches?.matches ?? [])].sort(
+      (a, b) => matchTimestamp(b) - matchTimestamp(a),
+    );
     if (player) list = list.filter((m) => m.playerA === player || m.playerB === player);
     if (matchType) list = list.filter((m) => m.matchType === matchType);
     return list;
@@ -67,7 +69,7 @@ export function MatchesPage() {
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-surface-2 text-left text-xs uppercase text-muted">
-              <th className="px-3 py-2">Date</th>
+              <th className="px-3 py-2">When</th>
               <th className="px-3 py-2">Player A</th>
               <th className="px-3 py-2">Score</th>
               <th className="px-3 py-2">Player B</th>
@@ -77,7 +79,10 @@ export function MatchesPage() {
           <tbody>
             {rows.map((m) => (
               <tr key={m.id} className="border-t border-border">
-                <td className="px-3 py-2 text-muted">{formatDate(m.date)}</td>
+                <td className="px-3 py-2 text-muted" title={m.playedAt ?? m.date}>
+                  <div>{concludedAgo(m)}</div>
+                  <div className="text-[11px] opacity-70">{formatDate(m.date)}</div>
+                </td>
                 <td className="px-3 py-2">
                   <span className="inline-flex items-center gap-1.5">
                     {m.charA && <CharacterIcon slug={m.charA} size={20} />}

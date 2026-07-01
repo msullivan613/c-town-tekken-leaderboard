@@ -8,6 +8,7 @@
     {
       "id": "2026-06-28#0",
       "date": "2026-06-28",
+      "playedAt": "2026-06-28T19:40:00Z",
       "playerA": "matt",
       "playerB": "alex",
       "charA": "jin",
@@ -19,6 +20,7 @@
     {
       "id": "2026-06-28#1",
       "date": "2026-06-28",
+      "playedAt": "2026-06-28T20:15:00Z",
       "playerA": "nick",
       "playerB": "matt",
       "charA": "kazuya",
@@ -30,6 +32,7 @@
     {
       "id": "2026-06-29#0",
       "date": "2026-06-29",
+      "playedAt": "2026-06-29T21:30:00Z",
       "playerA": "alex",
       "playerB": "nick",
       "charA": "king",
@@ -41,6 +44,7 @@
     {
       "id": "2026-06-29#1",
       "date": "2026-06-29",
+      "playedAt": "2026-06-29T23:05:00Z",
       "playerA": "matt",
       "playerB": "dev",
       "charA": "devil_jin",
@@ -52,6 +56,7 @@
     {
       "id": "2026-06-30#0",
       "date": "2026-06-30",
+      "playedAt": "2026-06-30T02:41:00Z",
       "playerA": "nick",
       "playerB": "alex",
       "charA": "kazuya",

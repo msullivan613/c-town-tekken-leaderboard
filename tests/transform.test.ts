@@ -58,6 +58,14 @@ describe('buildMatches', () => {
     expect(buildMatches([row({ match_type: 'offline' })], PLAYERS).matches[0].matchType).toBeNull();
   });
 
+  it('combines date + time into a UTC playedAt; blank/invalid → null', () => {
+    expect(buildMatches([row({ time: '19:30' })], PLAYERS).matches[0].playedAt).toBe('2026-06-28T19:30:00Z');
+    expect(buildMatches([row({ time: '9:05:12' })], PLAYERS).matches[0].playedAt).toBe('2026-06-28T09:05:12Z');
+    expect(buildMatches([row({ time: '' })], PLAYERS).matches[0].playedAt).toBeNull();
+    expect(buildMatches([row({ time: '25:00' })], PLAYERS).matches[0].playedAt).toBeNull();
+    expect(buildMatches([row({ time: 'evening' })], PLAYERS).matches[0].playedAt).toBeNull();
+  });
+
   it('assigns deterministic per-date ids in sheet order', () => {
     const { matches } = buildMatches(
       [row({}), row({ player_a: 'Alex', player_b: 'SugarFree' }), row({ date: '2026-06-29' })],

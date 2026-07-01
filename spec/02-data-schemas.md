@@ -259,6 +259,7 @@ from the set score (§4.4), so the sheet only records set scores.
     {
       "id": "2026-06-28#0",         // deterministic: `${date}#${indexOnDate}`
       "date": "2026-06-28",
+      "playedAt": "2026-06-28T19:40:00Z", // ISO-8601 UTC set conclusion; null if unknown
       "playerA": "matt",            // resolved player id (from tag)
       "playerB": "alex",
       "charA": "jin",               // CharacterSlug, or null if not recorded

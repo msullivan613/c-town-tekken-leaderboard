@@ -54,6 +54,22 @@ export function matchTypeLabel(type: string | null | undefined): string {
   }
 }
 
+/** Sortable epoch ms for a match, preferring its precise conclusion time and
+ *  falling back to the day. */
+export function matchTimestamp(m: {
+  playedAt: string | null;
+  date: string;
+}): number {
+  const t = Date.parse(m.playedAt ?? `${m.date}T00:00:00Z`);
+  return Number.isNaN(t) ? 0 : t;
+}
+
+/** "how long ago this set concluded" — precise when a time is known, else the
+ *  day (e.g. "3d ago"). */
+export function concludedAgo(m: { playedAt: string | null; date: string }): string {
+  return relativeTime(m.playedAt ?? `${m.date}T00:00:00Z`);
+}
+
 export function platformLabel(platform: string): string {
   switch (platform) {
     case 'steam':

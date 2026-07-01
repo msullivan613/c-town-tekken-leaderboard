@@ -74,7 +74,8 @@ export interface HistoryFile {
 export type MatchType = 'quick' | 'ranked' | 'player' | 'group' | null;
 export interface Match {
   id: string; // `${date}#${indexOnDate}`
-  date: string; // YYYY-MM-DD
+  date: string; // YYYY-MM-DD (day the set was played; used for grouping/ids)
+  playedAt: string | null; // ISO-8601 UTC when the set concluded; null if unknown
   playerA: string; // resolved player id
   playerB: string;
   charA: CharacterSlug | null;

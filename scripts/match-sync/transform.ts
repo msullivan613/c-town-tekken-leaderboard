@@ -39,6 +39,20 @@ function normMatchType(s: string | undefined): MatchType {
   return (MATCH_TYPES as string[]).includes(v) ? (v as MatchType) : null;
 }
 
+/** Combine the row's date + optional `time` (HH:MM[:SS], interpreted UTC) into an
+ *  ISO-8601 conclusion timestamp. Blank/invalid time ⇒ null (day-only). */
+function normPlayedAt(date: string, time: string | undefined): string | null {
+  const t = (time ?? '').trim();
+  const m = t.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+  if (!m) return null;
+  const hh = Number(m[1]);
+  const mm = Number(m[2]);
+  const ss = m[3] ? Number(m[3]) : 0;
+  if (hh > 23 || mm > 59 || ss > 59) return null;
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${date}T${pad(hh)}:${pad(mm)}:${pad(ss)}Z`;
+}
+
 function resolveChar(
   raw: string | undefined,
 ): { ok: true; value: CharacterSlug | null } | { ok: false; name: string } {
@@ -86,6 +100,7 @@ export function buildMatches(rows: SheetRow[], players: Player[]): BuildResult {
     matches.push({
       id: `${date}#${indexOnDate}`,
       date,
+      playedAt: normPlayedAt(date, raw.time),
       playerA: idA,
       playerB: idB,
       charA: charA.value,

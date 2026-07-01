@@ -30,6 +30,7 @@ Header row (exact, lowercase, order-independent — parsed by name):
 | Column | Required | Format | Notes |
 |---|---|---|---|
 | `date` | yes | `YYYY-MM-DD` | set date |
+| `time` | no | `HH:MM`\|`HH:MM:SS` | 24h UTC; combined with `date` → `playedAt` (drives "concluded X ago") |
 | `player_a` | yes | tag | resolved to roster id (§4.3) |
 | `player_b` | yes | tag | |
 | `char_a` | no | character name | canonicalized; blank ⇒ `null` |

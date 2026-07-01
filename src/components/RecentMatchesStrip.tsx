@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { Match } from '@/types/data-files';
 import { useData } from '@/data/DataProvider';
-import { formatDate, matchTypeLabel } from '@/lib/format';
+import { concludedAgo, formatDate, matchTimestamp, matchTypeLabel } from '@/lib/format';
 import { CharacterIcon } from './icons';
 
 function tagOf(playerById: Map<string, { player_tag: string }>, id: string): string {
@@ -12,7 +12,9 @@ function tagOf(playerById: Map<string, { player_tag: string }>, id: string): str
 // the middle. The winner's side lights up.
 export function RecentMatchesStrip({ limit = 20 }: { limit?: number }) {
   const { matches, playerById } = useData();
-  const recent = (matches?.matches ?? []).slice(-limit).reverse();
+  const recent = [...(matches?.matches ?? [])]
+    .sort((a, b) => matchTimestamp(b) - matchTimestamp(a))
+    .slice(0, limit);
   if (recent.length === 0) return null;
   return (
     <section className="mt-10">
@@ -48,8 +50,11 @@ export function RecentMatchesStrip({ limit = 20 }: { limit?: number }) {
                   <span className="text-xs text-muted">VS</span>
                   <span className={bWon ? 'text-p2' : 'text-muted'}>{m.scoreB}</span>
                 </div>
-                <span className="mt-0.5 text-[10px] uppercase tracking-widest text-muted">
-                  {formatDate(m.date)}
+                <span
+                  className="mt-0.5 text-[10px] uppercase tracking-widest text-muted"
+                  title={m.playedAt ?? formatDate(m.date)}
+                >
+                  {concludedAgo(m)}
                   {m.matchType ? ` · ${matchTypeLabel(m.matchType)}` : ''}
                 </span>
               </div>
