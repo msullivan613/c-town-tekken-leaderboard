@@ -1,7 +1,7 @@
 // Pure row → Match transform with validation & name resolution (spec §4.3).
 // Kept separate from index.ts (I/O) so it's straightforward to unit-test.
 import { canonicalizeCharacter } from '@/data/characters';
-import type { Match, MatchSetting, RejectedRow } from '@/types/data-files';
+import type { Match, MatchType, RejectedRow } from '@/types/data-files';
 import type { CharacterSlug, Player } from '@/types/domain';
 import type { SheetRow } from './sheet';
 
@@ -32,10 +32,11 @@ function parseScore(s: string): number | null {
   return Number(s.trim());
 }
 
-function normSetting(s: string | undefined): MatchSetting {
-  const v = (s ?? '').trim().toLowerCase();
-  if (v === 'offline' || v === 'online') return v;
-  return null;
+const MATCH_TYPES: MatchType[] = ['quick', 'ranked', 'player', 'group'];
+
+function normMatchType(s: string | undefined): MatchType {
+  const v = (s ?? '').trim().toLowerCase().replace(/\s*match$/, '');
+  return (MATCH_TYPES as string[]).includes(v) ? (v as MatchType) : null;
 }
 
 function resolveChar(
@@ -91,7 +92,7 @@ export function buildMatches(rows: SheetRow[], players: Player[]): BuildResult {
       charB: charB.value,
       scoreA,
       scoreB,
-      setting: normSetting(raw.setting),
+      matchType: normMatchType(raw.match_type),
       event: (raw.event ?? '').trim() || null,
       notes: (raw.notes ?? '').trim() || null,
     });

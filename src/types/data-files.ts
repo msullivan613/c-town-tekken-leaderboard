@@ -69,7 +69,9 @@ export interface HistoryFile {
 }
 
 // ── matches.json (§2.8) ──────────────────────────────────────────────────────
-export type MatchSetting = 'offline' | 'online' | null;
+// Tekken 8 online match type (matches EWGF's battle-type taxonomy). Offline is
+// intentionally not tracked.
+export type MatchType = 'quick' | 'ranked' | 'player' | 'group' | null;
 export interface Match {
   id: string; // `${date}#${indexOnDate}`
   date: string; // YYYY-MM-DD
@@ -79,7 +81,7 @@ export interface Match {
   charB: CharacterSlug | null;
   scoreA: number; // games won by A
   scoreB: number; // games won by B
-  setting: MatchSetting;
+  matchType: MatchType;
   event: string | null;
   notes: string | null;
 }

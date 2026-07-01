@@ -6,11 +6,11 @@ const NOW = '2026-06-30T12:00:01Z';
 
 // Mirrors the committed fixtures in public/data (matches.json ⇒ stats.json).
 const FIXTURE: Match[] = [
-  { id: '2026-06-28#0', date: '2026-06-28', playerA: 'matt', playerB: 'alex', charA: 'jin', charB: 'king', scoreA: 3, scoreB: 1, setting: 'offline', event: 'Tuesday sesh', notes: null },
-  { id: '2026-06-28#1', date: '2026-06-28', playerA: 'nick', playerB: 'matt', charA: 'kazuya', charB: 'jin', scoreA: 2, scoreB: 3, setting: 'offline', event: 'Tuesday sesh', notes: null },
-  { id: '2026-06-29#0', date: '2026-06-29', playerA: 'alex', playerB: 'nick', charA: 'king', charB: 'kazuya', scoreA: 3, scoreB: 2, setting: 'online', event: null, notes: 'close set' },
-  { id: '2026-06-29#1', date: '2026-06-29', playerA: 'matt', playerB: 'dev', charA: 'devil_jin', charB: 'dragunov', scoreA: 3, scoreB: 0, setting: 'online', event: null, notes: null },
-  { id: '2026-06-30#0', date: '2026-06-30', playerA: 'nick', playerB: 'alex', charA: 'kazuya', charB: 'king', scoreA: 1, scoreB: 3, setting: 'offline', event: null, notes: null },
+  { id: '2026-06-28#0', date: '2026-06-28', playerA: 'matt', playerB: 'alex', charA: 'jin', charB: 'king', scoreA: 3, scoreB: 1, matchType: 'ranked', event: 'Tuesday sesh', notes: null },
+  { id: '2026-06-28#1', date: '2026-06-28', playerA: 'nick', playerB: 'matt', charA: 'kazuya', charB: 'jin', scoreA: 2, scoreB: 3, matchType: 'player', event: 'Tuesday sesh', notes: null },
+  { id: '2026-06-29#0', date: '2026-06-29', playerA: 'alex', playerB: 'nick', charA: 'king', charB: 'kazuya', scoreA: 3, scoreB: 2, matchType: 'ranked', event: null, notes: 'close set' },
+  { id: '2026-06-29#1', date: '2026-06-29', playerA: 'matt', playerB: 'dev', charA: 'devil_jin', charB: 'dragunov', scoreA: 3, scoreB: 0, matchType: 'quick', event: null, notes: null },
+  { id: '2026-06-30#0', date: '2026-06-30', playerA: 'nick', playerB: 'alex', charA: 'kazuya', charB: 'king', scoreA: 1, scoreB: 3, matchType: 'group', event: null, notes: null },
 ];
 
 describe('deriveStats', () => {
@@ -52,7 +52,7 @@ describe('deriveStats', () => {
 
   it('handles a tie set (no set awarded, games still count)', () => {
     const tie = deriveStats(
-      [{ id: '2026-01-01#0', date: '2026-01-01', playerA: 'a', playerB: 'b', charA: null, charB: null, scoreA: 2, scoreB: 2, setting: null, event: null, notes: null }],
+      [{ id: '2026-01-01#0', date: '2026-01-01', playerA: 'a', playerB: 'b', charA: null, charB: null, scoreA: 2, scoreB: 2, matchType: null, event: null, notes: null }],
       NOW,
     );
     expect(tie.headToHead['a|b']).toEqual({ gamesA: 2, gamesB: 2, setsA: 0, setsB: 0 });

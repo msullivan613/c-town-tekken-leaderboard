@@ -50,6 +50,14 @@ describe('buildMatches', () => {
     expect(buildMatches([row({ date: 'nonsense' })], PLAYERS).rejected[0].reason).toContain('invalid date');
   });
 
+  it('normalizes match_type (case- and "Match"-suffix-insensitive; unknown → null)', () => {
+    expect(buildMatches([row({ match_type: 'Ranked Match' })], PLAYERS).matches[0].matchType).toBe('ranked');
+    expect(buildMatches([row({ match_type: 'quick' })], PLAYERS).matches[0].matchType).toBe('quick');
+    expect(buildMatches([row({ match_type: 'GROUP' })], PLAYERS).matches[0].matchType).toBe('group');
+    expect(buildMatches([row({ match_type: '' })], PLAYERS).matches[0].matchType).toBeNull();
+    expect(buildMatches([row({ match_type: 'offline' })], PLAYERS).matches[0].matchType).toBeNull();
+  });
+
   it('assigns deterministic per-date ids in sheet order', () => {
     const { matches } = buildMatches(
       [row({}), row({ player_a: 'Alex', player_b: 'SugarFree' }), row({ date: '2026-06-29' })],

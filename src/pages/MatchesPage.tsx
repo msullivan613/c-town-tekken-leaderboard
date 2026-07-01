@@ -1,19 +1,21 @@
 import { useMemo, useState } from 'react';
 import { useData } from '@/data/DataProvider';
-import { formatDate } from '@/lib/format';
+import { formatDate, matchTypeLabel } from '@/lib/format';
 import { CharacterIcon } from '@/components/icons';
+
+const MATCH_TYPES = ['quick', 'ranked', 'player', 'group'] as const;
 
 export function MatchesPage() {
   const { matches, players, playerById } = useData();
   const [player, setPlayer] = useState('');
-  const [setting, setSetting] = useState('');
+  const [matchType, setMatchType] = useState('');
 
   const rows = useMemo(() => {
     let list = [...(matches?.matches ?? [])].reverse();
     if (player) list = list.filter((m) => m.playerA === player || m.playerB === player);
-    if (setting) list = list.filter((m) => m.setting === setting);
+    if (matchType) list = list.filter((m) => m.matchType === matchType);
     return list;
-  }, [matches, player, setting]);
+  }, [matches, player, matchType]);
 
   const rejected = matches?.rejected ?? [];
 
@@ -48,13 +50,16 @@ export function MatchesPage() {
           ))}
         </select>
         <select
-          value={setting}
-          onChange={(e) => setSetting(e.target.value)}
+          value={matchType}
+          onChange={(e) => setMatchType(e.target.value)}
           className="rounded border border-border bg-surface px-2 py-1 text-sm"
         >
-          <option value="">Any setting</option>
-          <option value="offline">Offline</option>
-          <option value="online">Online</option>
+          <option value="">Any match type</option>
+          {MATCH_TYPES.map((t) => (
+            <option key={t} value={t}>
+              {matchTypeLabel(t)}
+            </option>
+          ))}
         </select>
       </div>
 
@@ -66,7 +71,7 @@ export function MatchesPage() {
               <th className="px-3 py-2">Player A</th>
               <th className="px-3 py-2">Score</th>
               <th className="px-3 py-2">Player B</th>
-              <th className="px-3 py-2">Setting</th>
+              <th className="px-3 py-2">Type</th>
               <th className="px-3 py-2">Event</th>
             </tr>
           </thead>
@@ -89,7 +94,7 @@ export function MatchesPage() {
                     {playerById.get(m.playerB)?.player_tag ?? m.playerB}
                   </span>
                 </td>
-                <td className="px-3 py-2 text-muted">{m.setting ?? '—'}</td>
+                <td className="px-3 py-2 text-muted">{matchTypeLabel(m.matchType)}</td>
                 <td className="px-3 py-2 text-muted">{m.event ?? '—'}</td>
               </tr>
             ))}

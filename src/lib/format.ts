@@ -39,6 +39,21 @@ export function relativeTime(iso: string | null | undefined): string {
   return `${Math.floor(months / 12)}y ago`;
 }
 
+export function matchTypeLabel(type: string | null | undefined): string {
+  switch (type) {
+    case 'quick':
+      return 'Quick Match';
+    case 'ranked':
+      return 'Ranked Match';
+    case 'player':
+      return 'Player Match';
+    case 'group':
+      return 'Group Match';
+    default:
+      return EMPTY;
+  }
+}
+
 export function platformLabel(platform: string): string {
   switch (platform) {
     case 'steam':

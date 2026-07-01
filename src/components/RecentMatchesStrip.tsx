@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { Match } from '@/types/data-files';
 import { useData } from '@/data/DataProvider';
-import { formatDate } from '@/lib/format';
+import { formatDate, matchTypeLabel } from '@/lib/format';
 import { CharacterIcon } from './icons';
 
 function tagOf(playerById: Map<string, { player_tag: string }>, id: string): string {
@@ -50,7 +50,7 @@ export function RecentMatchesStrip({ limit = 20 }: { limit?: number }) {
                 </div>
                 <span className="mt-0.5 text-[10px] uppercase tracking-widest text-muted">
                   {formatDate(m.date)}
-                  {m.setting ? ` · ${m.setting}` : ''}
+                  {m.matchType ? ` · ${matchTypeLabel(m.matchType)}` : ''}
                 </span>
               </div>
 

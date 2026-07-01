@@ -36,12 +36,12 @@ Header row (exact, lowercase, order-independent — parsed by name):
 | `char_b` | no | character name | |
 | `score_a` | yes | integer ≥ 0 | games A won |
 | `score_b` | yes | integer ≥ 0 | games B won |
-| `setting` | no | `offline`\|`online` | blank ⇒ `null` |
+| `match_type` | no | `quick`\|`ranked`\|`player`\|`group` | Tekken 8 online match type; blank ⇒ `null` (offline not tracked) |
 | `event` | no | free text | session/event name |
 | `notes` | no | free text | |
 
 A pinned "instructions" note in the sheet documents this for the crew, plus a data
-validation dropdown on `player_a`/`player_b`/`setting` to cut typos at the source.
+validation dropdown on `player_a`/`player_b`/`match_type` to cut typos at the source.
 
 ## 4.3 Validation & name resolution
 
