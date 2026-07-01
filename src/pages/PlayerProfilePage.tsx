@@ -63,13 +63,6 @@ export function PlayerProfilePage() {
               Peak: {peakRank ? <RankBadge rank={peakRank} /> : EMPTY}
             </span>
           </div>
-          {player.socials && (
-            <div className="mt-1 flex gap-3 text-sm">
-              {player.socials.twitch && <a href={player.socials.twitch}>Twitch</a>}
-              {player.socials.twitter && <a href={player.socials.twitter}>X</a>}
-              {player.socials.youtube && <a href={player.socials.youtube}>YouTube</a>}
-            </div>
-          )}
         </div>
       </header>
 

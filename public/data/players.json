@@ -7,11 +7,7 @@
       "player_tag": "SugarFree",
       "platform": "steam",
       "main_character": "jin",
-      "peak_rank": null,
-      "socials": {
-        "twitch": "https://twitch.tv/sugarfree",
-        "twitter": "https://x.com/sugarfree"
-      }
+      "peak_rank": null
     },
     {
       "id": "alex",
@@ -20,8 +16,7 @@
       "platform": "steam",
       "main_character": "king",
       "peak_rank": null,
-      "aliases": ["Alex", "Alx"],
-      "socials": {}
+      "aliases": ["Alex", "Alx"]
     },
     {
       "id": "nick",
@@ -30,10 +25,7 @@
       "platform": "playstation",
       "main_character": "kazuya",
       "peak_rank": "tekken_emperor",
-      "avatar": "avatars/nick.svg",
-      "socials": {
-        "twitter": "https://x.com/nicktheknife"
-      }
+      "avatar": "avatars/nick.svg"
     },
     {
       "id": "dev",
@@ -41,8 +33,7 @@
       "player_tag": "DevMain",
       "platform": "xbox",
       "main_character": "dragunov",
-      "peak_rank": null,
-      "socials": {}
+      "peak_rank": null
     }
   ]
 }

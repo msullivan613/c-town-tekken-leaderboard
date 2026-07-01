@@ -7,13 +7,6 @@ export type Platform = 'steam' | 'playstation' | 'xbox';
 
 export type WavuConfidence = 'leaderboard' | 'unqualified' | 'provisional';
 
-export interface PlayerSocials {
-  twitch?: string;
-  twitter?: string;
-  youtube?: string;
-  discord?: string;
-}
-
 export interface Player {
   id: string; // stable internal slug, used in URLs and as the join key
   tekken_id: string | null; // dashed Polaris id (§7.1); null if unresolved
@@ -26,7 +19,6 @@ export interface Player {
   // When unset, the UI falls back to the main-character portrait, then to a
   // colored initial. The per-player accent ring is applied either way.
   avatar?: string;
-  socials?: PlayerSocials;
 }
 
 /** Composite `${tekken_id}:${character}` join key across ranks/glicko/history. */
