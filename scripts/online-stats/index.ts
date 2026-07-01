@@ -4,7 +4,7 @@
 import { loadConfig } from '../shared/config';
 import { readDataFile, writeDataFile } from '../shared/atomicWrite';
 import { sleep } from '../shared/http';
-import { getPlayer, type BattleDTO, type EwgfCharacterStat } from './ewgf';
+import { getPlayer, type EwgfBattle, type EwgfCharacterStat } from './ewgf';
 import { getPlayerCharacters as getWavu } from './wavu';
 import { buildMatches } from './matches';
 import { deriveStats } from './stats';
@@ -79,7 +79,7 @@ async function main() {
 
   const rankPairs: RankPair[] = [];
   const glickoPairs: GlickoPair[] = [];
-  const allBattles: BattleDTO[] = [];
+  const allBattles: EwgfBattle[] = [];
 
   for (const player of players) {
     if (!player.tekken_id) continue;
@@ -91,7 +91,7 @@ async function main() {
         tekkenId,
         apiKey,
         config.sources.ewgfBaseUrl,
-        config.sources.ewgfPlayerPath,
+        config.sources.ewgfBattlesPath,
       );
       ewgf = res.characters;
       allBattles.push(...res.battles);

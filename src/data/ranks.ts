@@ -129,3 +129,18 @@ export function rankFromDanRank(danRank: number | null | undefined): {
   if (tier == null) return { slug: null, tier: null };
   return { slug: rankByTier(tier)?.slug ?? null, tier };
 }
+
+// EWGF's public API returns rank as a *display name* ("Tekken God"), not an int.
+const BY_DISPLAY = new Map<string, RankTier>(
+  RANK_LADDER.map((r) => [r.display.toLowerCase(), r]),
+);
+
+/** Map an EWGF rank display name to our stored { slug, tier }, or nulls if unknown. */
+export function rankFromName(name: string | null | undefined): {
+  slug: string | null;
+  tier: number | null;
+} {
+  if (!name) return { slug: null, tier: null };
+  const r = BY_DISPLAY.get(name.trim().toLowerCase());
+  return r ? { slug: r.slug, tier: r.tier } : { slug: null, tier: null };
+}

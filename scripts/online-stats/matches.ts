@@ -1,42 +1,24 @@
 // Build matches.json from EWGF battles (spec §4). Pure + unit-tested.
 //
-// Each EWGF BattleDTO is one match to 3 rounds. A crew-vs-crew battle appears in
-// BOTH players' battle lists, so we dedup by a synthetic id. Crew matches are
-// kept forever (head-to-head); non-crew matches are kept as a rolling recent
-// window (activity feed) bounded by config.
-import { fromCharacterId } from '@/data/characters';
-import { rankFromDanRank } from '@/data/ranks';
-import type { BattleDTO } from './ewgf';
+// Each EwgfBattle is one match to 3 rounds. A crew-vs-crew battle appears in
+// BOTH players' battle lists with identical orientation, so we dedup by a
+// synthetic id. Crew matches are kept forever (head-to-head); non-crew matches
+// are kept as a rolling recent window (activity feed) bounded by config.
+import { canonicalizeCharacter } from '@/data/characters';
+import { rankFromName } from '@/data/ranks';
+import type { EwgfBattle } from './ewgf';
 import type { AppConfig, Match, MatchSide, MatchType } from '@/types/data-files';
 import type { Player } from '@/types/domain';
 
-const BATTLE_TYPE: Record<number, MatchType> = {
-  1: 'quick',
-  2: 'ranked',
-  3: 'group',
-  4: 'player',
+const BATTLE_TYPE: Record<string, MatchType> = {
+  QUICK_BATTLE: 'quick',
+  RANKED_BATTLE: 'ranked',
+  GROUP_BATTLE: 'group',
+  PLAYER_BATTLE: 'player',
 };
 
 function undash(id: string): string {
   return id.replaceAll('-', '');
-}
-
-/** Parse EWGF's "MM/dd/yyyy HH:mm:ss UTC" (seconds optional) → ISO-8601. */
-export function parseEwgfDate(date: string): string | null {
-  const m = date.match(
-    /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?/,
-  );
-  if (!m) return null;
-  const [, mm, dd, yyyy, hh, min, ss] = m;
-  const ms = Date.UTC(
-    Number(yyyy),
-    Number(mm) - 1,
-    Number(dd),
-    Number(hh),
-    Number(min),
-    ss ? Number(ss) : 0,
-  );
-  return Number.isNaN(ms) ? null : new Date(ms).toISOString();
 }
 
 function rosterByPolaris(players: Player[]): Map<string, Player> {
@@ -51,16 +33,16 @@ function makeSide(
   roster: Map<string, Player>,
   name: string,
   polarisId: string,
-  characterId: number,
-  danRank: number | null,
+  charName: string,
+  danRank: string | null,
 ): MatchSide {
   const player = polarisId ? roster.get(undash(polarisId)) : undefined;
   return {
     playerId: player?.id ?? null,
     name,
-    polarisId,
-    character: fromCharacterId(characterId),
-    rank: rankFromDanRank(danRank).slug,
+    polarisId: undash(polarisId),
+    character: canonicalizeCharacter(charName),
+    rank: rankFromName(danRank).slug,
   };
 }
 
@@ -76,7 +58,7 @@ export interface BuildMatchesResult {
 }
 
 export function buildMatches(
-  battles: BattleDTO[],
+  battles: EwgfBattle[],
   players: Player[],
   priorMatches: Match[],
   config: AppConfig,
@@ -89,21 +71,22 @@ export function buildMatches(
   for (const m of priorMatches) byId.set(m.id, m);
 
   for (const b of battles) {
-    const playedAt = parseEwgfDate(b.date);
-    if (!playedAt) continue;
-    const a = makeSide(roster, b.player1Name, b.player1PolarisId, b.player1CharacterId, b.player1DanRank);
-    const side2 = makeSide(roster, b.player2Name, b.player2PolarisId, b.player2CharacterId, b.player2DanRank);
+    const at = Date.parse(b.battle_at);
+    if (!Number.isFinite(at)) continue;
+    const playedAt = new Date(at).toISOString();
+    const a = makeSide(roster, b.p1_name, b.p1_tekken_id, b.p1_char, b.p1_dan_rank);
+    const side2 = makeSide(roster, b.p2_name, b.p2_tekken_id, b.p2_char, b.p2_dan_rank);
     if (!a.playerId && !side2.playerId) continue; // must involve a tracked player
-    const epoch = Math.floor(Date.parse(playedAt) / 1000);
-    const id = `${b.player1PolarisId}:${b.player2PolarisId}:${epoch}`;
+    const epoch = Math.floor(at / 1000);
+    const id = `${undash(b.p1_tekken_id)}:${undash(b.p2_tekken_id)}:${epoch}`;
     byId.set(id, {
       id,
       playedAt,
-      battleType: BATTLE_TYPE[b.battleType] ?? null,
+      battleType: BATTLE_TYPE[b.battle_type] ?? null,
       a,
       b: side2,
-      roundsA: b.player1RoundsWon,
-      roundsB: b.player2RoundsWon,
+      roundsA: b.p1_rounds_won,
+      roundsB: b.p2_rounds_won,
       winner: b.winner === 1 ? 'a' : 'b',
       crew: a.playerId != null && side2.playerId != null,
     });

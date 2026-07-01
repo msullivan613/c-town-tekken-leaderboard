@@ -52,6 +52,9 @@ const ROSTER: ReadonlyArray<readonly [displayName: string, slug: string]> = [
   ['Clive', 'clive'],
   ['Anna', 'anna'],
   ['Fahkumram', 'fahkumram'],
+  ['Armor King', 'armor_king'],
+  ['Kunimitsu', 'kunimitsu'],
+  ['Miary Zo', 'miary_zo'],
 ];
 
 export type CharacterSlug = string;

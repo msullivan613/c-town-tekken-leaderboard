@@ -148,7 +148,7 @@ export interface AppConfig {
   };
   sources: {
     ewgfBaseUrl: string;
-    ewgfPlayerPath: string;
+    ewgfBattlesPath: string;
     wavuProfileUrl: string;
   };
   wavu: { userAgent: string };

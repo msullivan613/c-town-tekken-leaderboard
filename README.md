@@ -34,8 +34,8 @@ Data flow and every schema are documented in [`spec/`](./spec) — start with
 ## Running the pipelines locally
 
 ```bash
-EWGF_API_KEY=<key> npm run online-stats   # ranks + MMR + history + matches + stats
-npm run resolve-id -- "SomeTag"            # look up a player's tekken_id (EWGF search)
+EWGF_API_KEY=<key> npm run online-stats       # ranks + MMR + history + matches + stats
+EWGF_API_KEY=<key> npm run resolve-id -- "3fee-J699-M7An"  # verify a tekken_id resolves
 ```
 
 The job writes deterministically and only changes files when the data actually
@@ -57,9 +57,11 @@ These are the only things the code can't do for itself:
    degrades gracefully to **MMR-only** (Wavu needs no key); the board shows `—`
    for in-game rank and sorts by MMR, and no matches/head-to-head are gathered
    (matches come from EWGF battles). See [`spec/07`](./spec/07-external-api-reference.md#74-ewgf-api-key-decision-resolves-the-biggest-open-risk).
-2. **Roster** — add crew members to `public/data/players.json` (use
-   `resolve-id` to fill `tekken_id`; a player without a `tekken_id` shows in the
-   roster but has no ranks/MMR/matches). Optional per-player `avatar` (a path
+2. **Roster** — add crew members to `public/data/players.json`. Each member's
+   `tekken_id` is the id in their ewgf.gg profile URL
+   (`https://ewgf.gg/player/<tekken_id>`); `resolve-id` verifies it resolves. A
+   player without a `tekken_id` shows in the roster but has no
+   ranks/MMR/matches. Optional per-player `avatar` (a path
    under `public/`, e.g. `"avatars/nick.svg"`) overrides the default
    main-character portrait shown next to their name; without it the UI uses
    the character portrait, then a colored initial.

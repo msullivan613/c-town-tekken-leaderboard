@@ -14,7 +14,7 @@
   },
   "sources": {
     "ewgfBaseUrl": "https://api.ewgf.gg",
-    "ewgfPlayerPath": "/player-stats",
+    "ewgfBattlesPath": "/external/battles",
     "wavuProfileUrl": "https://wank.wavu.wiki"
   },
   "wavu": {

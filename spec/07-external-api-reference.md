@@ -27,89 +27,87 @@ Steam id is also exposed on the Wavu page (`steamcommunity.com/profiles/<steamId
 
 ---
 
-## 7.2 EWGF — in-game rank, wins/losses, Tekken power
+## 7.2 EWGF — recent battles (drives ranks + matches)
 
-> **⚠️ Requires an API key.** Every EWGF endpoint (`/player-stats/*`,
-> `/statistics/*`) returns **HTTP 401** without `Authorization: Bearer <key>`. The
-> public website is a Next.js server that injects the key server-side (`API_KEY` env
-> var). There is **no anonymous access.** See the §7.4 decision.
+> **⚠️ Requires an API key.** The **public** EWGF API lives at `api.ewgf.gg`
+> behind an auth gateway: every request returns **HTTP 401**
+> (`{"error":"Unauthorized access."}`) without `Authorization: Bearer <key>`. Keys
+> are self-serve — create an account and generate one under Settings → Developer.
+> (The `/player-stats/*` routes seen in `ewgfgg-backend` are the site's *internal*
+> API, not exposed publicly; the public surface is the `/external/*` routes below.)
+> Docs: <https://ewgf.gg/api-docs>. See the §7.4 decision.
 
 - **Base URL:** `https://api.ewgf.gg`
-- **Endpoint:** `GET /player-stats/{polarisId}` → `PlayerDTO`
+- **Endpoint (used):** `GET /external/battles/{tekkenId}` → `{ _metadata, data: EwgfBattle[] }`
 - **Headers:** `Accept: application/json`, `Authorization: Bearer <EWGF_API_KEY>`
-- **Search (id lookup):** `GET /player-stats/search?query=<tag>` → `PlayerSearchDTO[]`
-  (also gated) — this is how a new member's `polarisId` is found for `players.json`.
+- **Other endpoints (not used):** `GET /external/profile/{tekkenId}` and
+  `POST /external/profile` return profile metadata but are **Pro-tier only** (they
+  500/deny on the free tier), so we don't depend on them.
+- **Tiers / limits:** Free = **100 req/day**, player's **last 50 battles, 24h
+  delayed**, no profile metadata. Pro ($10/mo) = 1,000 req/day, last 100, no delay.
+  Every response carries a `_metadata` object (`rate_limit_remaining`,
+  `rate_limit_reset`, `tier`).
+- **Id verification:** the public API has **no name search**. A member's
+  `tekken_id` is the id in their profile URL (`https://ewgf.gg/player/<tekken_id>`);
+  `npm run resolve-id -- "<tekken_id>"` confirms it resolves (fetches battles, prints
+  the display name + characters seen).
 
-### `PlayerDTO` (top level)
+### `EwgfBattle` — one online match to 3 rounds (verified live)
+
+The battles response is the **sole source** for both `ranks.json` (rank/usage are
+*derived* from the battle list — see below) and `matches.json`/`stats.json`.
 
 ```ts
-interface PlayerDTO {
-  polarisId: string;
-  name: string;
-  regionId: number;                 // EWGF region code (America = one of these)
-  tekkenPower: number;              // Tekken's own power metric (NOT Glicko)
-  latestBattle: number;             // unix seconds of most recent battle
-  mainCharacterAndRank: Record<string, string>;      // { "<Character>": "<rankName>" }
-  playedCharacters: Record<string, PlayerMatchupSummaryDTO>;  // key = character name
-  battles: BattleDTO[];             // recent battle history
-}
-
-interface PlayerMatchupSummaryDTO {  // one per played character
-  wins: number;
-  losses: number;
-  currentSeasonDanRank: number | null;   // integer dan rank → rankOrderMap (§7.5)
-  previousSeasonDanRank: number;
-  characterWinrate: number;              // 0..100
-  bestMatchup: Record<string, number>;
-  worstMatchup: Record<string, number>;
-  matchups: Record<string, { wins: number; losses: number; winRate: number; totalMatches: number }>;
+interface EwgfBattle {
+  battle_at: string;    // ISO-8601 UTC, e.g. "2026-06-21T03:56:41Z"
+  battle_type: string;  // "QUICK_BATTLE" | "RANKED_BATTLE" | "GROUP_BATTLE" | "PLAYER_BATTLE"
+  game_version?: number;
+  winner: number;       // 1 | 2
+  stage_id?: number;
+  p1_name: string; p1_tekken_id: string;   // tekken_id is UNDASHED, e.g. "3feeJ699M7An"
+  p1_char: string;                          // display name, e.g. "Bryan" (canonical, §7.6)
+  p1_region: string | null;                 // e.g. "Americas"
+  p1_dan_rank: string | null;               // display name, e.g. "Tekken God" (§7.5)
+  p1_tekken_power?: number; p1_rounds_won: number;
+  p2_name: string; p2_tekken_id: string;
+  p2_char: string; p2_region: string | null; p2_dan_rank: string | null;
+  p2_tekken_power?: number; p2_rounds_won: number;
 }
 ```
 
-**Mapping EWGF → our schema (§2.4 `ranks.json`):**
+Notes (all verified against the live free-tier endpoint):
 
-| our field | from EWGF |
+- **Character and rank are *names*, not ids** — map via `canonicalizeCharacter`
+  (§7.6) and `rankFromName` (§7.5). `characterId`/integer-`danRank` are internal-API
+  concepts and do **not** appear here.
+- **`p1`/`p2` orientation is stable across feeds:** a crew-vs-crew battle appears in
+  both players' lists with identical p1/p2/winner/rounds, so it's deduped by the
+  synthetic key `{p1_tekken_id}:{p2_tekken_id}:{epochSeconds}` (§4.2).
+- **No `battleId`** and **no per-character lifetime totals** (profile is Pro-only).
+
+**Deriving `ranks.json` (§2.4) from battles** — for each character a tracked player
+appears on in their recent battles:
+
+| our field | derived from the player's own battles on that character |
 |---|---|
-| `character` | key of `playedCharacters` (already canonical, §7.6) |
-| `rank` | `rankOrderMap[currentSeasonDanRank]` slugified (§7.5) |
-| `rankTier` | `currentSeasonDanRank` normalized (§7.5) |
-| `rankedGames` | `wins + losses` (EWGF has no separate ranked-games count) |
-| `region` | `regionId` mapped to a name |
-| `characterPeakRank` | **not provided per character** — see §7.5 note |
-| `lastSeen` | `latestBattle` (player-level; EWGF gives no per-char timestamp) |
+| `character` | `canonicalizeCharacter(p{1,2}_char)` (§7.6) |
+| `rank` / `rankTier` | `rankFromName(dan_rank)` of their **most recent** battle on it (§7.5) |
+| `rankedGames` | count of `RANKED_BATTLE` battles seen in the window |
+| `region` | `region` of their most recent battle |
+| `characterPeakRank` | running max of `rankTier` across daily snapshots — see note |
+| `lastSeen` | `battle_at` of their most recent battle on it |
 
-> **Note — peak rank:** EWGF's `PlayerDTO` exposes `currentSeasonDanRank` and
-> `previousSeasonDanRank`, **not** an all-time per-character peak. So the brief §7
-> "derive peak from EWGF per-character peak data" is **not directly available**.
-> **📌 Revised decision:** derive `peak_rank` as the **running max of
-> `currentSeasonDanRank`** we observe across our own daily snapshots
-> (`rankhistory.json`), with the hand-set `players.json` value as the floor/fallback.
-> Peak becomes a value we *accumulate*, which also means it's correct going forward
-> even if EWGF never backfills it.
+> **Free-tier caveat:** `rankedGames` reflects only the **last-50 battle window**,
+> not lifetime totals, so a player whose recent games are all PLAYER/QUICK battles
+> can show `rankedGames: 0` yet still have a valid `rank` (from the latest battle's
+> `dan_rank`). The `pairThreshold.minRankedGames` gate is satisfied via
+> `max(EWGF windowed games, Wavu lifetime games)`, so Wavu's lifetime count keeps
+> established players on the board.
 
-### `PlayerDTO.battles: BattleDTO[]` — recent matches (drives §4)
-
-The same player-stats response carries the player's battles. Each `BattleDTO` is
-**one online match to 3 rounds** (verified against `ewgf-gg/ewgfgg-backend`):
-
-```ts
-interface BattleDTO {
-  date: string;                 // "MM/dd/yyyy HH:mm:ss UTC" (UTC, parseable)
-  battleType: number;           // 1 quick, 2 ranked, 3 group, 4 player
-  gameVersion: number;
-  player1Name: string; player1PolarisId: string;
-  player1CharacterId: number; player1RegionId: number | null; player1DanRank: number | null;
-  player2Name: string; player2PolarisId: string;
-  player2CharacterId: number; player2RegionId: number | null; player2DanRank: number | null;
-  player1RoundsWon: number; player2RoundsWon: number;
-  winner: number;               // 1 | 2
-  stageId: number;
-}
-```
-
-There is **no `battleId`** in the DTO, so a crew-vs-crew battle (present in both
-players' lists) is deduped by a synthetic key (§4.2). `battleType` maps directly to
-our `matchType` slugs. This is the sole source for `matches.json`/`stats.json`.
+> **Note — peak rank:** the public API exposes no all-time per-character peak.
+> **📌 Decision:** derive `peak_rank` as the **running max of `rankTier`** we observe
+> across our own daily snapshots (`rankhistory.json`), with the hand-set
+> `players.json` value as the floor/fallback — correct going forward regardless.
 
 ---
 
@@ -209,8 +207,12 @@ alone.
 
 ## 7.5 Rank ladder — verified `rankOrderMap` (from EWGF frontend)
 
-Integer `currentSeasonDanRank` → name. Use the **integer as `tier`** for sorting
-(higher = better). Two quirks to normalize:
+This map is `tier` → display name (higher = better). The **public** `/external`
+API returns the rank as one of these **display names** (e.g. `"Tekken God"`), so
+`rankFromName` reverse-looks it up to `{ slug, tier }`. (The integer
+`currentSeasonDanRank` below is the *internal* API's encoding, kept here because it
+defines the ladder ordering and the `normalizeDanRank` folding.) Two quirks to
+normalize on the integer side:
 
 - `29..37` and `100..107` (+`765`) are **both** "God of Destruction …" encodings.
   Normalize the `100+`/`765` block down onto `29..37` for a single ordering
@@ -242,11 +244,15 @@ custom style — the *slug + tier* stored in data is icon-agnostic.
 
 ---
 
-## 7.6 Character list — verified `characterIdMap` (EWGF); Wavu uses same names
+## 7.6 Character list — display names (EWGF public API + Wavu agree)
 
-EWGF `playedCharacters` is keyed by these display names, and Wavu's `.char` uses the
-**same** spellings (observed: `Yoshimitsu`, `Bryan`, `Feng`, `Fahkumram`, `Kazuya`,
-`Devil Jin`). So character keying across the two providers is effectively 1:1.
+The public `/external/battles` API returns characters as **display names**
+(`p1_char`/`p2_char`, e.g. `"Bryan"`, `"Armor King"`, `"Miary Zo"`), and Wavu's
+`.char` uses the **same** spellings. So character keying across the two providers is
+1:1 on the name — `canonicalizeCharacter(name)` is the single mapper; the numeric
+`characterIdMap` below (internal-API encoding) is retained for reference only and is
+**not** used by the pipeline. The roster includes all live-observed names, incl.
+`Armor King`, `Kunimitsu`, `Miary Zo`.
 
 > **📌 Simplified decision:** the canonical key is the **EWGF/Wavu display name**
 > (e.g. `"Devil Jin"`, `"Jack-8"`). Keep a slugify for URLs (`"devil_jin"`), but the
@@ -285,7 +291,7 @@ run seeds day 1; the charts grow from there.
 | Finding | Spec impact |
 |---|---|
 | EWGF fully gated (401) | New `EWGF_API_KEY` secret + graceful degrade + MMR-only fallback (§7.4) |
-| In-game rank = EWGF `currentSeasonDanRank` only | `ranks.json.rankTier` = normalized dan int; `rankedGames` = wins+losses (§7.2) |
+| Public API = `/external/battles` only (free tier: last 50, 24h delay, no profile) | Rank/usage **derived from battles**; `rankedGames` = ranked battles in-window; names not ids (§7.2) |
 | No EWGF per-char all-time peak | Peak = running max over our snapshots + roster fallback (§7.2) |
 | Wavu = HTML scrape, publishes σ² + confidence buckets | `glicko.json`: `deviation`→`sigmaSquared`, add `confidence`; drop `PROVISIONAL_RD` (§7.3) |
 | Both providers share character names | Character aliasing simplified to name⇄slug (§7.6) |

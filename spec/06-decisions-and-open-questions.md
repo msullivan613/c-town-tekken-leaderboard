@@ -37,18 +37,20 @@ The spike is complete. [`07-external-api-reference.md`](./07-external-api-refere
 records the **verified** EWGF + Wavu contracts, rank map, character list, and DOM
 structure, observed live via the crew's own account (`3fee-J699-M7An`). Resolutions:
 
-1. **EWGF API** — `GET https://api.ewgf.gg/player-stats/{polarisId}` → `PlayerDTO`;
-   in-game rank = `currentSeasonDanRank` (int) via the verified `rankOrderMap`;
-   `rankedGames = wins + losses`. ✅ *Except:* it **requires an API key** — see the
-   one remaining action item below.
+1. **EWGF API** — public `GET https://api.ewgf.gg/external/battles/{tekkenId}` →
+   `{ data: EwgfBattle[] }`; in-game rank/usage are **derived from the battle list**
+   (latest `dan_rank` name per character via `rankFromName`; `rankedGames` = ranked
+   battles in the last-50 window). Free tier = 100 req/day, last 50 battles, 24h delay,
+   no profile metadata. ✅ *Except:* it **requires an API key** — see the one remaining
+   action item below.
 2. **Wavu Wank** — no per-player JSON; `?_format=json` returns HTML. Scrape the
    profile page's stable `.rating-group`/`.rating` DOM; it publishes **μ** and **σ²**
    and buckets characters into Leaderboard/Unqualified/Provisional itself. Anonymous,
    ToS-respecting. ✅
-3. **`tekken_id` lookup** — `GET /player-stats/search?query=<tag>` (gated); manual
-   helper `resolve-id.ts`. ✅
-4. **Character roster** — verified `characterIdMap`; both providers share names, so no
-   alias maps needed. ✅
+3. **`tekken_id` lookup** — no public name search; take the id from the member's
+   profile URL (`ewgf.gg/player/<tekken_id>`), verified by the `resolve-id.ts` helper. ✅
+4. **Character roster** — both providers use display names, so `canonicalizeCharacter`
+   is the single mapper; no alias maps needed. ✅
 
 ### The one true remaining external dependency
 

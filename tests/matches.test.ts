@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { buildMatches, parseEwgfDate } from '../scripts/online-stats/matches';
-import type { BattleDTO } from '../scripts/online-stats/ewgf';
+import { buildMatches } from '../scripts/online-stats/matches';
+import type { EwgfBattle } from '../scripts/online-stats/ewgf';
 import type { AppConfig } from '@/types/data-files';
 import type { Player } from '@/types/domain';
 
@@ -12,48 +12,40 @@ const P = { matt: '3feeJ699M7An', nick: '2b3c4d5e6f70' };
 const CFG = { matches: { recentWindowDays: 30, feedMaxPerPlayer: 40 } } as AppConfig;
 const NOW = new Date('2026-06-30T08:00:00Z');
 
-function battle(o: Partial<BattleDTO> & Pick<BattleDTO, 'date' | 'player1PolarisId' | 'player2PolarisId'>): BattleDTO {
+function battle(
+  o: Partial<EwgfBattle> & Pick<EwgfBattle, 'battle_at' | 'p1_tekken_id' | 'p2_tekken_id'>,
+): EwgfBattle {
   return {
-    battleType: 2,
-    player1Name: o.player1PolarisId,
-    player1CharacterId: 6,
-    player1RegionId: 2,
-    player1DanRank: 27,
-    player2Name: o.player2PolarisId,
-    player2CharacterId: 8,
-    player2RegionId: 2,
-    player2DanRank: 25,
-    player1RoundsWon: 3,
-    player2RoundsWon: 1,
+    battle_type: 'RANKED_BATTLE',
     winner: 1,
+    p1_name: o.p1_tekken_id,
+    p1_char: 'Jin',
+    p1_region: 'Americas',
+    p1_dan_rank: 'Tekken God',
+    p1_rounds_won: 3,
+    p2_name: o.p2_tekken_id,
+    p2_char: 'Kazuya',
+    p2_region: 'Americas',
+    p2_dan_rank: 'Tekken King',
+    p2_rounds_won: 1,
     ...o,
-  } as BattleDTO;
+  } as EwgfBattle;
 }
-
-describe('parseEwgfDate', () => {
-  it('parses "MM/dd/yyyy HH:mm:ss UTC" to ISO', () => {
-    expect(parseEwgfDate('06/29/2026 21:30:00 UTC')).toBe('2026-06-29T21:30:00.000Z');
-  });
-  it('tolerates missing seconds and returns null on garbage', () => {
-    expect(parseEwgfDate('6/1/2026 09:05')).toBe('2026-06-01T09:05:00.000Z');
-    expect(parseEwgfDate('yesterday')).toBeNull();
-  });
-});
 
 describe('buildMatches', () => {
   it('dedups a crew battle that appears in both players’ feeds', () => {
-    const b = battle({ date: '06/29/2026 21:30:00 UTC', player1PolarisId: P.matt, player2PolarisId: P.nick });
+    const b = battle({ battle_at: '2026-06-29T21:30:00Z', p1_tekken_id: P.matt, p2_tekken_id: P.nick });
     const res = buildMatches([b, { ...b }], PLAYERS, [], CFG, NOW);
     expect(res.matches).toHaveLength(1);
     expect(res.crewMatchCount).toBe(1);
     expect(res.feedMatchCount).toBe(0);
   });
 
-  it('classifies crew vs external and resolves polarisId → roster id', () => {
+  it('classifies crew vs external and resolves tekken_id → roster id', () => {
     const res = buildMatches(
       [
-        battle({ date: '06/29/2026 21:30:00 UTC', player1PolarisId: P.matt, player2PolarisId: P.nick }),
-        battle({ date: '06/30/2026 02:00:00 UTC', player1PolarisId: P.matt, player2PolarisId: 'RANDO123', player2Name: 'Rando' }),
+        battle({ battle_at: '2026-06-29T21:30:00Z', p1_tekken_id: P.matt, p2_tekken_id: P.nick }),
+        battle({ battle_at: '2026-06-30T02:00:00Z', p1_tekken_id: P.matt, p2_tekken_id: 'RANDO123', p2_name: 'Rando' }),
       ],
       PLAYERS,
       [],
@@ -68,9 +60,9 @@ describe('buildMatches', () => {
     expect(ext.b.name).toBe('Rando');
   });
 
-  it('maps characterId → slug and danRank → rank slug', () => {
+  it('maps character name → slug and rank name → rank slug', () => {
     const res = buildMatches(
-      [battle({ date: '06/29/2026 21:30:00 UTC', player1PolarisId: P.matt, player2PolarisId: P.nick, player1CharacterId: 12, player1DanRank: 21 })],
+      [battle({ battle_at: '2026-06-29T21:30:00Z', p1_tekken_id: P.matt, p2_tekken_id: P.nick, p1_char: 'Devil Jin', p1_dan_rank: 'Fujin' })],
       PLAYERS,
       [],
       CFG,
@@ -81,11 +73,22 @@ describe('buildMatches', () => {
     expect(res.matches[0].b.character).toBe('kazuya');
   });
 
+  it('maps the string battleType enum to MatchType', () => {
+    const res = buildMatches(
+      [battle({ battle_at: '2026-06-29T21:30:00Z', p1_tekken_id: P.matt, p2_tekken_id: 'RANDO', p2_name: 'R', battle_type: 'PLAYER_BATTLE' })],
+      PLAYERS,
+      [],
+      CFG,
+      NOW,
+    );
+    expect(res.matches[0].battleType).toBe('player');
+  });
+
   it('keeps crew matches forever but prunes non-crew outside the window', () => {
     const res = buildMatches(
       [
-        battle({ date: '01/01/2026 10:00:00 UTC', player1PolarisId: P.matt, player2PolarisId: P.nick }), // old crew → kept
-        battle({ date: '01/01/2026 11:00:00 UTC', player1PolarisId: P.matt, player2PolarisId: 'RANDO', player2Name: 'R' }), // old feed → pruned
+        battle({ battle_at: '2026-01-01T10:00:00Z', p1_tekken_id: P.matt, p2_tekken_id: P.nick }), // old crew → kept
+        battle({ battle_at: '2026-01-01T11:00:00Z', p1_tekken_id: P.matt, p2_tekken_id: 'RANDO', p2_name: 'R' }), // old feed → pruned
       ],
       PLAYERS,
       [],
@@ -100,10 +103,10 @@ describe('buildMatches', () => {
     const cfg = { matches: { recentWindowDays: 30, feedMaxPerPlayer: 2 } } as AppConfig;
     const feed = [10, 11, 12, 13].map((hh) =>
       battle({
-        date: `06/29/2026 ${hh}:00:00 UTC`,
-        player1PolarisId: P.matt,
-        player2PolarisId: `RAND${hh}`,
-        player2Name: `R${hh}`,
+        battle_at: `2026-06-29T${hh}:00:00Z`,
+        p1_tekken_id: P.matt,
+        p2_tekken_id: `RAND${hh}`,
+        p2_name: `R${hh}`,
       }),
     );
     const res = buildMatches(feed, PLAYERS, [], cfg, NOW);
@@ -112,14 +115,14 @@ describe('buildMatches', () => {
 
   it('merges with prior matches (append-only crew history)', () => {
     const first = buildMatches(
-      [battle({ date: '06/28/2026 20:00:00 UTC', player1PolarisId: P.matt, player2PolarisId: P.nick })],
+      [battle({ battle_at: '2026-06-28T20:00:00Z', p1_tekken_id: P.matt, p2_tekken_id: P.nick })],
       PLAYERS,
       [],
       CFG,
       NOW,
     );
     const second = buildMatches(
-      [battle({ date: '06/29/2026 20:00:00 UTC', player1PolarisId: P.matt, player2PolarisId: P.nick })],
+      [battle({ battle_at: '2026-06-29T20:00:00Z', p1_tekken_id: P.matt, p2_tekken_id: P.nick })],
       PLAYERS,
       first.matches,
       CFG,

@@ -31,43 +31,50 @@ minute for a small crew.
 
 ## 3.2 EWGF client (`scripts/online-stats/ewgf.ts`)
 
-Contract **verified** — full detail in [§7.2](./07-external-api-reference.md#72-ewgf--in-game-rank-winslosses-tekken-power).
+Contract **verified live** — full detail in [§7.2](./07-external-api-reference.md#72-ewgf--recent-battles-drives-ranks--matches).
 
-- `GET https://api.ewgf.gg/player-stats/{polarisId}` → `PlayerDTO`.
-- **Requires** `Authorization: Bearer ${EWGF_API_KEY}` (every endpoint 401s without
-  it). Key comes from the Actions secret via `process.env.EWGF_API_KEY` (§7.4).
-- `polarisId` = the **dashed** `tekken_id` from `players.json` (e.g. `3fee-J699-M7An`).
+- `GET https://api.ewgf.gg/external/battles/{tekkenId}` → `{ _metadata, data: EwgfBattle[] }`.
+- **Requires** `Authorization: Bearer ${EWGF_API_KEY}` (the gateway 401s without a
+  valid key). Key comes from the Actions secret via `process.env.EWGF_API_KEY` (§7.4).
+- `tekkenId` = the `tekken_id` from `players.json`; dashes are stripped internally, so
+  either encoding works.
+- One fetch per player returns both the raw `battles` (for §4) and — since the free
+  tier has no profile endpoint — the per-character rank/usage **derived** from those
+  battles.
 
 ```ts
 export interface EwgfCharacterStat {
-  character: string;          // key of playedCharacters (already canonical, §7.6)
-  rank: string | null;        // rankOrderMap[currentSeasonDanRank], slugified
-  rankTier: number | null;    // normalized currentSeasonDanRank (§7.5)
-  rankedGames: number;        // wins + losses
-  region: string | null;      // from PlayerDTO.regionId
-  lastSeen: string | null;    // from PlayerDTO.latestBattle (unix → ISO)
+  character: string;          // canonicalizeCharacter(p{1,2}_char) (§7.6)
+  rank: string | null;        // rankFromName(latest dan_rank), slug (§7.5)
+  rankTier: number | null;    // rankFromName(latest dan_rank), tier (§7.5)
+  rankedGames: number;        // count of RANKED_BATTLE in the last-50 window
+  region: string | null;      // region of the latest battle
+  lastSeen: string | null;    // battle_at of the latest battle (ISO)
 }
-export async function getPlayerCharacters(
+export async function getPlayer(
   tekkenId: string,
   apiKey: string,
-): Promise<EwgfCharacterStat[]>;
+  baseUrl: string,
+  battlesPath: string,
+): Promise<{ characters: EwgfCharacterStat[]; battles: EwgfBattle[] }>;
 ```
 
 Responsibilities:
-- Fetch the DTO; iterate `playedCharacters` (key = character name); map
-  `currentSeasonDanRank` through `rankOrderMap` + normalization (§7.5);
-  `rankedGames = wins + losses`.
+- Fetch battles; for each character the player appears on, take the latest battle's
+  `dan_rank` (→ `rankFromName`, §7.5) as their current rank and count `RANKED_BATTLE`s.
 - Character names come through canonical (§7.6); an unrecognized name is
   `console.warn`ed and skipped.
-- **`EWGF_API_KEY` absent/invalid ⇒ skip EWGF entirely** and return `[]` for all
+- **`EWGF_API_KEY` absent/invalid ⇒ skip EWGF entirely** and return empties for all
   players; the run still writes `glicko.json` from Wavu (graceful degrade, §7.4).
-- Never throw on one player's failure — log, return `[]`, continue (brief §5.1). On an
+- Never throw on one player's failure — log, return empty, continue (brief §5.1). On an
   EWGF outage the pair keeps yesterday's committed data (overwrite only on success +
   commit-if-changed).
 
-**`polarisId` resolution** when onboarding a member (not on cron):
-`GET /player-stats/search?query=<tag>` → `PlayerSearchDTO[]` (also key-gated). A manual
-helper `scripts/online-stats/resolve-id.ts <tag>` wraps this to fill `players.json`.
+**`tekken_id` when onboarding a member** (not on cron): the public API has no name
+search, so grab the id from the member's profile URL
+(`https://ewgf.gg/player/<tekken_id>`); the helper
+`npm run resolve-id -- "<tekken_id>"` (`scripts/online-stats/resolve-id.ts`) fetches
+their battles and prints the resolved name + characters to confirm it's correct.
 
 ## 3.3 Wavu Wank client (`scripts/online-stats/wavu.ts`)
 
