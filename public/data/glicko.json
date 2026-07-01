@@ -1,62 +1,6 @@
 {
   "schemaVersion": 1,
   "source": "wavu",
-  "generatedAt": "2026-06-30T08:01:40Z",
-  "pairs": [
-    {
-      "pairId": "1a2b-3c4d-5e6f:king",
-      "playerId": "alex",
-      "character": "king",
-      "rating": 1710,
-      "sigmaSquared": 61,
-      "confidence": "leaderboard",
-      "provisional": false,
-      "games": 401,
-      "lastUpdated": "2026-06-29T00:00:00Z"
-    },
-    {
-      "pairId": "2b3c-4d5e-6f70:kazuya",
-      "playerId": "nick",
-      "character": "kazuya",
-      "rating": 1802,
-      "sigmaSquared": 54,
-      "confidence": "leaderboard",
-      "provisional": false,
-      "games": 705,
-      "lastUpdated": "2026-06-30T00:00:00Z"
-    },
-    {
-      "pairId": "2b3c-4d5e-6f70:devil_jin",
-      "playerId": "nick",
-      "character": "devil_jin",
-      "rating": 1655,
-      "sigmaSquared": 118,
-      "confidence": "provisional",
-      "provisional": true,
-      "games": 88,
-      "lastUpdated": "2026-06-27T00:00:00Z"
-    },
-    {
-      "pairId": "3fee-J699-M7An:jin",
-      "playerId": "matt",
-      "character": "jin",
-      "rating": 1875,
-      "sigmaSquared": 48,
-      "confidence": "leaderboard",
-      "provisional": false,
-      "games": 1012,
-      "lastUpdated": "2026-06-29T00:00:00Z"
-    },
-    {
-      "pairId": "3fee-J699-M7An:devil_jin",
-      "playerId": "matt",
-      "character": "devil_jin",
-      "rating": 1740,
-      "sigmaSquared": 72,
-      "confidence": "leaderboard",
-      "provisional": false,
-      "games": 176,
-      "lastUpdated": "2026-06-28T00:00:00Z"
-    }
-  ]
+  "generatedAt": "2026-07-01T00:00:00Z",
+  "pairs": []
 }

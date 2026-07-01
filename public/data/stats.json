@@ -1,76 +1,8 @@
 {
-  "basedOnMatchCount": 7,
-  "charMatchups": {
-    "alex:king|matt:jin": {
-      "matchesA": 0,
-      "matchesB": 1
-    },
-    "alex:king|nick:kazuya": {
-      "matchesA": 1,
-      "matchesB": 0
-    },
-    "matt:devil_jin|nick:kazuya": {
-      "matchesA": 0,
-      "matchesB": 1
-    },
-    "matt:jin|nick:kazuya": {
-      "matchesA": 1,
-      "matchesB": 0
-    }
-  },
-  "generatedAt": "2026-06-30T08:00:00.000Z",
-  "headToHead": {
-    "alex|matt": {
-      "matchesA": 0,
-      "matchesB": 1,
-      "roundsA": 0,
-      "roundsB": 3
-    },
-    "alex|nick": {
-      "matchesA": 1,
-      "matchesB": 0,
-      "roundsA": 3,
-      "roundsB": 2
-    },
-    "matt|nick": {
-      "matchesA": 1,
-      "matchesB": 1,
-      "roundsA": 5,
-      "roundsB": 4
-    }
-  },
-  "players": {
-    "alex": {
-      "charUsage": {
-        "king": 3
-      },
-      "matchLosses": 1,
-      "matchWins": 2,
-      "mostPlayedCharacter": "king",
-      "totalMatches": 3,
-      "winRate": 0.667
-    },
-    "matt": {
-      "charUsage": {
-        "devil_jin": 1,
-        "jin": 3
-      },
-      "matchLosses": 1,
-      "matchWins": 3,
-      "mostPlayedCharacter": "jin",
-      "totalMatches": 4,
-      "winRate": 0.75
-    },
-    "nick": {
-      "charUsage": {
-        "kazuya": 4
-      },
-      "matchLosses": 3,
-      "matchWins": 1,
-      "mostPlayedCharacter": "kazuya",
-      "totalMatches": 4,
-      "winRate": 0.25
-    }
-  },
-  "schemaVersion": 2
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-01T00:00:00Z",
+  "basedOnMatchCount": 0,
+  "headToHead": {},
+  "players": {},
+  "charMatchups": {}
 }

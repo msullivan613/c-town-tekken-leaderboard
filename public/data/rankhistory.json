@@ -1,55 +1,6 @@
 {
   "schemaVersion": 1,
   "source": "ewgf",
-  "updatedAt": "2026-06-30T08:00:12Z",
-  "series": {
-    "1a2b-3c4d-5e6f:king": {
-      "playerId": "alex",
-      "character": "king",
-      "points": [
-        ["2026-06-27", 20],
-        ["2026-06-28", 21],
-        ["2026-06-29", 21],
-        ["2026-06-30", 21]
-      ]
-    },
-    "2b3c-4d5e-6f70:kazuya": {
-      "playerId": "nick",
-      "character": "kazuya",
-      "points": [
-        ["2026-06-27", 24],
-        ["2026-06-28", 25],
-        ["2026-06-29", 25],
-        ["2026-06-30", 25]
-      ]
-    },
-    "2b3c-4d5e-6f70:devil_jin": {
-      "playerId": "nick",
-      "character": "devil_jin",
-      "points": [
-        ["2026-06-28", 19],
-        ["2026-06-29", 20],
-        ["2026-06-30", 20]
-      ]
-    },
-    "3fee-J699-M7An:jin": {
-      "playerId": "matt",
-      "character": "jin",
-      "points": [
-        ["2026-06-27", 26],
-        ["2026-06-28", 27],
-        ["2026-06-29", 27],
-        ["2026-06-30", 27]
-      ]
-    },
-    "3fee-J699-M7An:devil_jin": {
-      "playerId": "matt",
-      "character": "devil_jin",
-      "points": [
-        ["2026-06-28", 20],
-        ["2026-06-29", 21],
-        ["2026-06-30", 21]
-      ]
-    }
-  }
+  "updatedAt": "2026-07-01T00:00:00Z",
+  "series": {}
 }

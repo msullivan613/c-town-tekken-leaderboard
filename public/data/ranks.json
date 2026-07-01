@@ -1,67 +1,6 @@
 {
   "schemaVersion": 1,
   "source": "ewgf",
-  "generatedAt": "2026-06-30T08:00:12Z",
-  "pairs": [
-    {
-      "pairId": "1a2b-3c4d-5e6f:king",
-      "playerId": "alex",
-      "tekken_id": "1a2b-3c4d-5e6f",
-      "character": "king",
-      "rank": "fujin",
-      "rankTier": 21,
-      "rankedGames": 412,
-      "region": "us",
-      "characterPeakRank": "raijin",
-      "lastSeen": "2026-06-29T19:02:00Z"
-    },
-    {
-      "pairId": "2b3c-4d5e-6f70:kazuya",
-      "playerId": "nick",
-      "tekken_id": "2b3c-4d5e-6f70",
-      "character": "kazuya",
-      "rank": "tekken_king",
-      "rankTier": 25,
-      "rankedGames": 733,
-      "region": "us",
-      "characterPeakRank": "tekken_emperor",
-      "lastSeen": "2026-06-30T02:41:00Z"
-    },
-    {
-      "pairId": "2b3c-4d5e-6f70:devil_jin",
-      "playerId": "nick",
-      "tekken_id": "2b3c-4d5e-6f70",
-      "character": "devil_jin",
-      "rank": "battle_ruler",
-      "rankTier": 20,
-      "rankedGames": 96,
-      "region": "us",
-      "characterPeakRank": "battle_ruler",
-      "lastSeen": "2026-06-27T23:15:00Z"
-    },
-    {
-      "pairId": "3fee-J699-M7An:jin",
-      "playerId": "matt",
-      "tekken_id": "3fee-J699-M7An",
-      "character": "jin",
-      "rank": "tekken_god",
-      "rankTier": 27,
-      "rankedGames": 1043,
-      "region": "us",
-      "characterPeakRank": "tekken_god_supreme",
-      "lastSeen": "2026-06-29T21:14:00Z"
-    },
-    {
-      "pairId": "3fee-J699-M7An:devil_jin",
-      "playerId": "matt",
-      "tekken_id": "3fee-J699-M7An",
-      "character": "devil_jin",
-      "rank": "fujin",
-      "rankTier": 21,
-      "rankedGames": 187,
-      "region": "us",
-      "characterPeakRank": "raijin",
-      "lastSeen": "2026-06-28T20:03:00Z"
-    }
-  ]
+  "generatedAt": "2026-07-01T00:00:00Z",
+  "pairs": []
 }

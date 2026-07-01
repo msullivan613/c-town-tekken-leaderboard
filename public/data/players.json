@@ -2,36 +2,67 @@
   "schemaVersion": 1,
   "players": [
     {
-      "id": "matt",
+      "id": "sugarfree",
       "tekken_id": "3fee-J699-M7An",
       "player_tag": "SugarFree",
       "platform": "steam",
-      "main_character": "jin",
+      "main_character": "bryan",
       "peak_rank": null
     },
     {
-      "id": "alex",
-      "tekken_id": "1a2b-3c4d-5e6f",
-      "player_tag": "AlxDestroyer",
+      "id": "bigman",
+      "tekken_id": "4899-Drd8-678h",
+      "player_tag": "BigMan",
       "platform": "steam",
-      "main_character": "king",
+      "main_character": "kuma",
       "peak_rank": null
     },
     {
-      "id": "nick",
-      "tekken_id": "2b3c-4d5e-6f70",
-      "player_tag": "NickTheKnife",
-      "platform": "playstation",
-      "main_character": "kazuya",
-      "peak_rank": "tekken_emperor",
-      "avatar": "avatars/nick.svg"
+      "id": "burny",
+      "tekken_id": "4fLe-2B6Q-34fJ",
+      "player_tag": "Burny",
+      "platform": "steam",
+      "main_character": "victor",
+      "peak_rank": null
     },
     {
-      "id": "dev",
-      "tekken_id": null,
-      "player_tag": "DevMain",
-      "platform": "xbox",
+      "id": "fop",
+      "tekken_id": "3E4R-n7J9-e32T",
+      "player_tag": "Fop",
+      "platform": "steam",
+      "main_character": "reina",
+      "peak_rank": null
+    },
+    {
+      "id": "stone",
+      "tekken_id": "4TiQ-J6FA-rHJa",
+      "player_tag": "Stone",
+      "platform": "steam",
       "main_character": "dragunov",
+      "peak_rank": null
+    },
+    {
+      "id": "mickrus",
+      "tekken_id": "2tYa-R4NB-GJJr",
+      "player_tag": "Mickrus",
+      "platform": "steam",
+      "main_character": "lee",
+      "peak_rank": null
+    },
+    {
+      "id": "nullified",
+      "tekken_id": "3JAY-QR5R-dNJh",
+      "player_tag": "Nullified",
+      "platform": "steam",
+      "main_character": "fahkumram",
+      "peak_rank": null
+    },
+    {
+      "id": "chamk",
+      "tekken_id": "37iF-Jy3H-YdTJ",
+      "player_tag": "ChamK",
+      "platform": "steam",
+      "main_character": "kazuya",
       "peak_rank": null
     }
   ]
