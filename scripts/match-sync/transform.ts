@@ -93,8 +93,6 @@ export function buildMatches(rows: SheetRow[], players: Player[]): BuildResult {
       scoreA,
       scoreB,
       matchType: normMatchType(raw.match_type),
-      event: (raw.event ?? '').trim() || null,
-      notes: (raw.notes ?? '').trim() || null,
     });
   });
 

@@ -72,7 +72,6 @@ export function MatchesPage() {
               <th className="px-3 py-2">Score</th>
               <th className="px-3 py-2">Player B</th>
               <th className="px-3 py-2">Type</th>
-              <th className="px-3 py-2">Event</th>
             </tr>
           </thead>
           <tbody>
@@ -95,7 +94,6 @@ export function MatchesPage() {
                   </span>
                 </td>
                 <td className="px-3 py-2 text-muted">{matchTypeLabel(m.matchType)}</td>
-                <td className="px-3 py-2 text-muted">{m.event ?? '—'}</td>
               </tr>
             ))}
             {rows.length === 0 && (

@@ -265,9 +265,7 @@ from the set score (§4.4), so the sheet only records set scores.
       "charB": "king",
       "scoreA": 3,                  // games won by A in the set
       "scoreB": 1,
-      "matchType": "ranked",        // "quick" | "ranked" | "player" | "group" | null (offline not tracked)
-      "event": null,                // optional event/session name
-      "notes": null
+      "matchType": "ranked"         // "quick" | "ranked" | "player" | "group" | null (offline not tracked)
     }
   ],
   "rejected": [

@@ -82,8 +82,6 @@ export interface Match {
   scoreA: number; // games won by A
   scoreB: number; // games won by B
   matchType: MatchType;
-  event: string | null;
-  notes: string | null;
 }
 export interface RejectedRow {
   rowNumber: number;

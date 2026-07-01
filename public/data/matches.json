@@ -14,9 +14,7 @@
       "charB": "king",
       "scoreA": 3,
       "scoreB": 1,
-      "matchType": "ranked",
-      "event": "Tuesday sesh",
-      "notes": null
+      "matchType": "ranked"
     },
     {
       "id": "2026-06-28#1",
@@ -27,9 +25,7 @@
       "charB": "jin",
       "scoreA": 2,
       "scoreB": 3,
-      "matchType": "player",
-      "event": "Tuesday sesh",
-      "notes": null
+      "matchType": "player"
     },
     {
       "id": "2026-06-29#0",
@@ -40,9 +36,7 @@
       "charB": "kazuya",
       "scoreA": 3,
       "scoreB": 2,
-      "matchType": "ranked",
-      "event": null,
-      "notes": "close set"
+      "matchType": "ranked"
     },
     {
       "id": "2026-06-29#1",
@@ -53,9 +47,7 @@
       "charB": "dragunov",
       "scoreA": 3,
       "scoreB": 0,
-      "matchType": "quick",
-      "event": null,
-      "notes": null
+      "matchType": "quick"
     },
     {
       "id": "2026-06-30#0",
@@ -66,9 +58,7 @@
       "charB": "king",
       "scoreA": 1,
       "scoreB": 3,
-      "matchType": "group",
-      "event": null,
-      "notes": null
+      "matchType": "group"
     }
   ],
   "rejected": []
