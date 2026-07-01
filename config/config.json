@@ -5,7 +5,7 @@
   },
   "leaderboard": {
     "defaultView": "players",
-    "defaultSort": "rank",
+    "defaultSort": "mmr",
     "bestPairMetric": "mmr"
   },
   "matches": {
