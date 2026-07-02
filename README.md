@@ -1,72 +1,93 @@
-# C-Town Tekken Leaderboard
+# Tekken Leaderboard
 
-A free, serverless, self-updating Tekken 8 scoreboard for the crew. Static
-React + Vite app on GitHub Pages; committed JSON under `public/data/` is the only
-"database." A scheduled GitHub Action refreshes it. Built to the spec in
-[`spec/`](./spec).
+A free, serverless, self-updating Tekken 8 leaderboard. One React + Vite codebase
+renders **N independently-deployed sites** on GitHub Pages; committed JSON under
+`sites/<slug>/data/` is the only "database." A scheduled GitHub Action refreshes it.
+There is no backend, no runtime call to a third party from the browser, no auth.
+
+Currently two sites live in this repo: **`c-town`** (the default) and **`area-256`**.
+
+> **Docs vs. code:** [`spec/`](./spec) and [`PROJECT-BRIEF.md`](./PROJECT-BRIEF.md)
+> are design records. Where they and the code disagree, the code wins — the specs
+> have been brought back in line here, but [`CLAUDE.md`](./CLAUDE.md) is the
+> fastest orientation to the *current* system.
 
 ## Quick start
 
 ```bash
 npm install
-npm run dev          # local dev server (reads public/data/*.json fixtures)
-npm run build        # typecheck + production build → dist/
+npm run dev          # dev server for the default site (SITE=c-town)
+npm run build        # tsc --noEmit, then build every site into dist/<slug>/
 npm test             # vitest (pipeline math + committed-data validation)
 npm run lint
+npm run format
+
+# Work against a specific site (default is c-town):
+SITE=area-256 npm run dev
 ```
 
 ## How it works
 
 | Piece | What |
 |---|---|
-| `public/data/*.json` | the database — roster + generated stats, keyed per `(player, character)` pair |
-| `scripts/online-stats/` | daily job: one EWGF call per player → in-game rank + Wavu MMR (`ranks/glicko/*history.json`) **and** matches from EWGF battles (`matches.json` + derived `stats.json`) |
-| `src/` | the React app (leaderboard, profiles, head-to-head, matches) |
-| `config/config.json` | all tunables (thresholds, cron, match retention) — read by both app and pipelines |
+| `sites/<slug>/data/*.json` | the database — roster + generated stats, keyed per `(player, character)` pair |
+| `config/config.json` + `sites/<slug>/config.json` | shared defaults + per-site branding/overrides, deep-merged; **neither alone is a complete config** |
+| `scripts/online-stats/` | the refresh job: per player, tknow in-game rank + match history, Wavu Glicko MMR, and (opt-in) ewgf custom-lobby matches → `ranks/glicko/*history/matches/stats.json` |
+| `src/` | the React app (leaderboard, profiles, head-to-head, matches), shared with the pipeline via `@/` modules |
+| `public/` | **shared** static assets only (character icons, avatars) — *not* data |
 
-Matches are **gathered automatically** from EWGF's battle data (no manual entry):
-crew-vs-crew games power head-to-head, and each player's recent games vs anyone
-power the activity feed.
+### Data sources (all free; only ewgf needs a key)
 
-Data flow and every schema are documented in [`spec/`](./spec) — start with
+- **[tknow.gg](https://www.tknow.gg)** (`api.tk8now.pe.kr`, no API key — gated only by
+  an `Origin`/`Referer` check) — per-character in-game rank + quick/ranked match history.
+- **[Wavu Wank](https://wank.wavu.wiki)** (HTML scrape, no key) — Glicko-2 MMR (μ / σ²).
+- **[ewgf.gg](https://ewgf.gg)** public API (`Bearer` key) — **group/player
+  (custom-lobby) matches only**, which tknow doesn't surface. This is the *only*
+  place crew members meet head-to-head, so it powers the H2H feature. It is
+  **opt-in per site** (`headToHead.enabled` + `EWGF_API_KEY`); with the gate off a
+  site never touches ewgf and hides the H2H page. See [`spec/08`](./spec/08-ewgf-group-player-matches.md).
+
+Matches are **gathered automatically** (no manual entry, no spreadsheet). Data flow
+and every schema live in [`spec/`](./spec) — start with
 [`spec/01-architecture.md`](./spec/01-architecture.md).
 
-## Running the pipelines locally
+## Running the pipeline locally
 
 ```bash
-EWGF_API_KEY=<key> npm run online-stats       # ranks + MMR + history + matches + stats
-EWGF_API_KEY=<key> npm run resolve-id -- "3fee-J699-M7An"  # verify a tekken_id resolves
+npm run online-stats                       # SITE=c-town by default
+SITE=area-256 npm run online-stats         # a specific site
+EWGF_API_KEY=<key> npm run online-stats    # also gather group/player matches (c-town only, opt-in)
+npm run resolve-id -- "3fee-J699-M7An"     # verify a tekken_id resolves on tknow
 ```
 
-The job writes deterministically and only changes files when the data actually
-changed, so the commit-if-changed gate in CI produces no-op-free history.
+Output is written deterministically (recursively key-sorted, pretty-printed) and
+each file is only rewritten when its data actually changed, so the commit-if-changed
+gate in CI produces no-op-free history.
 
 ## Deployment
 
-`.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages on
-every push to `main` that touches app/data/config. Set the Pages source to
-"GitHub Actions" in repo settings. Vite `base` is `/c-town-tekken-leaderboard/`;
-routing uses `HashRouter` so deep links survive a refresh.
+- `.github/workflows/online-stats.yml` — cron every 6h + manual dispatch. Loops
+  over `sites/*/`, runs the pipeline per site, stages only generated JSON (never the
+  hand-maintained `players.json`), and commits/pushes only if changed. That push to
+  `main` triggers the deploy.
+- `.github/workflows/deploy.yml` — on push to `main` touching app/data/config, runs
+  `npm test && npm run build` and publishes `dist/` to Pages. Set the Pages source to
+  "GitHub Actions". Vite `base` is `/<PAGES_REPO>/<slug>/`; routing uses `HashRouter`
+  so deep links survive a refresh.
 
 ## Human action items (not code)
 
-These are the only things the code can't do for itself:
-
-1. **`EWGF_API_KEY`** — EWGF's API is fully gated (every endpoint 401s). Add a
-   read key as a repository Actions secret. Without it the online-stats job
-   degrades gracefully to **MMR-only** (Wavu needs no key); the board shows `—`
-   for in-game rank and sorts by MMR, and no matches/head-to-head are gathered
-   (matches come from EWGF battles). See [`spec/07`](./spec/07-external-api-reference.md#74-ewgf-api-key-decision-resolves-the-biggest-open-risk).
-2. **Roster** — add crew members to `public/data/players.json`. Each member's
-   `tekken_id` is the id in their ewgf.gg profile URL
-   (`https://ewgf.gg/player/<tekken_id>`); `resolve-id` verifies it resolves. A
-   player without a `tekken_id` shows in the roster but has no
-   ranks/MMR/matches. Optional per-player `avatar` (a path
-   under `public/`, e.g. `"avatars/nick.svg"`) overrides the default
-   main-character portrait shown next to their name; without it the UI uses
-   the character portrait, then a colored initial.
-
-## Status
-
-The current `public/data/*.json` are **fixtures** (four sample players) so the
-app renders against real shapes. The first real pipeline runs replace them.
+1. **Roster** — add crew members by hand-editing `sites/<slug>/data/players.json`.
+   Each member's `tekken_id` is the id in their `tknow.gg/player/<id>` URL;
+   `resolve-id` verifies it before you commit. A player without a `tekken_id` shows
+   in the roster but has no ranks/MMR/matches. `main_character` may be a slug or
+   `null` (then the UI derives their highest-ranked character as their main).
+   Optional `avatar` is a path under `public/` (e.g. `"avatars/nick.png"`); without
+   it the UI uses the character portrait, then a colored initial.
+2. **`EWGF_API_KEY`** *(optional)* — only needed for a site with
+   `headToHead.enabled: true`. Get a free key from ewgf.gg (account → API) and add
+   it as a repository Actions secret. Without it, everything else still works; that
+   site just gathers no custom-lobby matches. See
+   [`spec/08`](./spec/08-ewgf-group-player-matches.md).
+</content>
+</invoke>
