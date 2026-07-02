@@ -39,10 +39,14 @@ jobs:
         run: |
           git config user.name  "ctown-bot"
           git config user.email "ctown-bot@users.noreply.github.com"
-          # players.json is hand-maintained; only stage generated files.
-          git add sites/*/data/ranks.json sites/*/data/glicko.json \
-                  sites/*/data/rankhistory.json sites/*/data/mmrhistory.json \
-                  sites/*/data/matches.json sites/*/data/stats.json
+          # Stage every generated data file, then unstage the one hand-maintained
+          # file (players.json). Staging the whole data dir (rather than an explicit
+          # list) ensures cold-storage archives are committed too: matches.<year>.json
+          # (#19) and rankhistory/mmrhistory.<year>.json (#10). Those archives are what
+          # stats.json / the history charts are derived against, so dropping them
+          # desyncs the committed data (stats reference matches not in the repo).
+          git add sites/*/data/
+          git reset --quiet -- sites/*/data/players.json
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh online stats $(date -u +%F)"
             git push

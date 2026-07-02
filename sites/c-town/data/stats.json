@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 1817,
+  "basedOnMatchCount": 506,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -377,55 +377,51 @@
     "bigman": {
       "charUsage": {
         "heihachi": 2,
-        "kuma": 205,
-        "kunimitsu": 13,
+        "kuma": 56,
         "nina": 8,
-        "panda": 65,
+        "panda": 2,
         "paul": 2,
         "reina": 1
       },
-      "matchLosses": 148,
-      "matchWins": 148,
+      "matchLosses": 35,
+      "matchWins": 36,
       "mostPlayedCharacter": "kuma",
-      "totalMatches": 296,
-      "winRate": 0.5
+      "totalMatches": 71,
+      "winRate": 0.507
     },
     "burny": {
       "charUsage": {
         "clive": 2,
         "hwoarang": 6,
-        "paul": 68,
+        "paul": 49,
         "victor": 52
       },
       "matchLosses": 28,
-      "matchWins": 100,
-      "mostPlayedCharacter": "paul",
-      "totalMatches": 128,
-      "winRate": 0.781
+      "matchWins": 81,
+      "mostPlayedCharacter": "victor",
+      "totalMatches": 109,
+      "winRate": 0.743
     },
     "chamk": {
       "charUsage": {
-        "bryan": 6,
-        "devil_jin": 73,
-        "jin": 87,
-        "kazuya": 5,
-        "kunimitsu": 129
+        "devil_jin": 36,
+        "kunimitsu": 4
       },
-      "matchLosses": 130,
-      "matchWins": 170,
-      "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 300,
-      "winRate": 0.567
+      "matchLosses": 24,
+      "matchWins": 16,
+      "mostPlayedCharacter": "devil_jin",
+      "totalMatches": 40,
+      "winRate": 0.4
     },
     "code": {
       "charUsage": {
-        "leo": 39
+        "leo": 15
       },
-      "matchLosses": 17,
-      "matchWins": 22,
+      "matchLosses": 9,
+      "matchWins": 6,
       "mostPlayedCharacter": "leo",
-      "totalMatches": 39,
-      "winRate": 0.564
+      "totalMatches": 15,
+      "winRate": 0.4
     },
     "combatport9": {
       "charUsage": {
@@ -443,59 +439,57 @@
     "fop": {
       "charUsage": {
         "asuka": 4,
-        "devil_jin": 3,
         "lili": 4,
-        "reina": 223
+        "reina": 62
       },
-      "matchLosses": 96,
-      "matchWins": 138,
+      "matchLosses": 11,
+      "matchWins": 59,
       "mostPlayedCharacter": "reina",
-      "totalMatches": 234,
-      "winRate": 0.59
+      "totalMatches": 70,
+      "winRate": 0.843
     },
     "gnarlyidk": {
       "charUsage": {
-        "panda": 54
+        "panda": 36
       },
-      "matchLosses": 24,
-      "matchWins": 30,
+      "matchLosses": 16,
+      "matchWins": 20,
       "mostPlayedCharacter": "panda",
-      "totalMatches": 54,
+      "totalMatches": 36,
       "winRate": 0.556
     },
     "jardjay": {
       "charUsage": {
-        "lili": 41
+        "lili": 29
       },
-      "matchLosses": 32,
-      "matchWins": 9,
+      "matchLosses": 22,
+      "matchWins": 7,
       "mostPlayedCharacter": "lili",
-      "totalMatches": 41,
-      "winRate": 0.22
+      "totalMatches": 29,
+      "winRate": 0.241
     },
     "mickrus": {
       "charUsage": {
         "heihachi": 17,
         "jin": 1,
-        "lee": 65
+        "lee": 44
       },
-      "matchLosses": 33,
-      "matchWins": 50,
+      "matchLosses": 31,
+      "matchWins": 31,
       "mostPlayedCharacter": "lee",
-      "totalMatches": 83,
-      "winRate": 0.602
+      "totalMatches": 62,
+      "winRate": 0.5
     },
     "nullified": {
       "charUsage": {
-        "armor_king": 241,
-        "claudio": 11,
-        "fahkumram": 98
+        "armor_king": 3,
+        "fahkumram": 37
       },
-      "matchLosses": 193,
-      "matchWins": 157,
-      "mostPlayedCharacter": "armor_king",
-      "totalMatches": 350,
-      "winRate": 0.449
+      "matchLosses": 21,
+      "matchWins": 19,
+      "mostPlayedCharacter": "fahkumram",
+      "totalMatches": 40,
+      "winRate": 0.475
     },
     "nyx": {
       "charUsage": {
@@ -503,52 +497,50 @@
         "jin": 1,
         "kazuya": 1,
         "paul": 7,
-        "steve": 40
+        "steve": 26
       },
-      "matchLosses": 36,
-      "matchWins": 14,
+      "matchLosses": 27,
+      "matchWins": 9,
       "mostPlayedCharacter": "steve",
-      "totalMatches": 50,
-      "winRate": 0.28
+      "totalMatches": 36,
+      "winRate": 0.25
     },
     "slashuur": {
       "charUsage": {
         "armor_king": 1,
-        "dragunov": 152,
+        "dragunov": 7,
         "yoshimitsu": 3
       },
-      "matchLosses": 92,
-      "matchWins": 64,
+      "matchLosses": 6,
+      "matchWins": 5,
       "mostPlayedCharacter": "dragunov",
-      "totalMatches": 156,
-      "winRate": 0.41
+      "totalMatches": 11,
+      "winRate": 0.455
     },
     "stone": {
       "charUsage": {
-        "armor_king": 1,
-        "dragunov": 16,
+        "dragunov": 8,
         "eddy": 4,
-        "fahkumram": 3,
-        "kazuya": 5,
-        "law": 64,
-        "lee": 57,
+        "kazuya": 2,
+        "law": 32,
+        "lee": 7,
         "victor": 3
       },
-      "matchLosses": 51,
-      "matchWins": 102,
+      "matchLosses": 23,
+      "matchWins": 33,
       "mostPlayedCharacter": "law",
-      "totalMatches": 153,
-      "winRate": 0.667
+      "totalMatches": 56,
+      "winRate": 0.589
     },
     "sugarfree": {
       "charUsage": {
         "bryan": 9,
-        "yoshimitsu": 62
+        "yoshimitsu": 60
       },
-      "matchLosses": 36,
-      "matchWins": 35,
+      "matchLosses": 35,
+      "matchWins": 34,
       "mostPlayedCharacter": "yoshimitsu",
-      "totalMatches": 71,
+      "totalMatches": 69,
       "winRate": 0.493
     }
   },

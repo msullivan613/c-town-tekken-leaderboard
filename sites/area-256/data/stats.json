@@ -1,19 +1,18 @@
 {
-  "basedOnMatchCount": 3373,
+  "basedOnMatchCount": 624,
   "charMatchups": {},
   "generatedAt": "2026-07-02T13:44:05.711Z",
   "headToHead": {},
   "players": {
     "afriking": {
       "charUsage": {
-        "armor_king": 256,
-        "lars": 44
+        "armor_king": 40
       },
-      "matchLosses": 117,
-      "matchWins": 183,
+      "matchLosses": 10,
+      "matchWins": 30,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 300,
-      "winRate": 0.61
+      "totalMatches": 40,
+      "winRate": 0.75
     },
     "bard": {
       "charUsage": {
@@ -27,108 +26,85 @@
     },
     "bigkuma": {
       "charUsage": {
-        "dragunov": 45,
-        "jack8": 7,
-        "kuma": 248
+        "kuma": 40
       },
-      "matchLosses": 154,
-      "matchWins": 146,
+      "matchLosses": 20,
+      "matchWins": 20,
       "mostPlayedCharacter": "kuma",
-      "totalMatches": 300,
-      "winRate": 0.487
+      "totalMatches": 40,
+      "winRate": 0.5
     },
     "eonexodus": {
       "charUsage": {
-        "bryan": 47,
-        "heihachi": 30,
-        "kazuya": 223
+        "bryan": 18,
+        "kazuya": 22
       },
-      "matchLosses": 184,
-      "matchWins": 116,
+      "matchLosses": 24,
+      "matchWins": 16,
       "mostPlayedCharacter": "kazuya",
-      "totalMatches": 300,
-      "winRate": 0.387
+      "totalMatches": 40,
+      "winRate": 0.4
     },
     "falsecrustacean": {
       "charUsage": {
-        "heihachi": 10,
-        "hwoarang": 106,
-        "jin": 16
+        "hwoarang": 40
       },
-      "matchLosses": 51,
-      "matchWins": 81,
+      "matchLosses": 12,
+      "matchWins": 28,
       "mostPlayedCharacter": "hwoarang",
-      "totalMatches": 132,
-      "winRate": 0.614
+      "totalMatches": 40,
+      "winRate": 0.7
     },
     "goul": {
       "charUsage": {
-        "dragunov": 99,
-        "kunimitsu": 171,
-        "xiaoyu": 30
+        "dragunov": 40
       },
-      "matchLosses": 121,
-      "matchWins": 179,
-      "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 300,
-      "winRate": 0.597
-    },
-    "holycrow": {
-      "charUsage": {
-        "azucena": 67,
-        "shaheen": 7
-      },
-      "matchLosses": 28,
-      "matchWins": 46,
-      "mostPlayedCharacter": "azucena",
-      "totalMatches": 74,
-      "winRate": 0.622
+      "matchLosses": 20,
+      "matchWins": 20,
+      "mostPlayedCharacter": "dragunov",
+      "totalMatches": 40,
+      "winRate": 0.5
     },
     "kingbreadsticks": {
       "charUsage": {
-        "armor_king": 92,
-        "bryan": 15,
-        "dragunov": 23,
-        "king": 85,
-        "kunimitsu": 19,
+        "armor_king": 7,
+        "bryan": 8,
         "lars": 10,
-        "leroy": 42,
+        "leroy": 10,
         "lidia": 2,
-        "shaheen": 9,
         "victor": 3
       },
-      "matchLosses": 115,
-      "matchWins": 185,
-      "mostPlayedCharacter": "armor_king",
-      "totalMatches": 300,
-      "winRate": 0.617
+      "matchLosses": 16,
+      "matchWins": 24,
+      "mostPlayedCharacter": "leroy",
+      "totalMatches": 40,
+      "winRate": 0.6
     },
     "kragsloor": {
       "charUsage": {
-        "bryan": 44,
-        "dragunov": 67,
-        "fahkumram": 29,
+        "bryan": 4,
+        "dragunov": 14,
+        "fahkumram": 12,
         "kazuya": 3,
         "law": 3,
-        "lidia": 18,
-        "miary_zo": 2,
-        "steve": 7
+        "lidia": 2,
+        "miary_zo": 2
       },
-      "matchLosses": 48,
-      "matchWins": 125,
+      "matchLosses": 14,
+      "matchWins": 26,
       "mostPlayedCharacter": "dragunov",
-      "totalMatches": 173,
-      "winRate": 0.723
+      "totalMatches": 40,
+      "winRate": 0.65
     },
     "literally_kirby": {
       "charUsage": {
-        "king": 65
+        "king": 40
       },
-      "matchLosses": 34,
-      "matchWins": 31,
+      "matchLosses": 20,
+      "matchWins": 20,
       "mostPlayedCharacter": "king",
-      "totalMatches": 65,
-      "winRate": 0.477
+      "totalMatches": 40,
+      "winRate": 0.5
     },
     "nekomatameow": {
       "charUsage": {
@@ -142,95 +118,85 @@
     },
     "nullified": {
       "charUsage": {
-        "armor_king": 241,
-        "claudio": 11,
-        "fahkumram": 48
+        "armor_king": 3,
+        "fahkumram": 37
       },
-      "matchLosses": 169,
-      "matchWins": 131,
-      "mostPlayedCharacter": "armor_king",
-      "totalMatches": 300,
-      "winRate": 0.437
+      "matchLosses": 18,
+      "matchWins": 22,
+      "mostPlayedCharacter": "fahkumram",
+      "totalMatches": 40,
+      "winRate": 0.55
     },
     "oddlionss": {
       "charUsage": {
-        "heihachi": 95
+        "heihachi": 40
       },
-      "matchLosses": 42,
-      "matchWins": 53,
+      "matchLosses": 17,
+      "matchWins": 23,
       "mostPlayedCharacter": "heihachi",
-      "totalMatches": 95,
-      "winRate": 0.558
+      "totalMatches": 40,
+      "winRate": 0.575
     },
     "omni": {
       "charUsage": {
-        "lars": 32
+        "lars": 21
       },
-      "matchLosses": 5,
-      "matchWins": 27,
+      "matchLosses": 3,
+      "matchWins": 18,
       "mostPlayedCharacter": "lars",
-      "totalMatches": 32,
-      "winRate": 0.844
+      "totalMatches": 21,
+      "winRate": 0.857
     },
     "phine": {
       "charUsage": {
-        "azucena": 252,
-        "kunimitsu": 48
+        "azucena": 40
       },
-      "matchLosses": 92,
-      "matchWins": 208,
+      "matchLosses": 15,
+      "matchWins": 25,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 300,
-      "winRate": 0.693
+      "totalMatches": 40,
+      "winRate": 0.625
     },
     "puma": {
       "charUsage": {
-        "leroy": 49
+        "leroy": 32
       },
-      "matchLosses": 12,
-      "matchWins": 37,
+      "matchLosses": 7,
+      "matchWins": 25,
       "mostPlayedCharacter": "leroy",
-      "totalMatches": 49,
-      "winRate": 0.755
+      "totalMatches": 32,
+      "winRate": 0.781
     },
     "rev_grizz": {
       "charUsage": {
-        "dragunov": 2,
-        "eddy": 55,
-        "fahkumram": 94,
-        "kunimitsu": 146,
-        "leroy": 3
+        "fahkumram": 40
       },
-      "matchLosses": 123,
-      "matchWins": 177,
-      "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 300,
-      "winRate": 0.59
+      "matchLosses": 12,
+      "matchWins": 28,
+      "mostPlayedCharacter": "fahkumram",
+      "totalMatches": 40,
+      "winRate": 0.7
     },
     "skrt": {
       "charUsage": {
-        "bryan": 229,
-        "king": 5,
-        "kuma": 55,
-        "kunimitsu": 8,
-        "panda": 3
+        "bryan": 40
       },
-      "matchLosses": 157,
-      "matchWins": 143,
+      "matchLosses": 23,
+      "matchWins": 17,
       "mostPlayedCharacter": "bryan",
-      "totalMatches": 300,
-      "winRate": 0.477
+      "totalMatches": 40,
+      "winRate": 0.425
     },
     "sugarfree": {
       "charUsage": {
         "bryan": 4,
-        "yoshimitsu": 38
+        "yoshimitsu": 36
       },
-      "matchLosses": 14,
-      "matchWins": 28,
+      "matchLosses": 13,
+      "matchWins": 27,
       "mostPlayedCharacter": "yoshimitsu",
-      "totalMatches": 42,
-      "winRate": 0.667
+      "totalMatches": 40,
+      "winRate": 0.675
     }
   },
   "schemaVersion": 2
