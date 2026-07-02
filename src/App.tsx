@@ -21,32 +21,35 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-10 border-b border-border bg-bg/80 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center gap-6 px-4 py-3">
-          <NavLink to="/" className="group flex items-baseline gap-1 !text-fg hover:!text-fg">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 sm:gap-6">
+          <NavLink
+            to="/"
+            className="group flex items-baseline gap-1 !text-fg hover:!text-fg"
+          >
             {BRAND_PARTS.map((part, i) => (
               <span key={i} className="flex items-baseline gap-1">
                 {i > 0 && (
                   <span
-                    className="font-display text-2xl font-bold tracking-widest"
+                    className="font-display text-xl font-bold tracking-[0.15em] sm:text-2xl sm:tracking-widest"
                     style={{ color: 'rgb(var(--p1))' }}
                   >
                     ·
                   </span>
                 )}
-                <span className="font-display text-2xl font-bold tracking-widest">
+                <span className="font-display text-xl font-bold tracking-[0.15em] sm:text-2xl sm:tracking-widest">
                   {part}
                 </span>
               </span>
             ))}
           </NavLink>
-          <nav className="flex gap-5 text-sm">
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm sm:gap-5">
             {NAV.map((n) => (
               <NavLink
                 key={n.to}
                 to={n.to}
                 end={n.end}
                 className={({ isActive }) =>
-                  `eyebrow pb-0.5 ${
+                  `eyebrow whitespace-nowrap pb-0.5 tracking-[0.14em] sm:tracking-[0.22em] ${
                     isActive
                       ? '!text-fg [box-shadow:inset_0_-2px_0_rgb(var(--p2))]'
                       : 'hover:!text-fg'

@@ -48,30 +48,30 @@ export function LeaderboardTable({
       <table className="w-full border-separate border-spacing-y-1.5 text-sm">
         <thead>
           <tr className="text-left align-middle">
-            <th className="w-14 px-3 pb-1">
+            <th className="w-10 px-2 pb-1 sm:w-14 sm:px-3">
               <span className="eyebrow">#</span>
             </th>
-            <th className="px-3 pb-1">
+            <th className="px-2 pb-1 sm:px-3">
               <span className="eyebrow">Player</span>
             </th>
-            <th className="px-3 pb-1">
+            <th className="px-2 pb-1 sm:px-3">
               <span className="eyebrow">Character</span>
             </th>
-            <th className="px-3 pb-1">
+            <th className="px-2 pb-1 sm:px-3">
               <SortHeader
                 label="Rank"
                 active={sort === 'rank'}
                 onClick={() => onSortChange('rank')}
               />
             </th>
-            <th className="px-3 pb-1">
+            <th className="px-2 pb-1 sm:px-3">
               <SortHeader
                 label="MMR"
                 active={sort === 'mmr'}
                 onClick={() => onSortChange('mmr')}
               />
             </th>
-            <th className="hidden px-3 pb-1 sm:table-cell">
+            <th className="hidden px-2 pb-1 sm:table-cell sm:px-3">
               <span className="eyebrow">Peak</span>
             </th>
           </tr>
@@ -86,30 +86,34 @@ export function LeaderboardTable({
                 className="group bg-surface/70 transition-colors hover:bg-surface-2"
               >
                 <td
-                  className="rounded-l px-3 py-2.5"
+                  className="rounded-l px-2 py-2.5 sm:px-3"
                   style={{ boxShadow: `inset 3px 0 0 ${accent}` }}
                 >
-                  <span className="font-numeral text-2xl leading-none text-muted group-hover:text-fg">
+                  <span className="font-numeral text-xl leading-none text-muted group-hover:text-fg sm:text-2xl">
                     {pos}
                   </span>
                 </td>
-                <td className="px-3 py-2.5">
+                <td className="px-2 py-2.5 sm:px-3">
                   <PlayerLink playerId={p.playerId} tag={p.playerTag} />
                 </td>
-                <td className="px-3 py-2.5">
+                <td className="whitespace-nowrap px-2 py-2.5 sm:px-3">
                   <CharacterName slug={p.character} isMain={p.isMain} />
                 </td>
-                <td className="px-3 py-2.5">
-                  <RankBadge rank={p.rank} iconSize={22} />
+                <td className="whitespace-nowrap px-2 py-2.5 sm:px-3">
+                  <RankBadge
+                    rank={p.rank}
+                    iconSize={22}
+                    labelClassName="hidden sm:inline"
+                  />
                 </td>
-                <td className="rounded-r px-3 py-2.5 sm:rounded-none">
+                <td className="rounded-r px-2 py-2.5 sm:rounded-none sm:px-3">
                   <MmrCell
                     mmr={p.mmr}
                     provisional={p.provisional}
                     confidence={p.confidence}
                   />
                 </td>
-                <td className="hidden rounded-r px-3 py-2.5 sm:table-cell">
+                <td className="hidden rounded-r px-2 py-2.5 sm:table-cell sm:px-3">
                   <RankBadge rank={p.peakRank} iconSize={18} showLabel={false} />
                 </td>
               </tr>
