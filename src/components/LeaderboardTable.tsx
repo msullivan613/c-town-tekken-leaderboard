@@ -71,9 +71,6 @@ export function LeaderboardTable({
                 onClick={() => onSortChange('mmr')}
               />
             </th>
-            <th className="hidden px-2 pb-1 sm:table-cell sm:px-3">
-              <span className="eyebrow">Peak</span>
-            </th>
           </tr>
         </thead>
         <tbody>
@@ -106,22 +103,19 @@ export function LeaderboardTable({
                     labelClassName="hidden sm:inline"
                   />
                 </td>
-                <td className="rounded-r px-2 py-2.5 sm:rounded-none sm:px-3">
+                <td className="rounded-r px-2 py-2.5 sm:px-3">
                   <MmrCell
                     mmr={p.mmr}
                     provisional={p.provisional}
                     confidence={p.confidence}
                   />
                 </td>
-                <td className="hidden rounded-r px-2 py-2.5 sm:table-cell sm:px-3">
-                  <RankBadge rank={p.peakRank} iconSize={18} showLabel={false} />
-                </td>
               </tr>
             );
           })}
           {rows.length === 0 && (
             <tr>
-              <td colSpan={6} className="bg-surface/70 px-3 py-10 text-center text-muted">
+              <td colSpan={5} className="bg-surface/70 px-3 py-10 text-center text-muted">
                 No qualifying pairs yet — data appears after the first pipeline run.
               </td>
             </tr>
