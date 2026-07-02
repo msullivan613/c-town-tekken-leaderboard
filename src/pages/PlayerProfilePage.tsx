@@ -76,7 +76,9 @@ export function PlayerProfilePage() {
                 EMPTY
               )}
             </span>
-            <span>Peak: {peakRank ? <RankBadge rank={peakRank} /> : EMPTY}</span>
+            <span className="inline-flex items-center gap-1.5">
+              Peak: {peakRank ? <RankBadge rank={peakRank} /> : EMPTY}
+            </span>
           </div>
         </div>
       </header>
