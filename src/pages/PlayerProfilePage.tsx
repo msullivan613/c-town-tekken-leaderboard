@@ -218,6 +218,7 @@ export function PlayerProfilePage() {
             const meA = m.a.playerId === id;
             const myRounds = meA ? m.roundsA : m.roundsB;
             const oppRounds = meA ? m.roundsB : m.roundsA;
+            const mySide = meA ? m.a : m.b;
             const oppSide = meA ? m.b : m.a;
             const won = (m.winner === 'a') === meA;
             return (
@@ -228,6 +229,7 @@ export function PlayerProfilePage() {
                 <span className={won ? 'font-medium text-accent-2' : 'text-muted'}>
                   {won ? 'W' : 'L'}
                 </span>
+                <CharacterIcon slug={mySide.character} size={18} />
                 <span className="font-mono tabular-nums">
                   {myRounds}–{oppRounds}
                 </span>
