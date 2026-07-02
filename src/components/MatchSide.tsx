@@ -5,7 +5,15 @@ import { CharacterIcon } from './icons';
 
 // Renders one side of a match: the character portrait + the fighter's name. Crew
 // members link to their profile and use their roster tag; external opponents show
-// their tknow name, unlinked and muted.
+// their tknow name, unlinked.
+//
+// Two orthogonal signals keep the row readable (issue #11):
+//   • font weight + brightness say WHO WON — the winner is bold and fully lit, the
+//     loser is dimmed and normal-weight.
+//   • an accent underline (present only on the linked crew name) says WHO IS
+//     TRACKED — it stays put whether that player won or lost.
+// Because the two cues live on different visual channels, a crew member winning no
+// longer stacks two "bold" treatments into one indistinct blob.
 export function MatchSideLabel({
   side,
   align = 'left',
@@ -22,11 +30,14 @@ export function MatchSideLabel({
   const tag = player?.player_tag ?? side.name;
   const crew = Boolean(side.playerId);
   const nameClass = `truncate font-display uppercase tracking-wide ${
-    won ? 'text-fg' : crew ? 'text-fg/80' : 'text-muted'
+    won ? 'font-bold text-fg' : 'font-normal text-fg/50'
   }`;
 
   const name = crew ? (
-    <Link to={`/player/${side.playerId}`} className={`${nameClass} !text-inherit hover:!text-accent-2`}>
+    <Link
+      to={`/player/${side.playerId}`}
+      className={`${nameClass} underline decoration-accent-2/70 decoration-2 underline-offset-4 !text-inherit hover:!text-accent-2`}
+    >
       {tag}
     </Link>
   ) : (
