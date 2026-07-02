@@ -106,6 +106,18 @@ export interface MatchesFile {
   matches: Match[];
 }
 
+// ── matches.<year>.json — cold-storage archive of pruned feed matches ─────────
+// The live matches.json is a bounded recent feed; non-crew matches pruned out of it
+// (past the recent window or over the per-player cap) roll into these per-year
+// archives instead of being discarded (issue #19). Build-time only: the pipeline
+// reads them so stats span the full dataset, but the frontend never downloads them.
+export interface MatchArchiveFile {
+  schemaVersion: 2;
+  year: string;
+  generatedAt: string;
+  matches: Match[];
+}
+
 // ── stats.json (§2.9) — derived from matches.json ────────────────────────────
 export interface HeadToHeadRecord {
   matchesA: number; // matches won by the lexicographically-first id

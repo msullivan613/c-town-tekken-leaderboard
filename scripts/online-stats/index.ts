@@ -2,13 +2,19 @@
 // fetch tknow in-game rank + match history and Wavu Glicko MMR per character,
 // write ranks.json & glicko.json, append to rankhistory.json / mmrhistory.json,
 // and rebuild matches.json / stats.json.
-import { loadConfig } from '../shared/config';
+import { readdirSync } from 'node:fs';
+import { DATA_DIR, loadConfig } from '../shared/config';
 import { readDataFile, writeDataFile } from '../shared/atomicWrite';
 import { sleep } from '../shared/http';
 import { getPlayerInfo, getPlayerMatches, type TknowBattle } from './tknow';
 import { getPlayerCustomMatches } from './ewgf';
 import { getPlayerCharacters as getWavu } from './wavu';
-import { buildMatches } from './matches';
+import {
+  buildMatches,
+  matchArchiveName,
+  mergeMatches,
+  splitMatchesByYear,
+} from './matches';
 import { appendHistory, archiveName, mergeHistory, splitHistory } from './history';
 import { deriveStats } from './stats';
 import { rankByTier, rankBySlug } from '@/data/ranks';
@@ -17,6 +23,8 @@ import type {
   GlickoFile,
   GlickoPair,
   HistoryFile,
+  Match,
+  MatchArchiveFile,
   MatchesFile,
   PlayersFile,
   RankPair,
@@ -45,6 +53,23 @@ function writeHistory(
     writeDataFile(name, merged, { inlineArrays: true });
   }
   return writeDataFile(`${base}.json`, live, { inlineArrays: true });
+}
+
+/** All committed `matches.<year>.json` cold-storage archives, flattened (issue #19).
+ *  Distinguished from the live `matches.json` by the four-digit year segment. */
+function readMatchArchives(): Match[] {
+  const all: Match[] = [];
+  let names: string[] = [];
+  try {
+    names = readdirSync(DATA_DIR);
+  } catch {
+    return all;
+  }
+  for (const name of names) {
+    if (!/^matches\.\d{4}\.json$/.test(name)) continue;
+    all.push(...(readDataFile<MatchArchiveFile>(name)?.matches ?? []));
+  }
+  return all;
 }
 
 async function main() {
@@ -253,6 +278,7 @@ async function main() {
   let wroteMatches = false;
   let wroteStats = false;
   let matchCount = 0;
+  let archivedCount = 0;
   if (tknowReachable || ewgfReachable) {
     const built = buildMatches(allBattles, players, priorMatches, config, new Date(now));
     matchCount = built.matches.length;
@@ -265,12 +291,33 @@ async function main() {
       matches: built.matches,
     };
     wroteMatches = writeDataFile('matches.json', matchesFile);
-    wroteStats = writeDataFile('stats.json', deriveStats(built.matches, now));
+
+    // Roll feed matches pruned out of the live window this run into per-year
+    // cold-storage archives instead of discarding them (issue #19). Each archive is
+    // only rewritten when it actually gains matches (splitMatchesByYear only yields
+    // years with newly-pruned matches), preserving the commit-if-changed gate.
+    for (const [year, pruned] of splitMatchesByYear(built.archived)) {
+      const name = matchArchiveName(year);
+      const existing = readDataFile<MatchArchiveFile>(name)?.matches ?? [];
+      const merged = mergeMatches(existing, pruned);
+      const archiveFile: MatchArchiveFile = {
+        schemaVersion: 2,
+        year,
+        generatedAt: now,
+        matches: merged,
+      };
+      if (writeDataFile(name, archiveFile)) archivedCount += pruned.length;
+    }
+
+    // Derive stats over the full retained dataset — live feed + crew + all archives
+    // (deduped by id) — so per-player rollups aren't limited to the recent window.
+    const fullSet = mergeMatches(built.matches, readMatchArchives());
+    wroteStats = writeDataFile('stats.json', deriveStats(fullSet, now));
   }
 
   console.log(
     `[online-stats] ranks:${rankPairs.length} glicko:${glickoPairs.length} ` +
-      `battles:${allBattles.length} matches:${matchCount} ` +
+      `battles:${allBattles.length} matches:${matchCount} archived:${archivedCount} ` +
       `ewgf:${ewgfEnabled ? (ewgfReachable ? 'on' : 'unreachable') : 'off'} ` +
       `written(ranks:${wroteRanks} glicko:${wroteGlicko} rankHist:${wroteRankHist} ` +
       `mmrHist:${wroteMmrHist} matches:${wroteMatches} stats:${wroteStats})`,

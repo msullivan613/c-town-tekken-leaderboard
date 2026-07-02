@@ -99,6 +99,17 @@ MMR per character. It then:
 - **Matches are gathered automatically from tknow battles** — no manual entry, no Google
   Sheet (the sheet in the brief was never built). Matches accumulate append-only; known
   battle ids are fed back so the fetch stops early at already-seen battles.
+- **`matches.json` is a bounded recent feed; pruned matches are archived, not dropped
+  (issue #19, mirrors #10/#17).** Crew (both-sides-roster) matches stay in the live feed
+  forever; non-crew "feed" matches are bounded by `config.matches.recentWindowDays` +
+  `feedMaxPerPlayer`. Feed matches pruned out of that window roll into per-year cold-storage
+  archives `matches.<year>.json` (`buildMatches` returns them as `archived`; the caller
+  merges them in by id via `mergeMatches`) instead of being discarded. Archives are
+  build-time only — the frontend never downloads them. `deriveStats` runs over the **full**
+  set (live feed + crew + all archives, deduped by id) so per-player rollups aren't limited
+  to the recent window. An archive is only rewritten when it actually gains matches, so the
+  commit-if-changed gate holds. Archives only appear once feed matches age past the window,
+  so today there are none.
 - **Group/player (custom-lobby) matches come from ewgf, opt-in per site** (`scripts/online-stats/ewgf.ts`,
   issue #3). tknow only surfaces quick/ranked, so the crew-vs-crew lobby matches are pulled
   from ewgf.gg's public API (`GET /external/battles/{id}`, `Authorization: Bearer <EWGF_API_KEY>`).

@@ -2,10 +2,13 @@ import { describe, it, expect } from 'vitest';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { deriveStats } from '../scripts/online-stats/stats';
+import { mergeMatches } from '../scripts/online-stats/matches';
 import { isKnownCharacter } from '@/data/characters';
 import { rankBySlug } from '@/data/ranks';
 import type {
   GlickoFile,
+  Match,
+  MatchArchiveFile,
   MatchesFile,
   PlayersFile,
   RanksFile,
@@ -37,6 +40,12 @@ describe.each(siteSlugs)('committed data files: %s', (slug) => {
   const stats = readMaybe<StatsFile>('stats.json');
   const rankHistory = readMaybe<HistoryFile>('rankhistory.json');
   const mmrHistory = readMaybe<HistoryFile>('mmrhistory.json');
+  const archiveNames = readdirSync(DATA).filter((n) => /^matches\.\d{4}\.json$/.test(n));
+  const archives = archiveNames.map((n) => read<MatchArchiveFile>(n));
+  // The full retained dataset stats are derived over: live feed + all archives.
+  const allMatches: Match[] = matches
+    ? mergeMatches(matches.matches, archives.flatMap((a) => a.matches))
+    : [];
 
   const playerIds = new Set(players.players.map((p) => p.id));
 
@@ -107,9 +116,28 @@ describe.each(siteSlugs)('committed data files: %s', (slug) => {
     }
   });
 
-  it('stats.json is consistent with matches.json (regenerates identically)', () => {
+  it('matches.<year>.json: v2 archive of non-crew feed matches only (issue #19)', () => {
+    for (const [i, archive] of archives.entries()) {
+      expect(archive.schemaVersion).toBe(2);
+      expect(archive.year).toBe(archiveNames[i].slice('matches.'.length, -'.json'.length));
+      for (const m of archive.matches) {
+        expect(m.playedAt.slice(0, 4)).toBe(archive.year); // filed under the right year
+        expect(m.crew).toBe(false); // crew matches stay in the live feed forever
+        expect(m.a.playerId != null || m.b.playerId != null).toBe(true);
+      }
+    }
+    // Archives and the live feed are disjoint (nothing lives in both).
+    if (matches) {
+      const liveIds = new Set(matches.matches.map((m) => m.id));
+      for (const archive of archives) {
+        for (const m of archive.matches) expect(liveIds.has(m.id)).toBe(false);
+      }
+    }
+  });
+
+  it('stats.json is consistent with the full dataset (live feed + archives)', () => {
     if (!matches || !stats) return;
-    const regen = deriveStats(matches.matches, stats.generatedAt);
+    const regen = deriveStats(allMatches, stats.generatedAt);
     expect(regen.headToHead).toEqual(stats.headToHead);
     expect(regen.players).toEqual(stats.players);
     expect(regen.charMatchups).toEqual(stats.charMatchups);
