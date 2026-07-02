@@ -2,7 +2,7 @@
 // per site into dist/<slug>/, and writes a root dist/index.html that links to them.
 // Typecheck (tsc --noEmit) runs once in the npm `build` script before this.
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
@@ -34,6 +34,7 @@ function landingHtml(sites: string[]): string {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>Tekken Leaderboards</title>
     <style>
       body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; }
@@ -64,4 +65,10 @@ for (const slug of sites) {
 
 mkdirSync(resolve(REPO_ROOT, 'dist'), { recursive: true });
 writeFileSync(resolve(REPO_ROOT, 'dist', 'index.html'), landingHtml(sites));
+// The landing page lives at the dist root (not under a site), so give it its own
+// copy of the shared favicon that public/ only copies into each dist/<slug>/.
+copyFileSync(
+  resolve(REPO_ROOT, 'public', 'favicon.svg'),
+  resolve(REPO_ROOT, 'dist', 'favicon.svg'),
+);
 console.log(`\n[build-all] done: ${sites.join(', ')} + landing page`);

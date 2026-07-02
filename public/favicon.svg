@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!--
+    "Versus screen" emblem (see src/styles/tokens.css): P1 ember vs P2 volt,
+    split by the gold champion lightning bolt. Colors mirror the design tokens.
+  -->
+  <defs>
+    <clipPath id="round">
+      <rect x="0" y="0" width="32" height="32" rx="7" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <!-- deep indigo-black base (--bg) -->
+    <rect x="0" y="0" width="32" height="32" fill="#0B0E15" />
+    <!-- P1 ember half (--p1) -->
+    <path d="M0 0 H18 L13 13 L19 15 L12 32 H0 Z" fill="#FF4D4D" />
+    <!-- P2 volt half (--p2) -->
+    <path d="M18 0 H32 V32 H12 L19 15 L13 13 Z" fill="#22D3EE" />
+    <!-- gold lightning divider (--gold) -->
+    <path
+      d="M18 0 L13 13 L19 15 L12 32"
+      fill="none"
+      stroke="#FFC24B"
+      stroke-width="2.2"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+    />
+  </g>
+  <!-- subtle HUD border (--border) -->
+  <rect
+    x="0.75"
+    y="0.75"
+    width="30.5"
+    height="30.5"
+    rx="6.25"
+    fill="none"
+    stroke="#2B3446"
+    stroke-width="1.5"
+  />
+</svg>
