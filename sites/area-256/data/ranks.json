@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T08:45:48.609Z",
+  "generatedAt": "2026-07-02T13:44:05.711Z",
   "pairs": [
     {
       "character": "leroy",
@@ -268,12 +268,12 @@
     {
       "character": "bryan",
       "characterPeakRank": "god_of_destruction",
-      "lastSeen": "2026-06-30T02:30:36.000Z",
+      "lastSeen": "2026-07-02T03:22:44.000Z",
       "pairId": "3hBB-83gE-7EAG:bryan",
       "playerId": "skrt",
       "rank": "god_of_destruction",
       "rankTier": 29,
-      "rankedGames": 902,
+      "rankedGames": 907,
       "region": "Americas",
       "tekken_id": "3hBB-83gE-7EAG"
     },
@@ -343,8 +343,8 @@
       "lastSeen": "2026-06-17T04:08:33.000Z",
       "pairId": "3hBB-83gE-7EAG:kuma",
       "playerId": "skrt",
-      "rank": "god_of_destruction_iii",
-      "rankTier": 32,
+      "rank": "god_of_destruction_ii",
+      "rankTier": 31,
       "rankedGames": 269,
       "region": "Americas",
       "tekken_id": "3hBB-83gE-7EAG"
@@ -472,12 +472,12 @@
     {
       "character": "fahkumram",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-07-02T01:44:41.000Z",
+      "lastSeen": "2026-07-02T06:01:59.000Z",
       "pairId": "44eg-BAHA-424E:fahkumram",
       "playerId": "rev_grizz",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 1035,
+      "rankedGames": 1086,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
     },
@@ -676,12 +676,12 @@
     {
       "character": "kuma",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-06-30T21:57:48.000Z",
+      "lastSeen": "2026-07-02T08:41:44.000Z",
       "pairId": "4Y79-N5nY-HHJd:kuma",
       "playerId": "bigkuma",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 702,
+      "rankedGames": 735,
       "region": "Americas",
       "tekken_id": "4Y79-N5nY-HHJd"
     },
@@ -892,12 +892,12 @@
     {
       "character": "armor_king",
       "characterPeakRank": "god_of_destruction_iv",
-      "lastSeen": "2026-06-29T08:22:18.000Z",
+      "lastSeen": "2026-07-02T08:43:37.000Z",
       "pairId": "5EeM-RAhn-HbJd:armor_king",
       "playerId": "afriking",
       "rank": "god_of_destruction_iv",
       "rankTier": 33,
-      "rankedGames": 1246,
+      "rankedGames": 1261,
       "region": "Americas",
       "tekken_id": "5EeM-RAhn-HbJd"
     },
@@ -916,12 +916,12 @@
     {
       "character": "azucena",
       "characterPeakRank": "god_of_destruction_vi",
-      "lastSeen": "2026-07-01T05:02:20.000Z",
+      "lastSeen": "2026-07-02T03:53:17.000Z",
       "pairId": "5HyE-nHGe-rLJ8:azucena",
       "playerId": "phine",
       "rank": "god_of_destruction_vi",
       "rankTier": 35,
-      "rankedGames": 4024,
+      "rankedGames": 4046,
       "region": "Americas",
       "tekken_id": "5HyE-nHGe-rLJ8"
     },

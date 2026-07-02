@@ -1,7 +1,7 @@
 {
   "basedOnMatchCount": 3373,
   "charMatchups": {},
-  "generatedAt": "2026-07-02T08:45:48.609Z",
+  "generatedAt": "2026-07-02T13:44:05.711Z",
   "headToHead": {},
   "players": {
     "afriking": {
@@ -27,15 +27,15 @@
     },
     "bigkuma": {
       "charUsage": {
-        "dragunov": 46,
+        "dragunov": 45,
         "jack8": 7,
-        "kuma": 247
+        "kuma": 248
       },
-      "matchLosses": 153,
-      "matchWins": 147,
+      "matchLosses": 154,
+      "matchWins": 146,
       "mostPlayedCharacter": "kuma",
       "totalMatches": 300,
-      "winRate": 0.49
+      "winRate": 0.487
     },
     "eonexodus": {
       "charUsage": {
