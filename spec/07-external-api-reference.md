@@ -1,8 +1,19 @@
 # 7. External API reference (verified)
 
+> **📌 Current source hierarchy (read this first).** The pipeline sources:
+> - **in-game rank + quick/ranked matches → tknow.gg** (§7.9) — no API key.
+> - **MMR → Wavu Wank** (§7.3) — no API key.
+> - **group/player (custom-lobby) matches → ewgf.gg** ([§8](./08-ewgf-group-player-matches.md))
+>   — opt-in per site, needs `EWGF_API_KEY`.
+>
+> Sections **7.2, 7.4, and 7.8 are historical** — they describe the abandoned
+> EWGF-as-primary design (see the 🛑 banner in §7.2 and the pivot writeup in §6.2).
+> The rank ladder (§7.5), character list (§7.6), identity (§7.1), and "build history
+> from our own snapshots" (§7.7) notes are still current and used by the code.
+
 Everything here was **observed from the live services / EWGF's open-source code**
-on 2026-06-30 using the crew's own account (SugarFree, Tekken ID `3fee-J699-M7An`).
-This supersedes the "⚠️ Needs confirmation" placeholders in files 2–3.
+on 2026-06-30 (EWGF/Wavu) and 2026-07-01 (tknow) using the crew's own account
+(SugarFree, Tekken ID `3fee-J699-M7An`).
 
 Sources: [`ewgf-gg/ewgfgg-backend`](https://github.com/ewgf-gg/ewgfgg-backend),
 [`ewgf-gg/ewgfgg-frontend`](https://github.com/ewgf-gg/ewgfgg-frontend),
@@ -189,7 +200,13 @@ appears on in their recent battles:
 
 ---
 
-## 7.4 EWGF API-key decision (resolves the biggest open risk)
+## 7.4 EWGF API-key decision (HISTORICAL)
+
+> **🛑 SUPERSEDED.** This section reasoned about needing an `EWGF_API_KEY` for the
+> *rank* pipeline back when EWGF was the primary source. That's no longer true: ranks
+> come from tknow (no key, §7.9). An `EWGF_API_KEY` still exists but now unlocks only
+> the **opt-in group/player match** feature ([§8](./08-ewgf-group-player-matches.md)) —
+> the core site works without it. Retained for context.
 
 Because EWGF is fully gated, the automated rank pipeline **needs a key**.
 

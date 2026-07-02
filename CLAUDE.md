@@ -32,21 +32,23 @@ SITE=area-256 npm run online-stats
 npm run resolve-id -- "3fee-J699-M7An"     # verify a tekken_id resolves on tknow
 ```
 
-## ⚠️ The docs have drifted — trust the code
+## Docs status — code is still ground truth
 
-`spec/`, `README.md`, and `PROJECT-BRIEF.md` describe an earlier design. Two things
-changed that they mostly still describe the old way:
+`spec/` and `README.md` were reconciled with the current design in issue #4, so they
+now describe the real system. **`PROJECT-BRIEF.md` is intentionally left as a historical
+concept record** (it still shows the original EWGF + Google-Sheet single-site idea) — do
+not treat it as current. When any doc and the code disagree, the code is correct. The two
+biggest evolutions the brief predates (see `spec/06`):
 
 1. **Data source is tknow.gg, not EWGF.** The pipeline uses `scripts/online-stats/tknow.ts`
    (unofficial JSON API at `api.tk8now.pe.kr`, gated by an Origin/Referer check, **no API
-   key**) for in-game ranks and match history, plus Wavu Wank for Glicko MMR. The specs'
-   `ewgf.ts` / `EWGF_API_KEY` / Bearer-token discussion is obsolete. There is no `ewgf.ts`.
+   key**) for in-game ranks and quick/ranked match history, plus Wavu Wank for Glicko MMR.
+   `scripts/online-stats/ewgf.ts` **does** exist, but only for **opt-in group/player
+   (custom-lobby) matches** (issue #3) — see below — not as the primary rank/match source.
 2. **Multi-site.** Data lives in `sites/<slug>/data/*.json`, **not** `public/data/`. There
    are currently two sites: `c-town` and `area-256`. `public/` holds only shared static
-   assets (character icons, avatars). Wherever spec/atomicWrite comments say "public/data/",
-   read "sites/<SITE>/data/".
-
-When code and docs disagree on these points, the code is correct.
+   assets (character icons, avatars). If an old comment says "public/data/", read
+   "sites/<SITE>/data/".
 
 ## Architecture
 

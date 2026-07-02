@@ -19,29 +19,40 @@ HashRouter (§1.2 decision). Routes:
 
 ## 5.2 Data loading
 
-All pages consume a single `useData()` context that loads the JSON files once and
-memoizes a joined view model.
+Data is loaded relative to `import.meta.env.BASE_URL` (so it resolves under each
+site's Pages sub-path) and cached/deduped by a small `useJson` hook. To keep the
+initial load light, files are split into **core** (loaded app-wide) and **heavy**
+(loaded lazily by the pages that need them — issue #18).
 
 ```ts
-// src/data/useJson.ts — fetch one file relative to BASE_URL, typed
+// src/data/useJson.ts — fetch one file relative to BASE_URL, typed + cached
 function useJson<T>(name: string): { data: T | null; error: Error | null; loading: boolean };
 
-// src/data/DataProvider.tsx — loads all files, exposes joined selectors
-interface DataContext {
-  lastUpdated: string;                 // max(generatedAt across files) → "Last updated"
+// src/data/DataProvider.tsx — loads the CORE light files only (players/ranks/glicko),
+// which power the leaderboard + nav everywhere:
+interface DataContextValue {
+  loading: boolean;
+  error: Error | null;
+  lastUpdated: string | null;          // max(generatedAt of ranks/glicko) → "Last updated"
   players: Player[];
+  playerById: Map<string, Player>;
+  mainCharacterByPlayer: Map<string, CharacterSlug | null>;  // derives null mains (§conventions)
   pairs: PairViewModel[];              // ranks ⨝ glicko ⨝ players, one per pair (§5.4)
-  matches: Match[];
-  stats: StatsFile;
-  history: { rank: HistoryFile; mmr: HistoryFile };
 }
+
+// Heavy files load on demand, cached across navigations by the same useJson cache:
+function useMatches(): MatchesFile | null;   // Matches, Profile, H2H, home Recent strip
+function useStats(): StatsFile | null;       // Profile, H2H
+function useHistory(): { rank: HistoryFile | null; mmr: HistoryFile | null };  // Profile charts
 ```
 
 **Joining** happens client-side in `src/lib/leaderboard.ts`:
-`PairViewModel = players.json ⨝ ranks.json ⨝ glicko.json` on `pairId`/`playerId`.
-Missing MMR or rank ⇒ the field is `null` and the UI renders `—` (brief graceful
-fallback). A player with no qualifying pairs still appears in the roster/profiles
-with an empty pair list.
+`PairViewModel = players.json ⨝ ranks.json ⨝ glicko.json` on `pairId`/`playerId`
+(`buildPairViewModels`). `players.json` is the only required file; the rest degrade to
+null/empty. Missing MMR or rank ⇒ the field is `null` and the UI renders `—`. A player
+with no qualifying pairs still appears in the roster/profiles with an empty pair list.
+The history/match archives (`*.<year>.json`) are **never** fetched by the frontend —
+they're build-time cold storage (§2.6, §2.8.1).
 
 ## 5.3 Leaderboard (core, `/`)
 
@@ -72,9 +83,9 @@ toggle**.
   player share a visual accent (color/avatar) so multiple top spots read as one
   person (brief §5.1).
 
-**Sorting:** `defaultSort` = `rank` (in-game tier desc, MMR as tiebreak). Header
-click toggles between Rank and MMR sort (they disagree — the brief wants both signals
-side by side). Sort applies within the active view.
+**Sorting:** `defaultSort` (config; currently `mmr`) with the other signal as
+tiebreak. Header click toggles between Rank and MMR sort (they disagree — the brief
+wants both signals side by side). Sort applies within the active view.
 
 **Columns:** rank position, accent/avatar, player tag, character (context-dependent),
 current rank (icon + color from `src/data/ranks.ts`), MMR (with a subtle provisional
@@ -93,13 +104,18 @@ interface PairViewModel {
   playerId: string;
   playerTag: string;
   character: CharacterSlug;
-  isMain: boolean;                 // character === player.main_character
+  isMain: boolean;                 // character === effective main
   rank: RankTier | null;
-  mmr: number | null;
-  deviation: number | null;
+  rankedGames: number;
+  mmr: number | null;              // Wavu μ
+  sigmaSquared: number | null;     // Wavu σ² (variance, §2.5)
+  confidence: WavuConfidence | null;
   provisional: boolean;
   platform: Platform;
   peakRank: RankTier | null;       // player-level rollup (§2.4)
+  region: string | null;
+  lastSeen: string | null;
+  mmrUpdated: string | null;
 }
 ```
 
@@ -121,20 +137,27 @@ Rolls all of one person's pairs into a page (brief §5.4):
 Components: `ProfileHeader`, `CharacterPairList`, `HistoryChart` (shared,
 rank|mmr mode), `PlayerH2HTable`, `PlayerMatchList`, `PlayerStatCards`.
 
-## 5.6 Head-to-head (`/h2h`)
+## 5.6 Head-to-head (`/h2h`) — gated per site
+
+**Shown only when `config.headToHead.enabled`** (config is baked into each site's
+bundle at build time). A site with it off hides the H2H page + nav link *and* the
+profile H2H section — because without ewgf that site gathers no custom-lobby crew
+matches to populate them (§4.6, §8). Currently c-town shows it; area-256 doesn't.
 
 - **Crew matrix:** everyone-vs-everyone grid of **match records** (brief §5.3 "full
   crew grid"), colored by win share, reading from `stats.json.headToHead`.
 - **Cell drill-down:** click a cell → the two players' matches + rounds record and the
   optional per-character matchup breakdown (`charMatchups`).
 
-Components: `H2HMatrix`, `H2HCell`, `MatchupDrilldown`.
+Components: `H2HMatrix`, `H2HCell`, `MatchupDrilldown`. Data loads lazily via
+`useStats()` / `useMatches()` (§5.2).
 
 ## 5.7 Matches (`/matches`)
 
 Full log from `matches.json` with client-side filters (player, match type, crew-only).
-Opponents without a `playerId` are non-crew randoms and render by EWGF name (no link).
-Rows show each side's character, the rounds score, "concluded X ago", and match type.
+Opponents without a `playerId` are non-crew randoms and render by name (no link). Rows
+show each side's character, the rounds score, "concluded X ago", and match type
+(quick/ranked from tknow; player/group from ewgf where enabled).
 
 ## 5.8 Design direction (pointer, not spec)
 
