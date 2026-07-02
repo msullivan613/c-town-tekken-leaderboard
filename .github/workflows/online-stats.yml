@@ -24,6 +24,10 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - name: Refresh online stats (all sites)
+        env:
+          # Optional: enables group/player (custom-lobby) matches via the ewgf.gg
+          # public API. Unset ⇒ the pipeline skips ewgf and behaves as before.
+          EWGF_API_KEY: ${{ secrets.EWGF_API_KEY }}
         run: |
           for dir in sites/*/; do
             slug="$(basename "$dir")"

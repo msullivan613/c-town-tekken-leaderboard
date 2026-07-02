@@ -156,9 +156,13 @@ export interface AppConfig {
     tknowBaseUrl: string;
     tknowOrigin: string; // Origin/Referer the tknow API requires (anti-hotlink)
     wavuProfileUrl: string;
+    ewgfBaseUrl: string; // ewgf public API base, e.g. https://api.ewgf.gg/external
   };
   tknow: { userAgent: string };
   wavu: { userAgent: string };
+  // ewgf sources group/player (custom-lobby) matches. Enabled only when the
+  // EWGF_API_KEY env/secret is set (the key is never committed to config).
+  ewgf: { userAgent: string };
   history: {
     granularity: 'daily';
     maxDaysInline: number;

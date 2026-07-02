@@ -91,8 +91,20 @@ MMR per character. It then:
 - **Matches are gathered automatically from tknow battles** — no manual entry, no Google
   Sheet (the sheet in the brief was never built). Matches accumulate append-only; known
   battle ids are fed back so the fetch stops early at already-seen battles.
+- **Group/player (custom-lobby) matches come from ewgf, opt-in** (`scripts/online-stats/ewgf.ts`,
+  issue #3). tknow only surfaces quick/ranked, so the crew-vs-crew lobby matches are pulled
+  from ewgf.gg's public API (`GET /external/battles/{id}`, `Authorization: Bearer <EWGF_API_KEY>`).
+  Enabled **only when `EWGF_API_KEY` is set** (a GitHub Actions secret); with no key the pipeline
+  is byte-identical to before. ewgf battles carry no id, so a deterministic `ewgf:`-prefixed id is
+  synthesized (canonical orientation + timestamp) for cross-feed/run dedup. Only group/player are
+  taken from ewgf — quick/ranked stay with tknow (real battle ids, no 50-match cap). Both feed into
+  the same `buildMatches`. Free tier = 50 most-recent battles/player, ~24h staleness lag, sliding
+  window (6h cron + append-only captures all but extreme grinders). See
+  [`spec/08`](./spec/08-ewgf-group-player-matches.md).
 - **Graceful degradation:** if tknow is wholly unreachable, it keeps yesterday's committed
-  ranks/matches/stats rather than clobbering them with empties (Wavu still updates MMR).
+  ranks/matches/stats rather than clobbering them with empties (Wavu still updates MMR). Matches
+  rebuild when *either* tknow or ewgf was reachable; a source being down preserves its
+  previously-committed matches (buildMatches merges fresh battles onto priorMatches by id).
 
 ### Determinism / commit-if-changed
 
