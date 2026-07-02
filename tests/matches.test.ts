@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { buildMatches } from '../scripts/online-stats/matches';
+import {
+  buildMatches,
+  matchArchiveName,
+  mergeMatches,
+  splitMatchesByYear,
+} from '../scripts/online-stats/matches';
+import type { Match } from '@/types/data-files';
 import type { TknowBattle, TknowBattleSide } from '../scripts/online-stats/tknow';
 import type { AppConfig } from '@/types/data-files';
 import type { Player } from '@/types/domain';
@@ -113,11 +119,11 @@ describe('buildMatches', () => {
     expect(res.matches[0].battleType).toBe('quick');
   });
 
-  it('keeps crew matches forever but prunes non-crew outside the window', () => {
+  it('keeps crew matches forever but archives (not drops) non-crew outside the window', () => {
     const res = buildMatches(
       [
         battle({ battleId: 'CREW_OLD', battleAt: '2026-01-01T10:00:00Z', p1: P.matt, p2: P.nick }), // old crew → kept
-        battle({ battleId: 'FEED_OLD', battleAt: '2026-01-01T11:00:00Z', p1: P.matt, p2: side({ polarisId: 'RANDO', name: 'R' }) }), // old feed → pruned
+        battle({ battleId: 'FEED_OLD', battleAt: '2026-01-01T11:00:00Z', p1: P.matt, p2: side({ polarisId: 'RANDO', name: 'R' }) }), // old feed → archived
       ],
       PLAYERS,
       [],
@@ -126,9 +132,11 @@ describe('buildMatches', () => {
     );
     expect(res.crewMatchCount).toBe(1);
     expect(res.feedMatchCount).toBe(0);
+    expect(res.matches.map((m) => m.id)).not.toContain('FEED_OLD');
+    expect(res.archived.map((m) => m.id)).toEqual(['FEED_OLD']); // preserved, not dropped
   });
 
-  it('caps non-crew matches per player at feedMaxPerPlayer', () => {
+  it('caps non-crew matches per player at feedMaxPerPlayer and archives the overflow', () => {
     const cfg = { matches: { recentWindowDays: 30, feedMaxPerPlayer: 2 } } as AppConfig;
     const feed = [10, 11, 12, 13].map((hh) =>
       battle({
@@ -140,6 +148,21 @@ describe('buildMatches', () => {
     );
     const res = buildMatches(feed, PLAYERS, [], cfg, NOW);
     expect(res.feedMatchCount).toBe(2);
+    // The 2 most-recent survive in the feed; the 2 oldest are archived, not lost.
+    expect(res.matches.map((m) => m.id).sort()).toEqual(['FEED12', 'FEED13']);
+    expect(res.archived.map((m) => m.id).sort()).toEqual(['FEED10', 'FEED11']);
+  });
+
+  it('never archives crew matches (kept in the live feed forever)', () => {
+    const res = buildMatches(
+      [battle({ battleId: 'CREW_OLD', battleAt: '2024-01-01T10:00:00Z', p1: P.matt, p2: P.nick })],
+      PLAYERS,
+      [],
+      CFG,
+      NOW,
+    );
+    expect(res.archived).toHaveLength(0);
+    expect(res.matches.map((m) => m.id)).toEqual(['CREW_OLD']);
   });
 
   it('merges with prior matches (append-only crew history)', () => {
@@ -158,5 +181,56 @@ describe('buildMatches', () => {
       NOW,
     );
     expect(second.matches).toHaveLength(2);
+  });
+});
+
+function feedMatch(id: string, playedAt: string): Match {
+  return {
+    id,
+    playedAt,
+    battleType: 'ranked',
+    a: { playerId: 'matt', name: 'SugarFree', polarisId: P.matt, character: 'jin', rank: 'tekken_god' },
+    b: { playerId: null, name: 'Rando', polarisId: 'RANDO', character: 'kazuya', rank: 'tekken_king' },
+    roundsA: 3,
+    roundsB: 1,
+    winner: 'a',
+    crew: false,
+  };
+}
+
+describe('matchArchiveName', () => {
+  it('names the per-year cold-storage archive', () => {
+    expect(matchArchiveName('2025')).toBe('matches.2025.json');
+  });
+});
+
+describe('splitMatchesByYear', () => {
+  it('groups matches by the UTC calendar year of playedAt', () => {
+    const grouped = splitMatchesByYear([
+      feedMatch('A', '2025-12-31T23:00:00Z'),
+      feedMatch('B', '2026-01-01T00:00:00Z'),
+      feedMatch('C', '2026-07-04T12:00:00Z'),
+    ]);
+    expect([...grouped.keys()].sort()).toEqual(['2025', '2026']);
+    expect(grouped.get('2025')!.map((m) => m.id)).toEqual(['A']);
+    expect(grouped.get('2026')!.map((m) => m.id).sort()).toEqual(['B', 'C']);
+  });
+});
+
+describe('mergeMatches', () => {
+  it('dedups by id (existing wins) and sorts chronologically', () => {
+    const existing = [feedMatch('OLD', '2026-01-02T00:00:00Z')];
+    const incoming = [
+      { ...feedMatch('OLD', '2026-01-02T00:00:00Z'), roundsB: 99 }, // collision → ignored
+      feedMatch('NEW', '2026-01-01T00:00:00Z'),
+    ];
+    const merged = mergeMatches(existing, incoming);
+    expect(merged.map((m) => m.id)).toEqual(['NEW', 'OLD']); // chronological
+    expect(merged.find((m) => m.id === 'OLD')!.roundsB).toBe(1); // existing preserved
+  });
+
+  it('is idempotent — re-merging the same matches changes nothing', () => {
+    const archive = [feedMatch('A', '2026-01-01T00:00:00Z'), feedMatch('B', '2026-01-02T00:00:00Z')];
+    expect(mergeMatches(archive, archive)).toEqual(archive);
   });
 });
