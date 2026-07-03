@@ -1,7 +1,7 @@
 {
-  "basedOnMatchCount": 3411,
+  "basedOnMatchCount": 3451,
   "charMatchups": {},
-  "generatedAt": "2026-07-03T02:14:25.626Z",
+  "generatedAt": "2026-07-03T08:53:27.103Z",
   "headToHead": {},
   "players": {
     "afriking": {
@@ -210,16 +210,18 @@
     "skrt": {
       "charUsage": {
         "bryan": 229,
-        "king": 5,
+        "jack8": 15,
+        "king": 14,
         "kuma": 55,
         "kunimitsu": 8,
+        "miary_zo": 16,
         "panda": 3
       },
-      "matchLosses": 157,
-      "matchWins": 143,
+      "matchLosses": 187,
+      "matchWins": 153,
       "mostPlayedCharacter": "bryan",
-      "totalMatches": 300,
-      "winRate": 0.477
+      "totalMatches": 340,
+      "winRate": 0.45
     },
     "sugarfree": {
       "charUsage": {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T02:14:25.626Z",
+  "generatedAt": "2026-07-03T08:53:27.103Z",
   "pairs": [
     {
       "character": "leroy",
@@ -278,14 +278,14 @@
     },
     {
       "character": "jack8",
-      "confidence": "unqualified",
-      "games": 677,
-      "lastUpdated": "2026-05-02T04:33:11.000Z",
+      "confidence": "leaderboard",
+      "games": 692,
+      "lastUpdated": "2026-07-03T05:43:51.000Z",
       "pairId": "3hBB-83gE-7EAG:jack8",
       "playerId": "skrt",
       "provisional": false,
-      "rating": 1709,
-      "sigmaSquared": 77
+      "rating": 1724,
+      "sigmaSquared": 68
     },
     {
       "character": "king",

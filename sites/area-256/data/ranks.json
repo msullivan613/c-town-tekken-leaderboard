@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T02:14:25.626Z",
+  "generatedAt": "2026-07-03T08:53:27.103Z",
   "pairs": [
     {
       "character": "leroy",
@@ -343,8 +343,8 @@
       "lastSeen": "2026-06-17T04:08:33.000Z",
       "pairId": "3hBB-83gE-7EAG:kuma",
       "playerId": "skrt",
-      "rank": "god_of_destruction_ii",
-      "rankTier": 31,
+      "rank": "god_of_destruction_iii",
+      "rankTier": 32,
       "rankedGames": 269,
       "region": "Americas",
       "tekken_id": "3hBB-83gE-7EAG"
@@ -460,12 +460,12 @@
     {
       "character": "eddy",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-07-01T20:49:19.000Z",
+      "lastSeen": "2026-07-03T00:22:52.000Z",
       "pairId": "44eg-BAHA-424E:eddy",
       "playerId": "rev_grizz",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 319,
+      "rankedGames": 339,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
     },
@@ -591,13 +591,13 @@
     },
     {
       "character": "kazuya",
-      "characterPeakRank": "tekken_emperor",
-      "lastSeen": "2026-07-02T01:20:34.000Z",
+      "characterPeakRank": "tekken_god",
+      "lastSeen": "2026-07-03T01:31:17.000Z",
       "pairId": "4FE3-J976-Qray:kazuya",
       "playerId": "eonexodus",
-      "rank": "tekken_emperor",
-      "rankTier": 26,
-      "rankedGames": 1441,
+      "rank": "tekken_god",
+      "rankTier": 27,
+      "rankedGames": 1457,
       "region": "Americas",
       "tekken_id": "4FE3-J976-Qray"
     },
@@ -676,12 +676,12 @@
     {
       "character": "kuma",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-07-02T08:46:23.000Z",
+      "lastSeen": "2026-07-02T22:21:42.000Z",
       "pairId": "4Y79-N5nY-HHJd:kuma",
       "playerId": "bigkuma",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 736,
+      "rankedGames": 738,
       "region": "Americas",
       "tekken_id": "4Y79-N5nY-HHJd"
     },
