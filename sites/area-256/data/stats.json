@@ -1,7 +1,7 @@
 {
-  "basedOnMatchCount": 3451,
+  "basedOnMatchCount": 3480,
   "charMatchups": {},
-  "generatedAt": "2026-07-03T13:49:09.356Z",
+  "generatedAt": "2026-07-03T19:08:06.263Z",
   "headToHead": {},
   "players": {
     "afriking": {
@@ -52,14 +52,14 @@
     "falsecrustacean": {
       "charUsage": {
         "heihachi": 10,
-        "hwoarang": 106,
+        "hwoarang": 127,
         "jin": 16
       },
-      "matchLosses": 51,
-      "matchWins": 81,
+      "matchLosses": 53,
+      "matchWins": 100,
       "mostPlayedCharacter": "hwoarang",
-      "totalMatches": 132,
-      "winRate": 0.614
+      "totalMatches": 153,
+      "winRate": 0.654
     },
     "goul": {
       "charUsage": {
@@ -154,13 +154,13 @@
     },
     "oddlionss": {
       "charUsage": {
-        "heihachi": 95
+        "heihachi": 103
       },
-      "matchLosses": 42,
-      "matchWins": 53,
+      "matchLosses": 47,
+      "matchWins": 56,
       "mostPlayedCharacter": "heihachi",
-      "totalMatches": 95,
-      "winRate": 0.558
+      "totalMatches": 103,
+      "winRate": 0.544
     },
     "omni": {
       "charUsage": {
