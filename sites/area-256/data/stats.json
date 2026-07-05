@@ -1,7 +1,7 @@
 {
-  "basedOnMatchCount": 3773,
+  "basedOnMatchCount": 3956,
   "charMatchups": {},
-  "generatedAt": "2026-07-05T02:28:34.025Z",
+  "generatedAt": "2026-07-05T08:44:31.364Z",
   "headToHead": {},
   "players": {
     "afriking": {
@@ -27,27 +27,27 @@
     },
     "bigkuma": {
       "charUsage": {
-        "dragunov": 45,
+        "dragunov": 56,
         "jack8": 7,
-        "kuma": 250
+        "kuma": 314
       },
-      "matchLosses": 154,
-      "matchWins": 148,
+      "matchLosses": 190,
+      "matchWins": 187,
       "mostPlayedCharacter": "kuma",
-      "totalMatches": 302,
-      "winRate": 0.49
+      "totalMatches": 377,
+      "winRate": 0.496
     },
     "eonexodus": {
       "charUsage": {
         "bryan": 47,
         "heihachi": 47,
-        "kazuya": 274
+        "kazuya": 284
       },
-      "matchLosses": 224,
-      "matchWins": 144,
+      "matchLosses": 233,
+      "matchWins": 145,
       "mostPlayedCharacter": "kazuya",
-      "totalMatches": 368,
-      "winRate": 0.391
+      "totalMatches": 378,
+      "winRate": 0.384
     },
     "falsecrustacean": {
       "charUsage": {
@@ -174,14 +174,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 440,
+        "azucena": 529,
         "kunimitsu": 48
       },
-      "matchLosses": 157,
-      "matchWins": 331,
+      "matchLosses": 190,
+      "matchWins": 387,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 488,
-      "winRate": 0.678
+      "totalMatches": 577,
+      "winRate": 0.671
     },
     "puma": {
       "charUsage": {
@@ -225,15 +225,15 @@
     },
     "sugarfree": {
       "charUsage": {
-        "bryan": 4,
+        "bryan": 13,
         "jack8": 8,
         "yoshimitsu": 51
       },
-      "matchLosses": 27,
-      "matchWins": 36,
+      "matchLosses": 30,
+      "matchWins": 42,
       "mostPlayedCharacter": "yoshimitsu",
-      "totalMatches": 63,
-      "winRate": 0.571
+      "totalMatches": 72,
+      "winRate": 0.583
     }
   },
   "schemaVersion": 2

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T02:29:26.181Z",
+  "generatedAt": "2026-07-05T08:45:19.734Z",
   "pairs": [
     {
       "character": "lili",
@@ -136,13 +136,13 @@
     {
       "character": "bryan",
       "confidence": "leaderboard",
-      "games": 1390,
-      "lastUpdated": "2026-06-12T03:40:08.000Z",
+      "games": 1399,
+      "lastUpdated": "2026-07-05T04:18:33.000Z",
       "pairId": "3fee-J699-M7An:bryan",
       "playerId": "sugarfree",
       "provisional": false,
-      "rating": 1666,
-      "sigmaSquared": 71
+      "rating": 1682,
+      "sigmaSquared": 68
     },
     {
       "character": "fahkumram",

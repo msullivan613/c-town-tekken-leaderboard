@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2076,
+  "basedOnMatchCount": 2115,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -11,7 +11,7 @@
     },
     "bigman:kuma|burny:paul": {
       "matchesA": 1,
-      "matchesB": 3
+      "matchesB": 4
     },
     "bigman:kuma|burny:victor": {
       "matchesA": 0,
@@ -31,7 +31,7 @@
     },
     "bigman:kuma|fop:reina": {
       "matchesA": 0,
-      "matchesB": 2
+      "matchesB": 4
     },
     "bigman:kuma|gnarlyidk:panda": {
       "matchesA": 1,
@@ -102,7 +102,7 @@
       "matchesB": 0
     },
     "burny:paul|fop:reina": {
-      "matchesA": 2,
+      "matchesA": 3,
       "matchesB": 0
     },
     "burny:paul|mickrus:heihachi": {
@@ -126,7 +126,7 @@
       "matchesB": 1
     },
     "burny:victor|fop:reina": {
-      "matchesA": 1,
+      "matchesA": 5,
       "matchesB": 0
     },
     "burny:victor|mickrus:lee": {
@@ -146,8 +146,8 @@
       "matchesB": 0
     },
     "burny:victor|sugarfree:bryan": {
-      "matchesA": 12,
-      "matchesB": 0
+      "matchesA": 16,
+      "matchesB": 1
     },
     "burny:victor|sugarfree:jack8": {
       "matchesA": 10,
@@ -270,13 +270,13 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-05T02:29:26.181Z",
+  "generatedAt": "2026-07-05T08:45:19.734Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
-      "matchesB": 6,
+      "matchesB": 7,
       "roundsA": 5,
-      "roundsB": 20
+      "roundsB": 23
     },
     "bigman|code": {
       "matchesA": 3,
@@ -292,9 +292,9 @@
     },
     "bigman|fop": {
       "matchesA": 0,
-      "matchesB": 2,
-      "roundsA": 1,
-      "roundsB": 6
+      "matchesB": 4,
+      "roundsA": 3,
+      "roundsB": 12
     },
     "bigman|gnarlyidk": {
       "matchesA": 1,
@@ -327,10 +327,10 @@
       "roundsB": 6
     },
     "burny|fop": {
-      "matchesA": 4,
+      "matchesA": 9,
       "matchesB": 2,
-      "roundsA": 13,
-      "roundsB": 10
+      "roundsA": 28,
+      "roundsB": 15
     },
     "burny|gnarlyidk": {
       "matchesA": 1,
@@ -357,10 +357,10 @@
       "roundsB": 17
     },
     "burny|sugarfree": {
-      "matchesA": 44,
-      "matchesB": 7,
-      "roundsA": 139,
-      "roundsB": 52
+      "matchesA": 48,
+      "matchesB": 8,
+      "roundsA": 153,
+      "roundsB": 62
     },
     "code|nyx": {
       "matchesA": 3,
@@ -439,31 +439,32 @@
     "bigman": {
       "charUsage": {
         "heihachi": 2,
-        "kuma": 276,
+        "kuma": 279,
         "kunimitsu": 13,
         "nina": 8,
         "panda": 65,
         "paul": 2,
         "reina": 1
       },
-      "matchLosses": 179,
+      "matchLosses": 182,
       "matchWins": 188,
       "mostPlayedCharacter": "kuma",
-      "totalMatches": 367,
-      "winRate": 0.512
+      "totalMatches": 370,
+      "winRate": 0.508
     },
     "burny": {
       "charUsage": {
         "clive": 2,
+        "dragunov": 1,
         "hwoarang": 7,
-        "paul": 83,
-        "victor": 91
+        "paul": 88,
+        "victor": 103
       },
-      "matchLosses": 36,
-      "matchWins": 147,
+      "matchLosses": 40,
+      "matchWins": 161,
       "mostPlayedCharacter": "victor",
-      "totalMatches": 183,
-      "winRate": 0.803
+      "totalMatches": 201,
+      "winRate": 0.801
     },
     "chamk": {
       "charUsage": {
@@ -512,14 +513,14 @@
         "kunimitsu": 7,
         "lars": 1,
         "lili": 4,
-        "reina": 244,
+        "reina": 261,
         "steve": 1
       },
-      "matchLosses": 103,
-      "matchWins": 164,
+      "matchLosses": 108,
+      "matchWins": 176,
       "mostPlayedCharacter": "reina",
-      "totalMatches": 267,
-      "winRate": 0.614
+      "totalMatches": 284,
+      "winRate": 0.62
     },
     "gnarlyidk": {
       "charUsage": {
@@ -613,15 +614,15 @@
     },
     "sugarfree": {
       "charUsage": {
-        "bryan": 23,
+        "bryan": 37,
         "jack8": 18,
         "yoshimitsu": 81
       },
-      "matchLosses": 78,
-      "matchWins": 44,
+      "matchLosses": 85,
+      "matchWins": 51,
       "mostPlayedCharacter": "yoshimitsu",
-      "totalMatches": 122,
-      "winRate": 0.361
+      "totalMatches": 136,
+      "winRate": 0.375
     }
   },
   "schemaVersion": 2
