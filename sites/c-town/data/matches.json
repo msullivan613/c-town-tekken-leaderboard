@@ -1,7 +1,7 @@
 {
   "crewMatchCount": 234,
   "feedMatchCount": 335,
-  "generatedAt": "2026-07-05T08:45:19.734Z",
+  "generatedAt": "2026-07-05T13:17:42.496Z",
   "matches": [
     {
       "a": {
@@ -2645,98 +2645,6 @@
       "id": "ewgf:3E4Rn7J9e32T-4fLe2B6Q34fJ:1781661301",
       "playedAt": "2026-06-17T01:55:01.000Z",
       "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "devil_jin",
-        "name": "ChamK Mishima",
-        "playerId": "chamk",
-        "polarisId": "37iFJy3HYdTJ",
-        "rank": "tekken_king"
-      },
-      "b": {
-        "character": "king",
-        "name": "BombaClattt",
-        "playerId": null,
-        "polarisId": "5gA4M4FHinTa",
-        "rank": "bushin"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "765f653911c742bb824f3e64474083c7",
-      "playedAt": "2026-06-17T15:01:27.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "devil_jin",
-        "name": "ChamK Mishima",
-        "playerId": "chamk",
-        "polarisId": "37iFJy3HYdTJ",
-        "rank": "tekken_emperor"
-      },
-      "b": {
-        "character": "king",
-        "name": "ThatBoidaltdalt",
-        "playerId": null,
-        "polarisId": "3mqeLTFne7G4",
-        "rank": "tekken_emperor"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "96195dc82d274efe989b3d82ea18a79d",
-      "playedAt": "2026-06-17T15:05:58.000Z",
-      "roundsA": 2,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "devil_jin",
-        "name": "ChamK Mishima",
-        "playerId": "chamk",
-        "polarisId": "37iFJy3HYdTJ",
-        "rank": "tekken_emperor"
-      },
-      "b": {
-        "character": "king",
-        "name": "ThatBoidaltdalt",
-        "playerId": null,
-        "polarisId": "3mqeLTFne7G4",
-        "rank": "tekken_emperor"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "20a09f6f8cfc4667b0895274b8f7072f",
-      "playedAt": "2026-06-17T15:08:31.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "devil_jin",
-        "name": "ChamK Mishima",
-        "playerId": "chamk",
-        "polarisId": "37iFJy3HYdTJ",
-        "rank": "tekken_emperor"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "GorkhaNinja",
-        "playerId": null,
-        "polarisId": "47nh4JHMLeQM",
-        "rank": "tekken_king"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "58005cea0e5e45aba7e9aecbcf0564f2",
-      "playedAt": "2026-06-17T15:13:47.000Z",
-      "roundsA": 0,
       "roundsB": 3,
       "winner": "b"
     },
@@ -13089,6 +12997,98 @@
       "roundsA": 2,
       "roundsB": 3,
       "winner": "b"
+    },
+    {
+      "a": {
+        "character": "king",
+        "name": "Blank",
+        "playerId": null,
+        "polarisId": "2Bj422QGE5Dh",
+        "rank": "kishin"
+      },
+      "b": {
+        "character": "kazuya",
+        "name": "ChamK Mishima",
+        "playerId": "chamk",
+        "polarisId": "37iFJy3HYdTJ",
+        "rank": "tekken_king"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "271f136a40044162bd7669c1dff49296",
+      "playedAt": "2026-07-05T10:11:38.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "king",
+        "name": "Blank",
+        "playerId": null,
+        "polarisId": "2Bj422QGE5Dh",
+        "rank": "kishin"
+      },
+      "b": {
+        "character": "kazuya",
+        "name": "ChamK Mishima",
+        "playerId": "chamk",
+        "polarisId": "37iFJy3HYdTJ",
+        "rank": "tekken_king"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "e7a0db2fe6434940b3b8ad49e80e4347",
+      "playedAt": "2026-07-05T10:13:55.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "king",
+        "name": "Blank",
+        "playerId": null,
+        "polarisId": "2Bj422QGE5Dh",
+        "rank": "kishin"
+      },
+      "b": {
+        "character": "kazuya",
+        "name": "ChamK Mishima",
+        "playerId": "chamk",
+        "polarisId": "37iFJy3HYdTJ",
+        "rank": "tekken_king"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "7453e6f36b0c4b16815d92eeb8241517",
+      "playedAt": "2026-07-05T10:16:57.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "kazuya",
+        "name": "ChamK Mishima",
+        "playerId": "chamk",
+        "polarisId": "37iFJy3HYdTJ",
+        "rank": "tekken_king"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "DisasterManatee",
+        "playerId": null,
+        "polarisId": "5yjRN9rYrQ6d",
+        "rank": "bushin"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "09c839669d894eaaa7be897478ceefe0",
+      "playedAt": "2026-07-05T10:21:38.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
     }
   ],
   "schemaVersion": 2,

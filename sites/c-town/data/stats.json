@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2115,
+  "basedOnMatchCount": 2119,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -270,7 +270,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-05T08:45:19.734Z",
+  "generatedAt": "2026-07-05T13:17:42.496Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -471,14 +471,14 @@
         "bryan": 6,
         "devil_jin": 73,
         "jin": 87,
-        "kazuya": 5,
+        "kazuya": 9,
         "kunimitsu": 129
       },
-      "matchLosses": 130,
-      "matchWins": 170,
+      "matchLosses": 131,
+      "matchWins": 173,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 300,
-      "winRate": 0.567
+      "totalMatches": 304,
+      "winRate": 0.569
     },
     "code": {
       "charUsage": {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T08:45:19.734Z",
+  "generatedAt": "2026-07-05T13:17:42.496Z",
   "pairs": [
     {
       "character": "lili",
@@ -103,13 +103,13 @@
     {
       "character": "kazuya",
       "confidence": "unqualified",
-      "games": 1313,
-      "lastUpdated": "2026-06-06T02:55:21.000Z",
+      "games": 1317,
+      "lastUpdated": "2026-07-05T10:21:38.000Z",
       "pairId": "37iF-Jy3H-YdTJ:kazuya",
       "playerId": "chamk",
       "provisional": false,
-      "rating": 1515,
-      "sigmaSquared": 79
+      "rating": 1530,
+      "sigmaSquared": 75
     },
     {
       "character": "kunimitsu",
