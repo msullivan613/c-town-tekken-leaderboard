@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2119,
+  "basedOnMatchCount": 2146,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -146,8 +146,8 @@
       "matchesB": 0
     },
     "burny:victor|sugarfree:bryan": {
-      "matchesA": 16,
-      "matchesB": 1
+      "matchesA": 18,
+      "matchesB": 4
     },
     "burny:victor|sugarfree:jack8": {
       "matchesA": 10,
@@ -270,7 +270,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-05T13:17:42.496Z",
+  "generatedAt": "2026-07-05T19:07:00.235Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -357,10 +357,10 @@
       "roundsB": 17
     },
     "burny|sugarfree": {
-      "matchesA": 48,
-      "matchesB": 8,
-      "roundsA": 153,
-      "roundsB": 62
+      "matchesA": 50,
+      "matchesB": 11,
+      "roundsA": 165,
+      "roundsB": 73
     },
     "code|nyx": {
       "matchesA": 3,
@@ -439,18 +439,18 @@
     "bigman": {
       "charUsage": {
         "heihachi": 2,
-        "kuma": 279,
+        "kuma": 293,
         "kunimitsu": 13,
         "nina": 8,
         "panda": 65,
         "paul": 2,
         "reina": 1
       },
-      "matchLosses": 182,
-      "matchWins": 188,
+      "matchLosses": 191,
+      "matchWins": 193,
       "mostPlayedCharacter": "kuma",
-      "totalMatches": 370,
-      "winRate": 0.508
+      "totalMatches": 384,
+      "winRate": 0.503
     },
     "burny": {
       "charUsage": {
@@ -458,13 +458,13 @@
         "dragunov": 1,
         "hwoarang": 7,
         "paul": 88,
-        "victor": 103
+        "victor": 108
       },
-      "matchLosses": 40,
-      "matchWins": 161,
+      "matchLosses": 43,
+      "matchWins": 163,
       "mostPlayedCharacter": "victor",
-      "totalMatches": 201,
-      "winRate": 0.801
+      "totalMatches": 206,
+      "winRate": 0.791
     },
     "chamk": {
       "charUsage": {
@@ -561,13 +561,13 @@
       "charUsage": {
         "armor_king": 280,
         "claudio": 11,
-        "fahkumram": 98
+        "fahkumram": 106
       },
-      "matchLosses": 198,
-      "matchWins": 191,
+      "matchLosses": 203,
+      "matchWins": 194,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 389,
-      "winRate": 0.491
+      "totalMatches": 397,
+      "winRate": 0.489
     },
     "nyx": {
       "charUsage": {
@@ -614,15 +614,15 @@
     },
     "sugarfree": {
       "charUsage": {
-        "bryan": 37,
+        "bryan": 42,
         "jack8": 18,
         "yoshimitsu": 81
       },
-      "matchLosses": 85,
-      "matchWins": 51,
+      "matchLosses": 87,
+      "matchWins": 54,
       "mostPlayedCharacter": "yoshimitsu",
-      "totalMatches": 136,
-      "winRate": 0.375
+      "totalMatches": 141,
+      "winRate": 0.383
     }
   },
   "schemaVersion": 2

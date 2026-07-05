@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T13:16:48.941Z",
+  "generatedAt": "2026-07-05T19:06:11.214Z",
   "pairs": [
     {
       "character": "leroy",
@@ -664,12 +664,12 @@
     {
       "character": "dragunov",
       "characterPeakRank": "tekken_god_supreme",
-      "lastSeen": "2026-07-05T08:42:35.000Z",
+      "lastSeen": "2026-07-05T08:46:28.000Z",
       "pairId": "4Y79-N5nY-HHJd:dragunov",
       "playerId": "bigkuma",
       "rank": "tekken_god_supreme",
       "rankTier": 28,
-      "rankedGames": 448,
+      "rankedGames": 449,
       "region": "Americas",
       "tekken_id": "4Y79-N5nY-HHJd"
     },
@@ -688,12 +688,12 @@
     {
       "character": "kuma",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-07-05T08:00:17.000Z",
+      "lastSeen": "2026-07-05T10:36:24.000Z",
       "pairId": "4Y79-N5nY-HHJd:kuma",
       "playerId": "bigkuma",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 802,
+      "rankedGames": 807,
       "region": "Americas",
       "tekken_id": "4Y79-N5nY-HHJd"
     },

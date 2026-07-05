@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T13:17:42.496Z",
+  "generatedAt": "2026-07-05T19:07:00.235Z",
   "pairs": [
     {
       "character": "lili",
@@ -123,13 +123,13 @@
     },
     {
       "character": "kazuya",
-      "characterPeakRank": "kishin",
-      "lastSeen": "2026-06-06T02:55:21.000Z",
+      "characterPeakRank": "tekken_king",
+      "lastSeen": "2026-07-05T10:21:38.000Z",
       "pairId": "37iF-Jy3H-YdTJ:kazuya",
       "playerId": "chamk",
-      "rank": "kishin",
-      "rankTier": 23,
-      "rankedGames": 18,
+      "rank": "tekken_king",
+      "rankTier": 25,
+      "rankedGames": 22,
       "region": "Americas",
       "tekken_id": "37iF-Jy3H-YdTJ"
     },

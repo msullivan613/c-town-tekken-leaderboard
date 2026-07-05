@@ -1,7 +1,7 @@
 {
-  "basedOnMatchCount": 3962,
+  "basedOnMatchCount": 4011,
   "charMatchups": {},
-  "generatedAt": "2026-07-05T13:16:48.941Z",
+  "generatedAt": "2026-07-05T19:06:11.214Z",
   "headToHead": {},
   "players": {
     "afriking": {
@@ -174,14 +174,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 529,
+        "azucena": 558,
         "kunimitsu": 48
       },
-      "matchLosses": 190,
-      "matchWins": 387,
+      "matchLosses": 196,
+      "matchWins": 410,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 577,
-      "winRate": 0.671
+      "totalMatches": 606,
+      "winRate": 0.677
     },
     "puma": {
       "charUsage": {
@@ -196,16 +196,16 @@
     "rev_grizz": {
       "charUsage": {
         "dragunov": 2,
-        "eddy": 99,
+        "eddy": 112,
         "fahkumram": 94,
-        "kunimitsu": 146,
+        "kunimitsu": 153,
         "leroy": 3
       },
-      "matchLosses": 136,
-      "matchWins": 208,
+      "matchLosses": 145,
+      "matchWins": 219,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 344,
-      "winRate": 0.605
+      "totalMatches": 364,
+      "winRate": 0.602
     },
     "skrt": {
       "charUsage": {
