@@ -24,10 +24,14 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment; let a newer one supersede an in-flight build.
+# Allow one concurrent deployment; queue a newer run rather than cancelling the
+# in-flight one. Cancelling a deploy mid-flight orphans its Pages-backend
+# deployment, which then makes later runs fail with "Deployment failed, try again
+# later" (issue #28). GitHub's official Pages workflow uses cancel-in-progress: false
+# for this reason; queued intermediate runs are dropped, only the latest is kept.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
