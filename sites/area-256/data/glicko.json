@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T02:32:48.667Z",
+  "generatedAt": "2026-07-06T10:03:07.824Z",
   "pairs": [
     {
       "character": "leroy",
@@ -807,13 +807,13 @@
     {
       "character": "armor_king",
       "confidence": "leaderboard",
-      "games": 906,
-      "lastUpdated": "2026-06-15T03:25:46.000Z",
+      "games": 954,
+      "lastUpdated": "2026-07-06T08:03:33.000Z",
       "pairId": "5EeM-RAhn-HbJd:armor_king",
       "playerId": "afriking",
       "provisional": false,
-      "rating": 2114,
-      "sigmaSquared": 66
+      "rating": 2073,
+      "sigmaSquared": 62
     },
     {
       "character": "lars",

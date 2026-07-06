@@ -1,19 +1,19 @@
 {
-  "basedOnMatchCount": 4167,
+  "basedOnMatchCount": 4297,
   "charMatchups": {},
-  "generatedAt": "2026-07-06T02:32:48.667Z",
+  "generatedAt": "2026-07-06T10:03:07.824Z",
   "headToHead": {},
   "players": {
     "afriking": {
       "charUsage": {
-        "armor_king": 256,
+        "armor_king": 319,
         "lars": 44
       },
-      "matchLosses": 117,
-      "matchWins": 183,
+      "matchLosses": 144,
+      "matchWins": 219,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 300,
-      "winRate": 0.61
+      "totalMatches": 363,
+      "winRate": 0.603
     },
     "bard": {
       "charUsage": {
@@ -174,14 +174,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 604,
+        "azucena": 671,
         "kunimitsu": 48
       },
-      "matchLosses": 208,
-      "matchWins": 444,
+      "matchLosses": 228,
+      "matchWins": 491,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 652,
-      "winRate": 0.681
+      "totalMatches": 719,
+      "winRate": 0.683
     },
     "puma": {
       "charUsage": {
