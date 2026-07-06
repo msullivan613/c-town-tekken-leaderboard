@@ -1,0 +1,1042 @@
+{
+  "generatedAt": "2026-07-06T19:47:22.372Z",
+  "matches": [
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751068458",
+      "playedAt": "2025-06-27T23:54:18.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "kishin"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4899Drd8678h-4LB84Aq6e7fG:1751068762",
+      "playedAt": "2025-06-27T23:59:22.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "clive",
+        "name": "Mahoraga",
+        "playerId": "burny",
+        "polarisId": "4fLe2B6Q34fJ",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4LB84Aq6e7fG-4fLe2B6Q34fJ:1751069189",
+      "playedAt": "2025-06-28T00:06:29.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "clive",
+        "name": "Mahoraga",
+        "playerId": "burny",
+        "polarisId": "4fLe2B6Q34fJ",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4LB84Aq6e7fG-4fLe2B6Q34fJ:1751069470",
+      "playedAt": "2025-06-28T00:11:10.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "yoshimitsu",
+        "name": "Slashuur",
+        "playerId": "slashuur",
+        "polarisId": "4qeG258qfMQT",
+        "rank": "brawler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4LB84Aq6e7fG-4qeG258qfMQT:1751591941",
+      "playedAt": "2025-07-04T01:19:01.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751592189",
+      "playedAt": "2025-07-04T01:23:09.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "dragunov",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "fujin"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4LB84Aq6e7fG-4TiQJ6FArHJa:1751592437",
+      "playedAt": "2025-07-04T01:27:17.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "dragunov",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "fujin"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4LB84Aq6e7fG-4TiQJ6FArHJa:1751592823",
+      "playedAt": "2025-07-04T01:33:43.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "dragunov",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "fujin"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4LB84Aq6e7fG-4TiQJ6FArHJa:1751593051",
+      "playedAt": "2025-07-04T01:37:31.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "nina",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4899Drd8678h-4LB84Aq6e7fG:1751593257",
+      "playedAt": "2025-07-04T01:40:57.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "nina",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4899Drd8678h-4LB84Aq6e7fG:1751593490",
+      "playedAt": "2025-07-04T01:44:50.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "nina",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4899Drd8678h-4LB84Aq6e7fG:1751593797",
+      "playedAt": "2025-07-04T01:49:57.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "nina",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4899Drd8678h-4LB84Aq6e7fG:1751594074",
+      "playedAt": "2025-07-04T01:54:34.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "nina",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4899Drd8678h-4LB84Aq6e7fG:1751594329",
+      "playedAt": "2025-07-04T01:58:49.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751594549",
+      "playedAt": "2025-07-04T02:02:29.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751594831",
+      "playedAt": "2025-07-04T02:07:11.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751595057",
+      "playedAt": "2025-07-04T02:10:57.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751595239",
+      "playedAt": "2025-07-04T02:13:59.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "nina",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4899Drd8678h-4LB84Aq6e7fG:1751595518",
+      "playedAt": "2025-07-04T02:18:38.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751595678",
+      "playedAt": "2025-07-04T02:21:18.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "nina",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:4899Drd8678h-4LB84Aq6e7fG:1751596211",
+      "playedAt": "2025-07-04T02:30:11.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751596530",
+      "playedAt": "2025-07-04T02:35:30.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751596841",
+      "playedAt": "2025-07-04T02:40:41.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751597046",
+      "playedAt": "2025-07-04T02:44:06.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751597257",
+      "playedAt": "2025-07-04T02:47:37.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751597531",
+      "playedAt": "2025-07-04T02:52:11.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751597795",
+      "playedAt": "2025-07-04T02:56:35.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751598035",
+      "playedAt": "2025-07-04T03:00:35.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "b": {
+        "character": "lili",
+        "name": "JardJay",
+        "playerId": "jardjay",
+        "polarisId": "4LB84Aq6e7fG",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:3E4Rn7J9e32T-4LB84Aq6e7fG:1751598278",
+      "playedAt": "2025-07-04T03:04:38.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "b": {
+        "character": "asuka",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:32JbyqQN3MMJ-3E4Rn7J9e32T:1757042179",
+      "playedAt": "2025-09-05T03:16:19.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "b": {
+        "character": "asuka",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:32JbyqQN3MMJ-3E4Rn7J9e32T:1757042346",
+      "playedAt": "2025-09-05T03:19:06.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "b": {
+        "character": "asuka",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:32JbyqQN3MMJ-3E4Rn7J9e32T:1757042576",
+      "playedAt": "2025-09-05T03:22:56.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "b": {
+        "character": "lili",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:32JbyqQN3MMJ-3E4Rn7J9e32T:1757043394",
+      "playedAt": "2025-09-05T03:36:34.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "b": {
+        "character": "lili",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:32JbyqQN3MMJ-3E4Rn7J9e32T:1757043643",
+      "playedAt": "2025-09-05T03:40:43.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "b": {
+        "character": "lili",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:32JbyqQN3MMJ-3E4Rn7J9e32T:1757043832",
+      "playedAt": "2025-09-05T03:43:52.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "b": {
+        "character": "lili",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "battle_ruler"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:32JbyqQN3MMJ-3E4Rn7J9e32T:1757044002",
+      "playedAt": "2025-09-05T03:46:42.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "leo",
+        "name": "cheeki-haggrid",
+        "playerId": "code",
+        "polarisId": "2jTyfimTMEJr",
+        "rank": "dominator"
+      },
+      "b": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:2jTyfimTMEJr-32JbyqQN3MMJ:1757044319",
+      "playedAt": "2025-09-05T03:51:59.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "leo",
+        "name": "cheeki-haggrid",
+        "playerId": "code",
+        "polarisId": "2jTyfimTMEJr",
+        "rank": "dominator"
+      },
+      "b": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:2jTyfimTMEJr-32JbyqQN3MMJ:1757044592",
+      "playedAt": "2025-09-05T03:56:32.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "leo",
+        "name": "cheeki-haggrid",
+        "playerId": "code",
+        "polarisId": "2jTyfimTMEJr",
+        "rank": "dominator"
+      },
+      "b": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:2jTyfimTMEJr-32JbyqQN3MMJ:1757044750",
+      "playedAt": "2025-09-05T03:59:10.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "leo",
+        "name": "cheeki-haggrid",
+        "playerId": "code",
+        "polarisId": "2jTyfimTMEJr",
+        "rank": "dominator"
+      },
+      "b": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:2jTyfimTMEJr-32JbyqQN3MMJ:1757045011",
+      "playedAt": "2025-09-05T04:03:31.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "leo",
+        "name": "cheeki-haggrid",
+        "playerId": "code",
+        "polarisId": "2jTyfimTMEJr",
+        "rank": "dominator"
+      },
+      "b": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:2jTyfimTMEJr-32JbyqQN3MMJ:1757045131",
+      "playedAt": "2025-09-05T04:05:31.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "leo",
+        "name": "cheeki-haggrid",
+        "playerId": "code",
+        "polarisId": "2jTyfimTMEJr",
+        "rank": "dominator"
+      },
+      "b": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:2jTyfimTMEJr-32JbyqQN3MMJ:1757045286",
+      "playedAt": "2025-09-05T04:08:06.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "panda",
+        "name": "gnarlyidk",
+        "playerId": "gnarlyidk",
+        "polarisId": "2GAa6T8RT3Ey",
+        "rank": "cavalry"
+      },
+      "b": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:2GAa6T8RT3Ey-32JbyqQN3MMJ:1762225309",
+      "playedAt": "2025-11-04T03:01:49.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "b": {
+        "character": "asuka",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "fujin"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:32JbyqQN3MMJ-3E4Rn7J9e32T:1762225500",
+      "playedAt": "2025-11-04T03:05:00.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "panda",
+        "name": "gnarlyidk",
+        "playerId": "gnarlyidk",
+        "polarisId": "2GAa6T8RT3Ey",
+        "rank": "cavalry"
+      },
+      "b": {
+        "character": "steve",
+        "name": "Thingama",
+        "playerId": "nyx",
+        "polarisId": "32JbyqQN3MMJ",
+        "rank": "warrior"
+      },
+      "battleType": "player",
+      "crew": true,
+      "id": "ewgf:2GAa6T8RT3Ey-32JbyqQN3MMJ:1762226399",
+      "playedAt": "2025-11-04T03:19:59.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    }
+  ],
+  "schemaVersion": 2,
+  "year": "2025"
+}
