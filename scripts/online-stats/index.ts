@@ -296,10 +296,10 @@ async function main() {
     };
     wroteMatches = writeDataFile('matches.json', matchesFile);
 
-    // Roll feed matches pruned out of the live window this run into per-year
-    // cold-storage archives instead of discarding them (issue #19). Each archive is
-    // only rewritten when it actually gains matches (splitMatchesByYear only yields
-    // years with newly-pruned matches), preserving the commit-if-changed gate.
+    // Roll matches pruned out of the live window this run — crew and non-crew alike —
+    // into per-year cold-storage archives instead of discarding them (issues #19, #30).
+    // Each archive is only rewritten when it actually gains matches (splitMatchesByYear
+    // only yields years with newly-pruned matches), preserving the commit-if-changed gate.
     for (const [year, pruned] of splitMatchesByYear(built.archived)) {
       const name = matchArchiveName(year);
       const existing = readDataFile<MatchArchiveFile>(name)?.matches ?? [];
@@ -313,8 +313,9 @@ async function main() {
       if (writeDataFile(name, archiveFile)) archivedCount += pruned.length;
     }
 
-    // Derive stats over the full retained dataset — live feed + crew + all archives
-    // (deduped by id) — so per-player rollups aren't limited to the recent window.
+    // Derive stats over the full retained dataset — live feed + all archives
+    // (deduped by id) — so head-to-head + per-player rollups aren't limited to the
+    // recent window even as crew matches age out of the live feed (issue #30).
     const fullSet = mergeMatches(built.matches, readMatchArchives());
     wroteStats = writeDataFile('stats.json', deriveStats(fullSet, now));
   }

@@ -101,11 +101,12 @@ export interface MatchesFile {
   matches: Match[];
 }
 
-// ── matches.<year>.json — cold-storage archive of pruned feed matches ─────────
-// The live matches.json is a bounded recent feed; non-crew matches pruned out of it
-// (past the recent window or over the per-player cap) roll into these per-year
-// archives instead of being discarded (issue #19). Build-time only: the pipeline
-// reads them so stats span the full dataset, but the frontend never downloads them.
+// ── matches.<year>.json — cold-storage archive of pruned matches ──────────────
+// The live matches.json is a bounded recent feed; matches pruned out of it — crew and
+// non-crew alike aged past the recent window, plus non-crew over the per-player cap —
+// roll into these per-year archives instead of being discarded (issues #19, #30).
+// Build-time only: the pipeline reads them so stats span the full dataset, but the
+// frontend never downloads them.
 export interface MatchArchiveFile {
   schemaVersion: 2;
   year: string;
@@ -158,7 +159,7 @@ export interface AppConfig {
     bestPairMetric: 'mmr' | 'rank';
   };
   matches: {
-    recentWindowDays: number; // non-crew matches older than this are pruned
+    recentWindowDays: number; // matches (crew + non-crew) older than this are pruned to archives
     feedMaxPerPlayer: number; // cap of non-crew matches kept per player
   };
   // Per-site head-to-head tracking. When disabled, this site's players are never

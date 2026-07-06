@@ -1,7 +1,7 @@
 # 4. Match pipeline (tknow + ewgf battles → matches + stats)
 
 **Goal:** with no manual entry, gather each tracked player's online matches, write
-`matches.json` (a bounded recent feed + append-only crew history, with pruned matches
+`matches.json` (a bounded recent feed of crew + non-crew matches, with pruned matches
 archived, not dropped), then derive `stats.json` (head-to-head + usage) over the full
 dataset. This runs **inside the same `online-stats` job** (§3) — the per-player tknow
 match fetch and the optional ewgf fetch already return the battles, so no separate
@@ -23,9 +23,12 @@ Entry points: `scripts/online-stats/matches.ts` (build/dedup/classify/retain/arc
 ## 4.1 What we gather
 
 - **Crew-vs-crew** matches (both `polarisId`s resolve to roster players) → the
-  head-to-head / rivalry feature. **Kept forever.**
+  head-to-head / rivalry feature. **Kept as a rolling window**, then archived (§4.4,
+  issue #30). Head-to-head totals survive aging because `stats.json` derives over the
+  full retained set (live + archives), so nothing is lost from the aggregate.
 - **Non-crew** matches (a tracked player vs a random) → the recent-activity feed and
-  per-player recent form. **Kept as a rolling window**, then archived (§4.4).
+  per-player recent form. **Kept as a rolling window** (with a per-player cap), then
+  archived (§4.4).
 
 Since we only fetch tracked players' battles, every battle has ≥ 1 crew side.
 
@@ -44,9 +47,10 @@ crewMatchCount, feedMatchCount }`:
    `ewgf:{lo}-{hi}:{epoch}` (§8). A crew-vs-crew battle in _both_ players' feeds, and
    the same battle re-fetched on later runs, collapse to one `Match`. Fresh battles are
    **merged onto** `priorMatches` by id (append-only history + incremental catch-up).
-4. **Retention (issue #19).** Keep every crew match. Non-crew "feed" matches are bounded
-   by `matches.recentWindowDays` and `feedMaxPerPlayer`; those pruned out of the window
-   are returned as `archived` (not discarded — §4.4). Sort by `playedAt`.
+4. **Retention (issues #19, #30).** Both crew and non-crew matches are bounded by
+   `matches.recentWindowDays`; non-crew "feed" matches are additionally capped per player
+   by `feedMaxPerPlayer`. Matches pruned out of the live window are returned as `archived`
+   (not discarded — §4.4). Sort by `playedAt`.
 
 ## 4.3 Deriving `stats.json` (`scripts/online-stats/stats.ts`)
 
@@ -60,14 +64,15 @@ so per-player rollups aren't limited to the recent window:
   `charUsage`, `mostPlayedCharacter`.
 - `charMatchups` (crew), per `id:char` pair, by matches won.
 
-## 4.4 Archiving pruned feed matches (issue #19)
+## 4.4 Archiving pruned matches (issues #19, #30)
 
-Feed matches pruned out of the live window this run roll into per-year cold-storage
-archives `matches.<year>.json` (`buildMatches` returns them as `archived`; the caller
-merges them into the right year's archive by id via `mergeMatches`). These are
-**build-time only** — `deriveStats` reads them, but the frontend never downloads them.
-An archive is only rewritten when it actually gains matches, so the commit-if-changed
-gate holds and archives appear only once feed matches age past the window (none today).
+Matches pruned out of the live window this run — crew and non-crew alike — roll into
+per-year cold-storage archives `matches.<year>.json` (`buildMatches` returns them as
+`archived`; the caller merges them into the right year's archive by id via
+`mergeMatches`). These are **build-time only** — `deriveStats` reads them, but the
+frontend never downloads them. An archive is only rewritten when it actually gains
+matches, so the commit-if-changed gate holds and archives appear only once matches age
+past the window (none today).
 
 ## 4.5 Degradation & writing
 

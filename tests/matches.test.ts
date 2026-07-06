@@ -169,15 +169,21 @@ describe('buildMatches', () => {
     expect(res.matches[0].battleType).toBe('quick');
   });
 
-  it('keeps crew matches forever but archives (not drops) non-crew outside the window', () => {
+  it('keeps recent crew + feed matches live but archives (not drops) either outside the window', () => {
     const res = buildMatches(
       [
+        battle({
+          battleId: 'CREW_RECENT',
+          battleAt: '2026-06-29T10:00:00Z',
+          p1: P.matt,
+          p2: P.nick,
+        }), // recent crew → live
         battle({
           battleId: 'CREW_OLD',
           battleAt: '2026-01-01T10:00:00Z',
           p1: P.matt,
           p2: P.nick,
-        }), // old crew → kept
+        }), // old crew → archived (issue #30)
         battle({
           battleId: 'FEED_OLD',
           battleAt: '2026-01-01T11:00:00Z',
@@ -192,8 +198,8 @@ describe('buildMatches', () => {
     );
     expect(res.crewMatchCount).toBe(1);
     expect(res.feedMatchCount).toBe(0);
-    expect(res.matches.map((m) => m.id)).not.toContain('FEED_OLD');
-    expect(res.archived.map((m) => m.id)).toEqual(['FEED_OLD']); // preserved, not dropped
+    expect(res.matches.map((m) => m.id)).toEqual(['CREW_RECENT']);
+    expect(res.archived.map((m) => m.id).sort()).toEqual(['CREW_OLD', 'FEED_OLD']); // preserved, not dropped
   });
 
   it('caps non-crew matches per player at feedMaxPerPlayer and archives the overflow', () => {
@@ -213,26 +219,42 @@ describe('buildMatches', () => {
     expect(res.archived.map((m) => m.id).sort()).toEqual(['FEED10', 'FEED11']);
   });
 
-  it('never archives crew matches (kept in the live feed forever)', () => {
+  it('archives crew matches aged past the window, without the per-player cap (issue #30)', () => {
+    const cfg = { matches: { recentWindowDays: 30, feedMaxPerPlayer: 1 } } as AppConfig;
+    // Two old crew matches: both archived (aged out), the tight per-player cap does
+    // not apply to crew. A recent crew match stays live.
     const res = buildMatches(
       [
         battle({
-          battleId: 'CREW_OLD',
+          battleId: 'CREW_OLD_1',
           battleAt: '2024-01-01T10:00:00Z',
+          p1: P.matt,
+          p2: P.nick,
+        }),
+        battle({
+          battleId: 'CREW_OLD_2',
+          battleAt: '2024-02-01T10:00:00Z',
+          p1: P.matt,
+          p2: P.nick,
+        }),
+        battle({
+          battleId: 'CREW_RECENT',
+          battleAt: '2026-06-29T10:00:00Z',
           p1: P.matt,
           p2: P.nick,
         }),
       ],
       PLAYERS,
       [],
-      CFG,
+      cfg,
       NOW,
     );
-    expect(res.archived).toHaveLength(0);
-    expect(res.matches.map((m) => m.id)).toEqual(['CREW_OLD']);
+    expect(res.matches.map((m) => m.id)).toEqual(['CREW_RECENT']);
+    expect(res.crewMatchCount).toBe(1);
+    expect(res.archived.map((m) => m.id).sort()).toEqual(['CREW_OLD_1', 'CREW_OLD_2']);
   });
 
-  it('merges with prior matches (append-only crew history)', () => {
+  it('merges with prior matches (append-only, incremental catch-up)', () => {
     const first = buildMatches(
       [
         battle({
