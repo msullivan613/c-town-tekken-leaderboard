@@ -1,7 +1,7 @@
 {
-  "basedOnMatchCount": 4439,
+  "basedOnMatchCount": 4447,
   "charMatchups": {},
-  "generatedAt": "2026-07-07T14:14:41.897Z",
+  "generatedAt": "2026-07-07T19:46:04.806Z",
   "headToHead": {},
   "players": {
     "afriking": {
@@ -198,14 +198,14 @@
         "dragunov": 2,
         "eddy": 112,
         "fahkumram": 94,
-        "kunimitsu": 257,
+        "kunimitsu": 265,
         "leroy": 3
       },
-      "matchLosses": 210,
-      "matchWins": 258,
+      "matchLosses": 211,
+      "matchWins": 265,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 468,
-      "winRate": 0.551
+      "totalMatches": 476,
+      "winRate": 0.557
     },
     "skrt": {
       "charUsage": {
