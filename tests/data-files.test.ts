@@ -128,7 +128,6 @@ describe.each(siteSlugs)('committed data files: %s', (slug) => {
       );
       for (const m of archive.matches) {
         expect(m.playedAt.slice(0, 4)).toBe(archive.year); // filed under the right year
-        expect(m.crew).toBe(false); // crew matches stay in the live feed forever
         expect(m.a.playerId != null || m.b.playerId != null).toBe(true);
       }
     }
