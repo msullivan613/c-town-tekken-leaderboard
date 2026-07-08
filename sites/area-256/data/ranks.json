@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T13:47:56.769Z",
+  "generatedAt": "2026-07-08T19:13:57.883Z",
   "pairs": [
     {
       "character": "leroy",
@@ -355,8 +355,8 @@
       "lastSeen": "2026-06-17T04:08:33.000Z",
       "pairId": "3hBB-83gE-7EAG:kuma",
       "playerId": "skrt",
-      "rank": "god_of_destruction_ii",
-      "rankTier": 31,
+      "rank": "god_of_destruction_iii",
+      "rankTier": 32,
       "rankedGames": 269,
       "region": "Americas",
       "tekken_id": "3hBB-83gE-7EAG"
@@ -520,12 +520,12 @@
     {
       "character": "leroy",
       "characterPeakRank": "god_of_destruction",
-      "lastSeen": "2026-07-08T08:13:35.000Z",
+      "lastSeen": "2026-07-08T08:58:06.000Z",
       "pairId": "44eg-BAHA-424E:leroy",
       "playerId": "rev_grizz",
       "rank": "god_of_destruction",
       "rankTier": 29,
-      "rankedGames": 104,
+      "rankedGames": 117,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
     },
@@ -688,12 +688,12 @@
     {
       "character": "kuma",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-07-08T08:11:28.000Z",
+      "lastSeen": "2026-07-08T10:02:17.000Z",
       "pairId": "4Y79-N5nY-HHJd:kuma",
       "playerId": "bigkuma",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 839,
+      "rankedGames": 863,
       "region": "Americas",
       "tekken_id": "4Y79-N5nY-HHJd"
     },
@@ -904,12 +904,12 @@
     {
       "character": "armor_king",
       "characterPeakRank": "god_of_destruction_iv",
-      "lastSeen": "2026-07-08T08:12:15.000Z",
+      "lastSeen": "2026-07-08T08:43:22.000Z",
       "pairId": "5EeM-RAhn-HbJd:armor_king",
       "playerId": "afriking",
       "rank": "god_of_destruction_iv",
       "rankTier": 33,
-      "rankedGames": 1385,
+      "rankedGames": 1388,
       "region": "Americas",
       "tekken_id": "5EeM-RAhn-HbJd"
     },

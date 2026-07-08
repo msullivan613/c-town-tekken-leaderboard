@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T13:47:56.769Z",
+  "generatedAt": "2026-07-08T19:13:57.883Z",
   "pairs": [
     {
       "character": "leroy",
@@ -444,12 +444,12 @@
     {
       "character": "kunimitsu",
       "confidence": "leaderboard",
-      "games": 987,
-      "lastUpdated": "2026-07-08T07:42:05.000Z",
+      "games": 1023,
+      "lastUpdated": "2026-07-08T19:12:43.000Z",
       "pairId": "44eg-BAHA-424E:kunimitsu",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 2002,
+      "rating": 2012,
       "sigmaSquared": 62
     },
     {
