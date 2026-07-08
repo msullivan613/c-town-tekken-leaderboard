@@ -1,19 +1,31 @@
 {
-  "basedOnMatchCount": 4534,
-  "charMatchups": {},
-  "generatedAt": "2026-07-08T02:02:36.437Z",
-  "headToHead": {},
+  "basedOnMatchCount": 4683,
+  "charMatchups": {
+    "afriking:armor_king|phine:azucena": {
+      "matchesA": 6,
+      "matchesB": 10
+    }
+  },
+  "generatedAt": "2026-07-08T08:13:58.777Z",
+  "headToHead": {
+    "afriking|phine": {
+      "matchesA": 6,
+      "matchesB": 10,
+      "roundsA": 27,
+      "roundsB": 39
+    }
+  },
   "players": {
     "afriking": {
       "charUsage": {
-        "armor_king": 349,
+        "armor_king": 376,
         "lars": 44
       },
-      "matchLosses": 158,
-      "matchWins": 235,
+      "matchLosses": 170,
+      "matchWins": 250,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 393,
-      "winRate": 0.598
+      "totalMatches": 420,
+      "winRate": 0.595
     },
     "bard": {
       "charUsage": {
@@ -29,13 +41,13 @@
       "charUsage": {
         "dragunov": 57,
         "jack8": 7,
-        "kuma": 336
+        "kuma": 351
       },
-      "matchLosses": 198,
-      "matchWins": 202,
+      "matchLosses": 206,
+      "matchWins": 209,
       "mostPlayedCharacter": "kuma",
-      "totalMatches": 400,
-      "winRate": 0.505
+      "totalMatches": 415,
+      "winRate": 0.504
     },
     "eonexodus": {
       "charUsage": {
@@ -65,13 +77,13 @@
       "charUsage": {
         "dragunov": 99,
         "kunimitsu": 171,
-        "xiaoyu": 30
+        "xiaoyu": 42
       },
-      "matchLosses": 121,
-      "matchWins": 179,
+      "matchLosses": 122,
+      "matchWins": 190,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 300,
-      "winRate": 0.597
+      "totalMatches": 312,
+      "winRate": 0.609
     },
     "holycrow": {
       "charUsage": {
@@ -174,14 +186,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 742,
+        "azucena": 776,
         "kunimitsu": 48
       },
-      "matchLosses": 240,
-      "matchWins": 550,
+      "matchLosses": 248,
+      "matchWins": 576,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 790,
-      "winRate": 0.696
+      "totalMatches": 824,
+      "winRate": 0.699
     },
     "puma": {
       "charUsage": {
@@ -196,32 +208,32 @@
     "rev_grizz": {
       "charUsage": {
         "dragunov": 2,
-        "eddy": 112,
-        "fahkumram": 94,
-        "kunimitsu": 342,
-        "leroy": 3
+        "eddy": 118,
+        "fahkumram": 96,
+        "kunimitsu": 391,
+        "leroy": 9
       },
-      "matchLosses": 249,
-      "matchWins": 304,
+      "matchLosses": 281,
+      "matchWins": 335,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 553,
-      "winRate": 0.55
+      "totalMatches": 616,
+      "winRate": 0.544
     },
     "skrt": {
       "charUsage": {
         "bryan": 229,
-        "jack8": 36,
+        "jack8": 50,
         "king": 14,
         "kuma": 55,
         "kunimitsu": 8,
         "miary_zo": 16,
         "panda": 3
       },
-      "matchLosses": 199,
-      "matchWins": 162,
+      "matchLosses": 207,
+      "matchWins": 168,
       "mostPlayedCharacter": "bryan",
-      "totalMatches": 361,
-      "winRate": 0.449
+      "totalMatches": 375,
+      "winRate": 0.448
     },
     "sugarfree": {
       "charUsage": {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T02:02:36.437Z",
+  "generatedAt": "2026-07-08T08:13:58.777Z",
   "pairs": [
     {
       "character": "leroy",
@@ -290,13 +290,13 @@
     {
       "character": "jack8",
       "confidence": "leaderboard",
-      "games": 712,
-      "lastUpdated": "2026-07-08T01:57:31.000Z",
+      "games": 727,
+      "lastUpdated": "2026-07-08T02:46:56.000Z",
       "pairId": "3hBB-83gE-7EAG:jack8",
       "playerId": "skrt",
       "provisional": false,
-      "rating": 1711,
-      "sigmaSquared": 65
+      "rating": 1751,
+      "sigmaSquared": 64
     },
     {
       "character": "king",
@@ -422,34 +422,34 @@
     {
       "character": "eddy",
       "confidence": "leaderboard",
-      "games": 7540,
-      "lastUpdated": "2026-07-05T18:41:30.000Z",
+      "games": 7546,
+      "lastUpdated": "2026-07-08T06:58:32.000Z",
       "pairId": "44eg-BAHA-424E:eddy",
-      "playerId": "rev_grizz",
-      "provisional": false,
-      "rating": 2085,
-      "sigmaSquared": 63
-    },
-    {
-      "character": "fahkumram",
-      "confidence": "leaderboard",
-      "games": 3539,
-      "lastUpdated": "2026-07-02T06:01:59.000Z",
-      "pairId": "44eg-BAHA-424E:fahkumram",
       "playerId": "rev_grizz",
       "provisional": false,
       "rating": 2062,
       "sigmaSquared": 63
     },
     {
+      "character": "fahkumram",
+      "confidence": "leaderboard",
+      "games": 3541,
+      "lastUpdated": "2026-07-08T07:04:39.000Z",
+      "pairId": "44eg-BAHA-424E:fahkumram",
+      "playerId": "rev_grizz",
+      "provisional": false,
+      "rating": 2063,
+      "sigmaSquared": 63
+    },
+    {
       "character": "kunimitsu",
       "confidence": "leaderboard",
-      "games": 938,
-      "lastUpdated": "2026-07-08T00:32:58.000Z",
+      "games": 987,
+      "lastUpdated": "2026-07-08T07:42:05.000Z",
       "pairId": "44eg-BAHA-424E:kunimitsu",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1985,
+      "rating": 2002,
       "sigmaSquared": 62
     },
     {
@@ -466,13 +466,13 @@
     {
       "character": "leroy",
       "confidence": "leaderboard",
-      "games": 2033,
-      "lastUpdated": "2026-06-25T22:43:48.000Z",
+      "games": 2038,
+      "lastUpdated": "2026-07-08T08:09:34.000Z",
       "pairId": "44eg-BAHA-424E:leroy",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1854,
-      "sigmaSquared": 74
+      "rating": 1866,
+      "sigmaSquared": 72
     },
     {
       "character": "raven",
@@ -609,12 +609,12 @@
     {
       "character": "kuma",
       "confidence": "leaderboard",
-      "games": 3509,
-      "lastUpdated": "2026-07-07T07:21:10.000Z",
+      "games": 3524,
+      "lastUpdated": "2026-07-08T08:11:28.000Z",
       "pairId": "4Y79-N5nY-HHJd:kuma",
       "playerId": "bigkuma",
       "provisional": false,
-      "rating": 2054,
+      "rating": 2006,
       "sigmaSquared": 64
     },
     {
@@ -807,12 +807,12 @@
     {
       "character": "armor_king",
       "confidence": "leaderboard",
-      "games": 968,
-      "lastUpdated": "2026-07-07T08:04:59.000Z",
+      "games": 979,
+      "lastUpdated": "2026-07-08T08:12:15.000Z",
       "pairId": "5EeM-RAhn-HbJd:armor_king",
       "playerId": "afriking",
       "provisional": false,
-      "rating": 2099,
+      "rating": 2141,
       "sigmaSquared": 62
     },
     {
