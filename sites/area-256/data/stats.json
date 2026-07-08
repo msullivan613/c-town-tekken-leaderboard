@@ -1,7 +1,7 @@
 {
-  "basedOnMatchCount": 4447,
+  "basedOnMatchCount": 4534,
   "charMatchups": {},
-  "generatedAt": "2026-07-07T19:46:04.806Z",
+  "generatedAt": "2026-07-08T02:02:36.437Z",
   "headToHead": {},
   "players": {
     "afriking": {
@@ -174,14 +174,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 735,
+        "azucena": 742,
         "kunimitsu": 48
       },
-      "matchLosses": 239,
-      "matchWins": 544,
+      "matchLosses": 240,
+      "matchWins": 550,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 783,
-      "winRate": 0.695
+      "totalMatches": 790,
+      "winRate": 0.696
     },
     "puma": {
       "charUsage": {
@@ -198,30 +198,30 @@
         "dragunov": 2,
         "eddy": 112,
         "fahkumram": 94,
-        "kunimitsu": 265,
+        "kunimitsu": 342,
         "leroy": 3
       },
-      "matchLosses": 211,
-      "matchWins": 265,
+      "matchLosses": 249,
+      "matchWins": 304,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 476,
-      "winRate": 0.557
+      "totalMatches": 553,
+      "winRate": 0.55
     },
     "skrt": {
       "charUsage": {
         "bryan": 229,
-        "jack8": 33,
+        "jack8": 36,
         "king": 14,
         "kuma": 55,
         "kunimitsu": 8,
         "miary_zo": 16,
         "panda": 3
       },
-      "matchLosses": 197,
-      "matchWins": 161,
+      "matchLosses": 199,
+      "matchWins": 162,
       "mostPlayedCharacter": "bryan",
-      "totalMatches": 358,
-      "winRate": 0.45
+      "totalMatches": 361,
+      "winRate": 0.449
     },
     "sugarfree": {
       "charUsage": {

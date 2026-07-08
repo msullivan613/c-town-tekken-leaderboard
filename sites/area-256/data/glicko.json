@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T19:46:04.806Z",
+  "generatedAt": "2026-07-08T02:02:36.437Z",
   "pairs": [
     {
       "character": "leroy",
@@ -290,12 +290,12 @@
     {
       "character": "jack8",
       "confidence": "leaderboard",
-      "games": 710,
-      "lastUpdated": "2026-07-07T04:09:17.000Z",
+      "games": 712,
+      "lastUpdated": "2026-07-08T01:57:31.000Z",
       "pairId": "3hBB-83gE-7EAG:jack8",
       "playerId": "skrt",
       "provisional": false,
-      "rating": 1730,
+      "rating": 1711,
       "sigmaSquared": 65
     },
     {
@@ -444,13 +444,13 @@
     {
       "character": "kunimitsu",
       "confidence": "leaderboard",
-      "games": 861,
-      "lastUpdated": "2026-07-07T19:44:23.000Z",
+      "games": 938,
+      "lastUpdated": "2026-07-08T00:32:58.000Z",
       "pairId": "44eg-BAHA-424E:kunimitsu",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1963,
-      "sigmaSquared": 63
+      "rating": 1985,
+      "sigmaSquared": 62
     },
     {
       "character": "lars",
