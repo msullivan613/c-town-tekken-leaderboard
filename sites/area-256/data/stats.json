@@ -1,13 +1,23 @@
 {
-  "basedOnMatchCount": 4683,
+  "basedOnMatchCount": 4720,
   "charMatchups": {
+    "afriking:armor_king|bigkuma:kuma": {
+      "matchesA": 2,
+      "matchesB": 1
+    },
     "afriking:armor_king|phine:azucena": {
       "matchesA": 6,
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-08T08:13:58.777Z",
+  "generatedAt": "2026-07-08T13:47:56.769Z",
   "headToHead": {
+    "afriking|bigkuma": {
+      "matchesA": 2,
+      "matchesB": 1,
+      "roundsA": 8,
+      "roundsB": 4
+    },
     "afriking|phine": {
       "matchesA": 6,
       "matchesB": 10,
@@ -18,14 +28,14 @@
   "players": {
     "afriking": {
       "charUsage": {
-        "armor_king": 376,
+        "armor_king": 379,
         "lars": 44
       },
-      "matchLosses": 170,
-      "matchWins": 250,
+      "matchLosses": 171,
+      "matchWins": 252,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 420,
-      "winRate": 0.595
+      "totalMatches": 423,
+      "winRate": 0.596
     },
     "bard": {
       "charUsage": {
@@ -41,13 +51,13 @@
       "charUsage": {
         "dragunov": 57,
         "jack8": 7,
-        "kuma": 351
+        "kuma": 375
       },
-      "matchLosses": 206,
-      "matchWins": 209,
+      "matchLosses": 218,
+      "matchWins": 221,
       "mostPlayedCharacter": "kuma",
-      "totalMatches": 415,
-      "winRate": 0.504
+      "totalMatches": 439,
+      "winRate": 0.503
     },
     "eonexodus": {
       "charUsage": {
@@ -211,13 +221,13 @@
         "eddy": 118,
         "fahkumram": 96,
         "kunimitsu": 391,
-        "leroy": 9
+        "leroy": 22
       },
-      "matchLosses": 281,
-      "matchWins": 335,
+      "matchLosses": 284,
+      "matchWins": 345,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 616,
-      "winRate": 0.544
+      "totalMatches": 629,
+      "winRate": 0.548
     },
     "skrt": {
       "charUsage": {

@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2225,
+  "basedOnMatchCount": 2244,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -270,7 +270,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-08T08:15:24.239Z",
+  "generatedAt": "2026-07-08T13:48:45.374Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -513,14 +513,14 @@
         "kunimitsu": 7,
         "lars": 1,
         "lili": 4,
-        "reina": 266,
+        "reina": 285,
         "steve": 1
       },
-      "matchLosses": 110,
-      "matchWins": 179,
+      "matchLosses": 124,
+      "matchWins": 184,
       "mostPlayedCharacter": "reina",
-      "totalMatches": 289,
-      "winRate": 0.619
+      "totalMatches": 308,
+      "winRate": 0.597
     },
     "gnarlyidk": {
       "charUsage": {
