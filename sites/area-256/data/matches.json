@@ -1,100 +1,8 @@
 {
   "crewMatchCount": 19,
-  "feedMatchCount": 585,
-  "generatedAt": "2026-07-08T19:13:57.883Z",
+  "feedMatchCount": 581,
+  "generatedAt": "2026-07-09T02:14:46.260Z",
   "matches": [
-    {
-      "a": {
-        "character": "king",
-        "name": "Literally_Kirby",
-        "playerId": "literally_kirby",
-        "polarisId": "377NLf5nrB22",
-        "rank": "garyu"
-      },
-      "b": {
-        "character": "steve",
-        "name": "Darkness",
-        "playerId": null,
-        "polarisId": "55f29qMt2HE2",
-        "rank": "shinryu"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "297f9937165543d18fda74bdb44ed438",
-      "playedAt": "2026-06-08T23:53:47.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "dragunov",
-        "name": "Solosnipez",
-        "playerId": null,
-        "polarisId": "2N5aBJMqALiB",
-        "rank": "tenryu"
-      },
-      "b": {
-        "character": "king",
-        "name": "Literally_Kirby",
-        "playerId": "literally_kirby",
-        "polarisId": "377NLf5nrB22",
-        "rank": "garyu"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "c4e5923045cd4b80a29be52c617264ca",
-      "playedAt": "2026-06-08T23:57:31.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "BoisonFire",
-        "playerId": null,
-        "polarisId": "2EYLmd24NERh",
-        "rank": "tenryu"
-      },
-      "b": {
-        "character": "king",
-        "name": "Literally_Kirby",
-        "playerId": "literally_kirby",
-        "polarisId": "377NLf5nrB22",
-        "rank": "garyu"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "fa67b40769124976a4b864e8beb87fa1",
-      "playedAt": "2026-06-09T00:01:15.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "BoisonFire",
-        "playerId": null,
-        "polarisId": "2EYLmd24NERh",
-        "rank": "tenryu"
-      },
-      "b": {
-        "character": "king",
-        "name": "Literally_Kirby",
-        "playerId": "literally_kirby",
-        "polarisId": "377NLf5nrB22",
-        "rank": "garyu"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "675164fab1ba483c94f5a5a8a9e1e640",
-      "playedAt": "2026-06-09T00:05:43.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
     {
       "a": {
         "character": "hwoarang",
@@ -7464,190 +7372,6 @@
         "rank": "tekken_god"
       },
       "b": {
-        "character": "kunimitsu",
-        "name": "HydraSoryu",
-        "playerId": null,
-        "polarisId": "5EHNNrnDtFn2",
-        "rank": "tekken_god_supreme"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "1eb1208067874760bc51ee43dfa7d361",
-      "playedAt": "2026-07-05T01:34:18.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kazuya",
-        "name": "EonExodus",
-        "playerId": "eonexodus",
-        "polarisId": "4FE3J976Qray",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "HydraSoryu",
-        "playerId": null,
-        "polarisId": "5EHNNrnDtFn2",
-        "rank": "tekken_god_supreme"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "50f52f2306c54271874ceda569127f7c",
-      "playedAt": "2026-07-05T01:38:04.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kazuya",
-        "name": "EonExodus",
-        "playerId": "eonexodus",
-        "polarisId": "4FE3J976Qray",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "HydraSoryu",
-        "playerId": null,
-        "polarisId": "5EHNNrnDtFn2",
-        "rank": "tekken_god_supreme"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "9969c3a2e65c400ea65aac98229da548",
-      "playedAt": "2026-07-05T01:40:04.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "xiaoyu",
-        "name": "Ciel",
-        "playerId": null,
-        "polarisId": "3MQ4Hjr8g2Mh",
-        "rank": "tekken_emperor"
-      },
-      "b": {
-        "character": "kazuya",
-        "name": "EonExodus",
-        "playerId": "eonexodus",
-        "polarisId": "4FE3J976Qray",
-        "rank": "tekken_god"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "d84e42b0511749dc85a8a8c60f9a13ad",
-      "playedAt": "2026-07-05T01:42:31.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "CoolBreezexp",
-        "playerId": null,
-        "polarisId": "3gTiJ4dNGd86",
-        "rank": "tekken_emperor"
-      },
-      "b": {
-        "character": "kazuya",
-        "name": "EonExodus",
-        "playerId": "eonexodus",
-        "polarisId": "4FE3J976Qray",
-        "rank": "tekken_god"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "fe799c7055b14c59a0fac0dbf4c2fb96",
-      "playedAt": "2026-07-05T01:46:10.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "CoolBreezexp",
-        "playerId": null,
-        "polarisId": "3gTiJ4dNGd86",
-        "rank": "tekken_emperor"
-      },
-      "b": {
-        "character": "kazuya",
-        "name": "EonExodus",
-        "playerId": "eonexodus",
-        "polarisId": "4FE3J976Qray",
-        "rank": "tekken_god"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "c4afd82cdac44a1f857649229379a0d5",
-      "playedAt": "2026-07-05T01:48:48.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kazuya",
-        "name": "EonExodus",
-        "playerId": "eonexodus",
-        "polarisId": "4FE3J976Qray",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "heihachi",
-        "name": "Papatree",
-        "playerId": null,
-        "polarisId": "5ydBDAyMLa26",
-        "rank": "tekken_emperor"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "e0221d8ae2554f0ba9a9d3f98f0387bb",
-      "playedAt": "2026-07-05T01:51:51.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kazuya",
-        "name": "EonExodus",
-        "playerId": "eonexodus",
-        "polarisId": "4FE3J976Qray",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "heihachi",
-        "name": "Papatree",
-        "playerId": null,
-        "polarisId": "5ydBDAyMLa26",
-        "rank": "tekken_emperor"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "3ea0989737ba429083859efa69ca0a2e",
-      "playedAt": "2026-07-05T01:53:50.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kazuya",
-        "name": "EonExodus",
-        "playerId": "eonexodus",
-        "polarisId": "4FE3J976Qray",
-        "rank": "tekken_god"
-      },
-      "b": {
         "character": "dragunov",
         "name": "ChuloAfuerza",
         "playerId": null,
@@ -9113,351 +8837,6 @@
     },
     {
       "a": {
-        "character": "fahkumram",
-        "name": "Baus",
-        "playerId": null,
-        "polarisId": "58g74gEFe2MQ",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "2737c467a9484f10b9b611b78e59237f",
-      "playedAt": "2026-07-07T05:25:59.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "jin",
-        "name": "Š Ÿ Ñ",
-        "playerId": null,
-        "polarisId": "3tEFAY4nyNEj",
-        "rank": "god_of_destruction_i"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "b1d24288b6ec4ce7b33447ed516922e2",
-      "playedAt": "2026-07-07T05:30:04.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "436eb35da3d0479d8b1036dbe9d66267",
-      "playedAt": "2026-07-07T05:36:11.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "f103b7a19cc441e1bdb13ab1deebcca2",
-      "playedAt": "2026-07-07T05:38:22.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "43399bfab305437588604814cb1c7ccd",
-      "playedAt": "2026-07-07T05:41:16.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "506602e1b6604997a5d8c3e644c61fbb",
-      "playedAt": "2026-07-07T05:45:18.000Z",
-      "roundsA": 2,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "401edd02fbe2480ebb487034a5f3992e",
-      "playedAt": "2026-07-07T05:47:33.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "df0fe434b0204259a6edb8003279061c",
-      "playedAt": "2026-07-07T05:51:10.000Z",
-      "roundsA": 2,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "3b0683ae644e49088736aaf680f4e27b",
-      "playedAt": "2026-07-07T05:54:00.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "cc55851e3f71406482751d8d0e309e6d",
-      "playedAt": "2026-07-07T05:55:54.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "4793483a085149269d833c6cd6c14279",
-      "playedAt": "2026-07-07T05:57:50.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "3dee0715cefc4d988708b3a4d93c0306",
-      "playedAt": "2026-07-07T05:59:43.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "586368864cc249faa66649ce5c69ea0e",
-      "playedAt": "2026-07-07T06:02:05.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "f81048f40d3a4e668135ccc783c71efb",
-      "playedAt": "2026-07-07T06:04:42.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "lili",
-        "name": "mohawk",
-        "playerId": null,
-        "polarisId": "4Ag8rFqNM96Q",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "e08061cc14b7420cb1be2486ce0a9661",
-      "playedAt": "2026-07-07T06:07:42.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
         "character": "feng",
         "name": "Cuthroat4L",
         "playerId": null,
@@ -10212,52 +9591,6 @@
       "id": "f1679b765e0043eb8ea276f6d69ed65f",
       "playedAt": "2026-07-07T08:04:59.000Z",
       "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "anna",
-        "name": "Zhwan",
-        "playerId": null,
-        "polarisId": "4bhRmHLLF6r8",
-        "rank": "god_of_destruction_i"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "8940cdd0ee3b403fbc8f8466433b35e1",
-      "playedAt": "2026-07-08T00:32:14.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "dragunov",
-        "name": "ToastieBoonz",
-        "playerId": null,
-        "polarisId": "3F3mH9J95YrG",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "azucena",
-        "name": "Phine",
-        "playerId": "phine",
-        "polarisId": "5HyEnHGerLJ8",
-        "rank": "god_of_destruction_vi"
-      },
-      "battleType": "quick",
-      "crew": false,
-      "id": "4562d3e8e679456abd99456d4238cbab",
-      "playedAt": "2026-07-08T00:40:39.000Z",
-      "roundsA": 2,
       "roundsB": 3,
       "winner": "b"
     },
@@ -12655,29 +11988,6 @@
     },
     {
       "a": {
-        "character": "leroy",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "hwoarang",
-        "name": "Nhhgff",
-        "playerId": null,
-        "polarisId": "5G9ftyQbHYyf",
-        "rank": "god_of_destruction_i"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "70bbdd68288a4f59932fac05bdb99084",
-      "playedAt": "2026-07-08T08:49:06.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
         "character": "law",
         "name": "We believe",
         "playerId": null,
@@ -12696,29 +12006,6 @@
       "id": "3dd0a79b7336451d9b03568e582cba0e",
       "playedAt": "2026-07-08T08:49:11.000Z",
       "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "leroy",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "hwoarang",
-        "name": "Nhhgff",
-        "playerId": null,
-        "polarisId": "5G9ftyQbHYyf",
-        "rank": "god_of_destruction_i"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "e9e465238c9640dd8432e5051c4fc9ef",
-      "playedAt": "2026-07-08T08:51:52.000Z",
-      "roundsA": 1,
       "roundsB": 3,
       "winner": "b"
     },
@@ -12770,29 +12057,6 @@
     },
     {
       "a": {
-        "character": "leroy",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "hwoarang",
-        "name": "Nhhgff",
-        "playerId": null,
-        "polarisId": "5G9ftyQbHYyf",
-        "rank": "god_of_destruction_i"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "5c2aecdc39bd4be9a490ac3b1de5ae3a",
-      "playedAt": "2026-07-08T08:55:30.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
         "character": "kuma",
         "name": "BigKuma",
         "playerId": "bigkuma",
@@ -12811,29 +12075,6 @@
       "id": "3586becd8a89491fbc064dee49e61db3",
       "playedAt": "2026-07-08T08:57:27.000Z",
       "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "bryan",
-        "name": "Ish!",
-        "playerId": null,
-        "polarisId": "447TnnHNiLQ2",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "leroy",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "c60bb039a42a4b0bbac60cacbb59d9f8",
-      "playedAt": "2026-07-08T08:58:06.000Z",
-      "roundsA": 0,
       "roundsB": 3,
       "winner": "b"
     },
@@ -13069,98 +12310,6 @@
     },
     {
       "a": {
-        "character": "zafina",
-        "name": "AllSmokeMatters",
-        "playerId": null,
-        "polarisId": "3JJAeL5Fbry6",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "11aafa99d6484bd585ddb1c39ce13442",
-      "playedAt": "2026-07-08T16:08:43.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "zafina",
-        "name": "AllSmokeMatters",
-        "playerId": null,
-        "polarisId": "3JJAeL5Fbry6",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "37e59b1376914831af729a680326f6e1",
-      "playedAt": "2026-07-08T16:12:17.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "zafina",
-        "name": "AllSmokeMatters",
-        "playerId": null,
-        "polarisId": "3JJAeL5Fbry6",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "d840050cb8f14015ae917cc8a627a8c1",
-      "playedAt": "2026-07-08T16:14:17.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "anna",
-        "name": "J U S T i C E",
-        "playerId": null,
-        "polarisId": "3FFEyD5dFyE6",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "81b84873bc534dadbf265a2d7c15d67f",
-      "playedAt": "2026-07-08T16:17:56.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
         "character": "kunimitsu",
         "name": "Rev_Grizz",
         "playerId": "rev_grizz",
@@ -13168,177 +12317,16 @@
         "rank": "god_of_destruction_iii"
       },
       "b": {
-        "character": "devil_jin",
-        "name": "{A} How",
+        "character": "law",
+        "name": "Juice_202",
         "playerId": null,
-        "polarisId": "5mj7r34DJiE4",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "c149690fd41242608df83d0a06832b52",
-      "playedAt": "2026-07-08T16:22:54.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "devil_jin",
-        "name": "{A} How",
-        "playerId": null,
-        "polarisId": "5mj7r34DJiE4",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "7d173922dffe4edf9357ad245971e276",
-      "playedAt": "2026-07-08T16:26:56.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "hwoarang",
-        "name": "A10n",
-        "playerId": null,
-        "polarisId": "59D8FbetFiJJ",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "3e4a5fb9fb104d83b0aeabb64f93e44c",
-      "playedAt": "2026-07-08T16:30:52.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "hwoarang",
-        "name": "A10n",
-        "playerId": null,
-        "polarisId": "59D8FbetFiJJ",
-        "rank": "god_of_destruction_i"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "a8bd4863b63247b9b3ad3cd88d532421",
-      "playedAt": "2026-07-08T16:33:48.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "raven",
-        "name": "LIFE-STREAM-H20",
-        "playerId": null,
-        "polarisId": "2QgBNQTg6Bfa",
-        "rank": "god_of_destruction_ii"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
+        "polarisId": "5ETdYJ3FeeEf",
         "rank": "god_of_destruction_iii"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "fec43c3c47424f29a8008b71b5b6e6fc",
-      "playedAt": "2026-07-08T16:36:16.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "raven",
-        "name": "LIFE-STREAM-H20",
-        "playerId": null,
-        "polarisId": "2QgBNQTg6Bfa",
-        "rank": "god_of_destruction_ii"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "4b097f2b02e644909d4f82a33dd3181a",
-      "playedAt": "2026-07-08T16:38:26.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "victor",
-        "name": "Xblade",
-        "playerId": null,
-        "polarisId": "35hyD7Gy59E2",
-        "rank": "god_of_destruction_ii"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "9badfac75cbc404c96fb671aafdecae9",
-      "playedAt": "2026-07-08T16:43:19.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "victor",
-        "name": "Xblade",
-        "playerId": null,
-        "polarisId": "35hyD7Gy59E2",
-        "rank": "god_of_destruction_ii"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "ba135df885fc498d80d206cb79f64480",
-      "playedAt": "2026-07-08T16:46:52.000Z",
+      "id": "a500d88c5789412eb87f485d2b91977f",
+      "playedAt": "2026-07-08T21:27:07.000Z",
       "roundsA": 2,
       "roundsB": 3,
       "winner": "b"
@@ -13352,134 +12340,42 @@
         "rank": "god_of_destruction_iii"
       },
       "b": {
-        "character": "reina",
-        "name": "Manikin",
+        "character": "law",
+        "name": "Juice_202",
         "playerId": null,
-        "polarisId": "5aajRM5DRAyQ",
-        "rank": "god_of_destruction_i"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "550c119bee4a409e84f70cc59cd2190c",
-      "playedAt": "2026-07-08T17:43:37.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
+        "polarisId": "5ETdYJ3FeeEf",
         "rank": "god_of_destruction_iii"
       },
-      "b": {
-        "character": "leo",
-        "name": "Kwasi",
-        "playerId": null,
-        "polarisId": "4GD7Rrt9a2TB",
-        "rank": "god_of_destruction_ii"
-      },
       "battleType": "ranked",
       "crew": false,
-      "id": "971cf02018f04a30b6f007f6cce77a17",
-      "playedAt": "2026-07-08T17:47:32.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "leo",
-        "name": "Kwasi",
-        "playerId": null,
-        "polarisId": "4GD7Rrt9a2TB",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "dce9f5eecd7142b7b53b9c7d5a01ecf8",
-      "playedAt": "2026-07-08T17:49:47.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "leo",
-        "name": "Kwasi",
-        "playerId": null,
-        "polarisId": "4GD7Rrt9a2TB",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "7336e704ae2e487a968291791d67f954",
-      "playedAt": "2026-07-08T17:53:27.000Z",
+      "id": "ae2e76d51d174ad0b247fa87dc638a6c",
+      "playedAt": "2026-07-08T21:30:24.000Z",
       "roundsA": 1,
       "roundsB": 3,
       "winner": "b"
     },
     {
       "a": {
-        "character": "devil_jin",
-        "name": "FC²·º|Sabataj*",
-        "playerId": null,
-        "polarisId": "2rNNf99M3tj6",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
         "character": "kunimitsu",
         "name": "Rev_Grizz",
         "playerId": "rev_grizz",
         "polarisId": "44egBAHA424E",
         "rank": "god_of_destruction_iii"
       },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "87fb514a65e74d70860836f0b302ec87",
-      "playedAt": "2026-07-08T17:56:30.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "devil_jin",
-        "name": "FC²·º|Sabataj*",
-        "playerId": null,
-        "polarisId": "2rNNf99M3tj6",
-        "rank": "god_of_destruction_iv"
-      },
       "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
+        "character": "law",
+        "name": "losinU",
+        "playerId": null,
+        "polarisId": "534G88NBqAhQ",
+        "rank": "god_of_destruction_v"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "0f5ca921e49946f3a42b4448487c35f5",
-      "playedAt": "2026-07-08T17:59:14.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
+      "id": "fa603859dd4e40db932e40ae2a8823a5",
+      "playedAt": "2026-07-08T21:37:50.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
     },
     {
       "a": {
@@ -13490,142 +12386,809 @@
         "rank": "god_of_destruction_iii"
       },
       "b": {
-        "character": "lars",
-        "name": "Joeii",
+        "character": "law",
+        "name": "losinU",
         "playerId": null,
-        "polarisId": "59mHBNqRHhMf",
+        "polarisId": "534G88NBqAhQ",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "6a0d51a0ed0d4f3abe6b267eb68fab68",
+      "playedAt": "2026-07-08T21:40:59.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "jin",
+        "name": "CaptainBubbles",
+        "playerId": null,
+        "polarisId": "3HENQr5g5JJG",
+        "rank": "god_of_destruction_i"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "7b26971c06bb444790071b6978b7dbb5",
+      "playedAt": "2026-07-08T21:43:30.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "jin",
+        "name": "CaptainBubbles",
+        "playerId": null,
+        "polarisId": "3HENQr5g5JJG",
+        "rank": "god_of_destruction_i"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "5fd3d6b686884b4a8bb431c3f40964ca",
+      "playedAt": "2026-07-08T21:47:20.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "raven",
+        "name": "TheStudent",
+        "playerId": null,
+        "polarisId": "44EDt2257thj",
+        "rank": "god_of_destruction_ii"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "713cd1b994964dff9799bc981b4f3a61",
+      "playedAt": "2026-07-08T21:52:21.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "raven",
+        "name": "TheStudent",
+        "playerId": null,
+        "polarisId": "44EDt2257thj",
+        "rank": "god_of_destruction_ii"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "60e39da68c884d44ac2b7d419deb64a5",
+      "playedAt": "2026-07-08T21:55:19.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "raven",
+        "name": "TheStudent",
+        "playerId": null,
+        "polarisId": "44EDt2257thj",
+        "rank": "god_of_destruction_ii"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "f876c5da0c9442d5b8863b8ab93c0507",
+      "playedAt": "2026-07-08T21:59:38.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "nina",
+        "name": "kevvbmm",
+        "playerId": null,
+        "polarisId": "5hj4DTr6RdTJ",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "48be230e514a496089f45d16ebb91119",
+      "playedAt": "2026-07-08T22:03:07.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "nina",
+        "name": "kevvbmm",
+        "playerId": null,
+        "polarisId": "5hj4DTr6RdTJ",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "4659136ff1584de48f5cb10f7628d2ff",
+      "playedAt": "2026-07-08T22:05:54.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "zafina",
+        "name": "SHARKAHOLIC",
+        "playerId": null,
+        "polarisId": "33i7E9tgAL5M",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "9ddadfda9faa4662bc48283937aac94e",
+      "playedAt": "2026-07-08T22:09:12.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "zafina",
+        "name": "SHARKAHOLIC",
+        "playerId": null,
+        "polarisId": "33i7E9tgAL5M",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "6a7c2149aa4b42788e171d8b94d72ac9",
+      "playedAt": "2026-07-08T22:11:23.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "steve",
+        "name": "iiink",
+        "playerId": null,
+        "polarisId": "64f2mDE7in6h",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "819c0f0f2e5a4f5ab32b823d86f93de2",
+      "playedAt": "2026-07-08T22:15:42.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "steve",
+        "name": "iiink",
+        "playerId": null,
+        "polarisId": "64f2mDE7in6h",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "9aeaa3d39a6f4f159a12d5065d9d323a",
+      "playedAt": "2026-07-08T22:19:16.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "clive",
+        "name": "SEBA",
+        "playerId": null,
+        "polarisId": "3mNBbEEAn2rh",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "d41dd2d6d8a240988862d607e0795fc9",
+      "playedAt": "2026-07-08T22:22:00.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "XFactor",
+        "playerId": null,
+        "polarisId": "33thgFF22mAn",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "6c41f4d35d1a47bca625756f5635d7dc",
+      "playedAt": "2026-07-08T22:26:18.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "XFactor",
+        "playerId": null,
+        "polarisId": "33thgFF22mAn",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "0356def186784ed2993b3ce0e7eeba7e",
+      "playedAt": "2026-07-08T22:30:38.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "XFactor",
+        "playerId": null,
+        "polarisId": "33thgFF22mAn",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "6a5c746b07444a3f932fae6802dd6d9d",
+      "playedAt": "2026-07-08T22:33:54.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Highlander",
+        "playerId": null,
+        "polarisId": "49n7aYir2tQM",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "78f134ed55264090b50ada97fa81f03e",
+      "playedAt": "2026-07-08T22:37:24.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Highlander",
+        "playerId": null,
+        "polarisId": "49n7aYir2tQM",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "a7b363d2af0c44ce8d2e4adcfcbed278",
+      "playedAt": "2026-07-08T22:41:26.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "eddy",
+        "name": "Highlander",
+        "playerId": null,
+        "polarisId": "49n7aYir2tQM",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "666dc9af2cb34033a6ed32d5ac981bf6",
+      "playedAt": "2026-07-08T22:44:46.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "nina",
+        "name": "kevvbmm",
+        "playerId": null,
+        "polarisId": "5hj4DTr6RdTJ",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "564cfd818a7c4a8f8cb6ec9fae3b91cc",
+      "playedAt": "2026-07-08T22:48:25.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "nina",
+        "name": "kevvbmm",
+        "playerId": null,
+        "polarisId": "5hj4DTr6RdTJ",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "149a706e0a5940e3b181531cf47173b3",
+      "playedAt": "2026-07-08T22:51:57.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "leo",
+        "name": "¹TrickNegan",
+        "playerId": null,
+        "polarisId": "5j9h4HBq62Ga",
+        "rank": "god_of_destruction_i"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "e95d53b94b5c41edb307b291bfe2547a",
+      "playedAt": "2026-07-08T22:54:38.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "law",
+        "name": "Capri-Sun2026",
+        "playerId": null,
+        "polarisId": "4HH7E768JfE6",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "11b39703680b45cca3b85f321b70af7e",
+      "playedAt": "2026-07-08T22:57:52.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "eddy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "bryan",
+        "name": "SWEETPOTATO",
+        "playerId": null,
+        "polarisId": "4Q9DAMn2ejjT",
         "rank": "god_of_destruction_ii"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "5c96a942f49a4c46be59d5dad3f67a86",
-      "playedAt": "2026-07-08T18:05:14.000Z",
+      "id": "45d5e6e84d5249b2907f72de49343461",
+      "playedAt": "2026-07-08T23:00:59.000Z",
       "roundsA": 3,
-      "roundsB": 2,
+      "roundsB": 0,
       "winner": "a"
     },
     {
       "a": {
-        "character": "jin",
-        "name": "Raven",
+        "character": "armor_king",
+        "name": ">_>Bruh",
         "playerId": null,
-        "polarisId": "3yDhGmRheB2B",
-        "rank": "god_of_destruction_iii"
+        "polarisId": "3bj58LJLLEDd",
+        "rank": "god_of_destruction"
       },
       "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
+        "character": "kazuya",
+        "name": "EonExodus",
+        "playerId": "eonexodus",
+        "polarisId": "4FE3J976Qray",
+        "rank": "tekken_god"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "1e04231e3db44c48b53743cb3af44927",
-      "playedAt": "2026-07-08T18:10:32.000Z",
-      "roundsA": 0,
+      "id": "58bc3653d7e94dc199e7adb142c827d4",
+      "playedAt": "2026-07-08T23:08:30.000Z",
+      "roundsA": 1,
       "roundsB": 3,
       "winner": "b"
     },
     {
       "a": {
-        "character": "jin",
-        "name": "Raven",
+        "character": "armor_king",
+        "name": ">_>Bruh",
         "playerId": null,
-        "polarisId": "3yDhGmRheB2B",
-        "rank": "god_of_destruction_iii"
+        "polarisId": "3bj58LJLLEDd",
+        "rank": "god_of_destruction"
       },
       "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
+        "character": "kazuya",
+        "name": "EonExodus",
+        "playerId": "eonexodus",
+        "polarisId": "4FE3J976Qray",
+        "rank": "tekken_god"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "b7250d3334174619ba920f31682d3ed5",
-      "playedAt": "2026-07-08T18:14:11.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "jin",
-        "name": "Raven",
-        "playerId": null,
-        "polarisId": "3yDhGmRheB2B",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "34e16aae54154bd4a0c7d5b637fae655",
-      "playedAt": "2026-07-08T18:16:58.000Z",
+      "id": "bd516161eed94d648c80e7411a28f25a",
+      "playedAt": "2026-07-08T23:11:33.000Z",
       "roundsA": 3,
       "roundsB": 1,
       "winner": "a"
     },
     {
       "a": {
-        "character": "steve",
-        "name": "LMW | Nunchuck",
+        "character": "armor_king",
+        "name": ">_>Bruh",
         "playerId": null,
-        "polarisId": "2jLfmdQA9538",
-        "rank": "god_of_destruction_iv"
+        "polarisId": "3bj58LJLLEDd",
+        "rank": "god_of_destruction"
       },
       "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
+        "character": "kazuya",
+        "name": "EonExodus",
+        "playerId": "eonexodus",
+        "polarisId": "4FE3J976Qray",
+        "rank": "tekken_god"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "d962c8327a4644688123578e02dcf382",
-      "playedAt": "2026-07-08T18:23:15.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
+      "id": "354066fcfd024c87afe249f624fc4d3b",
+      "playedAt": "2026-07-08T23:14:10.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
     },
     {
       "a": {
-        "character": "steve",
-        "name": "LMW | Nunchuck",
-        "playerId": null,
-        "polarisId": "2jLfmdQA9538",
-        "rank": "god_of_destruction_iv"
+        "character": "kazuya",
+        "name": "EonExodus",
+        "playerId": "eonexodus",
+        "polarisId": "4FE3J976Qray",
+        "rank": "tekken_god"
       },
       "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
+        "character": "raven",
+        "name": "KuroDTV",
+        "playerId": null,
+        "polarisId": "5yR7bM4y4Rhd",
+        "rank": "tekken_god"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "a817a345b345473796ec3e400a8aa0b3",
-      "playedAt": "2026-07-08T18:25:52.000Z",
+      "id": "3f107ea94d8f4b7e974c46d7b578bc2c",
+      "playedAt": "2026-07-08T23:18:18.000Z",
       "roundsA": 3,
       "roundsB": 1,
       "winner": "a"
     },
     {
       "a": {
-        "character": "steve",
-        "name": "LMW | Nunchuck",
+        "character": "lili",
+        "name": "DrosselJun",
         "playerId": null,
-        "polarisId": "2jLfmdQA9538",
-        "rank": "god_of_destruction_iv"
+        "polarisId": "2heannhaQ6rJ",
+        "rank": "god_of_destruction"
+      },
+      "b": {
+        "character": "leroy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_i"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "33cb6fec546c4de886a7a67e6645b238",
+      "playedAt": "2026-07-08T23:19:57.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "DrosselJun",
+        "playerId": null,
+        "polarisId": "2heannhaQ6rJ",
+        "rank": "god_of_destruction"
+      },
+      "b": {
+        "character": "leroy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_i"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "d6f99808467a4e7c95a76b8e1f303a12",
+      "playedAt": "2026-07-08T23:23:04.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "UDG|robskenoooo",
+        "playerId": null,
+        "polarisId": "444iRrET5EMj",
+        "rank": "tekken_emperor"
+      },
+      "b": {
+        "character": "kazuya",
+        "name": "EonExodus",
+        "playerId": "eonexodus",
+        "polarisId": "4FE3J976Qray",
+        "rank": "tekken_god"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "00438a3e15174e3a86c5352629727808",
+      "playedAt": "2026-07-08T23:23:24.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "leroy",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_i"
+      },
+      "b": {
+        "character": "leroy",
+        "name": "WollopinTrollop",
+        "playerId": null,
+        "polarisId": "4hLgDJNnDd22",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "c5cc3806167a4c4cbc238e37c1cfd5ae",
+      "playedAt": "2026-07-08T23:26:18.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "UDG|robskenoooo",
+        "playerId": null,
+        "polarisId": "444iRrET5EMj",
+        "rank": "tekken_emperor"
+      },
+      "b": {
+        "character": "kazuya",
+        "name": "EonExodus",
+        "playerId": "eonexodus",
+        "polarisId": "4FE3J976Qray",
+        "rank": "tekken_god"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "c453bcbd5c9d4afa8a05fcceb23bc097",
+      "playedAt": "2026-07-08T23:27:41.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "UDG|robskenoooo",
+        "playerId": null,
+        "polarisId": "444iRrET5EMj",
+        "rank": "tekken_emperor"
+      },
+      "b": {
+        "character": "kazuya",
+        "name": "EonExodus",
+        "playerId": "eonexodus",
+        "polarisId": "4FE3J976Qray",
+        "rank": "tekken_god"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "3fa1331869784d5cb581fccecf4a9238",
+      "playedAt": "2026-07-08T23:30:29.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "kazuya",
+        "name": "EonExodus",
+        "playerId": "eonexodus",
+        "polarisId": "4FE3J976Qray",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "bryan",
+        "name": "Mellowmald",
+        "playerId": null,
+        "polarisId": "4Jm8R8htj6rh",
+        "rank": "tekken_king"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "13516135c452491bb13329fbc5b72611",
+      "playedAt": "2026-07-08T23:32:23.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "OceanMist11",
+        "playerId": null,
+        "polarisId": "3YgJbE7fd6fB",
+        "rank": "god_of_destruction_v"
       },
       "b": {
         "character": "kunimitsu",
@@ -13636,8 +13199,77 @@
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "b70d163908de4c64850232a4d6cce212",
-      "playedAt": "2026-07-08T18:27:46.000Z",
+      "id": "48f0aaea180447898e4276272ca1b40e",
+      "playedAt": "2026-07-08T23:33:07.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "OceanMist11",
+        "playerId": null,
+        "polarisId": "3YgJbE7fd6fB",
+        "rank": "god_of_destruction_v"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "67cdd39322184d4f99f4d57533844d0e",
+      "playedAt": "2026-07-08T23:36:32.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "heihachi",
+        "name": "Sigma17",
+        "playerId": null,
+        "polarisId": "35tEmbny4La6",
+        "rank": "god_of_destruction_ii"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "bc37f19991f945278c9a0745fffb2879",
+      "playedAt": "2026-07-08T23:39:58.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "heihachi",
+        "name": "Sigma17",
+        "playerId": null,
+        "polarisId": "35tEmbny4La6",
+        "rank": "god_of_destruction_ii"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "9c12782c1ac848c885bf8ee07de24776",
+      "playedAt": "2026-07-08T23:42:47.000Z",
       "roundsA": 3,
       "roundsB": 0,
       "winner": "a"
@@ -13651,206 +13283,22 @@
         "rank": "god_of_destruction_iii"
       },
       "b": {
-        "character": "hwoarang",
-        "name": "TekGODHw0",
+        "character": "yoshimitsu",
+        "name": "franklyspeakn",
         "playerId": null,
-        "polarisId": "4thE7r94DyB2",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "67a27d080243471d884365ce20dea1ae",
-      "playedAt": "2026-07-08T18:31:37.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "hwoarang",
-        "name": "TekGODHw0",
-        "playerId": null,
-        "polarisId": "4thE7r94DyB2",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "d7d43150bb86489a916aed52f0ef68bb",
-      "playedAt": "2026-07-08T18:34:02.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "hwoarang",
-        "name": "TekGODHw0",
-        "playerId": null,
-        "polarisId": "4thE7r94DyB2",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "ac977fac82ff42698ccf2a7b6fc0b570",
-      "playedAt": "2026-07-08T18:37:11.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "reina",
-        "name": "Ivanhoe",
-        "playerId": null,
-        "polarisId": "56ynqmLq6Q6d",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "23f331a19c174245a410bf7d06b4facc",
-      "playedAt": "2026-07-08T18:41:13.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "xiaoyu",
-        "name": "CryingLord",
-        "playerId": null,
-        "polarisId": "678byf2YYenE",
+        "polarisId": "4JH92FnjTA4B",
         "rank": "god_of_destruction_i"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "b82fe517a8ba44aeb0c3bb5f97f68de0",
-      "playedAt": "2026-07-08T18:47:03.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "law",
-        "name": "King_Franko_",
-        "playerId": null,
-        "polarisId": "2jj9ahgMEMGa",
-        "rank": "god_of_destruction_i"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "ed6fdfdb3cae4b2a9d0bebca519f6be0",
-      "playedAt": "2026-07-08T18:51:19.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "claudio",
-        "name": "Rednose",
-        "playerId": null,
-        "polarisId": "3BFnmtHrqEfh",
-        "rank": "god_of_destruction_i"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "73ec3153dc8e4b30ab050720fbba8da4",
-      "playedAt": "2026-07-08T18:54:59.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "claudio",
-        "name": "Hallucinate",
-        "playerId": null,
-        "polarisId": "3jDBRnQAGQ6j",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "0eae20a36a9342ea97219ce4ad95cd75",
-      "playedAt": "2026-07-08T18:58:29.000Z",
+      "id": "7485b8c3882043e8b8a9ff36a7f0fc6b",
+      "playedAt": "2026-07-08T23:45:52.000Z",
       "roundsA": 3,
       "roundsB": 0,
       "winner": "a"
     },
     {
       "a": {
-        "character": "claudio",
-        "name": "Hallucinate",
-        "playerId": null,
-        "polarisId": "3jDBRnQAGQ6j",
-        "rank": "god_of_destruction_iii"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "Rev_Grizz",
-        "playerId": "rev_grizz",
-        "polarisId": "44egBAHA424E",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "b96affd8a7e841e4a43de651bc6f88ba",
-      "playedAt": "2026-07-08T19:02:07.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
         "character": "kunimitsu",
         "name": "Rev_Grizz",
         "playerId": "rev_grizz",
@@ -13859,25 +13307,94 @@
       },
       "b": {
         "character": "law",
-        "name": "Trust",
+        "name": "Juice_202",
         "playerId": null,
-        "polarisId": "4QqGne4HijBn",
-        "rank": "god_of_destruction_ii"
+        "polarisId": "5ETdYJ3FeeEf",
+        "rank": "god_of_destruction_iii"
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "2294f90bc6164db3ab3bbe8b47eabfff",
-      "playedAt": "2026-07-08T19:07:25.000Z",
+      "id": "b594e931e6c8447b9d3d92575034e043",
+      "playedAt": "2026-07-08T23:57:54.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "b3bb7a247a54410a9eee0c4fe3790682",
+      "playedAt": "2026-07-09T00:02:43.000Z",
       "roundsA": 3,
       "roundsB": 1,
       "winner": "a"
     },
     {
       "a": {
-        "character": "jack8",
-        "name": "JAYR1010",
+        "character": "shaheen",
+        "name": "Voidzaury",
         "playerId": null,
-        "polarisId": "3gr2Fa8NYHNT",
+        "polarisId": "27dqffR6t7mn",
+        "rank": "god_of_destruction_ii"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "18fc36a043024309859b85bfec4a7eed",
+      "playedAt": "2026-07-09T00:04:03.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "2298ab6f7eb24df0916290a1641acd6b",
+      "playedAt": "2026-07-09T00:06:58.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "hwoarang",
+        "name": "VIILights",
+        "playerId": null,
+        "polarisId": "2m64RBEynM6J",
         "rank": "god_of_destruction_iii"
       },
       "b": {
@@ -13889,8 +13406,399 @@
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "100551317cf1478391862a9365c7f98c",
-      "playedAt": "2026-07-08T19:12:43.000Z",
+      "id": "581763bbb06e4989845fe0deba16bb76",
+      "playedAt": "2026-07-09T00:07:09.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "hwoarang",
+        "name": "VIILights",
+        "playerId": null,
+        "polarisId": "2m64RBEynM6J",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "645873a091f94f8090ea01dbfaad825f",
+      "playedAt": "2026-07-09T00:10:25.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "24eba32d179f45879aede0fb5ef0bd23",
+      "playedAt": "2026-07-09T00:11:13.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "hwoarang",
+        "name": "VIILights",
+        "playerId": null,
+        "polarisId": "2m64RBEynM6J",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Rev_Grizz",
+        "playerId": "rev_grizz",
+        "polarisId": "44egBAHA424E",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "9bbe08c8428c4d73b968da1144cd970f",
+      "playedAt": "2026-07-09T00:14:05.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "a9444313b3844e58be7646a9a996f3a4",
+      "playedAt": "2026-07-09T00:15:16.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "9167f0d992d04ee686f377a199cd0689",
+      "playedAt": "2026-07-09T00:17:59.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "6259161ea57648e79938e5c1ee553295",
+      "playedAt": "2026-07-09T00:21:36.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "hwoarang",
+        "name": "Dr. Wok × NSFU",
+        "playerId": null,
+        "polarisId": "3gBgMy9EHyRT",
+        "rank": "god_of_destruction_i"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "6660245cda26454ea146c485d1891d23",
+      "playedAt": "2026-07-09T01:26:36.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "hwoarang",
+        "name": "Dr. Wok × NSFU",
+        "playerId": null,
+        "polarisId": "3gBgMy9EHyRT",
+        "rank": "god_of_destruction_i"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "f2cff6d3f83a441985bbc953eadb2f14",
+      "playedAt": "2026-07-09T01:29:09.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "hwoarang",
+        "name": "Dr. Wok × NSFU",
+        "playerId": null,
+        "polarisId": "3gBgMy9EHyRT",
+        "rank": "god_of_destruction_i"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "b6d6345ffebf4755bfec53f6db45614b",
+      "playedAt": "2026-07-09T01:33:24.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "zafina",
+        "name": "SHARKAHOLIC",
+        "playerId": null,
+        "polarisId": "33i7E9tgAL5M",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "bd06d69452464de4a30fe55b4c552597",
+      "playedAt": "2026-07-09T01:47:55.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "zafina",
+        "name": "SHARKAHOLIC",
+        "playerId": null,
+        "polarisId": "33i7E9tgAL5M",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "a59a12ce4f12441dbb8367beafa80583",
+      "playedAt": "2026-07-09T01:50:37.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "zafina",
+        "name": "SHARKAHOLIC",
+        "playerId": null,
+        "polarisId": "33i7E9tgAL5M",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "ff80067e8e224c9baf60738f8a6164d2",
+      "playedAt": "2026-07-09T01:53:19.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "zafina",
+        "name": "SHARKAHOLIC",
+        "playerId": null,
+        "polarisId": "33i7E9tgAL5M",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "fe709012b8a94ea0b12c31dbd6b922a8",
+      "playedAt": "2026-07-09T01:55:46.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "35ddc8d2eabc40999d1d68013e22ecc6",
+      "playedAt": "2026-07-09T02:04:35.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "a0594fceecef4972b2fe26ec71da2a90",
+      "playedAt": "2026-07-09T02:08:33.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "805c4d9f06fa4df3a43a074d9286d315",
+      "playedAt": "2026-07-09T02:11:50.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "asuka",
+        "name": "Zatch",
+        "playerId": null,
+        "polarisId": "4nhQtBhryF2T",
+        "rank": "god_of_destruction_vi"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Phine",
+        "playerId": "phine",
+        "polarisId": "5HyEnHGerLJ8",
+        "rank": "god_of_destruction_vi"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "0ca6370d60e24d338533ece481bd5cdd",
+      "playedAt": "2026-07-09T02:14:52.000Z",
       "roundsA": 2,
       "roundsB": 3,
       "winner": "b"

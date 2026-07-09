@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2244,
+  "basedOnMatchCount": 2254,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -270,7 +270,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-08T19:14:50.375Z",
+  "generatedAt": "2026-07-09T02:15:36.357Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -439,17 +439,17 @@
     "bigman": {
       "charUsage": {
         "heihachi": 2,
-        "kuma": 362,
+        "kuma": 366,
         "kunimitsu": 13,
         "nina": 8,
         "panda": 65,
         "paul": 2,
         "reina": 1
       },
-      "matchLosses": 225,
-      "matchWins": 228,
+      "matchLosses": 227,
+      "matchWins": 230,
       "mostPlayedCharacter": "kuma",
-      "totalMatches": 453,
+      "totalMatches": 457,
       "winRate": 0.503
     },
     "burny": {
@@ -469,16 +469,16 @@
     "chamk": {
       "charUsage": {
         "bryan": 6,
-        "devil_jin": 78,
+        "devil_jin": 84,
         "jin": 87,
         "kazuya": 9,
         "kunimitsu": 129
       },
-      "matchLosses": 132,
-      "matchWins": 177,
+      "matchLosses": 136,
+      "matchWins": 179,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 309,
-      "winRate": 0.573
+      "totalMatches": 315,
+      "winRate": 0.568
     },
     "code": {
       "charUsage": {

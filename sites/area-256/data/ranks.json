@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T19:13:57.883Z",
+  "generatedAt": "2026-07-09T02:14:46.260Z",
   "pairs": [
     {
       "character": "leroy",
@@ -496,12 +496,12 @@
     {
       "character": "kunimitsu",
       "characterPeakRank": "god_of_destruction_iv",
-      "lastSeen": "2026-07-08T07:42:05.000Z",
+      "lastSeen": "2026-07-08T19:12:43.000Z",
       "pairId": "44eg-BAHA-424E:kunimitsu",
       "playerId": "rev_grizz",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 1301,
+      "rankedGames": 1337,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
     },
