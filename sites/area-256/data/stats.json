@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 4845,
+  "basedOnMatchCount": 4992,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-09T02:14:46.260Z",
+  "generatedAt": "2026-07-09T09:26:36.533Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -28,14 +28,14 @@
   "players": {
     "afriking": {
       "charUsage": {
-        "armor_king": 379,
+        "armor_king": 419,
         "lars": 44
       },
-      "matchLosses": 171,
-      "matchWins": 252,
+      "matchLosses": 192,
+      "matchWins": 271,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 423,
-      "winRate": 0.596
+      "totalMatches": 463,
+      "winRate": 0.585
     },
     "bard": {
       "charUsage": {
@@ -196,14 +196,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 793,
+        "azucena": 836,
         "kunimitsu": 48
       },
-      "matchLosses": 252,
-      "matchWins": 589,
+      "matchLosses": 263,
+      "matchWins": 621,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 841,
-      "winRate": 0.7
+      "totalMatches": 884,
+      "winRate": 0.702
     },
     "puma": {
       "charUsage": {
@@ -219,31 +219,31 @@
       "charUsage": {
         "dragunov": 2,
         "eddy": 137,
-        "fahkumram": 96,
-        "kunimitsu": 469,
+        "fahkumram": 100,
+        "kunimitsu": 506,
         "leroy": 25
       },
-      "matchLosses": 339,
-      "matchWins": 390,
+      "matchLosses": 357,
+      "matchWins": 413,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 729,
-      "winRate": 0.535
+      "totalMatches": 770,
+      "winRate": 0.536
     },
     "skrt": {
       "charUsage": {
         "bryan": 229,
-        "jack8": 50,
+        "jack8": 73,
         "king": 14,
         "kuma": 55,
         "kunimitsu": 8,
         "miary_zo": 16,
         "panda": 3
       },
-      "matchLosses": 207,
-      "matchWins": 168,
+      "matchLosses": 214,
+      "matchWins": 184,
       "mostPlayedCharacter": "bryan",
-      "totalMatches": 375,
-      "winRate": 0.448
+      "totalMatches": 398,
+      "winRate": 0.462
     },
     "sugarfree": {
       "charUsage": {

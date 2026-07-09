@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T02:15:36.357Z",
+  "generatedAt": "2026-07-09T09:27:25.613Z",
   "matches": [
     {
       "a": {
@@ -34089,6 +34089,75 @@
     },
     {
       "a": {
+        "character": "law",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "lili",
+        "name": "Forsaken",
+        "playerId": null,
+        "polarisId": "5Ry3ynmN9e4G",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "2e981e4294f94cdf91c6942c52fef7f9",
+      "playedAt": "2026-06-30T08:44:49.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "law",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "lili",
+        "name": "Forsaken",
+        "playerId": null,
+        "polarisId": "5Ry3ynmN9e4G",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "5cb2e2fa6f7141a0979d46adc8fb9199",
+      "playedAt": "2026-06-30T08:48:52.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "law",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "lili",
+        "name": "Forsaken",
+        "playerId": null,
+        "polarisId": "5Ry3ynmN9e4G",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "b738cff215b643b498dbdd3319f5af05",
+      "playedAt": "2026-06-30T08:52:34.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
         "character": "kunimitsu",
         "name": "BES | Mormon",
         "playerId": null,
@@ -36889,6 +36958,98 @@
       "crew": false,
       "id": "ewgf:4899Drd8678h-5Qy985HfTRhE:1782952969",
       "playedAt": "2026-07-02T00:42:49.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "Lyntheral",
+        "playerId": null,
+        "polarisId": "2niQrB3AAdE6",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "dragunov",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "god_of_destruction"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "a8c346baea904cf5ad7b3943faf82384",
+      "playedAt": "2026-07-02T05:11:21.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "fahkumram",
+        "name": "BarlosB",
+        "playerId": null,
+        "polarisId": "24HtY68tq2df",
+        "rank": "god_of_destruction"
+      },
+      "b": {
+        "character": "law",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "tekken_god"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "16b0adb0e2a940a49178f4ffc34d3e3f",
+      "playedAt": "2026-07-02T05:14:35.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "fahkumram",
+        "name": "BarlosB",
+        "playerId": null,
+        "polarisId": "24HtY68tq2df",
+        "rank": "god_of_destruction"
+      },
+      "b": {
+        "character": "law",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "tekken_god"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "b738e26de99443839fc1e71ff67fa90b",
+      "playedAt": "2026-07-02T05:17:01.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "anna",
+        "name": "Slidnik",
+        "playerId": null,
+        "polarisId": "4ReEenLFnrfh",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "law",
+        "name": "StoneG",
+        "playerId": "stone",
+        "polarisId": "4TiQJ6FArHJa",
+        "rank": "tekken_god"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "debd98a3e72e463a8c429b6e61e50143",
+      "playedAt": "2026-07-02T05:20:42.000Z",
       "roundsA": 0,
       "roundsB": 3,
       "winner": "b"

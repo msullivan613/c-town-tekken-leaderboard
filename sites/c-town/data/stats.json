@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2254,
+  "basedOnMatchCount": 2261,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -270,7 +270,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-09T02:15:36.357Z",
+  "generatedAt": "2026-07-09T09:27:25.613Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -600,17 +600,17 @@
         "armor_king": 1,
         "dragunov": 30,
         "eddy": 4,
-        "fahkumram": 3,
+        "fahkumram": 10,
         "kazuya": 7,
         "law": 75,
         "lee": 61,
         "victor": 3
       },
-      "matchLosses": 57,
-      "matchWins": 127,
+      "matchLosses": 60,
+      "matchWins": 131,
       "mostPlayedCharacter": "law",
-      "totalMatches": 184,
-      "winRate": 0.69
+      "totalMatches": 191,
+      "winRate": 0.686
     },
     "sugarfree": {
       "charUsage": {

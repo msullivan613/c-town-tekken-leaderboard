@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T02:14:46.260Z",
+  "generatedAt": "2026-07-09T09:26:36.533Z",
   "pairs": [
     {
       "character": "leroy",
@@ -290,13 +290,13 @@
     {
       "character": "jack8",
       "confidence": "leaderboard",
-      "games": 727,
-      "lastUpdated": "2026-07-08T02:46:56.000Z",
+      "games": 750,
+      "lastUpdated": "2026-07-09T03:48:18.000Z",
       "pairId": "3hBB-83gE-7EAG:jack8",
       "playerId": "skrt",
       "provisional": false,
-      "rating": 1751,
-      "sigmaSquared": 64
+      "rating": 1824,
+      "sigmaSquared": 63
     },
     {
       "character": "king",
@@ -433,24 +433,24 @@
     {
       "character": "fahkumram",
       "confidence": "leaderboard",
-      "games": 3541,
-      "lastUpdated": "2026-07-08T07:04:39.000Z",
+      "games": 3545,
+      "lastUpdated": "2026-07-09T03:42:28.000Z",
       "pairId": "44eg-BAHA-424E:fahkumram",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 2063,
+      "rating": 2056,
       "sigmaSquared": 63
     },
     {
       "character": "kunimitsu",
       "confidence": "leaderboard",
-      "games": 1065,
-      "lastUpdated": "2026-07-09T00:14:05.000Z",
+      "games": 1102,
+      "lastUpdated": "2026-07-09T05:50:57.000Z",
       "pairId": "44eg-BAHA-424E:kunimitsu",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1880,
-      "sigmaSquared": 63
+      "rating": 2003,
+      "sigmaSquared": 62
     },
     {
       "character": "lars",
@@ -807,13 +807,13 @@
     {
       "character": "armor_king",
       "confidence": "leaderboard",
-      "games": 982,
-      "lastUpdated": "2026-07-08T08:43:22.000Z",
+      "games": 1022,
+      "lastUpdated": "2026-07-09T08:38:17.000Z",
       "pairId": "5EeM-RAhn-HbJd:armor_king",
       "playerId": "afriking",
       "provisional": false,
-      "rating": 2142,
-      "sigmaSquared": 62
+      "rating": 2121,
+      "sigmaSquared": 63
     },
     {
       "character": "lars",
