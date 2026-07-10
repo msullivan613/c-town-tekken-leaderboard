@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T02:15:40.004Z",
+  "generatedAt": "2026-07-10T09:24:06.604Z",
   "pairs": [
     {
       "character": "lili",
@@ -112,12 +112,12 @@
     {
       "character": "jin",
       "characterPeakRank": "tekken_emperor",
-      "lastSeen": "2026-06-10T00:02:11.000Z",
+      "lastSeen": "2026-07-09T23:31:34.000Z",
       "pairId": "37iF-Jy3H-YdTJ:jin",
       "playerId": "chamk",
       "rank": "tekken_emperor",
       "rankTier": 26,
-      "rankedGames": 124,
+      "rankedGames": 140,
       "region": "Americas",
       "tekken_id": "37iF-Jy3H-YdTJ"
     },
@@ -256,12 +256,12 @@
     {
       "character": "fahkumram",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-06-30T23:47:08.000Z",
+      "lastSeen": "2026-07-10T03:53:37.000Z",
       "pairId": "3JAY-QR5R-dNJh:fahkumram",
       "playerId": "nullified",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 553,
+      "rankedGames": 563,
       "region": "Americas",
       "tekken_id": "3JAY-QR5R-dNJh"
     },
@@ -280,12 +280,12 @@
     {
       "character": "kuma",
       "characterPeakRank": "god_of_destruction_iv",
-      "lastSeen": "2026-07-09T18:50:02.000Z",
+      "lastSeen": "2026-07-10T01:09:42.000Z",
       "pairId": "4899-Drd8-678h:kuma",
       "playerId": "bigman",
       "rank": "god_of_destruction_iv",
       "rankTier": 33,
-      "rankedGames": 1420,
+      "rankedGames": 1457,
       "region": "Americas",
       "tekken_id": "4899-Drd8-678h"
     },

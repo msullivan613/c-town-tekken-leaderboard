@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 5029,
+  "basedOnMatchCount": 5061,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-10T02:14:50.904Z",
+  "generatedAt": "2026-07-10T09:23:14.390Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -63,12 +63,12 @@
       "charUsage": {
         "bryan": 51,
         "heihachi": 47,
-        "kazuya": 302
+        "kazuya": 309
       },
-      "matchLosses": 249,
-      "matchWins": 151,
+      "matchLosses": 253,
+      "matchWins": 154,
       "mostPlayedCharacter": "kazuya",
-      "totalMatches": 400,
+      "totalMatches": 407,
       "winRate": 0.378
     },
     "falsecrustacean": {
@@ -166,13 +166,13 @@
       "charUsage": {
         "armor_king": 241,
         "claudio": 11,
-        "fahkumram": 48
+        "fahkumram": 58
       },
-      "matchLosses": 169,
-      "matchWins": 131,
+      "matchLosses": 173,
+      "matchWins": 137,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 300,
-      "winRate": 0.437
+      "totalMatches": 310,
+      "winRate": 0.442
     },
     "oddlionss": {
       "charUsage": {
@@ -231,7 +231,7 @@
     },
     "skrt": {
       "charUsage": {
-        "bryan": 229,
+        "bryan": 244,
         "jack8": 73,
         "king": 14,
         "kuma": 55,
@@ -239,10 +239,10 @@
         "miary_zo": 16,
         "panda": 3
       },
-      "matchLosses": 214,
-      "matchWins": 184,
+      "matchLosses": 222,
+      "matchWins": 191,
       "mostPlayedCharacter": "bryan",
-      "totalMatches": 398,
+      "totalMatches": 413,
       "winRate": 0.462
     },
     "sugarfree": {

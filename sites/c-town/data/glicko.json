@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T02:15:40.004Z",
+  "generatedAt": "2026-07-10T09:24:06.604Z",
   "pairs": [
     {
       "character": "lili",
@@ -224,12 +224,12 @@
     {
       "character": "fahkumram",
       "confidence": "leaderboard",
-      "games": 2732,
-      "lastUpdated": "2026-06-30T23:47:08.000Z",
+      "games": 2742,
+      "lastUpdated": "2026-07-10T03:53:37.000Z",
       "pairId": "3JAY-QR5R-dNJh:fahkumram",
       "playerId": "nullified",
       "provisional": false,
-      "rating": 2035,
+      "rating": 2006,
       "sigmaSquared": 66
     },
     {
