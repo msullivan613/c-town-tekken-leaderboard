@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 5061,
+  "basedOnMatchCount": 5172,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-10T19:19:13.633Z",
+  "generatedAt": "2026-07-11T02:00:30.514Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -28,14 +28,14 @@
   "players": {
     "afriking": {
       "charUsage": {
-        "armor_king": 426,
+        "armor_king": 449,
         "lars": 44
       },
-      "matchLosses": 192,
-      "matchWins": 278,
+      "matchLosses": 203,
+      "matchWins": 290,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 470,
-      "winRate": 0.591
+      "totalMatches": 493,
+      "winRate": 0.588
     },
     "bard": {
       "charUsage": {
@@ -63,13 +63,13 @@
       "charUsage": {
         "bryan": 51,
         "heihachi": 47,
-        "kazuya": 309
+        "kazuya": 324
       },
-      "matchLosses": 253,
-      "matchWins": 154,
+      "matchLosses": 263,
+      "matchWins": 159,
       "mostPlayedCharacter": "kazuya",
-      "totalMatches": 407,
-      "winRate": 0.378
+      "totalMatches": 422,
+      "winRate": 0.377
     },
     "falsecrustacean": {
       "charUsage": {
@@ -196,14 +196,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 836,
+        "azucena": 860,
         "kunimitsu": 48
       },
-      "matchLosses": 263,
-      "matchWins": 621,
+      "matchLosses": 274,
+      "matchWins": 634,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 884,
-      "winRate": 0.702
+      "totalMatches": 908,
+      "winRate": 0.698
     },
     "puma": {
       "charUsage": {
@@ -220,14 +220,16 @@
         "dragunov": 2,
         "eddy": 137,
         "fahkumram": 100,
-        "kunimitsu": 506,
-        "leroy": 25
+        "feng": 5,
+        "king": 8,
+        "kunimitsu": 514,
+        "leroy": 53
       },
-      "matchLosses": 357,
-      "matchWins": 413,
+      "matchLosses": 382,
+      "matchWins": 437,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 770,
-      "winRate": 0.536
+      "totalMatches": 819,
+      "winRate": 0.534
     },
     "skrt": {
       "charUsage": {

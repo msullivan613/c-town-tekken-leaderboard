@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T19:19:13.633Z",
+  "generatedAt": "2026-07-11T02:00:30.514Z",
   "pairs": [
     {
       "character": "leroy",
@@ -444,12 +444,12 @@
     {
       "character": "kunimitsu",
       "confidence": "leaderboard",
-      "games": 1102,
-      "lastUpdated": "2026-07-09T05:50:57.000Z",
+      "games": 1110,
+      "lastUpdated": "2026-07-11T00:54:48.000Z",
       "pairId": "44eg-BAHA-424E:kunimitsu",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 2003,
+      "rating": 1993,
       "sigmaSquared": 62
     },
     {
@@ -466,13 +466,13 @@
     {
       "character": "leroy",
       "confidence": "leaderboard",
-      "games": 2055,
-      "lastUpdated": "2026-07-08T23:26:18.000Z",
+      "games": 2083,
+      "lastUpdated": "2026-07-11T00:16:40.000Z",
       "pairId": "44eg-BAHA-424E:leroy",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1840,
-      "sigmaSquared": 69
+      "rating": 1792,
+      "sigmaSquared": 64
     },
     {
       "character": "raven",
@@ -532,13 +532,13 @@
     {
       "character": "kazuya",
       "confidence": "leaderboard",
-      "games": 2484,
-      "lastUpdated": "2026-07-10T02:58:20.000Z",
+      "games": 2499,
+      "lastUpdated": "2026-07-11T01:49:42.000Z",
       "pairId": "4FE3-J976-Qray:kazuya",
       "playerId": "eonexodus",
       "provisional": false,
-      "rating": 1547,
-      "sigmaSquared": 64
+      "rating": 1527,
+      "sigmaSquared": 63
     },
     {
       "character": "shaheen",

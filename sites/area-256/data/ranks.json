@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T19:19:13.633Z",
+  "generatedAt": "2026-07-11T02:00:30.514Z",
   "pairs": [
     {
       "character": "leroy",
@@ -355,8 +355,8 @@
       "lastSeen": "2026-06-17T04:08:33.000Z",
       "pairId": "3hBB-83gE-7EAG:kuma",
       "playerId": "skrt",
-      "rank": "god_of_destruction_ii",
-      "rankTier": 31,
+      "rank": "god_of_destruction_iii",
+      "rankTier": 32,
       "rankedGames": 269,
       "region": "Americas",
       "tekken_id": "3hBB-83gE-7EAG"
@@ -903,12 +903,12 @@
     },
     {
       "character": "armor_king",
-      "characterPeakRank": "god_of_destruction_iv",
+      "characterPeakRank": "god_of_destruction_v",
       "lastSeen": "2026-07-09T23:40:50.000Z",
       "pairId": "5EeM-RAhn-HbJd:armor_king",
       "playerId": "afriking",
-      "rank": "god_of_destruction_iv",
-      "rankTier": 33,
+      "rank": "god_of_destruction_v",
+      "rankTier": 34,
       "rankedGames": 1435,
       "region": "Americas",
       "tekken_id": "5EeM-RAhn-HbJd"
