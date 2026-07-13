@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T14:17:33.526Z",
+  "generatedAt": "2026-07-13T19:17:23.537Z",
   "pairs": [
     {
       "character": "lili",
@@ -48,13 +48,13 @@
     {
       "character": "lee",
       "confidence": "leaderboard",
-      "games": 1012,
-      "lastUpdated": "2026-06-24T03:07:05.000Z",
+      "games": 1024,
+      "lastUpdated": "2026-07-13T18:01:23.000Z",
       "pairId": "2tYa-R4NB-GJJr:lee",
       "playerId": "mickrus",
       "provisional": false,
-      "rating": 1824,
-      "sigmaSquared": 68
+      "rating": 1806,
+      "sigmaSquared": 65
     },
     {
       "character": "steve",

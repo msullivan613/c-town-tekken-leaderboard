@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2426,
+  "basedOnMatchCount": 2440,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -270,7 +270,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-13T14:17:33.526Z",
+  "generatedAt": "2026-07-13T19:17:23.537Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -546,16 +546,16 @@
       "charUsage": {
         "bryan": 4,
         "dragunov": 2,
-        "heihachi": 22,
+        "heihachi": 24,
         "jin": 4,
         "kazuya": 2,
-        "lee": 93
+        "lee": 105
       },
-      "matchLosses": 71,
-      "matchWins": 56,
+      "matchLosses": 77,
+      "matchWins": 64,
       "mostPlayedCharacter": "lee",
-      "totalMatches": 127,
-      "winRate": 0.441
+      "totalMatches": 141,
+      "winRate": 0.454
     },
     "nullified": {
       "charUsage": {
