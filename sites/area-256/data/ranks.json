@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T07:51:29.865Z",
+  "generatedAt": "2026-07-14T13:17:26.957Z",
   "pairs": [
     {
       "character": "leroy",
@@ -436,12 +436,12 @@
     {
       "character": "fahkumram",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-07-14T01:50:32.000Z",
+      "lastSeen": "2026-07-14T02:40:08.000Z",
       "pairId": "3JAY-QR5R-dNJh:fahkumram",
       "playerId": "nullified",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 569,
+      "rankedGames": 586,
       "region": "Americas",
       "tekken_id": "3JAY-QR5R-dNJh"
     },
@@ -459,13 +459,13 @@
     },
     {
       "character": "bryan",
-      "characterPeakRank": "tekken_king",
-      "lastSeen": "2026-04-06T05:02:08.000Z",
+      "characterPeakRank": "god_of_destruction",
+      "lastSeen": "2026-07-14T07:48:05.000Z",
       "pairId": "44eg-BAHA-424E:bryan",
       "playerId": "rev_grizz",
-      "rank": "tekken_king",
-      "rankTier": 25,
-      "rankedGames": 4,
+      "rank": "god_of_destruction",
+      "rankTier": 29,
+      "rankedGames": 24,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
     },
@@ -520,12 +520,12 @@
     {
       "character": "kunimitsu",
       "characterPeakRank": "god_of_destruction_iv",
-      "lastSeen": "2026-07-13T08:17:41.000Z",
+      "lastSeen": "2026-07-14T06:04:49.000Z",
       "pairId": "44eg-BAHA-424E:kunimitsu",
       "playerId": "rev_grizz",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 1571,
+      "rankedGames": 1589,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
     },
@@ -631,8 +631,8 @@
       "lastSeen": "2026-07-14T01:31:06.000Z",
       "pairId": "4FE3-J976-Qray:kazuya",
       "playerId": "eonexodus",
-      "rank": "tekken_emperor",
-      "rankTier": 26,
+      "rank": "tekken_god",
+      "rankTier": 27,
       "rankedGames": 1595,
       "region": "Americas",
       "tekken_id": "4FE3-J976-Qray"

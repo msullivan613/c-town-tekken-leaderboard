@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T07:51:29.865Z",
+  "generatedAt": "2026-07-14T13:17:26.957Z",
   "pairs": [
     {
       "character": "leroy",
@@ -411,13 +411,13 @@
     {
       "character": "bryan",
       "confidence": "leaderboard",
-      "games": 1391,
-      "lastUpdated": "2026-07-14T07:48:05.000Z",
+      "games": 1439,
+      "lastUpdated": "2026-07-14T11:04:22.000Z",
       "pairId": "44eg-BAHA-424E:bryan",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1636,
-      "sigmaSquared": 70
+      "rating": 1742,
+      "sigmaSquared": 62
     },
     {
       "character": "eddy",

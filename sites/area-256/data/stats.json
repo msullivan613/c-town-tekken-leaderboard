@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 5784,
+  "basedOnMatchCount": 5832,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-14T07:51:29.865Z",
+  "generatedAt": "2026-07-14T13:17:26.957Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -217,7 +217,7 @@
     },
     "rev_grizz": {
       "charUsage": {
-        "bryan": 20,
+        "bryan": 68,
         "dragunov": 2,
         "eddy": 137,
         "fahkumram": 100,
@@ -226,11 +226,11 @@
         "kunimitsu": 679,
         "leroy": 53
       },
-      "matchLosses": 470,
-      "matchWins": 534,
+      "matchLosses": 493,
+      "matchWins": 559,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 1004,
-      "winRate": 0.532
+      "totalMatches": 1052,
+      "winRate": 0.531
     },
     "skrt": {
       "charUsage": {
