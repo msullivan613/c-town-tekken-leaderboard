@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2463,
+  "basedOnMatchCount": 2492,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -106,8 +106,12 @@
       "matchesB": 0
     },
     "burny:paul|mickrus:heihachi": {
-      "matchesA": 2,
+      "matchesA": 4,
       "matchesB": 0
+    },
+    "burny:paul|mickrus:jin": {
+      "matchesA": 23,
+      "matchesB": 3
     },
     "burny:paul|mickrus:lee": {
       "matchesA": 11,
@@ -123,6 +127,10 @@
     },
     "burny:paul|sugarfree:yoshimitsu": {
       "matchesA": 8,
+      "matchesB": 1
+    },
+    "burny:shaheen|mickrus:heihachi": {
+      "matchesA": 0,
       "matchesB": 1
     },
     "burny:victor|fop:reina": {
@@ -270,7 +278,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-14T19:09:05.815Z",
+  "generatedAt": "2026-07-15T01:48:40.677Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -345,10 +353,10 @@
       "roundsB": 2
     },
     "burny|mickrus": {
-      "matchesA": 26,
-      "matchesB": 6,
-      "roundsA": 85,
-      "roundsB": 47
+      "matchesA": 51,
+      "matchesB": 10,
+      "roundsA": 164,
+      "roundsB": 83
     },
     "burny|stone": {
       "matchesA": 9,
@@ -457,14 +465,15 @@
         "clive": 2,
         "dragunov": 1,
         "hwoarang": 7,
-        "paul": 102,
+        "paul": 130,
+        "shaheen": 1,
         "victor": 108
       },
-      "matchLosses": 48,
-      "matchWins": 172,
-      "mostPlayedCharacter": "victor",
-      "totalMatches": 220,
-      "winRate": 0.782
+      "matchLosses": 52,
+      "matchWins": 197,
+      "mostPlayedCharacter": "paul",
+      "totalMatches": 249,
+      "winRate": 0.791
     },
     "chamk": {
       "charUsage": {
@@ -546,16 +555,16 @@
       "charUsage": {
         "bryan": 4,
         "dragunov": 2,
-        "heihachi": 24,
-        "jin": 4,
+        "heihachi": 27,
+        "jin": 30,
         "kazuya": 2,
         "lee": 105
       },
-      "matchLosses": 77,
-      "matchWins": 64,
+      "matchLosses": 102,
+      "matchWins": 68,
       "mostPlayedCharacter": "lee",
-      "totalMatches": 141,
-      "winRate": 0.454
+      "totalMatches": 170,
+      "winRate": 0.4
     },
     "nullified": {
       "charUsage": {

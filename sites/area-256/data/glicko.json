@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T19:08:14.458Z",
+  "generatedAt": "2026-07-15T01:47:51.705Z",
   "pairs": [
     {
       "character": "leroy",
@@ -554,13 +554,13 @@
     {
       "character": "kazuya",
       "confidence": "leaderboard",
-      "games": 2546,
-      "lastUpdated": "2026-07-14T01:31:06.000Z",
+      "games": 2561,
+      "lastUpdated": "2026-07-15T00:22:10.000Z",
       "pairId": "4FE3-J976-Qray:kazuya",
       "playerId": "eonexodus",
       "provisional": false,
-      "rating": 1452,
-      "sigmaSquared": 62
+      "rating": 1514,
+      "sigmaSquared": 63
     },
     {
       "character": "shaheen",
