@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 6062,
+  "basedOnMatchCount": 6063,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-16T08:00:53.388Z",
+  "generatedAt": "2026-07-16T13:27:41.069Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -28,14 +28,14 @@
   "players": {
     "afriking": {
       "charUsage": {
-        "armor_king": 525,
+        "armor_king": 526,
         "lars": 44
       },
       "matchLosses": 247,
-      "matchWins": 322,
+      "matchWins": 323,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 569,
-      "winRate": 0.566
+      "totalMatches": 570,
+      "winRate": 0.567
     },
     "bard": {
       "charUsage": {

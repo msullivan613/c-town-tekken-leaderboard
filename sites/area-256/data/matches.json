@@ -1,100 +1,8 @@
 {
   "crewMatchCount": 19,
-  "feedMatchCount": 533,
-  "generatedAt": "2026-07-16T08:00:53.388Z",
+  "feedMatchCount": 529,
+  "generatedAt": "2026-07-16T13:27:41.069Z",
   "matches": [
-    {
-      "a": {
-        "character": "fahkumram",
-        "name": "Kragsloor",
-        "playerId": "kragsloor",
-        "polarisId": "3H47D6QbFDBr",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "dragunov",
-        "name": "Captain",
-        "playerId": null,
-        "polarisId": "5GJL9Yeh23J4",
-        "rank": "tekken_god"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "db39eb023b5f45129cb1f8835be00323",
-      "playedAt": "2026-06-16T09:33:35.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "fahkumram",
-        "name": "Kragsloor",
-        "playerId": "kragsloor",
-        "polarisId": "3H47D6QbFDBr",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "victor",
-        "name": "FOURTRESS",
-        "playerId": null,
-        "polarisId": "5iN35HDFinMf",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "eaa2a19b5c7b4bcba8370e154648b74a",
-      "playedAt": "2026-06-16T09:38:43.000Z",
-      "roundsA": 2,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "fahkumram",
-        "name": "Kragsloor",
-        "playerId": "kragsloor",
-        "polarisId": "3H47D6QbFDBr",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "dragunov",
-        "name": "sixseven",
-        "playerId": null,
-        "polarisId": "5ADBttqyFFhB",
-        "rank": "tekken_god_supreme"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "8731378408844acb8242d4b69f5abf32",
-      "playedAt": "2026-06-16T09:41:42.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "fahkumram",
-        "name": "Kragsloor",
-        "playerId": "kragsloor",
-        "polarisId": "3H47D6QbFDBr",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "dragunov",
-        "name": "sixseven",
-        "playerId": null,
-        "polarisId": "5ADBttqyFFhB",
-        "rank": "tekken_god_supreme"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "9dcc11b352eb4daf80d7f3850c3277d6",
-      "playedAt": "2026-06-16T09:44:56.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
     {
       "a": {
         "character": "dragunov",
@@ -9519,29 +9427,6 @@
       },
       "battleType": "quick",
       "crew": false,
-      "id": "a6f825f64b214d8d8a4f36531ec4a1f4",
-      "playedAt": "2026-07-14T20:14:16.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "steve",
-        "name": "SAUCYY!!",
-        "playerId": null,
-        "polarisId": "4n5hNe4gAh8n",
-        "rank": "god_of_destruction_v"
-      },
-      "b": {
-        "character": "armor_king",
-        "name": "Afriking777",
-        "playerId": "afriking",
-        "polarisId": "5EeMRAhnHbJd",
-        "rank": "god_of_destruction_v"
-      },
-      "battleType": "quick",
-      "crew": false,
       "id": "d27a7a795bea46d185e0694ddad50c4b",
       "playedAt": "2026-07-14T20:18:08.000Z",
       "roundsA": 3,
@@ -12696,6 +12581,29 @@
       "id": "4912c0576d794a26822b72521f32afb2",
       "playedAt": "2026-07-16T07:58:19.000Z",
       "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "RTX4080S Player",
+        "playerId": null,
+        "polarisId": "23HgqtTLmth6",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "armor_king",
+        "name": "Afriking777",
+        "playerId": "afriking",
+        "polarisId": "5EeMRAhnHbJd",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "ff35713f5bfd4ba3845028e4b7009e62",
+      "playedAt": "2026-07-16T08:01:17.000Z",
+      "roundsA": 1,
       "roundsB": 3,
       "winner": "b"
     }
