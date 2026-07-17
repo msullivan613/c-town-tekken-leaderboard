@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 6156,
+  "basedOnMatchCount": 6160,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-17T07:57:33.401Z",
+  "generatedAt": "2026-07-17T13:13:01.910Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -176,13 +176,13 @@
     },
     "oddlionss": {
       "charUsage": {
-        "heihachi": 117
+        "heihachi": 121
       },
-      "matchLosses": 57,
-      "matchWins": 60,
+      "matchLosses": 60,
+      "matchWins": 61,
       "mostPlayedCharacter": "heihachi",
-      "totalMatches": 117,
-      "winRate": 0.513
+      "totalMatches": 121,
+      "winRate": 0.504
     },
     "omni": {
       "charUsage": {

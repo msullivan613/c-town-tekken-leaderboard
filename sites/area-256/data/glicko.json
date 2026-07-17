@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T07:57:33.401Z",
+  "generatedAt": "2026-07-17T13:13:01.910Z",
   "pairs": [
     {
       "character": "leroy",
@@ -609,12 +609,12 @@
     {
       "character": "heihachi",
       "confidence": "leaderboard",
-      "games": 190,
-      "lastUpdated": "2026-07-17T07:55:32.000Z",
+      "games": 194,
+      "lastUpdated": "2026-07-17T08:08:46.000Z",
       "pairId": "4tF6-JdJa-Rna2:heihachi",
       "playerId": "oddlionss",
       "provisional": false,
-      "rating": 1373,
+      "rating": 1370,
       "sigmaSquared": 63
     },
     {
