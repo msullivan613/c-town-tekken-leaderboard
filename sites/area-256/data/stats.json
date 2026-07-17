@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 6160,
+  "basedOnMatchCount": 6170,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-17T13:13:01.910Z",
+  "generatedAt": "2026-07-17T18:57:49.750Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -196,14 +196,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 1110,
+        "azucena": 1120,
         "kunimitsu": 48
       },
-      "matchLosses": 357,
-      "matchWins": 801,
+      "matchLosses": 362,
+      "matchWins": 806,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 1158,
-      "winRate": 0.692
+      "totalMatches": 1168,
+      "winRate": 0.69
     },
     "puma": {
       "charUsage": {
