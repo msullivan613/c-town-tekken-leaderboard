@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T01:52:09.217Z",
+  "generatedAt": "2026-07-18T07:39:34.596Z",
   "pairs": [
     {
       "character": "lili",
@@ -136,13 +136,13 @@
     {
       "character": "bryan",
       "confidence": "leaderboard",
-      "games": 1399,
-      "lastUpdated": "2026-07-05T04:18:33.000Z",
+      "games": 1416,
+      "lastUpdated": "2026-07-18T03:41:23.000Z",
       "pairId": "3fee-J699-M7An:bryan",
       "playerId": "sugarfree",
       "provisional": false,
-      "rating": 1682,
-      "sigmaSquared": 69
+      "rating": 1673,
+      "sigmaSquared": 67
     },
     {
       "character": "fahkumram",
@@ -178,14 +178,25 @@
       "sigmaSquared": 109
     },
     {
+      "character": "kazuya",
+      "confidence": "provisional",
+      "games": 157,
+      "lastUpdated": "2026-07-18T02:07:20.000Z",
+      "pairId": "3fee-J699-M7An:kazuya",
+      "playerId": "sugarfree",
+      "provisional": true,
+      "rating": 1280,
+      "sigmaSquared": 111
+    },
+    {
       "character": "yoshimitsu",
       "confidence": "leaderboard",
-      "games": 572,
-      "lastUpdated": "2026-07-04T05:57:00.000Z",
+      "games": 580,
+      "lastUpdated": "2026-07-18T02:36:03.000Z",
       "pairId": "3fee-J699-M7An:yoshimitsu",
       "playerId": "sugarfree",
       "provisional": false,
-      "rating": 1671,
+      "rating": 1704,
       "sigmaSquared": 67
     },
     {
@@ -246,12 +257,12 @@
     {
       "character": "kuma",
       "confidence": "leaderboard",
-      "games": 5226,
-      "lastUpdated": "2026-07-17T01:33:59.000Z",
+      "games": 5237,
+      "lastUpdated": "2026-07-18T04:04:21.000Z",
       "pairId": "4899-Drd8-678h:kuma",
       "playerId": "bigman",
       "provisional": false,
-      "rating": 2093,
+      "rating": 2080,
       "sigmaSquared": 62
     },
     {

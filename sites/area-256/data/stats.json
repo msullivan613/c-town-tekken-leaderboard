@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 6272,
+  "basedOnMatchCount": 6411,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-18T01:51:16.429Z",
+  "generatedAt": "2026-07-18T07:38:44.645Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -63,13 +63,13 @@
       "charUsage": {
         "bryan": 51,
         "heihachi": 47,
-        "kazuya": 423
+        "kazuya": 443
       },
-      "matchLosses": 332,
-      "matchWins": 189,
+      "matchLosses": 341,
+      "matchWins": 200,
       "mostPlayedCharacter": "kazuya",
-      "totalMatches": 521,
-      "winRate": 0.363
+      "totalMatches": 541,
+      "winRate": 0.37
     },
     "falsecrustacean": {
       "charUsage": {
@@ -196,14 +196,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 1120,
+        "azucena": 1153,
         "kunimitsu": 48
       },
-      "matchLosses": 362,
-      "matchWins": 806,
+      "matchLosses": 368,
+      "matchWins": 833,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 1168,
-      "winRate": 0.69
+      "totalMatches": 1201,
+      "winRate": 0.694
     },
     "puma": {
       "charUsage": {
@@ -224,13 +224,13 @@
         "feng": 20,
         "king": 10,
         "kunimitsu": 691,
-        "leroy": 98
+        "leroy": 155
       },
-      "matchLosses": 609,
-      "matchWins": 678,
+      "matchLosses": 633,
+      "matchWins": 711,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 1287,
-      "winRate": 0.527
+      "totalMatches": 1344,
+      "winRate": 0.529
     },
     "skrt": {
       "charUsage": {
@@ -250,15 +250,16 @@
     },
     "sugarfree": {
       "charUsage": {
-        "bryan": 13,
+        "bryan": 30,
         "jack8": 8,
-        "yoshimitsu": 51
+        "kazuya": 4,
+        "yoshimitsu": 59
       },
-      "matchLosses": 30,
-      "matchWins": 42,
+      "matchLosses": 42,
+      "matchWins": 59,
       "mostPlayedCharacter": "yoshimitsu",
-      "totalMatches": 72,
-      "winRate": 0.583
+      "totalMatches": 101,
+      "winRate": 0.584
     }
   },
   "schemaVersion": 2
