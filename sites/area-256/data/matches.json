@@ -1,7 +1,7 @@
 {
   "crewMatchCount": 19,
-  "feedMatchCount": 538,
-  "generatedAt": "2026-07-19T08:04:38.106Z",
+  "feedMatchCount": 541,
+  "generatedAt": "2026-07-19T13:01:30.021Z",
   "matches": [
     {
       "a": {
@@ -10470,6 +10470,29 @@
     },
     {
       "a": {
+        "character": "shaheen",
+        "name": "holycrow",
+        "playerId": "holycrow",
+        "polarisId": "2YTmMj474bny",
+        "rank": "god_of_destruction"
+      },
+      "b": {
+        "character": "law",
+        "name": "Jiraiya",
+        "playerId": null,
+        "polarisId": "3m2JnLB2dfdT",
+        "rank": "god_of_destruction"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "d164cc61bbd344ab9a245a7b6faa0183",
+      "playedAt": "2026-07-19T03:07:40.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
         "character": "dragunov",
         "name": "Corgi Legs",
         "playerId": null,
@@ -10510,6 +10533,29 @@
       "crew": false,
       "id": "22065896c31d4d72ab144d8fb351ca0a",
       "playedAt": "2026-07-19T03:09:53.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "shaheen",
+        "name": "holycrow",
+        "playerId": "holycrow",
+        "polarisId": "2YTmMj474bny",
+        "rank": "god_of_destruction"
+      },
+      "b": {
+        "character": "jun",
+        "name": "xToSmooth",
+        "playerId": null,
+        "polarisId": "2mbMgMe46gDy",
+        "rank": "god_of_destruction_i"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "18fffb4222b24bb6b9b78136d7ce7837",
+      "playedAt": "2026-07-19T03:11:07.000Z",
       "roundsA": 3,
       "roundsB": 1,
       "winner": "a"
@@ -10557,6 +10603,29 @@
       "id": "fdce25e2defc4a1797bbb17df91d5a65",
       "playedAt": "2026-07-19T03:12:35.000Z",
       "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "shaheen",
+        "name": "holycrow",
+        "playerId": "holycrow",
+        "polarisId": "2YTmMj474bny",
+        "rank": "god_of_destruction"
+      },
+      "b": {
+        "character": "hwoarang",
+        "name": "crane_god",
+        "playerId": null,
+        "polarisId": "3jj6Qri5MAiM",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "701abf328cc64c96bc47d451475a33cc",
+      "playedAt": "2026-07-19T03:14:21.000Z",
+      "roundsA": 0,
       "roundsB": 3,
       "winner": "b"
     },
@@ -11911,29 +11980,6 @@
       },
       "battleType": "quick",
       "crew": false,
-      "id": "6b1e436ecc2b4b79afd7dfaadb9bac8e",
-      "playedAt": "2026-07-19T05:52:26.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "heihachi",
-        "name": "bleed.",
-        "playerId": null,
-        "polarisId": "3rjbrDEyAb8j",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "armor_king",
-        "name": "Afriking777",
-        "playerId": "afriking",
-        "polarisId": "5EeMRAhnHbJd",
-        "rank": "god_of_destruction_v"
-      },
-      "battleType": "quick",
-      "crew": false,
       "id": "288b57932bb24db399f55e3322ecc474",
       "playedAt": "2026-07-19T05:55:45.000Z",
       "roundsA": 3,
@@ -12811,6 +12857,29 @@
       "id": "eafee01a0565406097f9a1ede6293ae8",
       "playedAt": "2026-07-19T08:03:47.000Z",
       "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "law",
+        "name": "RASTARELLPB",
+        "playerId": null,
+        "polarisId": "2iBJJ8BENaiT",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "armor_king",
+        "name": "Afriking777",
+        "playerId": "afriking",
+        "polarisId": "5EeMRAhnHbJd",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "d0c70c25be30458fb36275c410cbb960",
+      "playedAt": "2026-07-19T08:07:12.000Z",
+      "roundsA": 2,
       "roundsB": 3,
       "winner": "b"
     }

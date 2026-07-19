@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T08:04:38.106Z",
+  "generatedAt": "2026-07-19T13:01:30.021Z",
   "matches": [
     {
       "a": {
@@ -139814,6 +139814,29 @@
       "crew": false,
       "id": "8c2c650df0b5456fb1b850f0e7512682",
       "playedAt": "2026-07-19T05:50:20.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "heihachi",
+        "name": "bleed.",
+        "playerId": null,
+        "polarisId": "3rjbrDEyAb8j",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "armor_king",
+        "name": "Afriking777",
+        "playerId": "afriking",
+        "polarisId": "5EeMRAhnHbJd",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "6b1e436ecc2b4b79afd7dfaadb9bac8e",
+      "playedAt": "2026-07-19T05:52:26.000Z",
       "roundsA": 3,
       "roundsB": 0,
       "winner": "a"

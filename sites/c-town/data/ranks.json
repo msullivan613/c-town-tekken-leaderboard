@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T08:05:26.396Z",
+  "generatedAt": "2026-07-19T13:02:22.922Z",
   "pairs": [
     {
       "character": "lili",
@@ -159,12 +159,12 @@
     },
     {
       "character": "bryan",
-      "characterPeakRank": "tekken_god_supreme",
+      "characterPeakRank": "god_of_destruction",
       "lastSeen": "2026-07-19T04:01:14.000Z",
       "pairId": "3fee-J699-M7An:bryan",
       "playerId": "sugarfree",
-      "rank": "tekken_god_supreme",
-      "rankTier": 28,
+      "rank": "god_of_destruction",
+      "rankTier": 29,
       "rankedGames": 206,
       "region": "Americas",
       "tekken_id": "3fee-J699-M7An"
@@ -291,13 +291,13 @@
     },
     {
       "character": "kuma",
-      "characterPeakRank": "god_of_destruction_iv",
-      "lastSeen": "2026-07-19T02:01:26.000Z",
+      "characterPeakRank": "god_of_destruction_v",
+      "lastSeen": "2026-07-19T02:50:06.000Z",
       "pairId": "4899-Drd8-678h:kuma",
       "playerId": "bigman",
-      "rank": "god_of_destruction_iv",
-      "rankTier": 33,
-      "rankedGames": 1511,
+      "rank": "god_of_destruction_v",
+      "rankTier": 34,
+      "rankedGames": 1527,
       "region": "Americas",
       "tekken_id": "4899-Drd8-678h"
     },
@@ -328,12 +328,12 @@
     {
       "character": "paul",
       "characterPeakRank": "tekken_god",
-      "lastSeen": "2026-06-07T01:36:42.000Z",
+      "lastSeen": "2026-07-19T04:02:03.000Z",
       "pairId": "4fLe-2B6Q-34fJ:paul",
       "playerId": "burny",
       "rank": "tekken_god",
       "rankTier": 27,
-      "rankedGames": 30,
+      "rankedGames": 52,
       "region": "Americas",
       "tekken_id": "4fLe-2B6Q-34fJ"
     },

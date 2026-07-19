@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T08:04:38.106Z",
+  "generatedAt": "2026-07-19T13:01:30.021Z",
   "pairs": [
     {
       "character": "leroy",
@@ -52,12 +52,12 @@
     {
       "character": "shaheen",
       "characterPeakRank": "god_of_destruction",
-      "lastSeen": "2026-05-16T03:28:03.000Z",
+      "lastSeen": "2026-07-19T03:14:21.000Z",
       "pairId": "2YTm-Mj47-4bny:shaheen",
       "playerId": "holycrow",
       "rank": "god_of_destruction",
       "rankTier": 29,
-      "rankedGames": 7,
+      "rankedGames": 10,
       "region": "Americas",
       "tekken_id": "2YTm-Mj47-4bny"
     },
@@ -112,12 +112,12 @@
     {
       "character": "bryan",
       "characterPeakRank": "tekken_god_supreme",
-      "lastSeen": "2026-07-19T02:01:26.000Z",
+      "lastSeen": "2026-07-19T04:01:14.000Z",
       "pairId": "3fee-J699-M7An:bryan",
       "playerId": "sugarfree",
       "rank": "tekken_god_supreme",
       "rankTier": 28,
-      "rankedGames": 174,
+      "rankedGames": 206,
       "region": "Americas",
       "tekken_id": "3fee-J699-M7An"
     },
@@ -568,12 +568,12 @@
     {
       "character": "leroy",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-07-19T02:00:31.000Z",
+      "lastSeen": "2026-07-19T04:02:52.000Z",
       "pairId": "44eg-BAHA-424E:leroy",
       "playerId": "rev_grizz",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 296,
+      "rankedGames": 330,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
     },
@@ -952,12 +952,12 @@
     {
       "character": "armor_king",
       "characterPeakRank": "god_of_destruction_v",
-      "lastSeen": "2026-07-16T08:01:17.000Z",
+      "lastSeen": "2026-07-19T08:03:47.000Z",
       "pairId": "5EeM-RAhn-HbJd:armor_king",
       "playerId": "afriking",
       "rank": "god_of_destruction_v",
       "rankTier": 34,
-      "rankedGames": 1535,
+      "rankedGames": 1577,
       "region": "Americas",
       "tekken_id": "5EeM-RAhn-HbJd"
     },
@@ -976,12 +976,12 @@
     {
       "character": "azucena",
       "characterPeakRank": "god_of_destruction_vi",
-      "lastSeen": "2026-07-18T22:52:55.000Z",
+      "lastSeen": "2026-07-19T05:38:56.000Z",
       "pairId": "5HyE-nHGe-rLJ8:azucena",
       "playerId": "phine",
       "rank": "god_of_destruction_vi",
       "rankTier": 35,
-      "rankedGames": 4973,
+      "rankedGames": 5005,
       "region": "Americas",
       "tekken_id": "5HyE-nHGe-rLJ8"
     },

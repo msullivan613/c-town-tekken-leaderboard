@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 6636,
+  "basedOnMatchCount": 6640,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-19T08:04:38.106Z",
+  "generatedAt": "2026-07-19T13:01:30.021Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -28,13 +28,13 @@
   "players": {
     "afriking": {
       "charUsage": {
-        "armor_king": 568,
+        "armor_king": 569,
         "lars": 44
       },
       "matchLosses": 272,
-      "matchWins": 340,
+      "matchWins": 341,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 612,
+      "totalMatches": 613,
       "winRate": 0.556
     },
     "bard": {
@@ -98,13 +98,13 @@
     "holycrow": {
       "charUsage": {
         "azucena": 67,
-        "shaheen": 7
+        "shaheen": 10
       },
-      "matchLosses": 28,
-      "matchWins": 46,
+      "matchLosses": 29,
+      "matchWins": 48,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 74,
-      "winRate": 0.622
+      "totalMatches": 77,
+      "winRate": 0.623
     },
     "kingbreadsticks": {
       "charUsage": {
