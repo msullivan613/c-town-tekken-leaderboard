@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T18:54:17.516Z",
+  "generatedAt": "2026-07-19T02:02:41.964Z",
   "pairs": [
     {
       "character": "lili",
@@ -136,13 +136,13 @@
     {
       "character": "bryan",
       "confidence": "leaderboard",
-      "games": 1416,
-      "lastUpdated": "2026-07-18T03:41:23.000Z",
+      "games": 1421,
+      "lastUpdated": "2026-07-19T01:56:49.000Z",
       "pairId": "3fee-J699-M7An:bryan",
       "playerId": "sugarfree",
       "provisional": false,
-      "rating": 1673,
-      "sigmaSquared": 67
+      "rating": 1698,
+      "sigmaSquared": 65
     },
     {
       "character": "fahkumram",
@@ -257,12 +257,12 @@
     {
       "character": "kuma",
       "confidence": "leaderboard",
-      "games": 5239,
-      "lastUpdated": "2026-07-18T15:05:07.000Z",
+      "games": 5245,
+      "lastUpdated": "2026-07-19T01:57:24.000Z",
       "pairId": "4899-Drd8-678h:kuma",
       "playerId": "bigman",
       "provisional": false,
-      "rating": 2060,
+      "rating": 2097,
       "sigmaSquared": 62
     },
     {

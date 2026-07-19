@@ -1,7 +1,7 @@
 {
   "crewMatchCount": 169,
   "feedMatchCount": 325,
-  "generatedAt": "2026-07-18T18:54:17.516Z",
+  "generatedAt": "2026-07-19T02:02:41.964Z",
   "matches": [
     {
       "a": {
@@ -5410,52 +5410,6 @@
     },
     {
       "a": {
-        "character": "lee",
-        "name": "\" Hmm \"",
-        "playerId": null,
-        "polarisId": "2egy5R8iGGGB",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "yoshimitsu",
-        "name": "SugarFree",
-        "playerId": "sugarfree",
-        "polarisId": "3feeJ699M7An",
-        "rank": "tekken_god"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "80fda10ffeb2412193f7909a2ed05409",
-      "playedAt": "2026-07-04T05:54:20.000Z",
-      "roundsA": 2,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "lee",
-        "name": "\" Hmm \"",
-        "playerId": null,
-        "polarisId": "2egy5R8iGGGB",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "yoshimitsu",
-        "name": "SugarFree",
-        "playerId": "sugarfree",
-        "polarisId": "3feeJ699M7An",
-        "rank": "tekken_god"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "af3e9e93b48240eda99d5db88fdab1dc",
-      "playedAt": "2026-07-04T05:57:00.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
         "character": "bryan",
         "name": "SugarFree",
         "playerId": "sugarfree",
@@ -5565,98 +5519,6 @@
       "crew": true,
       "id": "ewgf:3feeJ699M7An-4fLe2B6Q34fJ:1783189236",
       "playedAt": "2026-07-04T18:20:36.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "bryan",
-        "name": "SugarFree",
-        "playerId": "sugarfree",
-        "polarisId": "3feeJ699M7An",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "TheLiberator",
-        "playerId": null,
-        "polarisId": "3ie3Yty54M8Q",
-        "rank": "tekken_king"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "4dd675ca8c194dbca0871aae29cde5d7",
-      "playedAt": "2026-07-05T03:50:01.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "bryan",
-        "name": "SugarFree",
-        "playerId": "sugarfree",
-        "polarisId": "3feeJ699M7An",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "kunimitsu",
-        "name": "TheLiberator",
-        "playerId": null,
-        "polarisId": "3ie3Yty54M8Q",
-        "rank": "tekken_king"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "31af7446093241d29b95db25b01c0a6d",
-      "playedAt": "2026-07-05T03:54:00.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "bryan",
-        "name": "SugarFree",
-        "playerId": "sugarfree",
-        "polarisId": "3feeJ699M7An",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "bryan",
-        "name": "JBlxck",
-        "playerId": null,
-        "polarisId": "5jj6j8J5bGBJ",
-        "rank": "tekken_god_supreme"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "3a90ff8d6b174bb9bdd6f5acb9ad8b44",
-      "playedAt": "2026-07-05T03:58:03.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "bryan",
-        "name": "SugarFree",
-        "playerId": "sugarfree",
-        "polarisId": "3feeJ699M7An",
-        "rank": "tekken_god"
-      },
-      "b": {
-        "character": "bryan",
-        "name": "JBlxck",
-        "playerId": null,
-        "polarisId": "5jj6j8J5bGBJ",
-        "rank": "tekken_god_supreme"
-      },
-      "battleType": "ranked",
-      "crew": false,
-      "id": "592844b3ac7347e996564eb8aa9d4875",
-      "playedAt": "2026-07-05T04:01:12.000Z",
       "roundsA": 3,
       "roundsB": 2,
       "winner": "a"
@@ -9787,298 +9649,114 @@
         "rank": "god_of_destruction_iv"
       },
       "b": {
-        "character": "eddy",
-        "name": "Mingo_slushy",
+        "character": "azucena",
+        "name": "NxS | Tapp",
         "playerId": null,
-        "polarisId": "4F47dQFiL5T6",
-        "rank": "tekken_emperor"
+        "polarisId": "5RaNJf79H8fB",
+        "rank": "god_of_destruction"
       },
-      "battleType": "player",
+      "battleType": "group",
       "crew": false,
-      "id": "ewgf:4899Drd8678h-4F47dQFiL5T6:1784301866",
-      "playedAt": "2026-07-17T15:24:26.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "reina",
-        "name": "SlickEVAN",
-        "playerId": null,
-        "polarisId": "4bg7AmDtqYff",
-        "rank": "god_of_destruction_i"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4bg7AmDtqYff:1784302118",
-      "playedAt": "2026-07-17T15:28:38.000Z",
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784321417",
+      "playedAt": "2026-07-17T20:50:17.000Z",
       "roundsA": 3,
       "roundsB": 2,
       "winner": "a"
     },
     {
       "a": {
-        "character": "fahkumram",
-        "name": "TTV_ARXH3RY",
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "NxS | Tapp",
         "playerId": null,
-        "polarisId": "3Y7e5NQ4yLT4",
+        "polarisId": "5RaNJf79H8fB",
         "rank": "god_of_destruction"
       },
-      "b": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "player",
+      "battleType": "group",
       "crew": false,
-      "id": "ewgf:3Y7e5NQ4yLT4-4899Drd8678h:1784304377",
-      "playedAt": "2026-07-17T16:06:17.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "fahkumram",
-        "name": "TTV_ARXH3RY",
-        "playerId": null,
-        "polarisId": "3Y7e5NQ4yLT4",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:3Y7e5NQ4yLT4-4899Drd8678h:1784304597",
-      "playedAt": "2026-07-17T16:09:57.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "armor_king",
-        "name": "GENETIC FREAK",
-        "playerId": null,
-        "polarisId": "3t8hyqg9rR2d",
-        "rank": "tekken_king"
-      },
-      "b": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:3t8hyqg9rR2d-4899Drd8678h:1784305244",
-      "playedAt": "2026-07-17T16:20:44.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "armor_king",
-        "name": "GENETIC FREAK",
-        "playerId": null,
-        "polarisId": "3t8hyqg9rR2d",
-        "rank": "tekken_king"
-      },
-      "b": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:3t8hyqg9rR2d-4899Drd8678h:1784305407",
-      "playedAt": "2026-07-17T16:23:27.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "eddy",
-        "name": "Mingo_slushy",
-        "playerId": null,
-        "polarisId": "4F47dQFiL5T6",
-        "rank": "tekken_emperor"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4F47dQFiL5T6:1784305604",
-      "playedAt": "2026-07-17T16:26:44.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "eddy",
-        "name": "Mingo_slushy",
-        "playerId": null,
-        "polarisId": "4F47dQFiL5T6",
-        "rank": "tekken_emperor"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4F47dQFiL5T6:1784305738",
-      "playedAt": "2026-07-17T16:28:58.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "lili",
-        "name": "RGBBUDDHA",
-        "playerId": null,
-        "polarisId": "4mgjnQLBQahQ",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4mgjnQLBQahQ:1784305993",
-      "playedAt": "2026-07-17T16:33:13.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "lili",
-        "name": "RGBBUDDHA",
-        "playerId": null,
-        "polarisId": "4mgjnQLBQahQ",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4mgjnQLBQahQ:1784306179",
-      "playedAt": "2026-07-17T16:36:19.000Z",
-      "roundsA": 3,
-      "roundsB": 1,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "lili",
-        "name": "RGBBUDDHA",
-        "playerId": null,
-        "polarisId": "4mgjnQLBQahQ",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4mgjnQLBQahQ:1784306366",
-      "playedAt": "2026-07-17T16:39:26.000Z",
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784321761",
+      "playedAt": "2026-07-17T20:56:01.000Z",
       "roundsA": 2,
       "roundsB": 3,
       "winner": "b"
     },
     {
       "a": {
-        "character": "eddy",
-        "name": "RbCr| KoingWolf",
-        "playerId": null,
-        "polarisId": "287jetM6gYhj",
-        "rank": "god_of_destruction"
-      },
-      "b": {
         "character": "kuma",
         "name": "BES | BigMan",
         "playerId": "bigman",
         "polarisId": "4899Drd8678h",
         "rank": "god_of_destruction_iv"
       },
-      "battleType": "player",
+      "b": {
+        "character": "azucena",
+        "name": "NxS | Tapp",
+        "playerId": null,
+        "polarisId": "5RaNJf79H8fB",
+        "rank": "god_of_destruction"
+      },
+      "battleType": "group",
       "crew": false,
-      "id": "ewgf:287jetM6gYhj-4899Drd8678h:1784307316",
-      "playedAt": "2026-07-17T16:55:16.000Z",
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784321997",
+      "playedAt": "2026-07-17T20:59:57.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "NxS | Tapp",
+        "playerId": null,
+        "polarisId": "5RaNJf79H8fB",
+        "rank": "god_of_destruction"
+      },
+      "battleType": "group",
+      "crew": false,
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784322188",
+      "playedAt": "2026-07-17T21:03:08.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "NxS | Tapp",
+        "playerId": null,
+        "polarisId": "5RaNJf79H8fB",
+        "rank": "god_of_destruction"
+      },
+      "battleType": "group",
+      "crew": false,
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784322417",
+      "playedAt": "2026-07-17T21:06:57.000Z",
       "roundsA": 3,
       "roundsB": 2,
       "winner": "a"
     },
     {
       "a": {
-        "character": "eddy",
-        "name": "RbCr| KoingWolf",
-        "playerId": null,
-        "polarisId": "287jetM6gYhj",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:287jetM6gYhj-4899Drd8678h:1784307500",
-      "playedAt": "2026-07-17T16:58:20.000Z",
-      "roundsA": 3,
-      "roundsB": 2,
-      "winner": "a"
-    },
-    {
-      "a": {
         "character": "kuma",
         "name": "BES | BigMan",
         "playerId": "bigman",
@@ -10086,62 +9764,16 @@
         "rank": "god_of_destruction_iv"
       },
       "b": {
-        "character": "kuma",
-        "name": "BES39 C-Sticks",
+        "character": "azucena",
+        "name": "NxS | Tapp",
         "playerId": null,
-        "polarisId": "4eNRg85Qgrfy",
+        "polarisId": "5RaNJf79H8fB",
         "rank": "god_of_destruction"
       },
-      "battleType": "player",
+      "battleType": "group",
       "crew": false,
-      "id": "ewgf:4899Drd8678h-4eNRg85Qgrfy:1784308148",
-      "playedAt": "2026-07-17T17:09:08.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "kuma",
-        "name": "BES39 C-Sticks",
-        "playerId": null,
-        "polarisId": "4eNRg85Qgrfy",
-        "rank": "god_of_destruction"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4eNRg85Qgrfy:1784308313",
-      "playedAt": "2026-07-17T17:11:53.000Z",
-      "roundsA": 3,
-      "roundsB": 0,
-      "winner": "a"
-    },
-    {
-      "a": {
-        "character": "king",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction"
-      },
-      "b": {
-        "character": "king",
-        "name": "BES39 C-Sticks",
-        "playerId": null,
-        "polarisId": "4eNRg85Qgrfy",
-        "rank": "god_of_destruction_iii"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4eNRg85Qgrfy:1784308497",
-      "playedAt": "2026-07-17T17:14:57.000Z",
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784322570",
+      "playedAt": "2026-07-17T21:09:30.000Z",
       "roundsA": 0,
       "roundsB": 3,
       "winner": "b"
@@ -10155,39 +9787,16 @@
         "rank": "god_of_destruction_iv"
       },
       "b": {
-        "character": "armor_king",
-        "name": "BES39 C-Sticks",
+        "character": "azucena",
+        "name": "NxS | Tapp",
         "playerId": null,
-        "polarisId": "4eNRg85Qgrfy",
-        "rank": "god_of_destruction_ii"
+        "polarisId": "5RaNJf79H8fB",
+        "rank": "god_of_destruction"
       },
-      "battleType": "player",
+      "battleType": "group",
       "crew": false,
-      "id": "ewgf:4899Drd8678h-4eNRg85Qgrfy:1784308725",
-      "playedAt": "2026-07-17T17:18:45.000Z",
-      "roundsA": 0,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "b": {
-        "character": "armor_king",
-        "name": "BES39 C-Sticks",
-        "playerId": null,
-        "polarisId": "4eNRg85Qgrfy",
-        "rank": "god_of_destruction_ii"
-      },
-      "battleType": "player",
-      "crew": false,
-      "id": "ewgf:4899Drd8678h-4eNRg85Qgrfy:1784308920",
-      "playedAt": "2026-07-17T17:22:00.000Z",
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784322784",
+      "playedAt": "2026-07-17T21:13:04.000Z",
       "roundsA": 3,
       "roundsB": 1,
       "winner": "a"
@@ -10201,19 +9810,42 @@
         "rank": "god_of_destruction_iv"
       },
       "b": {
-        "character": "armor_king",
-        "name": "BES39 C-Sticks",
+        "character": "azucena",
+        "name": "NxS | Tapp",
         "playerId": null,
-        "polarisId": "4eNRg85Qgrfy",
-        "rank": "god_of_destruction_ii"
+        "polarisId": "5RaNJf79H8fB",
+        "rank": "god_of_destruction"
       },
-      "battleType": "player",
+      "battleType": "group",
       "crew": false,
-      "id": "ewgf:4899Drd8678h-4eNRg85Qgrfy:1784309118",
-      "playedAt": "2026-07-17T17:25:18.000Z",
-      "roundsA": 2,
-      "roundsB": 3,
-      "winner": "b"
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784323026",
+      "playedAt": "2026-07-17T21:17:06.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "NxS | Tapp",
+        "playerId": null,
+        "polarisId": "5RaNJf79H8fB",
+        "rank": "god_of_destruction"
+      },
+      "battleType": "group",
+      "crew": false,
+      "id": "ewgf:4899Drd8678h-5RaNJf79H8fB:1784323175",
+      "playedAt": "2026-07-17T21:19:35.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
     },
     {
       "a": {
@@ -11362,6 +10994,374 @@
       "id": "855e6f4479b04f92873f4d8f7e77ee72",
       "playedAt": "2026-07-18T18:49:07.000Z",
       "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "jun",
+        "name": "Love and Peace",
+        "playerId": null,
+        "polarisId": "2JYhEnBAr9tG",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "c8c426c9eb5949e3a7fd72d6dc28835a",
+      "playedAt": "2026-07-18T18:54:37.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "jun",
+        "name": "Love and Peace",
+        "playerId": null,
+        "polarisId": "2JYhEnBAr9tG",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "5f74ff39256b4b38934898d56b8b9b56",
+      "playedAt": "2026-07-18T18:57:03.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "jun",
+        "name": "Love and Peace",
+        "playerId": null,
+        "polarisId": "2JYhEnBAr9tG",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "802b5653b9cd4847bdb509a622dab29f",
+      "playedAt": "2026-07-18T19:00:27.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "law",
+        "name": "OTL |DidiDoThat",
+        "playerId": null,
+        "polarisId": "2etf3LgT6F3T",
+        "rank": "god_of_destruction_v"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "792127c812464bba83a29579a26b4406",
+      "playedAt": "2026-07-19T01:37:12.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "law",
+        "name": "OTL |DidiDoThat",
+        "playerId": null,
+        "polarisId": "2etf3LgT6F3T",
+        "rank": "god_of_destruction_v"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "23d1d3b693ca40b694a06c4d899ba887",
+      "playedAt": "2026-07-19T01:40:41.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "SugarFree",
+        "playerId": "sugarfree",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Zayswoon",
+        "playerId": null,
+        "polarisId": "3m3EYM2JN92f",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "38dec004c95c4ed58ed08401721c4fdd",
+      "playedAt": "2026-07-19T01:44:26.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kunimitsu",
+        "name": "Jaded",
+        "playerId": null,
+        "polarisId": "435r4Lq5JeTQ",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "29fff4738cd5488c8f4c028596621bfe",
+      "playedAt": "2026-07-19T01:45:05.000Z",
+      "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "SugarFree",
+        "playerId": "sugarfree",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Zayswoon",
+        "playerId": null,
+        "polarisId": "3m3EYM2JN92f",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "0314c586f332464192f33601ec7afb90",
+      "playedAt": "2026-07-19T01:47:22.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "SugarFree",
+        "playerId": "sugarfree",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "azucena",
+        "name": "Zayswoon",
+        "playerId": null,
+        "polarisId": "3m3EYM2JN92f",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "880bbba0648b4c1db2c1ff1bc71273b3",
+      "playedAt": "2026-07-19T01:49:31.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "leroy",
+        "name": "SirDogula",
+        "playerId": null,
+        "polarisId": "4Ff437q5Nf2h",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "0d4c09f7e4124b039a51736942c71eb7",
+      "playedAt": "2026-07-19T01:52:18.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "SugarFree",
+        "playerId": "sugarfree",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "steve",
+        "name": "theWORSTplayR",
+        "playerId": null,
+        "polarisId": "46hfF6EnJMjy",
+        "rank": "tekken_god"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "27ef8f290ce844b2a4c2e9273649a3b4",
+      "playedAt": "2026-07-19T01:53:05.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "leroy",
+        "name": "SirDogula",
+        "playerId": null,
+        "polarisId": "4Ff437q5Nf2h",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "974f74371a514fc5b58d47e19d6278fd",
+      "playedAt": "2026-07-19T01:54:38.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "bryan",
+        "name": "SugarFree",
+        "playerId": "sugarfree",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "steve",
+        "name": "theWORSTplayR",
+        "playerId": null,
+        "polarisId": "46hfF6EnJMjy",
+        "rank": "tekken_god"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "019bd06d7fe840b1abc46ea677b35fac",
+      "playedAt": "2026-07-19T01:56:49.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "leroy",
+        "name": "SirDogula",
+        "playerId": null,
+        "polarisId": "4Ff437q5Nf2h",
+        "rank": "god_of_destruction_iii"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "9e2b00fa12b8498ab5798485e3fb6f90",
+      "playedAt": "2026-07-19T01:57:24.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "armor_king",
+        "name": "Ineedcoaching",
+        "playerId": null,
+        "polarisId": "2QNB6NB9Rj4Q",
+        "rank": "god_of_destruction_i"
+      },
+      "b": {
+        "character": "bryan",
+        "name": "SugarFree",
+        "playerId": "sugarfree",
+        "polarisId": "3feeJ699M7An",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "66e6a7cc1129439b8fb94f349ba55316",
+      "playedAt": "2026-07-19T02:01:26.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "Cøcaina",
+        "playerId": null,
+        "polarisId": "4egYbNN6ardr",
+        "rank": "god_of_destruction_v"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "e4e5691063084eef8243bd6102fa5524",
+      "playedAt": "2026-07-19T02:01:26.000Z",
+      "roundsA": 1,
       "roundsB": 3,
       "winner": "b"
     }

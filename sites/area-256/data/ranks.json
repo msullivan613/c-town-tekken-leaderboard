@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T18:53:27.778Z",
+  "generatedAt": "2026-07-19T02:01:51.051Z",
   "pairs": [
     {
       "character": "leroy",
@@ -700,12 +700,12 @@
     {
       "character": "heihachi",
       "characterPeakRank": "bushin",
-      "lastSeen": "2026-07-18T01:35:40.000Z",
+      "lastSeen": "2026-07-18T17:23:34.000Z",
       "pairId": "4tF6-JdJa-Rna2:heihachi",
       "playerId": "oddlionss",
-      "rank": "bushin",
-      "rankTier": 24,
-      "rankedGames": 197,
+      "rank": "kishin",
+      "rankTier": 23,
+      "rankedGames": 199,
       "region": "Americas",
       "tekken_id": "4tF6-JdJa-Rna2"
     },

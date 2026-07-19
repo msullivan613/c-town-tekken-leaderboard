@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 6413,
+  "basedOnMatchCount": 6496,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-18T18:53:27.778Z",
+  "generatedAt": "2026-07-19T02:01:51.051Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -63,13 +63,13 @@
       "charUsage": {
         "bryan": 51,
         "heihachi": 47,
-        "kazuya": 443
+        "kazuya": 448
       },
-      "matchLosses": 341,
-      "matchWins": 200,
+      "matchLosses": 345,
+      "matchWins": 201,
       "mostPlayedCharacter": "kazuya",
-      "totalMatches": 541,
-      "winRate": 0.37
+      "totalMatches": 546,
+      "winRate": 0.368
     },
     "falsecrustacean": {
       "charUsage": {
@@ -196,14 +196,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 1153,
+        "azucena": 1179,
         "kunimitsu": 48
       },
-      "matchLosses": 368,
-      "matchWins": 833,
+      "matchLosses": 378,
+      "matchWins": 849,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 1201,
-      "winRate": 0.694
+      "totalMatches": 1227,
+      "winRate": 0.692
     },
     "puma": {
       "charUsage": {
@@ -224,13 +224,13 @@
         "feng": 20,
         "king": 10,
         "kunimitsu": 691,
-        "leroy": 155
+        "leroy": 201
       },
-      "matchLosses": 633,
-      "matchWins": 711,
+      "matchLosses": 652,
+      "matchWins": 738,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 1344,
-      "winRate": 0.529
+      "totalMatches": 1390,
+      "winRate": 0.531
     },
     "skrt": {
       "charUsage": {
@@ -250,16 +250,16 @@
     },
     "sugarfree": {
       "charUsage": {
-        "bryan": 30,
+        "bryan": 36,
         "jack8": 8,
         "kazuya": 4,
         "yoshimitsu": 59
       },
-      "matchLosses": 42,
-      "matchWins": 59,
+      "matchLosses": 44,
+      "matchWins": 63,
       "mostPlayedCharacter": "yoshimitsu",
-      "totalMatches": 101,
-      "winRate": 0.584
+      "totalMatches": 107,
+      "winRate": 0.589
     }
   },
   "schemaVersion": 2
