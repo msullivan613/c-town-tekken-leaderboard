@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2766,
+  "basedOnMatchCount": 2799,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -278,7 +278,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-20T13:53:56.460Z",
+  "generatedAt": "2026-07-20T19:30:40.598Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -571,13 +571,14 @@
       "charUsage": {
         "armor_king": 280,
         "claudio": 11,
-        "fahkumram": 205
+        "clive": 21,
+        "fahkumram": 217
       },
-      "matchLosses": 220,
-      "matchWins": 276,
+      "matchLosses": 221,
+      "matchWins": 308,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 496,
-      "winRate": 0.556
+      "totalMatches": 529,
+      "winRate": 0.582
     },
     "nyx": {
       "charUsage": {

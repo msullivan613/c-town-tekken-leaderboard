@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T13:53:03.949Z",
+  "generatedAt": "2026-07-20T19:29:49.862Z",
   "pairs": [
     {
       "character": "leroy",
@@ -476,14 +476,14 @@
     },
     {
       "character": "king",
-      "confidence": "provisional",
-      "games": 700,
-      "lastUpdated": "2025-10-06T00:56:50.000Z",
+      "confidence": "leaderboard",
+      "games": 733,
+      "lastUpdated": "2026-07-20T19:18:07.000Z",
       "pairId": "44eg-BAHA-424E:king",
       "playerId": "rev_grizz",
-      "provisional": true,
-      "rating": 1741,
-      "sigmaSquared": 111
+      "provisional": false,
+      "rating": 1795,
+      "sigmaSquared": 69
     },
     {
       "character": "kunimitsu",
@@ -521,13 +521,13 @@
     {
       "character": "raven",
       "confidence": "leaderboard",
-      "games": 4614,
-      "lastUpdated": "2026-06-19T04:02:03.000Z",
+      "games": 4616,
+      "lastUpdated": "2026-07-20T19:26:33.000Z",
       "pairId": "44eg-BAHA-424E:raven",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1877,
-      "sigmaSquared": 72
+      "rating": 1855,
+      "sigmaSquared": 71
     },
     {
       "character": "feng",
