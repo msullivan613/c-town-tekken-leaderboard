@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T18:58:24.250Z",
+  "generatedAt": "2026-07-20T02:23:34.452Z",
   "matches": [
     {
       "a": {
@@ -29443,6 +29443,29 @@
     },
     {
       "a": {
+        "character": "azucena",
+        "name": "TenguMatt",
+        "playerId": null,
+        "polarisId": "29T4Yj786R5n",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "lee",
+        "name": "Mickrus",
+        "playerId": "mickrus",
+        "polarisId": "2tYaR4NBGJJr",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "3fe79ddc21054048a0d419fdba04a49f",
+      "playedAt": "2026-06-23T18:29:59.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
         "character": "armor_king",
         "name": "Nullified",
         "playerId": "nullified",
@@ -29552,6 +29575,121 @@
       "crew": false,
       "id": "0722103cc0ed494a893c2c6b181dc942",
       "playedAt": "2026-06-23T21:58:36.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "lee",
+        "name": "Mickrus",
+        "playerId": "mickrus",
+        "polarisId": "2tYaR4NBGJJr",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "law",
+        "name": "Captain Kurtis",
+        "playerId": null,
+        "polarisId": "5j7qaLNBB6Gh",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "0b43aa56bba942d088d91a4271d23cb5",
+      "playedAt": "2026-06-24T02:40:07.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kazuya",
+        "name": "Nozarashi",
+        "playerId": null,
+        "polarisId": "2F98a3JFgAD8",
+        "rank": "god_of_destruction"
+      },
+      "b": {
+        "character": "lee",
+        "name": "Mickrus",
+        "playerId": "mickrus",
+        "polarisId": "2tYaR4NBGJJr",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "15b43a369d964be9bef3a71cf382aa75",
+      "playedAt": "2026-06-24T02:44:34.000Z",
+      "roundsA": 3,
+      "roundsB": 1,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "Zolso",
+        "playerId": null,
+        "polarisId": "2R2qqhjYjHMQ",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "lee",
+        "name": "Mickrus",
+        "playerId": "mickrus",
+        "polarisId": "2tYaR4NBGJJr",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "1cd07e2257994fffa91d888b4f853ee9",
+      "playedAt": "2026-06-24T02:48:09.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "Zolso",
+        "playerId": null,
+        "polarisId": "2R2qqhjYjHMQ",
+        "rank": "tekken_god"
+      },
+      "b": {
+        "character": "lee",
+        "name": "Mickrus",
+        "playerId": "mickrus",
+        "polarisId": "2tYaR4NBGJJr",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "ca4e072e9a9e41c18c544eee9f377ab2",
+      "playedAt": "2026-06-24T02:50:39.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "lee",
+        "name": "Mickrus",
+        "playerId": "mickrus",
+        "polarisId": "2tYaR4NBGJJr",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "armor_king",
+        "name": "Teeelar",
+        "playerId": null,
+        "polarisId": "4J5nNNatD3Gf",
+        "rank": "tekken_god"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "e4cf1afb7ba540cb88c1a6be6faf08c2",
+      "playedAt": "2026-06-24T02:55:57.000Z",
       "roundsA": 3,
       "roundsB": 1,
       "winner": "a"

@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-19T18:57:31.398Z",
+  "generatedAt": "2026-07-20T02:22:45.903Z",
   "pairs": [
     {
       "character": "leroy",
       "confidence": "leaderboard",
-      "games": 1882,
-      "lastUpdated": "2026-07-12T22:42:29.000Z",
+      "games": 1894,
+      "lastUpdated": "2026-07-20T01:00:35.000Z",
       "pairId": "2dar-ftbJ-jHDy:leroy",
       "playerId": "puma",
       "provisional": false,
-      "rating": 1661,
-      "sigmaSquared": 69
+      "rating": 1581,
+      "sigmaSquared": 66
     },
     {
       "character": "king",
@@ -510,13 +510,13 @@
     {
       "character": "leroy",
       "confidence": "leaderboard",
-      "games": 2314,
-      "lastUpdated": "2026-07-19T18:55:52.000Z",
+      "games": 2381,
+      "lastUpdated": "2026-07-19T23:11:16.000Z",
       "pairId": "44eg-BAHA-424E:leroy",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1909,
-      "sigmaSquared": 63
+      "rating": 2031,
+      "sigmaSquared": 62
     },
     {
       "character": "raven",

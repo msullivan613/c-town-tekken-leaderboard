@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T18:57:31.398Z",
+  "generatedAt": "2026-07-20T02:22:45.903Z",
   "pairs": [
     {
       "character": "leroy",
@@ -499,8 +499,8 @@
       "lastSeen": "2026-07-16T21:26:01.000Z",
       "pairId": "44eg-BAHA-424E:eddy",
       "playerId": "rev_grizz",
-      "rank": "god_of_destruction_v",
-      "rankTier": 34,
+      "rank": "god_of_destruction_iv",
+      "rankTier": 33,
       "rankedGames": 477,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
@@ -568,12 +568,12 @@
     {
       "character": "leroy",
       "characterPeakRank": "god_of_destruction_iii",
-      "lastSeen": "2026-07-19T04:02:52.000Z",
+      "lastSeen": "2026-07-19T18:55:52.000Z",
       "pairId": "44eg-BAHA-424E:leroy",
       "playerId": "rev_grizz",
       "rank": "god_of_destruction_iii",
       "rankTier": 32,
-      "rankedGames": 330,
+      "rankedGames": 379,
       "region": "Americas",
       "tekken_id": "44eg-BAHA-424E"
     },
@@ -976,12 +976,12 @@
     {
       "character": "azucena",
       "characterPeakRank": "god_of_destruction_vi",
-      "lastSeen": "2026-07-19T05:38:56.000Z",
+      "lastSeen": "2026-07-19T18:38:32.000Z",
       "pairId": "5HyE-nHGe-rLJ8:azucena",
       "playerId": "phine",
       "rank": "god_of_destruction_vi",
       "rankTier": 35,
-      "rankedGames": 5005,
+      "rankedGames": 5028,
       "region": "Americas",
       "tekken_id": "5HyE-nHGe-rLJ8"
     },
