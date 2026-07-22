@@ -1,7 +1,7 @@
 {
   "crewMatchCount": 149,
   "feedMatchCount": 325,
-  "generatedAt": "2026-07-21T19:09:16.443Z",
+  "generatedAt": "2026-07-22T02:00:12.282Z",
   "matches": [
     {
       "a": {
@@ -7127,29 +7127,6 @@
       },
       "battleType": "ranked",
       "crew": false,
-      "id": "792127c812464bba83a29579a26b4406",
-      "playedAt": "2026-07-19T01:37:12.000Z",
-      "roundsA": 1,
-      "roundsB": 3,
-      "winner": "b"
-    },
-    {
-      "a": {
-        "character": "law",
-        "name": "OTL |DidiDoThat",
-        "playerId": null,
-        "polarisId": "2etf3LgT6F3T",
-        "rank": "god_of_destruction_v"
-      },
-      "b": {
-        "character": "kuma",
-        "name": "BES | BigMan",
-        "playerId": "bigman",
-        "polarisId": "4899Drd8678h",
-        "rank": "god_of_destruction_iv"
-      },
-      "battleType": "ranked",
-      "crew": false,
       "id": "23d1d3b693ca40b694a06c4d899ba887",
       "playedAt": "2026-07-19T01:40:41.000Z",
       "roundsA": 1,
@@ -10902,6 +10879,29 @@
       "id": "88814a9edb3c486fab41391acd3caa1d",
       "playedAt": "2026-07-21T01:20:15.000Z",
       "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_v"
+      },
+      "b": {
+        "character": "yoshimitsu",
+        "name": "Ducky445",
+        "playerId": null,
+        "polarisId": "5gAM47HNdfBM",
+        "rank": "god_of_destruction"
+      },
+      "battleType": "group",
+      "crew": false,
+      "id": "ewgf:4899Drd8678h-5gAM47HNdfBM:1784599101",
+      "playedAt": "2026-07-21T01:58:21.000Z",
+      "roundsA": 2,
       "roundsB": 3,
       "winner": "b"
     }

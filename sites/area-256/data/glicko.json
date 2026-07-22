@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T19:08:26.970Z",
+  "generatedAt": "2026-07-22T01:59:19.592Z",
   "pairs": [
     {
       "character": "leroy",
@@ -422,13 +422,13 @@
     {
       "character": "armor_king",
       "confidence": "leaderboard",
-      "games": 652,
-      "lastUpdated": "2026-07-20T22:07:26.000Z",
+      "games": 674,
+      "lastUpdated": "2026-07-21T21:05:55.000Z",
       "pairId": "44eg-BAHA-424E:armor_king",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1773,
-      "sigmaSquared": 70
+      "rating": 1783,
+      "sigmaSquared": 64
     },
     {
       "character": "bryan",
