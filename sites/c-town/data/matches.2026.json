@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:18:42.053Z",
+  "generatedAt": "2026-07-23T13:41:01.055Z",
   "matches": [
     {
       "a": {
@@ -43358,6 +43358,75 @@
     },
     {
       "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Hajiii",
+        "playerId": null,
+        "polarisId": "4ngMrN9338MM",
+        "rank": "brawler"
+      },
+      "battleType": "player",
+      "crew": false,
+      "id": "ewgf:3E4Rn7J9e32T-4ngMrN9338MM:1783135700",
+      "playedAt": "2026-07-04T03:28:20.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Hajiii",
+        "playerId": null,
+        "polarisId": "4ngMrN9338MM",
+        "rank": "brawler"
+      },
+      "battleType": "player",
+      "crew": false,
+      "id": "ewgf:3E4Rn7J9e32T-4ngMrN9338MM:1783136519",
+      "playedAt": "2026-07-04T03:41:59.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "kunimitsu",
+        "name": "Hajiii",
+        "playerId": null,
+        "polarisId": "4ngMrN9338MM",
+        "rank": "brawler"
+      },
+      "battleType": "player",
+      "crew": false,
+      "id": "ewgf:3E4Rn7J9e32T-4ngMrN9338MM:1783137606",
+      "playedAt": "2026-07-04T04:00:06.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
         "character": "steve",
         "name": "FluffyCake",
         "playerId": null,
@@ -45635,6 +45704,29 @@
     },
     {
       "a": {
+        "character": "zafina",
+        "name": "Ketchupnomustar",
+        "playerId": null,
+        "polarisId": "2E3eMbArGy34",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "355dbb06437a4f409d98c04742d89823",
+      "playedAt": "2026-07-06T23:07:02.000Z",
+      "roundsA": 0,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
         "character": "kuma",
         "name": "BES | BigMan",
         "playerId": "bigman",
@@ -45658,6 +45750,52 @@
     },
     {
       "a": {
+        "character": "zafina",
+        "name": "Ketchupnomustar",
+        "playerId": null,
+        "polarisId": "2E3eMbArGy34",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "tekken_god_supreme"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "15b99be428aa4c80b6d1f484bf8bb64f",
+      "playedAt": "2026-07-06T23:09:47.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "steve",
+        "name": "guts_99",
+        "playerId": null,
+        "polarisId": "66hg7BgEheQB",
+        "rank": "tekken_god"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "dc07afd8ff46459cbf9b5959d484564f",
+      "playedAt": "2026-07-06T23:13:00.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
         "character": "kuma",
         "name": "BES | BigMan",
         "playerId": "bigman",
@@ -45678,6 +45816,29 @@
       "roundsA": 2,
       "roundsB": 3,
       "winner": "b"
+    },
+    {
+      "a": {
+        "character": "reina",
+        "name": "FopFopFop",
+        "playerId": "fop",
+        "polarisId": "3E4Rn7J9e32T",
+        "rank": "tekken_god_supreme"
+      },
+      "b": {
+        "character": "steve",
+        "name": "guts_99",
+        "playerId": null,
+        "polarisId": "66hg7BgEheQB",
+        "rank": "tekken_god"
+      },
+      "battleType": "quick",
+      "crew": false,
+      "id": "7e88a3963207482a9e02605a0767268f",
+      "playedAt": "2026-07-06T23:14:48.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
     },
     {
       "a": {

@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 7344,
+  "basedOnMatchCount": 7387,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-23T08:17:49.256Z",
+  "generatedAt": "2026-07-23T13:40:09.529Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -85,15 +85,16 @@
     },
     "goul": {
       "charUsage": {
+        "asuka": 36,
         "dragunov": 190,
-        "kunimitsu": 171,
+        "kunimitsu": 178,
         "xiaoyu": 67
       },
-      "matchLosses": 156,
-      "matchWins": 272,
+      "matchLosses": 170,
+      "matchWins": 301,
       "mostPlayedCharacter": "dragunov",
-      "totalMatches": 428,
-      "winRate": 0.636
+      "totalMatches": 471,
+      "winRate": 0.639
     },
     "holycrow": {
       "charUsage": {
