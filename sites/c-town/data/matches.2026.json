@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T13:41:01.055Z",
+  "generatedAt": "2026-07-23T19:04:59.728Z",
   "matches": [
     {
       "a": {
@@ -54002,6 +54002,98 @@
       "id": "62e31d4c160f4575a156a9be7ec9da71",
       "playedAt": "2026-07-19T02:19:39.000Z",
       "roundsA": 2,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "fahkumram",
+        "name": "P-CO",
+        "playerId": null,
+        "polarisId": "4tiTa6nrqb4h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "8496ab14a9444acbb186da3b20682ba6",
+      "playedAt": "2026-07-19T02:22:51.000Z",
+      "roundsA": 3,
+      "roundsB": 2,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "b": {
+        "character": "fahkumram",
+        "name": "P-CO",
+        "playerId": null,
+        "polarisId": "4tiTa6nrqb4h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "df018c20634c424f9da2d1f7708689aa",
+      "playedAt": "2026-07-19T02:25:30.000Z",
+      "roundsA": 3,
+      "roundsB": 0,
+      "winner": "a"
+    },
+    {
+      "a": {
+        "character": "lili",
+        "name": "Buffy",
+        "playerId": null,
+        "polarisId": "3Q88LnN9ttnB",
+        "rank": "god_of_destruction_v"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "dd62afdce1cf410d9d730ba160df438c",
+      "playedAt": "2026-07-19T02:28:56.000Z",
+      "roundsA": 1,
+      "roundsB": 3,
+      "winner": "b"
+    },
+    {
+      "a": {
+        "character": "lee",
+        "name": "kxp.",
+        "playerId": null,
+        "polarisId": "3FLQQnrdR4hQ",
+        "rank": "god_of_destruction_iii"
+      },
+      "b": {
+        "character": "kuma",
+        "name": "BES | BigMan",
+        "playerId": "bigman",
+        "polarisId": "4899Drd8678h",
+        "rank": "god_of_destruction_iv"
+      },
+      "battleType": "ranked",
+      "crew": false,
+      "id": "b83c1ff7d6d84af78bcb29a88a38ad4c",
+      "playedAt": "2026-07-19T02:32:51.000Z",
+      "roundsA": 1,
       "roundsB": 3,
       "winner": "b"
     },

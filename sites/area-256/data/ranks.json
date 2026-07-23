@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T13:40:09.529Z",
+  "generatedAt": "2026-07-23T19:04:09.057Z",
   "pairs": [
     {
       "character": "leroy",
@@ -783,13 +783,13 @@
     },
     {
       "character": "asuka",
-      "characterPeakRank": "god_of_destruction_ii",
-      "lastSeen": "2026-05-30T10:29:35.000Z",
+      "characterPeakRank": "god_of_destruction_iv",
+      "lastSeen": "2026-07-23T12:34:14.000Z",
       "pairId": "54Ab-yiYH-Ab4B:asuka",
       "playerId": "goul",
-      "rank": "god_of_destruction_ii",
-      "rankTier": 31,
-      "rankedGames": 261,
+      "rank": "god_of_destruction_iv",
+      "rankTier": 33,
+      "rankedGames": 297,
       "region": "Americas",
       "tekken_id": "54Ab-yiYH-Ab4B"
     },
@@ -820,12 +820,12 @@
     {
       "character": "kunimitsu",
       "characterPeakRank": "god_of_destruction_iv",
-      "lastSeen": "2026-06-26T09:58:27.000Z",
+      "lastSeen": "2026-07-23T10:26:08.000Z",
       "pairId": "54Ab-yiYH-Ab4B:kunimitsu",
       "playerId": "goul",
       "rank": "god_of_destruction_iv",
       "rankTier": 33,
-      "rankedGames": 398,
+      "rankedGames": 405,
       "region": "Americas",
       "tekken_id": "54Ab-yiYH-Ab4B"
     },

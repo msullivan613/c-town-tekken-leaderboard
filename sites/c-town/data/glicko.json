@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T13:41:01.055Z",
+  "generatedAt": "2026-07-23T19:04:59.728Z",
   "pairs": [
     {
       "character": "lili",
@@ -257,12 +257,12 @@
     {
       "character": "kuma",
       "confidence": "leaderboard",
-      "games": 5261,
-      "lastUpdated": "2026-07-19T02:45:11.000Z",
+      "games": 5265,
+      "lastUpdated": "2026-07-23T17:16:17.000Z",
       "pairId": "4899-Drd8-678h:kuma",
       "playerId": "bigman",
       "provisional": false,
-      "rating": 2172,
+      "rating": 2176,
       "sigmaSquared": 63
     },
     {
