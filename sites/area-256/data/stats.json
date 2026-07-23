@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 7119,
+  "basedOnMatchCount": 7218,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-22T19:02:20.548Z",
+  "generatedAt": "2026-07-23T02:06:58.956Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -108,22 +108,22 @@
     },
     "kingbreadsticks": {
       "charUsage": {
-        "armor_king": 92,
+        "armor_king": 96,
         "bryan": 15,
         "dragunov": 23,
         "king": 85,
         "kunimitsu": 19,
         "lars": 10,
-        "leroy": 47,
+        "leroy": 50,
         "lidia": 2,
         "shaheen": 9,
         "victor": 3
       },
-      "matchLosses": 118,
-      "matchWins": 187,
+      "matchLosses": 119,
+      "matchWins": 193,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 305,
-      "winRate": 0.613
+      "totalMatches": 312,
+      "winRate": 0.619
     },
     "kragsloor": {
       "charUsage": {
@@ -164,15 +164,16 @@
     },
     "nullified": {
       "charUsage": {
-        "armor_king": 251,
+        "armor_king": 267,
         "claudio": 11,
+        "clive": 4,
         "fahkumram": 105
       },
-      "matchLosses": 197,
-      "matchWins": 170,
+      "matchLosses": 206,
+      "matchWins": 181,
       "mostPlayedCharacter": "armor_king",
-      "totalMatches": 367,
-      "winRate": 0.463
+      "totalMatches": 387,
+      "winRate": 0.468
     },
     "oddlionss": {
       "charUsage": {
@@ -225,15 +226,15 @@
         "feng": 20,
         "king": 43,
         "kunimitsu": 691,
-        "leo": 39,
-        "leroy": 351,
+        "leo": 56,
+        "leroy": 406,
         "raven": 12
       },
-      "matchLosses": 789,
-      "matchWins": 887,
+      "matchLosses": 833,
+      "matchWins": 915,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 1676,
-      "winRate": 0.529
+      "totalMatches": 1748,
+      "winRate": 0.523
     },
     "skrt": {
       "charUsage": {
