@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 2976,
+  "basedOnMatchCount": 2989,
   "charMatchups": {
     "bigman:heihachi|nyx:steve": {
       "matchesA": 1,
@@ -278,7 +278,7 @@
       "matchesB": 1
     }
   },
-  "generatedAt": "2026-07-24T02:02:49.579Z",
+  "generatedAt": "2026-07-24T08:14:12.366Z",
   "headToHead": {
     "bigman|burny": {
       "matchesA": 1,
@@ -523,14 +523,14 @@
         "kunimitsu": 7,
         "lars": 1,
         "lili": 4,
-        "reina": 305,
+        "reina": 314,
         "steve": 1
       },
-      "matchLosses": 135,
-      "matchWins": 193,
+      "matchLosses": 141,
+      "matchWins": 196,
       "mostPlayedCharacter": "reina",
-      "totalMatches": 328,
-      "winRate": 0.588
+      "totalMatches": 337,
+      "winRate": 0.582
     },
     "gnarlyidk": {
       "charUsage": {
@@ -613,16 +613,16 @@
         "dragunov": 36,
         "eddy": 4,
         "fahkumram": 10,
-        "kazuya": 7,
-        "law": 75,
+        "kazuya": 8,
+        "law": 78,
         "lee": 61,
         "victor": 3
       },
-      "matchLosses": 61,
-      "matchWins": 136,
+      "matchLosses": 62,
+      "matchWins": 139,
       "mostPlayedCharacter": "law",
-      "totalMatches": 197,
-      "winRate": 0.69
+      "totalMatches": 201,
+      "winRate": 0.692
     },
     "sugarfree": {
       "charUsage": {

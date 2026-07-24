@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T02:01:55.945Z",
+  "generatedAt": "2026-07-24T08:13:21.502Z",
   "pairs": [
     {
       "character": "leroy",
@@ -443,14 +443,14 @@
     },
     {
       "character": "dragunov",
-      "confidence": "unqualified",
-      "games": 17,
-      "lastUpdated": "2026-07-24T00:10:14.000Z",
+      "confidence": "leaderboard",
+      "games": 48,
+      "lastUpdated": "2026-07-24T04:43:23.000Z",
       "pairId": "44eg-BAHA-424E:dragunov",
       "playerId": "rev_grizz",
       "provisional": false,
-      "rating": 1523,
-      "sigmaSquared": 106
+      "rating": 1588,
+      "sigmaSquared": 69
     },
     {
       "character": "eddy",
@@ -598,13 +598,13 @@
     {
       "character": "kazuya",
       "confidence": "leaderboard",
-      "games": 2609,
-      "lastUpdated": "2026-07-19T00:31:38.000Z",
+      "games": 2614,
+      "lastUpdated": "2026-07-24T03:10:15.000Z",
       "pairId": "4FE3-J976-Qray:kazuya",
       "playerId": "eonexodus",
       "provisional": false,
-      "rating": 1428,
-      "sigmaSquared": 65
+      "rating": 1442,
+      "sigmaSquared": 64
     },
     {
       "character": "shaheen",

@@ -1,5 +1,5 @@
 {
-  "basedOnMatchCount": 7433,
+  "basedOnMatchCount": 7483,
   "charMatchups": {
     "afriking:armor_king|bigkuma:kuma": {
       "matchesA": 2,
@@ -10,7 +10,7 @@
       "matchesB": 10
     }
   },
-  "generatedAt": "2026-07-24T02:01:55.945Z",
+  "generatedAt": "2026-07-24T08:13:21.502Z",
   "headToHead": {
     "afriking|bigkuma": {
       "matchesA": 2,
@@ -63,13 +63,13 @@
       "charUsage": {
         "bryan": 51,
         "heihachi": 47,
-        "kazuya": 456
+        "kazuya": 461
       },
-      "matchLosses": 351,
-      "matchWins": 203,
+      "matchLosses": 353,
+      "matchWins": 206,
       "mostPlayedCharacter": "kazuya",
-      "totalMatches": 554,
-      "winRate": 0.366
+      "totalMatches": 559,
+      "winRate": 0.369
     },
     "falsecrustacean": {
       "charUsage": {
@@ -198,14 +198,14 @@
     },
     "phine": {
       "charUsage": {
-        "azucena": 1368,
+        "azucena": 1382,
         "kunimitsu": 48
       },
-      "matchLosses": 448,
-      "matchWins": 968,
+      "matchLosses": 451,
+      "matchWins": 979,
       "mostPlayedCharacter": "azucena",
-      "totalMatches": 1416,
-      "winRate": 0.684
+      "totalMatches": 1430,
+      "winRate": 0.685
     },
     "puma": {
       "charUsage": {
@@ -221,7 +221,7 @@
       "charUsage": {
         "armor_king": 52,
         "bryan": 68,
-        "dragunov": 80,
+        "dragunov": 111,
         "eddy": 213,
         "fahkumram": 126,
         "feng": 20,
@@ -231,11 +231,11 @@
         "leroy": 455,
         "raven": 12
       },
-      "matchLosses": 872,
-      "matchWins": 967,
+      "matchLosses": 889,
+      "matchWins": 981,
       "mostPlayedCharacter": "kunimitsu",
-      "totalMatches": 1839,
-      "winRate": 0.526
+      "totalMatches": 1870,
+      "winRate": 0.525
     },
     "skrt": {
       "charUsage": {
